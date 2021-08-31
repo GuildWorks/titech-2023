@@ -21,7 +21,18 @@ paginate: true
 　　　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**
 
 ---
-TODO
+- [Adalo Resources](https://help.adalo.com/)を参考に資料を作成して、それを見ながらAdaloの開発ツールでできることを一つ一つ確認していく
+    - やることリスト
+        - Adaloとは
+        - Adaloの開発ツールの概要説明
+        - テンプレートアプリを作って操作してみよう
+        - 画面の見た目を変えてみよう
+        - 画面を追加してみよう
+        - 画面遷移をさせてみよう
+        - 開発に役立つTipsを覚えよう
+            - Command + Zとか(早めに知っておかないと辛いもの)
+---
+- [Adalo Resourcesメモ](https://www.notion.so/Adalo-Resources-3b58f37ac0894b038c30d6b0d8274370)
 
 ---
 ## 目次
