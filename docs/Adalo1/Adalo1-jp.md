@@ -40,12 +40,9 @@ paginate: true
   - Adaloに登録しよう
   - テンプレートアプリを作って操作してみよう
   - Adaloの開発ツールの概要説明
-    - 開発に役立つTipsを覚えよう
   - アプリを作ってみよう
-    - 画面の見た目を変えてみよう
-    - 画面を追加してみよう
-    - 画面遷移をさせてみよう
-  
+  - 演習
+  - 次回に向けて
 
 ---
 ## Adaloとは
@@ -254,8 +251,10 @@ TODO: 説明追加と画像
 
 ---
 #### ComponentとScreen
+
 TODO: 色々ある中でもよく使うCompomentを紹介
 TODO: 説明追加と画像
+
 ---
 #### Blanding
 - 色やフォントを自由に変えられる
@@ -302,11 +301,15 @@ TODO
 ---
 ## 演習
 TODO
+
 --- 
 #### 演習の回答
+
 TODO
+
 ---
 ## 次回に向けて
+
 TODO
 
 
@@ -316,9 +319,8 @@ TODO
 - https://hashikake.jp/articles/adalo-no-code-app-creation-platform-ep01
 - https://www.no-code.tv/course/nocode135
 ---
-
----
 以後、old
+
 ---
 ## 目次
 - 前回までのふりかえり
