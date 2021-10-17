@@ -12,7 +12,7 @@ paginate: true
 
 # Adaloの基本
 
-**東京工業大学 2021/??/??**
+**東京工業大学 2021/10/23**
 　
 　
 　
@@ -31,9 +31,118 @@ paginate: true
         - 画面遷移をさせてみよう
         - 開発に役立つTipsを覚えよう
             - Command + Zとか(早めに知っておかないと辛いもの)
+        
+        - ペットの健康管理アプリのUIを作っておけると良さそう(データベースに触れずに作るのは難しいので、データベースにも軽く触れる？)
+        - 1テーブルへの登録と表示くらい？
 ---
-- [Adalo Resourcesメモ](https://www.notion.so/Adalo-Resources-3b58f37ac0894b038c30d6b0d8274370)
+## 目次
+  - Adaloとは
+  - Adaloに登録しよう
+  - テンプレートアプリを作って操作してみよう
+  - Adaloの開発ツールの概要説明
+    - 開発に役立つTipsを覚えよう
+  - 画面の見た目を変えてみよう
+  - 画面を追加してみよう
+  - 画面遷移をさせてみよう
+  
 
+---
+## Adaloとは
+- [Adalo](https://www.adalo.com/)は、アメリカ発のノーコードツールです。プログラミング不要でアプリを開発することができます。
+- 用意されているパーツから使用したいものを選び、それを画面にドラッグ＆ドロップしていくことで、アプリを作ることが可能です。
+- ブラウザで表示するWebアプリだけでなく、AndroidやiOS向けのスマートフォンアプリも開発できます。開発したアプリのGooglePlayやAppStoreでの公開も可能です。
+
+
+---
+#### Adaloで作られたアプリの例
+- Union: https://union-jp.site/
+  - 大学生が開発した、大学生・大学院生・大学教員・大学職員限定のSNS
+  - 2021年に1,000万円の資金調達を実施している
+    - https://prtimes.jp/main/html/rd/p/000000001.000076669.html
+- その他にも、 #MadeInAdalo でたくさん紹介されています
+  - https://www.adalo.com/made-in-adalo
+---
+## Adaloに登録しよう
+- AdaloのSignUp画面にアクセスしてください
+  - https://app.adalo.com/signup
+![w:800px](images/signup.png)
+
+---
+- 無料で登録できます
+- ご自身のEメールアドレス、パスワード、フルネームを入力してください
+- 利用規約への同意のチェックを入れてください
+- LET'S DO THIS! ボタンを押して、次の画面に進んでください
+---
+#### プラットフォームの選択
+- Native Mobile AppとDesktop Web Appが選べます
+- 今回は、Native Mobile Appを選択しましょう
+![w:600px](images/select-native-mobile-app.png)
+---
+#### テンプレートの選択
+- 完成されたアプリがテンプレートとして提供されています
+- 今回は、Chatを選択しましょう
+![w:500px](images/select-chat-template.png)
+
+
+---
+#### ブランディング
+
+- App Name、Primary Color、Secondary Colorを自由に入力してください
+  - Primary Colorは、アプリで最も使われるベースになる色です
+  - Secondary Colorは、目立たせたい時に使う色です。重要なボタンなどに使われます。
+![w:400px](images/branding-chat-app.png)
+<!-- - ADVANCED OPTIONSは変更せず、そのままで大丈夫です -->
+---
+- このようなAdaloの管理画面が表示されたらOKです
+![w:900px](images/dev-tool-of-chat-app.png)
+
+---
+## テンプレートアプリを操作してみよう
+- Webアプリとスマートフォンアプリのそれぞれに、完成されたアプリがテンプレートとして提供されています。
+- 自分たちが作りたいアプリに近いものがあれば、そのテンプレートを流用することで開発スピードをアップさせられるかもしれません。
+- どのようなテンプレートがあるか、確認してみましょう。
+
+---
+- この他にも、いくつかのテンプレートが提供されています
+- 自分たちが作りたいアプリに近いものがあれば、そのテンプレートを流用して開発スピードをアップさせられるかもしれません。時間があれば、他のテンプレートも試してみましょう。
+
+---
+
+---
+
+
+
+---
+---
+
+#### [無料プラン](https://www.adalo.com/pricing)の制限
+<!-- ![w:900px](images/pricing.png) -->
+- 外部アプリケーションとの連携ができない
+  - ただし、14日間はトライアル利用が可能
+- ドメインを変更できない(adaloのドメインになる)
+- ロゴの変更ができない(Adaloのロゴのまま)
+- GooglePlayやAppStoreへの申請ができない
+- 1つのアプリで登録できるデータベースのレコード数の上限が50件
+※ 実際にサービスを運用していく際は、有料プランへの移行を検討してください
+
+
+---
+## Adaloの開発ツールの概要説明
+
+
+---
+#### 開発に役立つTipsを覚えよう
+- Adaloの開発ツールでは、日本語の直接入力がうまくいかないことがあります。日本語のテキスト入力はコピー＆ペーストで行ってください。
+
+---
+## 参考
+- [Adalo Resourcesメモ](https://www.notion.so/Adalo-Resources-3b58f37ac0894b038c30d6b0d8274370)
+- https://hashikake.jp/articles/adalo-no-code-app-creation-platform-ep01
+- https://www.no-code.tv/course/nocode135
+---
+
+---
+以後、old
 ---
 ## 目次
 - 前回までのふりかえり
