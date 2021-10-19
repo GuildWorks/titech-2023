@@ -24,10 +24,11 @@ paginate: true
 ## 目次
   - Adaloとは
   - Adaloに登録しよう
-  - テンプレートアプリを作って操作してみよう
-  - Adaloの開発ツールの概要説明
+  - テンプレートアプリを操作してみよう
+  - Adaloでのアプリ開発の概要説明
   - アプリを作ってみよう
   - 演習
+  - 時間が余れば話したいこと
   - 次回に向けて
 
 ---
@@ -231,6 +232,7 @@ paginate: true
 ---
 ###### ![w:60px](images/2021-10-20-01-20-56.png) Database
 - データベースの構成や保存されているデータを表示できる
+- Collection: 同じ属性(プロパティ)を持ったデータの集まり
 ![w:214px](images/2021-10-20-01-38-57.png) ![w:878px](images/2021-10-20-01-30-09.png)
 
 ---
@@ -259,54 +261,38 @@ paginate: true
 
 ---
 ###### App Switcher
-![w:200px](images/app-switcher.png)
-  - アプリの名前が表示されている
-  - アプリを切り替えられる
-  - 新しいアプリを追加できる
-- Preview
-![w:200px](images/preview.png)
-    - アプリを実行して試すことができる
----
-- Share
-![w:100px](images/share.png)
-  - アプリをシェアして使ってもらうことができる。相手はAdaloのアカウントを持っていなくてもOK。
-- Account Menu
-![w:100px](images/account-menu.png)
-  - Settings
-  - Help&Documentation
-  - Sign Out
+- 開いているアプリの名前が表示される
+- アプリを切り替えられる
+- 新しいアプリを追加できる
+
+![bg right 90%](images/2021-10-20-02-27-22.png)
+
 
 ---
-## (時間が余れば)詳細
+######  Preview
+- アプリを実行して試すことができる
+- 画面サイズの異なるデバイスに切り替えて表示の確認ができる
+![w:830px](images/2021-10-20-02-42-08.png)
 
 ---
-#### ComponentとScreen
-
-TODO: 色々ある中でもよく使うCompomentを紹介
-TODO: 説明追加と画像
-
----
-#### Blanding
-- 色やフォントを自由に変えられる
-TODO: 説明追加と画像
----
-#### Screens
-- 画面の構成要素を見て、変更できる
-- Home, Welcomeの設定ができる
-TODO: 説明追加と画像
+###### Share
+- アプリをシェアして他の人に使ってもらうことができる。
+  Adaloのアカウントを持っていない人でも利用可能。
+![w:830px](images/2021-10-20-02-44-28.png)
 
 ---
-#### Database
-- Collection
-    - 同じ属性(プロパティ)を持ったデータの集まり
-    - プロパティ
-- Relation
-TODO: 説明追加と画像
+###### Account Menu
+- 各種設定ができる
+- ヘルプやドキュメントを開ける
+- ログアウトできる
+![bg right 90%](images/2021-10-20-02-56-33.png)
 ---
-#### 開発に役立つTipsを覚えよう
-- 間違って編集してしまった時は、`Command + Z ` で戻れる
+#### 開発に役立つTipsを覚えておこう
+- 間違って編集してしまった時は、Windowsなら`Ctrl + Z`、Macなら `Command + Z ` で元に戻せます
 - Adaloの開発ツールでは、日本語の直接入力がうまくいかないことがあります。日本語のテキスト入力はコピー＆ペーストで行ってください。
-TODO: 他にもあるはず
+
+TODO: 他にもあれば追加
+
 ---
 ## アプリを作ってみよう
 次に、新しくアプリを作ってみましょう
@@ -339,6 +325,11 @@ TODO
 TODO
 
 ---
+## 時間が余れば話したいこと
+- Home画面、Welcome画面の設定
+- 他のテンプレートの紹介
+
+---
 ## まとめ
 :white_check_mark: 
 
@@ -360,3 +351,4 @@ TODO
 メモ
 - [1対1のリレーションがないことについて](https://help.adalo.com/database)
 >While One-to-One relationships do not exist in Adalo, sometimes it is necessary to adapt the One-to-Many relationship type for this purpose. These instances are rare, but do crop up from time to time. For example, if an event host can only be assigned one event at a time and the event can only have one host. The "Many" side of the relationship can be disregarded.
+- [配色](https://note.com/tomokortn/n/n0d3d9da16907)
