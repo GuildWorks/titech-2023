@@ -435,7 +435,7 @@ TODO: 他にもあれば追加
 ![bg right h:700px](images/2021-10-20-04-40-45.png)
 
 ---
-- ADD SCREENからFormを選択します
+- ADD SCREENからApp Barを選択します
 ![bg right h:700px](images/2021-10-20-06-26-12.png)
 
 ---
@@ -444,10 +444,76 @@ TODO: 他にもあれば追加
 
 
 ---
-画面が追加されました。
+Screenが追加されました。
 
-![bg right h:700px](images/2021-10-20-06-30-39.png)
+この上に必要なコンポーネントを追加していきます。
 
+![bg right h:700px](images/2021-10-20-06-37-56.png)
+
+---
+- ADD COMPONENTからTextを選択します
+![bg right h:500px](images/2021-10-20-06-47-19.png)
+
+---
+- 画面上に配置します
+![bg right h:500px](images/2021-10-20-06-49-18.png)
+
+---
+- Textの値をNameに変えます
+![bg right h:500px](images/2021-10-20-06-52-11.png)
+
+---
+- 同様に、ImageとBirthdayというTextも追加します。
+![bg right h:500px](images/2021-10-20-07-02-04.png)
+
+---
+- ADD COMPONENTからText Inputを選択します
+![bg right h:500px](images/2021-10-20-06-53-05.png)
+
+---
+- 画面上に配置し、Placeholderの値をEnter Nameに変更します
+![bg right h:480px](images/2021-10-20-07-03-27.png)
+
+---
+- ADD COMPONENTからImage Pickerを選択します
+![bg right h:480px](images/2021-10-20-07-05-23.png)
+
+---
+- 画面上に配置します
+![bg right h:480px](images/2021-10-20-07-06-54.png)
+
+---
+- ADD COMPONENTからDate Pickerを選択します
+![bg right h:480px](images/2021-10-20-07-08-35.png)
+
+---
+- 画面上に配置し、StyleをDate Pickerに変更します
+![bg right h:480px](images/2021-10-20-07-10-35.png)
+
+---
+- ADD COMPONENTからButtonを選択します
+![bg right h:480px](images/2021-10-20-07-12-13.png)
+
+---
+- 画面上に配置します
+- Textの値をRegisterに変更します
+- Button ColorをSecondaryに変更します
+
+
+
+![bg right h:480px](images/2021-10-20-07-22-10.png)
+
+---
+ペット登録画面の見た目を確認してみましょう。
+- まだ導線がなく、画面遷移をして表示することができないので、ログイン後の遷移先であるHome Screenに設定します
+- Screensからペット登録画面を選び、Screen Navigation TypeをHome Screenに変更しましょう
+![bg right h:400px](images/2021-10-20-07-28-52.png)
+---
+- プレビュー機能でログインをすると、ペット登録画面が表示できます。
+- 名前の入力、画像の選択、誕生日の選択ができます。
+
+これで、ペット登録画面のUIは完成です。
+![bg right h:700px](images/2021-10-20-07-33-30.png)
 
 ---
 ###### ペット一覧画面
