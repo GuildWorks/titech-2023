@@ -154,75 +154,111 @@ paginate: true
 ---
 ## Adaloでのアプリ開発の概要説明
 次に、Adaloでのアプリ開発の概要を説明していきます。
-![w:900px](images/dev-tool-of-chat-app.png)
 
 ---
 ### 3つの基本コンセプト
 - 基本となる以下3つのコンセプトについて紹介します
   - Components
-  - Actions
   - Database
+  - Actions
 
 --- 
 #### Components
-- ユーザーインターフェース(アプリの画面)の構成要素。+で追加できる。
+- ユーザーインターフェースを作るために画面上に配置される要素。
+- 例:
+  - リスト
+  - ボタン
+  - テキスト
+  - 画像
 ![bg 35% right](images/components.png)
+
+---
+#### Database
+- 整理されたデータの集合。
+- データの登録、読込(表示)、更新、削除が行われる。
+- 例: Chatアプリの場合
+![w:400px](images/2021-10-19-23-49-03.png)
+<!-- ![w:570px](images/2021-10-19-23-39-29.png) -->
+![bg 35% right](images/2021-10-19-23-13-47.png)
 
 ---
 #### Actions
 - 特定のコンポーネントをクリックした時に何を行うかを指定するために使われる。
-TODO: 説明追加と画像
-
----
-#### Database
-- 入力されたデータをここに保存したり、ここから保存されたデータを取り出して表示したりする。
-TODO: 説明追加と画像
+<!-- - コンポーネントとそこで表示するデータベース内のデータを紐付けたり、ユーザー体験をカスタマイズする。 -->
+- 例:
+  - 別の画面に遷移させる
+  - データベースのデータを登録、更新、削除する
+![bg 35% right](images/2021-10-19-23-12-42.png)
 
 ---
 ### Adaloの機能説明
 次に、Adaloの管理画面で利用できる機能を紹介していきます
-
-TODO: 一つ一つ実際に操作してもらうようにする
+![w:900px](images/dev-tool-of-chat-app.png)
 
 ---
 #### Canvas
 - 画面を作る作業領域
-- スクロール、拡大、縮小ができる
-![w:800px](images/canvas.png)
-
+- 要素を選択したり、ドラッグアンドドロップで動かしたりできる
+![w:680px](images/canvas.png)
+<!-- - スクロール、拡大、縮小ができる -->
+<!-- ![w:650px](images/2021-10-19-23-57-52.png) -->
 
 ---
 
 #### Left Toolbar
-<!-- ![w:60px](images/left-tool-bar.png) -->
+左側のツールバーの各機能を紹介します。
 
-- Add Panel
-    - コンポーネントと画面を選択してアプリに追加できる
-![w:60px](images/add-panel.png)
-- Branding
-    - 色を変えられる
-![w:60px](images/branding.png)
-- Screens
-    - 画面とそれを構成するコンポーネント
-![w:60px](images/screens.png)
+![w:60px](images/left-tool-bar.png)
+
 ---
-- Database
-    - データベース
-![w:60px](images/databases.png)
-- Settings
-    - アプリの名前を変えたり、アプリのアイコンをセットしたりできる
-    - アプリの複製や削除ができる
-![w:60px](images/settings.png)
-- Publish
-    - 作ったアプリを公開できる(プレビュー以外は有料)
-![w:60px](images/publish.png)
+###### ![w:60px](images/add-panel.png) Add Panel
+- コンポーネントや画面を選択してアプリに追加できる
+![bg right 95%](images/2021-10-20-00-37-54.png)
+![bg right 93%](images/2021-10-20-00-44-42.png)
+<!-- 画面とコンポーネントの追加を実演する -->
 ---
-- Analytics
-    - Google Analyticsを設定して利用状況をトラッキングできる
-![w:60px](images/analytics.png)
+###### ![w:60px](images/2021-10-20-00-52-07.png) Branding
+- 色やフォントを変えられる
+![bg right 100%](images/2021-10-20-00-50-02.png)
+![bg right 92%](images/2021-10-20-00-50-42.png)
+<!-- 色とフォントの変更を実演する -->
+---
+###### ![w:60px](images/2021-10-20-00-54-44.png) Screens
+- 画面の一覧や、その画面の構成を表示できる
+![bg right 100%](images/2021-10-20-01-18-20.png)
+![bg right 93%](images/2021-10-20-01-14-53.png)
+
+---
+###### ![w:60px](images/2021-10-20-01-20-56.png) Database
+- データベースの構成や保存されているデータを表示できる
+![w:214px](images/2021-10-20-01-38-57.png) ![w:878px](images/2021-10-20-01-30-09.png)
+
+---
+###### ![w:60px](images/2021-10-20-01-45-09.png) Settings 
+- アプリの名前を変えたり、アプリのアイコンを設定したりできる
+- キャンバスに関する表示設定ができる
+- アプリへのアクセス権限の設定ができる
+- アプリの複製や削除ができる
+![bg right 90%](images/2021-10-20-01-47-47.png)
+
+---
+###### ![w:60px](images/2021-10-20-01-56-00.png)Publish
+- 作ったアプリを公開できる(有料プランのみ)
+![bg right 90%](images/2021-10-20-01-59-11.png)
+
+---
+###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
+- 利用状況を分析したレポートを見ることができる
+![bg right 90%](images/2021-10-20-02-07-44.png)
+
 ---
 #### Top Bar
-- App Switcher
+上部のツールバーの各機能を紹介します。
+
+![w:1150px](images/2021-10-20-02-11-14.png)
+
+---
+###### App Switcher
 ![w:200px](images/app-switcher.png)
   - アプリの名前が表示されている
   - アプリを切り替えられる
@@ -239,6 +275,9 @@ TODO: 一つ一つ実際に操作してもらうようにする
   - Settings
   - Help&Documentation
   - Sign Out
+
+---
+## (時間が余れば)詳細
 
 ---
 #### ComponentとScreen
@@ -316,3 +355,8 @@ TODO
 - [Adalo Resourcesメモ](https://www.notion.so/Adalo-Resources-3b58f37ac0894b038c30d6b0d8274370)
 - https://hashikake.jp/articles/adalo-no-code-app-creation-platform-ep01
 - https://www.no-code.tv/course/nocode135
+
+---
+メモ
+- [1対1のリレーションがないことについて](https://help.adalo.com/database)
+>While One-to-One relationships do not exist in Adalo, sometimes it is necessary to adapt the One-to-Many relationship type for this purpose. These instances are rare, but do crop up from time to time. For example, if an event host can only be assigned one event at a time and the event can only have one host. The "Many" side of the relationship can be disregarded.

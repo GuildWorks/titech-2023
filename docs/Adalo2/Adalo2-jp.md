@@ -53,6 +53,11 @@ paginate: true
 - データベース連携をしよう
 
 ---
+参考
+- https://help.adalo.com/database
+![](images/2021-10-19-23-36-00.png)
+
+---
 ## 前回までのふりかえり
 - 第1回では、HTML、CSS、Javascriptの基礎を学びました。
   - [参考: 第1回資料](https://github.com/GuildWorks/titech-2020/blob/master/docs/Phase1)
