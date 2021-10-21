@@ -499,10 +499,8 @@ Screenが追加されました。
 - 画面上に配置します
 - Textの値をRegisterに変更します
 - Button ColorをSecondaryに変更します
-
-
-
-![bg right h:480px](images/2021-10-20-07-22-10.png)
+- Icon & Text ColorをDefault Background(White)に変更します
+![bg right h:530px](images/2021-10-22-02-19-14.png)
 
 ---
 ペット登録画面の見た目を確認してみましょう。
@@ -512,9 +510,10 @@ Screenが追加されました。
 ---
 - プレビュー機能でログインをすると、ペット登録画面が表示できます。
 - 名前の入力、画像の選択、誕生日の選択ができます。
+- まだRegisterボタンを押しても何も起きません
 
 これで、ペット登録画面のUIは完成です。
-![bg right h:700px](images/2021-10-20-07-33-30.png)
+![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
 ###### ペット一覧画面
@@ -526,21 +525,89 @@ Screenが追加されました。
 ![bg right h:700px](images/2021-10-20-04-35-13.png) 
 
 ---
-- ADD SCREENからImage Listを選択して、Screen Nameを入力してください
-![bg right h:500px](images/2021-10-20-07-45-49.png)
+- ADD SCREENからApp Barを選択して、Screen Nameを入力してください
+![bg right h:700px](images/2021-10-20-06-26-12.png)
 
 ---
-- Image ListコンポーネントのImageにペットの写真をアップロードしてください
-![bg right h:500px](images/2021-10-20-07-50-45.png)
+- ADD COMPONENTからImageを選択してください
+![bg right h:700px](images/2021-10-21-23-24-54.png)
+
+---
+- 画面上に配置してください
+- Image Source -> Uploadから、ペットの写真をアップロードしてください
+![bg right h:540px](images/2021-10-22-01-08-36.png)
+
+---
+- ADD COMPONENTからTextを選択してください
+![bg right h:500px](images/2021-10-22-00-07-29.png)
+
+---
+- Textにペットの名前を入力し、文字色をWhiteに変更しましょう
+- 選んだ写真によっては白い文字が見えづらくなりますので、次は文字を見やすくします
+![bg right h:450px](images/2021-10-22-01-10-24.png)
+
+---
+- ADD COMPONENTからRectagleを選択してください
+![bg right h:500px](images/2021-10-22-01-13-13.png)
+
+---
+- ペットの名前の上に重ねて配置してください
+- Backgroundの色でBlackを選択した後、RGBAのAの値を10に変更してください
+  - RGBAは色を表す形式のひとつで、色をRed、Green、Blueの三原色のそれぞれの強度と、透明度(Alpha)の組み合わせで表現します
+![bg right h:500px](images/2021-10-22-01-23-50.png)
+
+---
+- Screensからペット一覧画面を選択し、Componentsの並び順でRectangleがTextよりも上になっていることを確認してください
+  - 上にあるものが手前に表示されるため、今はRectangleがTextを隠してしまっています
+<!-- ![bg right h:500px](images/2021-10-22-01-33-23.png) -->
+![bg right h:500px](images/2021-10-22-01-38-45.png)
+
+---
+- 順番を入れ替えて、Textを一番上に、Rectangleを2番目にしましょう
+  -  Textが手前に表示され、Rectangleのおかげで白い文字が見やすくなりました
+![bg right h:500px](images/2021-10-22-01-41-54.png)
+
+---
+次に、ペットをもう一匹表示しましょう
+- 追加した3つのコンポーネント(Image, Rectangle, Text)をCanvas上で選択し、MAKE GROUPをクリックします
+![bg right h:500px](images/2021-10-22-01-53-38.png)
+
+---
+- 作成したGroupを選択した状態でコピー&ペースト(Windowsなら`Ctrl + C`と`Ctrl + V`、Macなら`Command + C`と`Command + V`)をして、複製されたGroupを下に配置します
+![bg right h:700px](images/2021-10-22-02-01-32.png)
+
+---
+- 2つ目のImage、Textを別のペットのものに変更しましょう
+![bg right h:700px](images/2021-10-22-02-06-16.png)
+
+---
+次に、ペット登録画面への導線を追加します
+- ADD COMPONENTからAction Buttonを選択してください
+![bg right h:370px](images/2021-10-22-02-11-11.png)
+
+---
+- 画面右下に配置してください
+- Icon and Text ColorをDefault Background(White)に変更してください
+![bg right h:500px](images/2021-10-22-02-26-03.png)
+
+---
+- ADD ACTION -> Link -> [ペット登録画面名] を選択してください
+![bg right h:500px](images/2021-10-22-02-28-24.png)
+
+---
+ペット登録画面からペット一覧画面への導線も追加しておきましょう
+- ペット登録画面のRegisterボタンを選択してください
+- ADD ACTION -> Link -> [ペット一覧画面名] を選択してください
+※ 導線を追加しただけなので、まだペットの登録はできません(データの登録は次回のレクチャーでやります)
+![bg right h:500px](images/2021-10-22-02-33-55.png)
 
 ---
 ペット一覧画面の見た目を確認してみましょう。
 - ペット登録画面のプレビューをした時と同様に、ペット一覧画面のScreen Navigation TypeをHome Screenに変更してください
 - プレビュー機能でログインをすると、ペット一覧画面が表示できます。
-TODO: 画像の表示
 
-これで、ペット登録画面のUIは完成です。
-![bg right h:700px](images/2021-10-20-07-33-30.png)
+これで、ペット一覧画面のUIは完成です。
+![bg right h:700px](images/2021-10-22-02-40-24.png)
 
 ---
 ###### ペット詳細画面
@@ -609,3 +676,15 @@ TODO
 - [1対1のリレーションがないことについて](https://help.adalo.com/database)
 >While One-to-One relationships do not exist in Adalo, sometimes it is necessary to adapt the One-to-Many relationship type for this purpose. These instances are rare, but do crop up from time to time. For example, if an event host can only be assigned one event at a time and the event can only have one host. The "Many" side of the relationship can be disregarded.
 - [配色](https://note.com/tomokortn/n/n0d3d9da16907)
+- List系のコンポーネントはデータベースと紐付けないと要素が表示されないので、今回は使えない
+---
+- Formコンポーネントはコレクションと1対1で紐付けないといけない
+![bg right h:400px](images/2021-10-21-23-40-18.png)
+---
+- ClickActionでの追加もコレクションと1対1でないといけないみたい
+![bg right h:400px](images/2021-10-21-23-57-05.png)
+- 多分即答できない質問が出てくるので、随時休憩時間に調べることリストに追加しよう
+- RGBAとは、ディスプレイ画面で色を表現するために用いられる、赤（Red）、緑（Green）、青（Blue）の3色に、アルファ（Alpha）と呼ばれる透過度の情報を加えたもの
+https://www.weblio.jp/content/RGBA
+
+
