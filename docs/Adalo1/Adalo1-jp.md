@@ -667,16 +667,39 @@ Screenが追加されました。
 ![bg right h:700px](images/2021-10-20-04-36-37.png)
 
 ---
-###### TODO: 画面遷移の設定
+- ADD SCREENからApp Barを選択して、Screen Nameを入力してください
+![bg right h:700px](images/2021-10-20-06-26-12.png)
 
 ---
+- ADD COMPONENTから、EXPLORE MARKETPLACEを選択してください
+![bg right h:500px](images/2021-10-22-04-15-57.png)
+<!-- ![](images/2021-10-22-04-18-00.png) -->
+
+---
+- Chart KitをINSTALLしてください
+![bg right h:500px](images/2021-10-22-04-19-03.png)
+
+---
+- ADD COMPONENTのInstalled欄にChartのコンポーネントが追加されました
+- Line Chartを選んで、画面上に配置してください
+![bg right h:500px](images/2021-10-22-04-20-12.png)
+
+---
+- Chartの設定にはデータベースが必要なので、これは次回のレクチャーで実施します
+TODO: 画像に差し替え？
+![bg right h:500px](images/2021-10-22-04-22-45.png)
+
+---
+
+TODO: 完成イメージ画像の差し替え
 
 ---
 ## 演習
 TODO
 - 追加の画面のUIを見せて、それを作ってもらう？
 - 自由に作ってみて、最後に何人かに発表してもらう？
-- 名前にListとつくComponentやScreenは次回教えるデータベースとの紐付けが必要なので、苦戦するかもしれません。(自分で解決できる自信がなければ、それ以外のものを使うことをお勧めします)
+
+- 注意: 名前にListとつくComponentやScreenは次回教えるデータベースとの紐付けが必要なので、苦戦するかもしれません。(自分で解決できる自信がなければ、それ以外のものを使うことをお勧めします)
 - 
 --- 
 #### 演習の回答
