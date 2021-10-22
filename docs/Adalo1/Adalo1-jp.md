@@ -28,8 +28,7 @@ paginate: true
   - Adaloでのアプリ開発の概要説明
   - アプリを作ってみよう
   - 演習
-  - 時間が余れば話したいこと
-  - 次回に向けて
+  - まとめ
 
 ---
 ## Adaloとは
@@ -130,8 +129,8 @@ paginate: true
 
 ---
 - SHARE APPボタンをクリックして、COPY LINKを選択してください
-- コピーしたリンクを、参加者全員が見られるところ(Slack?Zoom?)に投稿しましょう
-  - TODO: 時間がかからないようにペアを作るなどの工夫が必要
+- コピーしたリンクを、参加者全員が見られるようにSlackに投稿しましょう
+  <!-- - TODO: 時間がかからないようにペアを作るなどの工夫が必要 -->
 ![w:800px](images/share-chat-app.png)
 
 ---
@@ -292,8 +291,6 @@ paginate: true
 - 間違って編集してしまった時は、Windowsなら`Ctrl + Z`、Macなら `Command + Z ` で元に戻せます
 - Adaloの開発ツールでは、日本語の直接入力がうまくいかないことがあります。日本語のテキスト入力はコピー＆ペーストで行ってください。
 
-TODO: 他にもあれば追加
-
 ---
 ## アプリを作ってみよう
 次に、新しくアプリを作ってみましょう。
@@ -370,7 +367,7 @@ TODO: 他にもあれば追加
 
 
 ---
-#### アプリを作ろう
+#### アプリ作成
 それでは、実際にアプリを作っていきます。
 
 - CREATE NEW APPを選択してください
@@ -721,62 +718,32 @@ Screenが追加されました。
 ![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
 
 ---
-TODO: オレンジの完成イメージ画像の差し替え
+#### クローン用URL
+- 以下のURLからアプリをクローンできますので、答え合わせに使ってください
+https://previewer.adalo.com/014fd9d1-80c6-4325-899a-d943e778c865
+
+![bg right h:400px](images/2021-10-22-17-31-06.png)
 
 ---
 ## 演習
-TODO
-- 追加の画面のUIを見せて、それを作ってもらう？
-- 自由に作ってみて、最後に何人かに発表してもらう？
+- ペット詳細画面のLink 2の遷移先となる画面を自由に作成してみてください
+  - できたらSlackでURLを共有して、みんなに見てもらいましょう
 
-- 注意: 名前にListとつくComponentやScreenは次回教えるデータベースとの紐付けが必要なので、苦戦するかもしれません。(自分で解決できる自信がなければ、それ以外のものを使うことをお勧めします)
-- 
---- 
-#### 演習の回答
+![bg right h:700px](images/2021-10-22-04-07-06.png)
 
-- 今日の最後の状態のアプリのリンクを共有しますので、クローンして答え合わせに使ってください
-TODO: URL
 ---
-## 時間が余れば話したいこと
-- 他のテンプレートの紹介
-
+#### 演習における注意事項
+- 名前に「List」とつくComponentやScreenは、次回のレクチャーでお伝えするデータベースとの紐付けが必要なので、使うのが難しいかもしれません。
+  - 自分で解決できる自身がなければ、それ以外のもので代用することをお勧めします。
+- NoCodeツールでは、簡単にアプリを作れる反面、複雑なUIや機能を実現できない場合があります
+  - 行き詰まった時は、どうすれば自分がやりたいことをシンプルなUI、機能で実現できるか考えてみてください
+    - 例: 1画面に多くのコンポーネントを含めず、画面を分ける 等
 ---
 ## まとめ
-:white_check_mark: 
-
-口頭で: NoCodeツールでなんでもできるわけではないので、仕様をシンプルに調整してね
-<!--  -->
-  
-
----
-## 次回に向けて
-
-TODO
+:white_check_mark:
+ TODO:
 
 ---
 # 以上です！
 # お疲れさまでした！
----
-## 参考
-- [Adalo Resourcesメモ](https://www.notion.so/Adalo-Resources-3b58f37ac0894b038c30d6b0d8274370)
-- https://hashikake.jp/articles/adalo-no-code-app-creation-platform-ep01
-- https://www.no-code.tv/course/nocode135
 
----
-メモ
-- [1対1のリレーションがないことについて](https://help.adalo.com/database)
->While One-to-One relationships do not exist in Adalo, sometimes it is necessary to adapt the One-to-Many relationship type for this purpose. These instances are rare, but do crop up from time to time. For example, if an event host can only be assigned one event at a time and the event can only have one host. The "Many" side of the relationship can be disregarded.
-- [配色](https://note.com/tomokortn/n/n0d3d9da16907)
-- List系のコンポーネントはデータベースと紐付けないと要素が表示されないので、今回は使えない
----
-- Formコンポーネントはコレクションと1対1で紐付けないといけない
-![bg right h:400px](images/2021-10-21-23-40-18.png)
----
-- ClickActionでの追加もコレクションと1対1でないといけないみたい
-![bg right h:400px](images/2021-10-21-23-57-05.png)
-- 多分即答できない質問が出てくるので、随時休憩時間に調べることリストに追加しよう
-- RGBAとは、ディスプレイ画面で色を表現するために用いられる、赤（Red）、緑（Green）、青（Blue）の3色に、アルファ（Alpha）と呼ばれる透過度の情報を加えたもの
-https://www.weblio.jp/content/RGBA
-
-- Missing component: @protonapp/material-components.Icon ???
-  - 同じものを作り直したら直った
