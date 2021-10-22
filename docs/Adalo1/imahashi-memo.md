@@ -31,3 +31,7 @@ https://www.weblio.jp/content/RGBA
 
 - Missing component: @protonapp/material-components.Icon ???
   - 同じものを作り直したら直った
+
+- 静的、動的 https://kt-life.net/seitekisite-doutekisite/# 
+  - 静的サイト(視覚的な動きはある)の例: https://recruit.uuum.co.jp/
+
