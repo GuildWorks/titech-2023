@@ -685,12 +685,37 @@ Screenが追加されました。
 ![bg right h:500px](images/2021-10-22-04-20-12.png)
 
 ---
-- Chartの設定にはデータベースが必要なので、これは次回のレクチャーで実施します
-TODO: 画像に差し替え？
+- Chartの設定にはデータベースが必要ですが、これは次回のレクチャーで説明します
+  <!-- - TODO: このままではプレビュー画面でChartが表示されませんので、気になる人は今から共有するChartの画像に置き換えてください -->
+
 ![bg right h:500px](images/2021-10-22-04-22-45.png)
 
 ---
 
+![bg right h:300px](images/2021-10-22-12-50-39.png)
+
+---
+- ADD COMPONENTから、Text Inputを選択してください
+![bg right h:360px](images/2021-10-22-12-01-47.png)
+
+---
+- TypeをNumberに変更してください
+- PlaceholderをEnter current weightに変更してください
+![bg right h:500px](images/2021-10-22-12-10-19.png)
+---
+- ADD COMPONENTからTextを追加し、値をWeight(kg)に変更してください
+![bg right h:500px](images/2021-10-22-12-10-57.png)
+
+---
+- ADD COMPONENTからButtonを追加し、TextをAddに変更してください
+![bg right h:500px](images/2021-10-22-12-16-14.png)
+
+---
+ペット詳細画面から体重記録画面への導線を設定しましょう
+- ペット詳細画面のText:'Weight Log'を含むGroupに対して、Click Actionで体重記録画面へのLinkを設定します
+![bg right h:500px](images/2021-10-22-12-40-18.png)
+
+---
 TODO: 完成イメージ画像の差し替え
 
 ---
