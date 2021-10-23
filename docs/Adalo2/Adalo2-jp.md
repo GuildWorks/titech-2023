@@ -21,6 +21,11 @@ paginate: true
 　　　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**
 
 ---
+## 参考
+https://nocodo.net/media/media-4553/
+https://note.com/shinya_matsui/n/n05335098aaeb
+
+---
 - [ペットの健康管理アプリ](https://www.notion.so/f2e98a79e98f4f248217484a2d281a98)を題材に、同じものを一から作っていく
 - やることリスト
     - サンプルアプリの解説

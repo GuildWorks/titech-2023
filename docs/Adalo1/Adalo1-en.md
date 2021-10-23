@@ -8,7 +8,7 @@ page_number: true
 paginate: true
 ---
 
-**Programming Boot Camp**.
+**Programming Boot Camp**
 
 # Adalo Basics
 
@@ -16,64 +16,64 @@ paginate: true
 　
 　
 　
-　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**.
+　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**
 
 ---
 ## Table of Contents
   - What is Adalo?
-  - Register with Adalo
-  - Let's use a template application
+  - Adalo account registration
+  - Try template application
   - Overview of application development with Adalo
-  - Let's create an app
-  - Exercises
+  - Sample application development
+  - Exercise
   - Summary
 
 ---
 ## What is Adalo?
 - [Adalo](https://www.adalo.com/) is a no-code tool from the United States. It allows you to develop applications without programming.
 - You can create an app by selecting the parts you want to use from those provided and dragging and dropping them onto the screen.
-- You can develop not only web apps to be displayed in a browser, but also smartphone apps for Android and iOS. It is also possible to publish the developed application on Google Play and AppStore.
+- You can develop not only web apps(to be displayed in a browser), but also smartphone apps for Android and iOS. It is also possible to publish the developed application on Google Play and AppStore.
 
 
 ---
-#### Examples of apps created with Adalo
+#### Example of apps created with Adalo
 - Union: https://union-jp.site/
-  - A social networking service developed by university students and limited to undergraduates, graduate students, university faculty and university staff.
-  - Funding of 10 million yen is being raised in 2021
+  - A social networking service limited to undergraduates, graduate students, university faculty and university staff developed by university students.
+  - Funding of 10 million yen was raised in 2021.
     - https://prtimes.jp/main/html/rd/p/000000001.000076669.html
-- And many more on #MadeInAdalo
+- More examples on #MadeInAdalo
   - https://www.adalo.com/made-in-adalo
 
 ---
-## Sign up for Adalo!
-- Go to Adalo's SignUp page
+## Adalo account registration
+- Go to Adalo's SignUp page.
   - https://app.adalo.com/signup
 ![w:800px](images/signup.png)
 
 ---
 - You can register for free!
--  enter your email address, password and full name
--  check the box to agree to the Terms of Use
-- Click on the LET'S DO THIS! button to proceed to the next screen!
+-  Enter your email address, password and full name.
+-  Check the box to agree to the Terms of Use.
+- Click the  DO THIS! button to proceed.
 
 ---
 #### Reference: Limitations of the [Free Plan](https://www.adalo.com/pricing)
-- Cannot be linked to external applications.
+- Cannot use external integration with other applications.
   - However, trial use is available for 14 days
-- The maximum number of database records that can be registered in one application is 50
+- The maximum number of database records is 50.
 
-:white_check_mark:  consider moving to a paid plan when you actually run the service!
+:white_check_mark:  Consider using a Pro Plan when you actually launch your app.
 
 ---
 #### Platform Selection
-- You can choose between Native Mobile App and Desktop Web App.
-- This time, let's choose Native Mobile App!
+- You can select Native Mobile App or Desktop Web App.
+- This time, select Native Mobile App.
 ![bg 90% right](images/select-native-mobile-app.png)
 
 ---
 #### Selecting a template
 - Finished apps are provided as templates.
-- This time, let's choose Chat!
+- This time, select Chat template.
 ![bg 90% right](images/select-chat-template.png)
 
 
@@ -81,7 +81,7 @@ paginate: true
 #### Branding
 - Enter the App Name, Primary Color, and Secondary Color.
   - Primary Color is the base color that will be used most in your app.
-  - Secondary Color is the color you want to use to stand out. It is used for important buttons.
+  - Secondary Color is the color for important parts (e.g. register button)
 ![bg 90% right](images/branding-chat-app.png)
 
 ---
@@ -90,52 +90,52 @@ paginate: true
 ![w:900px](images/dev-tool-of-chat-app.png)
 
 ---
-## Let's use a template application
-- First of all, let's try to operate the Chat app that we just selected to see how the application created by Adalo works.
+## Try template application
+- First of all,  try to operate the Chat app template to see how the application created by Adalo works.
 - Click the Preview button in the upper right corner of the screen
 
 ![w:1100px](images/preview-button.png)
 
 ---
 - The preview screen will be launched.
-- Let's try to operate the Chat application together!
+- Let's operate the Chat application together!
 ![w:800px](images/chat-app-preview.png)
 
 ---
-- Let's sign up.
-  -  write down your Email and Password (we'll use them later).
+- Sign up.
+  -  Enter your Email and Password (remember them so that you can use again later).
 ![bg 50% right](images/chat-app-signup.png)
 
 ---
 - The list is empty because no conversation has taken place yet
-- Let's press the + button at the bottom right of the screen
+-  Press the + button at the bottom right of the screen.
 ![bg 50% right](images/chat-app-no-conversation.png)
 
 ---
-- It looks like you can't Chat because you just created the app and there are no other users.
+- It looks like you can't chat because you just created the app and there are no other users.
 ![bg 50% right](images/no-other-chat-app-user.png)
 
 ---
 - Let's share the app you created with others and have a conversation with them.
-- Close Preview mode with the X button in the upper left corner, and click SHARE in the menu!
+- Close Preview mode with the x button in the upper left corner, and click SHARE in the menu.
 
 ![w:1100px](images/share-button.png)
 
 ---
-- Click on the SHARE APP button and select COPY LINK
-- Post the copied link to Slack so that all participants can see it!
+- Click on the SHARE APP button and select COPY LINK.
+- Post the copied link to Slack so that all students can see it.
 
 ![w:800px](images/share-chat-app.png)
 
 ---
-- Click on a link posted by someone else to signup for their app and send them a message!
-  - You'll see the creator of the app (and the other subscribers) in the list of users!
+- Click on a links posted in slack to signup for their app and send them a message.
+  - You'll see the creator of the app (and other students) in the list of users!
 ![bg 50% right](images/start-conversation.png)
 
 ---
 - (Around the time when the message would have been sent to everyone's apps,)
 Display the Preview screen of your app again.
-  - You should have received a message, so click on it to view it!
+  - You should have received a message, so click on it to check it!
 ![w:800px](images/preview-got-new-message.png)
 
 ---
@@ -144,15 +144,15 @@ Display the Preview screen of your app again.
 
 ---
 - In addition to the Chat we tried this time, there are several other templates available.
-- If there is one that is similar to the application we want to build, we may be able to divert that template to speed up the development process. When you have time, try out other templates.
+- If there is one that is similar to the application you want to build, you may be able to use that template to boost your development. When you have time, try out other templates.
 
 ---
 ## Overview of application development with Adalo
-Next, let's take a look at how to develop an app with Adalo.
+Next,  take a look at how to develop an app with Adalo.
 
 ---
 ## Three basic concepts
-- The following three basic concepts are introduced.
+- Let's learn the following three basic concepts of Adalo.
   - Components
   - Database
   - Actions
@@ -160,7 +160,7 @@ Next, let's take a look at how to develop an app with Adalo.
 --- 
 #### Components
 - Elements that are placed on the screen to create a user interface.
-- Example:
+- Examples:
   - Lists
   - Buttons
   - Text
@@ -170,7 +170,7 @@ Next, let's take a look at how to develop an app with Adalo.
 ---
 #### Database
 - A set of organized data.
-- Data is registered, read (displayed), updated, and deleted.
+- Data can be registered, read (displayed), updated, and deleted.
 - Example: In the case of a Chat application
 ![w:400px](images/2021-10-19-23-49-03.png)
 ![bg 35% right](images/2021-10-19-23-13-47.png)
@@ -180,12 +180,12 @@ Next, let's take a look at how to develop an app with Adalo.
 - This is used to specify what to do when a specific component is clicked.
 - Example :
   - Transition to another screen.
-  - Registering, updating, and deleting data in the database
+  - Registering, updating, and deleting data in the database.
 ![bg 35% right](images/2021-10-19-23-12-42.png)
 
 ---
 ### Explanation of Adalo's functions
-Next, let's take a look at the features available in Adalo's admin panel
+Next, take a look at the features available in Adalo's admin panel.
 ![w:900px](images/dev-tool-of-chat-app.png)
 
 ---
@@ -197,15 +197,15 @@ Next, let's take a look at the features available in Adalo's admin panel
 
 ---
 #### Left Toolbar
-This section introduces each function of the left toolbar.
+Let's learn each function of the left toolbar.
 
 ![w:60px](images/left-tool-bar.png)
 
 ---
 ###### ![w:60px](images/add-panel.png) Add Panel
-- Allows you to select a component or screen to add to your app.
+- This allows you to select a component or screen to add to your app.
 ![bg right 95%](images/2021-10-20-00-37-54.png)
-![bg right 93%](images/2021-10-20-00-44-42.png) !
+![bg right 93%](images/2021-10-20-00-44-42.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-00-52-07.png) Branding
@@ -215,27 +215,27 @@ This section introduces each function of the left toolbar.
 
 ---
 ###### ![w:60px](images/2021-10-20-00-54-44.png) Screens
-- List of screens and their configurations can be displayed.
+- List of screens and their configurations.
 ![bg right 100%](images/2021-10-20-01-18-20.png)
 ![bg right 93%](images/2021-10-20-01-14-53.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-20-56.png) Database
 - Displays the structure of the database and the data stored in it.
-- Collection: A collection of data that has the same properties
+- Collection: A collection of data that has the same properties.
 ![w:214px](images/2021-10-20-01-38-57.png) ![w:878px](images/2021-10-20-01-30-09.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-45-09.png) Settings 
 - You can change the name of the app and set the app's icon.
-- Configure display settings for the canvas.
-- Set access permissions to the app
-- Duplicate or delete an app
+- You can configure display settings for the canvas.
+- You can set access permissions to the app.
+- You can copy or delete an app.
 ![bg right 90%](images/2021-10-20-01-47-47.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-56-00.png)Publish
-- You can publish your apps (paid plan only).
+- You can publish your apps (paid plan required).
 ![bg right 90%](images/2021-10-20-01-59-11.png)
 
 ---
@@ -251,48 +251,48 @@ This section introduces each function of the top toolbar.
 
 ---
 ###### App Switcher
-- Displays the name of the open app.
-- You can switch between apps.
-- New apps can be added
+- Displays the name of the opened app.
+- You can switch to other app.
+- New apps can be added.
 
 ![bg right 90%](images/2021-10-20-02-27-22.png)
 
 
 ---
 ###### Preview
-- Run the app and try it out.
+- You can run the app and try it out.
 - You can switch to devices with different screen sizes to check the display.
 ![w:830px](images/2021-10-20-02-42-08.png)
 
 ---
 ###### Share
 - You can share the app to get others to use it.
-  Even if you don't have an Adalo account, you can use it.
+  No Adalo account required to use shared app.
 ![w:830px](images/2021-10-20-02-44-28.png)
 
 ---
 ###### Account Menu
 - Allows you to configure various settings.
-- Open help and documentation
-- Logout
+- Open help and documentation.
+- Logout.
 ![bg right 90%](images/2021-10-20-02-56-33.png)
 
 ---
-#### Let's remember some useful tips for development!
+#### Tips
 - If you edit something by mistake, you can undo it with `Ctrl + Z` on Windows or `Command + Z ` on Mac!
 - Direct input of Japanese text may not work well with Adalo's development tools.  use copy and paste to enter Japanese text.
 
 ---
-## Let's try to create an application
-Next, let's create a new application.
+## Sample application development
+Next,  create a new application.
 
 - In this lecture, we will create a static site without using a database (the content displayed will remain the same no matter which user accesses the site).
 - In the next lecture, we will create a dynamic screen using a database (the content displayed will change for each user).
 
 ---
 #### UI of the application you want to build
-Let's create a pet health management application.
-First, let's check the UI.
+ create a pet health management application.
+First,  check the UI.
 
 ![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)!
 
@@ -347,7 +347,7 @@ First, let's check the UI.
 
 ---
 #### Creating the application
-Now, let's actually create the application.
+Now,  actually create the application.
 
 -  select CREATE NEW APP
 ![bg right 90%](images/2021-10-20-05-31-12.png)
@@ -377,7 +377,7 @@ Member registration screen and login screen are generated by default.
 ![h:400px](images/2021-10-20-05-53-24.png)
 
 ---
-Let's check the preview function to see how it works.
+ check the preview function to see how it works.
 
 - Member Registration Screen
   - When you register, you will be redirected to the Home screen.
@@ -394,7 +394,7 @@ Let's check the preview function to see how it works.
 
 ---
 We found that the registration screen and login screen are fine as they are.
-Let's create the other four screens.
+ create the other four screens.
 
 
 ---
@@ -404,7 +404,7 @@ Let's create the other four screens.
 - Enter the birthday.
 - Click the "Register" button to confirm and go to the pet list screen.
 
-Let's make this screen!
+ make this screen!
 ![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
@@ -419,7 +419,7 @@ Let's make this screen!
 ---
 The Screen has been added.
 
-Let's add components on this screen.
+ add components on this screen.
 
 ![bg right h:700px](images/2021-10-20-06-37-56.png)
 
@@ -475,14 +475,14 @@ Let's add components on this screen.
 Change the value of ![bg right h:530px](images/2021-10-22-02-19-14.png)
 
 ---
-Let's check the appearance of the pet registration screen.
+ check the appearance of the pet registration screen.
 - Since there is no leading line yet, we can't display it with screen transitions, so we'll set it to the Home Screen, which is the transition point after logging in.
 - Change the Screen Navigation Type of Pet Registration screen to Home Screen.
 ![bg right h:400px](images/2021-10-20-07-28-52.png)
 
 ---
 - After logging in with the preview function, you can see the Pet Registration screen.
-- You can enter a name, select an image, and choose a birthday.
+- You can enter a name, select an image, and select a birthday.
 - Nothing happens when you press the Register button yet.
 
 Now, the pet registration screen is OK.
@@ -495,7 +495,7 @@ Now, the pet registration screen is OK.
 - Click the icon at the bottom right to go to the Pet Registration screen.
 ![bg right h:700px](images/2021-10-22-02-40-24.png)
 
-Next, let's create this screen.
+Next,  create this screen.
 
 ---
 - Select App Bar from ADD SCREEN and enter the Screen Name !
@@ -536,12 +536,12 @@ Next, let's create this screen.
 ![bg right h:500px](images/2021-10-22-01-38-45.png)
 
 --- 
-- Let's switch the order, putting Text at the top and Rectangle at the second.
+-  switch the order, putting Text at the top and Rectangle at the second.
   - The Text is now in the foreground, and the Rectangle makes it easier to see the white text!
 ![bg right h:500px](images/2021-10-22-01-41-54.png)
 
 ---
-Next, let's display one more pet!
+Next,  display one more pet!
 - Select the three components you added (Image, Rectangle, Text) on Canvas, and click MAKE GROUP
 ![bg right h:500px](images/2021-10-22-01-53-38.png)
 
@@ -550,7 +550,7 @@ Next, let's display one more pet!
 ![bg right h:700px](images/2021-10-22-02-01-32.png)
 
 ---
-- Let's change the second Image and Text to those of another pet!
+-  change the second Image and Text to those of another pet!
 ![bg right h:700px](images/2021-10-22-02-06-16.png)
 
 ---
@@ -568,22 +568,22 @@ Next, we will add the lead to the pet registration page.
 ![bg right h:500px](images/2021-10-22-02-28-24.png)
 
 ---
-Let's add a lead line from the pet registration screen to the pet list screen.
+ add a lead line from the pet registration screen to the pet list screen.
 - Select the Register button on the Pet Registration page
 - ADD ACTION -> Link -> Select [Pet List Screen Name
 You can't register your pets yet because you just added a line (we will do the data registration in the next lecture).
 ![bg right h:500px](images/2021-10-22-02-33-55.png)
 
 ---
-- Let's also change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to the Pet List screen.
+-  also change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to the Pet List screen.
 ![bg right h:340px](images/2021-10-22-03-52-31.png)
 
 ---
-- The Home screen that was created by default is no longer needed, so let's delete it!
+- The Home screen that was created by default is no longer needed, so  delete it!
 ![bg right h:480px](images/2021-10-22-03-57-57.png)
 
 ---
-Let's check the appearance of the Pet List screen.
+ check the appearance of the Pet List screen.
 - Change the Screen Navigation Type of the Pet List screen to Home Screen as you did when you previewed the Pet Registration screen.
 - After logging in with the preview function, you can see the Pet List screen.
 
@@ -597,7 +597,7 @@ Pet List screen seems OK.
 - Birth date is displayed.
 - The latest weight is displayed.
 
-Next, let's make this screen
+Next,  make this screen
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
@@ -614,20 +614,20 @@ Next, let's make this screen
 ![bg right h:700px](images/2021-10-22-03-18-32.png)
 
 ---
-- Let's change the Text named Link 1 to Weihgt Log
+-  change the Text named Link 1 to Weihgt Log
 - Leave Link 2 as it is.
 (Use it as a lead-in to the screen you created in the last exercise time)
 
 ![bg right h:700px](images/2021-10-22-03-28-26.png)
 
 ---
-Let's make it possible to move from the pet list screen to the pet detail screen.
+ make it possible to move from the pet list screen to the pet detail screen.
 - Select the Group that contains the components for the first pet in the Pet List screen, and click ADD ACTION -> Link -> PetDetail
 
 ![bg right h:450px](images/2021-10-22-03-31-30.png)
 
 ---
-- Let's check the display on the preview screen.
+-  check the display on the preview screen.
 
 The UI of the pet detail screen is now ready.
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
@@ -638,12 +638,12 @@ The UI of the pet detail screen is now ready.
 - You can enter your current weight.
 - You can add weight by pressing the button.
 
-Let's make this screen
+ make this screen
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
 
 ---
 - To create a Chart, we need to prepare a database, which will be explained in the next lecture.
-- This time, let's paste the Chart image instead using actual chart.
+- This time,  paste the Chart image instead using actual chart.
   - I'll share the image with you via Slack.
   (You can also take a screenshot of the image on the right and use it)
 ![bg right h:350px](images/pet-weight-log-chart.png)
@@ -669,12 +669,12 @@ Let's make this screen
 ![bg right h:500px](images/2021-10-22-16-36-06.png)
 
 ---
-Let's set up a lead line from the pet detail screen to the weight record screen
+ set up a lead line from the pet detail screen to the weight record screen
 - Set up a link to the weight record screen with Click Action for the Group containing Text:'Weight Log' in the pet detail screen.
 ![bg right h:500px](images/2021-10-22-12-40-18.png)
 
 ---
-- Let's check the display on the preview screen.
+-  check the display on the preview screen.
 
 This is the UI for the weight record screen.
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
