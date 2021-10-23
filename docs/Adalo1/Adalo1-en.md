@@ -696,7 +696,9 @@ https://previewer.adalo.com/014fd9d1-80c6-4325-899a-d943e778c865
 ---
 ## Exercise
 - Create your own screen that will be the transition destination for "Link 2" on the pet details screen.
-  - When you are done, share the URL on Slack to make it available for everyone .
+- Alternatively, you can create a new app as you like.
+
+When you are ready, share the URL on Slack to make it available for everyone.
 
 ![bg right h:500px](images/2021-10-22-18-37-12.png)
 
