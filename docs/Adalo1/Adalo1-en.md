@@ -240,12 +240,12 @@ Let's learn each function of the left toolbar.
 
 ---
 ###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
-- View reports that analyze usage.
+- Show usage analysis report.
 ![bg right 90%](images/2021-10-20-02-07-44.png)
 
 ---
 #### Top Bar
-This section introduces each function of the top toolbar.
+Let's learn each function of the top toolbar.
 
 ![w:1150px](images/2021-10-20-02-11-14.png)
 
@@ -261,7 +261,7 @@ This section introduces each function of the top toolbar.
 ---
 ###### Preview
 - You can run the app and try it out.
-- You can switch to devices with different screen sizes to check the display.
+- You can switch to devices with different screen sizes to check the display image.
 ![w:830px](images/2021-10-20-02-42-08.png)
 
 ---
@@ -273,33 +273,33 @@ This section introduces each function of the top toolbar.
 ---
 ###### Account Menu
 - Allows you to configure various settings.
-- Open help and documentation.
-- Logout.
+- Link to help and documentation.
+- Sign Out.
 ![bg right 90%](images/2021-10-20-02-56-33.png)
 
 ---
 #### Tips
 - If you edit something by mistake, you can undo it with `Ctrl + Z` on Windows or `Command + Z ` on Mac!
-- Direct input of Japanese text may not work well with Adalo's development tools.  use copy and paste to enter Japanese text.
+- Entering japanese text may not work well with Adalo's development tools. Use copy and paste instead.
 
 ---
 ## Sample application development
-Next,  create a new application.
+Let's create a new application.
 
 - In this lecture, we will create a static site without using a database (the content displayed will remain the same no matter which user accesses the site).
-- In the next lecture, we will create a dynamic screen using a database (the content displayed will change for each user).
+- In the next lecture, we will create a dynamic app using a database (the content displayed will change for each user).
 
 ---
-#### UI of the application you want to build
- create a pet health management application.
-First,  check the UI.
+#### UI of the sample application
+This is a health management application for your pet.
+First, check the UI.
 
-![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)!
+![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
 
 
 ---
-###### Member Registration Screen
-- You can register as a member by entering the following information
+###### User Registration Screen
+- You can register as a user by entering the following information
   - Email
   - Password
   - Full Name
@@ -312,42 +312,42 @@ First,  check the UI.
   - Email
   - Password
 - There is a link for those who have forgotten their password.
-- There is a link to the member registration page.
+- There is a link to the user registration page.
 ![bg right h:700px](images/2021-10-20-06-16-03.png)
 
 ---
 ###### Pet Registration Screen
-- You can enter a name.
-- You can select a photo.
-- You can enter the date of birth.
-- Click the "Register" button to confirm and move to the pet list screen.
+- You can enter your pet's name.
+- You can select your pet's photo.
+- You can enter your pet's birthday.
+- You can click the "Register" button to register your pet and move to the pet list screen.
 ![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
 ###### Pet List screen
 - Registered pets can be displayed in a list.
 - Clicking on a pet will take you to the pet details screen for that pet.
-- Click the icon at the bottom right to go to the Pet Registration screen.
+- Clicking the icon at the bottom right take you to the Pet Registration screen.
 ![bg right h:700px](images/2021-10-22-02-40-24.png)
 
 ---
 ###### Pet Detail Screen
-- There is a link to the weight record screen.
+- There is a link to the weight Record screen.
 (Link2 is for exercise)
-- Birth date is displayed.
+- Birthday is displayed.
 - The latest weight is displayed.
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
-###### Weight record screen
+###### Weight Record screen
 - A graph showing the transition in weight is displayed.
-- You can enter your current weight.
-- You can add your weight by pressing the button
+- You can enter your pet's current weight.
+- You can add your pet's weight by pressing the button
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
 
 ---
 #### Creating the application
-Now,  actually create the application.
+Now, let's start creating the application.
 
 -  select CREATE NEW APP
 ![bg right 90%](images/2021-10-20-05-31-12.png)
@@ -361,8 +361,8 @@ Now,  actually create the application.
 ![bg right 90%](images/2021-10-20-05-35-47.png)
 
 ---
--  decide App Name and Color freely.
-- You can leave Team as default.
+- Enter App Name and Color as you like.
+- Leave Team setting as default.
   (It won't be displayed to people who haven't set up a Team.)
 ![bg right 90%](images/2021-10-20-05-40-11.png)
 
@@ -371,60 +371,59 @@ Now,  actually create the application.
 ![h:550px](images/2021-10-20-05-45-06.png)
 
 ---
-###### Member registration screen, login screen
+###### User registration screen, login screen
 
-Member registration screen and login screen are generated by default.
+User registration screen and login screen are generated by default.
 ![h:400px](images/2021-10-20-05-53-24.png)
 
 ---
- check the preview function to see how it works.
+Check the preview function to see how they works.
 
-- Member Registration Screen
-  - When you register, you will be redirected to the Home screen.
-  - Log out from the icon in the upper right corner of the Home screen.
+- User Registration Screen
+  - When you signup, you will be redirected to the Home screen.
+  - You can log out from the icon in the upper right corner of the Home screen.
 ![bg right h:600px](images/2021-10-20-06-09-56.png)
 ![bg right h:600px](images/2021-10-20-06-11-03.png)
 
 ---
 - Login screen
-  - Log in with the same Email and Password that you used to register earlier, and you will be redirected to the Home screen.
+  - Log in with the same Email and Password that you used to register earlier, then you will be redirected to the Home screen.
 
 ![bg right h:600px](images/2021-10-20-06-16-03.png)
 ![bg right h:600px](images/2021-10-20-06-11-03.png)
 
 ---
-We found that the registration screen and login screen are fine as they are.
- create the other four screens.
+It seems like the registration screen and login screen are fine as they are.
+Let's create the other four screens.
 
 
 ---
 ###### Pet Registration Screen
-- You can enter a name.
-- You can select a photo.
-- Enter the birthday.
-- Click the "Register" button to confirm and go to the pet list screen.
-
- make this screen!
+- You can enter your pet's name.
+- You can select your pet's photo.
+- You can enter your pet's birthday.
+- You can click the "Register" button to register your pet and move to the pet list screen.
+Let's create this screen!
 ![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
-- Select App Bar from ADD SCREEN.
+- Select "App Bar" from ADD SCREEN.
 ![bg right h:700px](images/2021-10-20-06-26-12.png)
 
 ---
-- Enter the Screen Name
+- Enter the Screen Name.
 ![w:900px](images/2021-10-20-06-28-11.png)
 
 
 ---
 The Screen has been added.
 
- add components on this screen.
+Let's add components on this screen.
 
 ![bg right h:700px](images/2021-10-20-06-37-56.png)
 
 ---
-- Select Text from ADD COMPONENT
+- Select "Text" from ADD COMPONENT.
 ![bg right h:500px](images/2021-10-20-06-47-19.png)
 
 ---
@@ -432,95 +431,96 @@ The Screen has been added.
 ![bg right h:500px](images/2021-10-20-06-49-18.png)
 
 ---
-- Change the value of Text to Name.
+- Change the value of "Text" to Name.
 ![bg right h:500px](images/2021-10-20-06-52-11.png)
 
 ---
-- Similarly, add an Image and a Text called Birthday.
+- Let's put text "Image" and "Birthday" in the same way.
 ![bg right h:500px](images/2021-10-20-07-02-04.png)
 
 ---
-- Select Text Input from ADD COMPONENT
+- Select "Text Input" from ADD COMPONENT
 ![bg right h:500px](images/2021-10-20-06-53-05.png)
 
 ---
-- Place it on the screen and change the Placeholder value to Enter Name
+- Place it on the screen and change the "Placeholder" value to "Enter Name"
 ![bg right h:480px](images/2021-10-20-07-03-27.png)
 
 ---
-- Select Image Picker from ADD COMPONENT
-![bg right h:480px](images/2021-10-20-07-05-23.png)
+- Select "Image Picker" from ADD COMPONENT.
+![bg right h:600px](images/2021-10-20-07-05-23.png)
 
 ---
 - Place it on the screen.
 ![bg right h:480px](images/2021-10-20-07-06-54.png)
 
 ---
-- Select Date Picker from ADD COMPONENT
+- Select "Date Picker" from ADD COMPONENT.
 ![bg right h:480px](images/2021-10-20-07-08-35.png)
 
 ---
-- Place it on the screen and change the Style to Date Picker.
+- Place it on the screen and change the Style to "Date Picker".
 ![bg right h:480px](images/2021-10-20-07-10-35.png)
 
 ---
-- Select Button from ADD COMPONENT
+- Select "Button" from ADD COMPONENT.
 ![bg right h:480px](images/2021-10-20-07-12-13.png)
 
 ---
-- Place it on the screen
-- Change the Text value to Register.
-- Change Button Color to Secondary
-- Change the Icon & Text Color to Default Background(White)
-Change the value of ![bg right h:530px](images/2021-10-22-02-19-14.png)
+- Place it on the screen.
+- Change the "Text" value to Register.
+- Change "Button Color" to "Secondary".
+- Change the "Icon & Text Color" to "Default Background"(White)
+
+![bg right h:530px](images/2021-10-22-02-19-14.png)
 
 ---
- check the appearance of the pet registration screen.
-- Since there is no leading line yet, we can't display it with screen transitions, so we'll set it to the Home Screen, which is the transition point after logging in.
+Let's check the appearance of the pet registration screen.
+- Since there is no link yet, we can't display this screen with screen transitions, so we'll set it to the Home Screen, which is the screen displayed after logging in.
 - Change the Screen Navigation Type of Pet Registration screen to Home Screen.
 ![bg right h:400px](images/2021-10-20-07-28-52.png)
 
 ---
-- After logging in with the preview function, you can see the Pet Registration screen.
+- Open Preview. After logging in, you can see the Pet Registration screen.
 - You can enter a name, select an image, and select a birthday.
 - Nothing happens when you press the Register button yet.
 
-Now, the pet registration screen is OK.
+The pet registration screen is done.
 ![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
 ###### Pet List Screen
 - Registered pets can be displayed in a list.
 - Clicking on a pet will take you to the pet details screen for that pet.
-- Click the icon at the bottom right to go to the Pet Registration screen.
+- Clicking the icon at the bottom right take you to the Pet Registration screen.
 ![bg right h:700px](images/2021-10-22-02-40-24.png)
 
-Next,  create this screen.
+Next, let's create this screen.
 
 ---
-- Select App Bar from ADD SCREEN and enter the Screen Name !
+- Select "App Bar" from ADD SCREEN and enter the Screen Name.
 ![bg right h:700px](images/2021-10-20-06-26-12.png)
 
 ---
-- Select Image from ADD COMPONENT
+- Select "Image" from ADD COMPONENT
 ![bg right h:700px](images/2021-10-21-23-24-54.png)
 
 ---
-- Place it on the screen
-- Upload a photo of your pet from Image Source -> Upload
+- Place it on the screen.
+- Upload a photo of your pet from "Image Source" -> "Upload"
 ![bg right h:540px](images/2021-10-22-01-08-36.png)
 
 ---
-- Select Text from ADD COMPONENT
+- Select "Text" from ADD COMPONENT
 ![bg right h:500px](images/2021-10-22-00-07-29.png)
 
 ---
-- Enter your pet's name in Text and change the text color to White!
-- Depending on the photo you choose, the white text may be difficult to see, so the next step is to make the text easier to read
+- Enter your pet's name in "Text" value and change the text color to White.
+- Depending on the photo you choose, the white text may be difficult to see, so the next step is to make the text easier to read.
 ![bg right h:450px](images/2021-10-22-01-10-24.png)
 
 ---
-- Select Rectagle from ADD COMPONENT
+- Select "Rectagle" from ADD COMPONENT
 ![bg right h:500px](images/2021-10-22-01-13-13.png)
 
 ---
@@ -530,13 +530,13 @@ Next,  create this screen.
 ![bg right h:500px](images/2021-10-22-01-23-50.png)
 
 ---
-- Select the Pet List screen from Screens, and make sure that Rectangle is above Text in the Components order.
-  - The Rectangle is now hiding the Text because the one on top is displayed in front of it.
+- Select the Pet List screen from Screens, and confirm that Rectangle is above Text in the Components order.
+  - The Rectangle is now hiding the Text because the one on top is displayed in front of the other.
 
 ![bg right h:500px](images/2021-10-22-01-38-45.png)
 
 --- 
--  switch the order, putting Text at the top and Rectangle at the second.
+- Let's switch the order, putting Text at the top and Rectangle at the second.
   - The Text is now in the foreground, and the Rectangle makes it easier to see the white text!
 ![bg right h:500px](images/2021-10-22-01-41-54.png)
 
@@ -592,12 +592,12 @@ Pet List screen seems OK.
 
 ---
 ###### Pet Detail Screen
-- There is a link to the weight record screen.
+- There is a link to the weight Record screen.
 (Link2 is for exercise)
-- Birth date is displayed.
+- Birthday is displayed.
 - The latest weight is displayed.
 
-Next,  make this screen
+Next, let's create this screen
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
@@ -614,31 +614,31 @@ Next,  make this screen
 ![bg right h:700px](images/2021-10-22-03-18-32.png)
 
 ---
--  change the Text named Link 1 to Weihgt Log
+- Let's change the Text named Link 1 to Weihgt Log
 - Leave Link 2 as it is.
 (Use it as a lead-in to the screen you created in the last exercise time)
 
 ![bg right h:700px](images/2021-10-22-03-28-26.png)
 
 ---
- make it possible to move from the pet list screen to the pet detail screen.
+Let's make it possible to move from the pet list screen to the pet detail screen.
 - Select the Group that contains the components for the first pet in the Pet List screen, and click ADD ACTION -> Link -> PetDetail
 
 ![bg right h:450px](images/2021-10-22-03-31-30.png)
 
 ---
--  check the display on the preview screen.
+- Let's check the display on the preview screen.
 
 The UI of the pet detail screen is now ready.
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
 ###### Weight record screen
-- A graph showing the transition of weight is displayed.
-- You can enter your current weight.
-- You can add weight by pressing the button.
+- A graph showing the transition in weight is displayed.
+- You can enter your pet's current weight.
+- You can add your pet's weight by pressing the button
 
- make this screen
+Let's create this screen
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
 
 ---
