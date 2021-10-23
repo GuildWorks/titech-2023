@@ -475,7 +475,7 @@ Let's add components on this screen.
 ![bg right h:530px](images/2021-10-22-02-19-14.png)
 
 ---
-Let's check the appearance of the pet registration screen.
+Let's Preview the appearance of the pet registration screen.
 - Since there is no link yet, we can't display this screen with screen transitions, so we'll set it to the Home Screen, which is the screen displayed after logging in.
 - Change the Screen Navigation Type of Pet Registration screen to Home Screen.
 ![bg right h:400px](images/2021-10-20-07-28-52.png)
@@ -531,61 +531,63 @@ Next, let's create this screen.
 
 ---
 - Select the Pet List screen from Screens, and confirm that Rectangle is above Text in the Components order.
-  - The Rectangle is now hiding the Text because the one on top is displayed in front of the other.
+  - The Rectangle is now hiding the Text because the one on top is displayed in front of the others.
 
 ![bg right h:500px](images/2021-10-22-01-38-45.png)
 
 --- 
-- Let's switch the order, putting Text at the top and Rectangle at the second.
+- Let's switch the order. Put Text at the top and Rectangle at the second.
   - The Text is now in the foreground, and the Rectangle makes it easier to see the white text!
 ![bg right h:500px](images/2021-10-22-01-41-54.png)
 
 ---
-Next,  display one more pet!
-- Select the three components you added (Image, Rectangle, Text) on Canvas, and click MAKE GROUP
+Next, let's add one more pet.
+- Select the three components you added (Image, Rectangle, Text) on Canvas, and click "MAKE GROUP".
 ![bg right h:500px](images/2021-10-22-01-53-38.png)
 
 ---
-- Copy and paste (`Ctrl + C` and `Ctrl + V` on Windows, `Command + C` and `Command + V` on Mac) the created Group while it is selected, and place the duplicated Group on the bottom.
+- Copy and paste (`Ctrl + C` and `Ctrl + V` on Windows, `Command + C` and `Command + V` on Mac) the created Group while it is selected, and place the duplicated Group under first pet.
 ![bg right h:700px](images/2021-10-22-02-01-32.png)
 
 ---
--  change the second Image and Text to those of another pet!
+- Change the second Image and Text to those of another pet.
 ![bg right h:700px](images/2021-10-22-02-06-16.png)
 
 ---
-Next, we will add the lead to the pet registration page.
-- Select Action Button from ADD COMPONENT
+Next, add the link to the pet registration page.
+- Select "Action Button" from ADD COMPONENT
 ![bg right h:370px](images/2021-10-22-02-11-11.png)
 
 ---
 - Place it in the lower right corner of the screen.
-- Change the Icon and Text Color to Default Background (White).
+- Change the "Icon and Text Color" to "Default Background"(White).
 ![bg right h:500px](images/2021-10-22-02-26-03.png)
 
 ---
-- ADD ACTION -> Link -> Select [Pet Registration Screen Name
+- Select "ADD ACTION"
+  - Select "Link"
+    - Select [Pet Registration Screen Name]
 ![bg right h:500px](images/2021-10-22-02-28-24.png)
 
 ---
- add a lead line from the pet registration screen to the pet list screen.
+Let's add a link from the pet registration screen to the pet list screen.
 - Select the Register button on the Pet Registration page
-- ADD ACTION -> Link -> Select [Pet List Screen Name
-You can't register your pets yet because you just added a line (we will do the data registration in the next lecture).
+- ADD ACTION -> Link -> Select [Pet List Screen Name]
+You can't register your pets yet because you just added a link (Data registration is in the next lecture).
 ![bg right h:500px](images/2021-10-22-02-33-55.png)
 
 ---
--  also change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to the Pet List screen.
+- Change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to the Pet List screen.
 ![bg right h:340px](images/2021-10-22-03-52-31.png)
 
 ---
-- The Home screen that was created by default is no longer needed, so  delete it!
+- The Home screen that was created by default is no longer needed. You can delete it.
 ![bg right h:480px](images/2021-10-22-03-57-57.png)
 
 ---
- check the appearance of the Pet List screen.
-- Change the Screen Navigation Type of the Pet List screen to Home Screen as you did when you previewed the Pet Registration screen.
-- After logging in with the preview function, you can see the Pet List screen.
+Preview the appearance of the Pet List screen.
+- Change the "Screen Navigation Type" of the Pet List screen to "Home Screen" as you did when you previewed the Pet Registration screen.
+- After logging, you can see the Pet List screen.
 
 Pet List screen seems OK.
 ![bg right h:650px](images/2021-10-22-02-40-24.png)
@@ -601,123 +603,123 @@ Next, let's create this screen
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
-- Select Info with Links from ADD SCREEN and enter the Screen Name
+- Select "Info with Links" from ADD SCREEN and enter the Screen Name.
 ![bg right h:650px](images/2021-10-22-02-58-46.png)
 
 ---
-- Upload the photo used in the Pet List screen in Image Source.
+- Upload one of the photos used in the Pet List screen in Image Source.
 ![bg right h:500px](images/2021-10-22-03-05-37.png)
 
 
 ---
-- Rewrite the Text with the label Birthday and its value, and the label Latest Weight and its value!
+- Rewrite the Text with the label "Birthday" and its value, and the label "Latest Weight" and its value.
 ![bg right h:700px](images/2021-10-22-03-18-32.png)
 
 ---
-- Let's change the Text named Link 1 to Weihgt Log
+- Change the Text named "Link 1" to "Weight Log"
 - Leave Link 2 as it is.
-(Use it as a lead-in to the screen you created in the last exercise time)
+(This will be used as a link to the screen created in the exercise)
 
 ![bg right h:700px](images/2021-10-22-03-28-26.png)
 
 ---
 Let's make it possible to move from the pet list screen to the pet detail screen.
-- Select the Group that contains the components for the first pet in the Pet List screen, and click ADD ACTION -> Link -> PetDetail
+- Select the Group that contains the components for the first pet in the Pet List screen, and click "ADD ACTION" -> "Link" -> [PetDetailScreenName]
 
 ![bg right h:450px](images/2021-10-22-03-31-30.png)
 
 ---
-- Let's check the display on the preview screen.
+- Preview the appearance of the Pet Detail screen.
 
-The UI of the pet detail screen is now ready.
+The pet detail screen seems OK.
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
-###### Weight record screen
+###### Weight Record screen
 - A graph showing the transition in weight is displayed.
 - You can enter your pet's current weight.
-- You can add your pet's weight by pressing the button
+- You can add your pet's weight by pressing the button.
 
-Let's create this screen
+Let's create this screen.
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
 
 ---
 - To create a Chart, we need to prepare a database, which will be explained in the next lecture.
-- This time,  paste the Chart image instead using actual chart.
-  - I'll share the image with you via Slack.
+- This time, paste the Chart image instead of using actual chart.
+  - I'll share the Chart image with you via Slack.
   (You can also take a screenshot of the image on the right and use it)
 ![bg right h:350px](images/pet-weight-log-chart.png)
 
 ---
-- Add an Image from ADD COMPONENT and upload the Chart image!
+- Add an Image from ADD COMPONENT and upload the Chart image.
 ![bg right h:500px](images/2021-10-22-16-33-13.png)
 
 ---
-- Add Text Input from ADD COMPONENT
-- Change Type to Number.
-- Change Placeholder to Enter current weight
+- Add "Text Input" from ADD COMPONENT.
+- Change "Type" to "Number".
+- Change "Placeholder" to "Enter current weight".
 ![bg right h:500px](images/2021-10-22-16-35-03.png)
 
 ---
-- Add a Text from ADD COMPONENT
-- Change the value to Weight(kg)
+- Add a "Text" from ADD COMPONENT.
+- Change the value to "Weight(kg)".
 ![bg right h:500px](images/2021-10-22-16-35-39.png)
 
 ---
--  add Button from ADD COMPONENT
--  change Text to Add.
+- Add "Button" from ADD COMPONENT.
+- Change Text to "Add".
 ![bg right h:500px](images/2021-10-22-16-36-06.png)
 
 ---
- set up a lead line from the pet detail screen to the weight record screen
-- Set up a link to the weight record screen with Click Action for the Group containing Text:'Weight Log' in the pet detail screen.
+Set up a link from the pet detail screen to the weight record screen.
+- Set up a link to the weight record screen with "Click Action" of the Group containing "Text:'Weight Log'" in the pet detail screen.
 ![bg right h:500px](images/2021-10-22-12-40-18.png)
 
 ---
--  check the display on the preview screen.
+Let's preview the screen.
 
-This is the UI for the weight record screen.
+The weight record screen seems OK.
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
 
 ---
-We have created all UI for the app :tada:
+We have created all UI for the sample app :tada:
 
 ![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
 
 ---
 #### URL for cloning
-- You can clone the application from the following URL, and use it to check your answers
+- You can clone the application from the following URL, and use it to check completed version.
 https://previewer.adalo.com/014fd9d1-80c6-4325-899a-d943e778c865
 
 ![bg right h:400px](images/2021-10-22-17-31-06.png)
 
 ---
 ## Exercise
-- Create your own screen that will be the transition destination for Link 2 on the pet details screen.
-  - When you are done, share the URL on Slack for everyone to see!
+- Create your own screen that will be the transition destination for "Link 2" on the pet details screen.
+  - When you are done, share the URL on Slack to make it available for everyone .
 
 ![bg right h:500px](images/2021-10-22-18-37-12.png)
 
 ---
-#### Notes on the exercise
-- Components and Screens with "List" in their names may be difficult to use because they need to be connected to the database, which we will discuss in the next lecture.
-  - If you can't solve this problem by yourself, we recommend you to substitute them with something else today.
-- While the NoCode tool allows you to create apps easily, it may not allow you to achieve complex UI and functions!
-  - If you are stuck, think about how you can achieve what you want to do with a simple UI and functionality.
-    - For example: don't include too many components in one screen, separate screens, etc.
+#### Notes about the exercise
+- Components and Screens named "xxxxList" may be difficult to use because they need to be connected to the database, which will be explained in the next lecture.
+  - If you face a problem and can't solve by yourself, I recommend you to avoid using "xxxxList" for today.
+- While the NoCode tool allows you to create apps easily, it may not allow you to achieve complex UI and functions.
+  - If you are stuck, think about how you can achieve what you want to do with a simple UI and functions.
+    - For example: Avoid including too many components in one screen(separate them into multiple screens).
 
 ---
 #### Presentation of exercise results
 (If there is enough time)
 
-Would you like to present the screens you made in the exercise?
+Would you like to present the app you made in the exercise?
 
 ---
 ## Summary
-- In this lecture, we introduced Adalo and created the UI of an application based on a pet health management application.
+- In this lecture, we learned about Adalo and created the UI of the pet health management application.
   - We used only simple components that do not require a database.
-- In the next lecture, we will continue to use Adalo to build a database that matches the UI we created this time, so that we can manipulate data from the app. 
-  - By using a database, various functions can be realized and the UI can be easily created. Enjoy!
+- In the next lecture, we will continue to use Adalo to build a database that matches the UI we created today, and make it possible to manipulate data from the app. 
+  - By using a database, various functions can be realized and the UI can be easily created. I hope you'll enjoy it!
 
 ---
 # That's all!
