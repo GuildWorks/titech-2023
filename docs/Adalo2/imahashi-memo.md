@@ -35,3 +35,5 @@ https://www.weblio.jp/content/RGBA
 - 静的、動的 https://kt-life.net/seitekisite-doutekisite/# 
   - 静的サイト(視覚的な動きはある)の例: https://recruit.uuum.co.jp/
 
+---
+- データベースの一番上のプロパティは消せないよ
