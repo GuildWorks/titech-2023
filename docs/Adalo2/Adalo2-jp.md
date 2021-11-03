@@ -319,7 +319,7 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 ![bg right h:520px](images/2021-11-03-23-10-44.png)
 
 ---
-以下を入力してからDONEをクリックする。
+以下を入力してDONE。
 - NameはOther ComponentsのInputを選択
 - BirthdayはOther ComponentsのDate Pickerを選択
 - ImageはOther ComponentsのImage Pickerを選択
@@ -328,13 +328,27 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 ![bg right h:700px](images/2021-11-03-23-16-38.png)
 
 ---
+Preview機能でペットを登録してみましょう。
+Pets CollectionにRecordが登録されたらOKです。
+![w:1200px](images/2021-11-04-01-40-49.png)
+
+---
 次に、ペットの体重管理画面で現在の体重を登録できるようにします。
 ![bg right h:700px](../Adalo1/images/2021-10-22-16-42-42.png)
 
 
-
+---
+- ペットの体重管理画面でADDボタンを選択し、「ADD ACTION」をクリック
+- Create > PetWeightLog を選択
+![bg right h:540px](images/2021-11-04-01-01-01.png)
 
 ---
+以下を入力してDONE。
+- WeightKgはOther ComponentsのInputを選択
+- WeightRegisteredTimeはDate&Time > Current Timeを選択
+- PetはNothing Availableなので、一旦そのまま
+  (後で特定のペットの体重を表示する画面として設定してから、そのペットを選びます)
+![bg right h:700px](images/2021-11-04-01-08-12.png)
 
 
 ---
@@ -344,6 +358,59 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 ![bg right h:700px](../Adalo1/images/2021-10-22-02-40-24.png)
 
 ---
+- ペットの画像と名前を表示している2つのコンポーネントを選択し、MAKE LISTをクリック
+![bg right h:460px](images/2021-11-04-01-17-26.png)
+
+---
+- What is this a list of?でPetsを選択
+- FilterでLogged In User > Petsを選択
+
+![bg right h:700px](images/2021-11-04-01-23-07.png)
+
+---
+- 作成したListを構成するコンポーネントであるGroupの1つ目をクリック。
+- Group内のImageコンポーネント、ペット名のコンポーネントをそれぞれ編集していきます。
+![bg right w:300px](images/2021-11-04-01-24-06.png)
+![bg right w:350px](images/2021-11-04-01-26-54.png)
+
+---
+Imageコンポーネントを編集
+- Image Sourceで、Database > Current Pet's > Imageを選択
+- If there's no image...でDon`t show anythingを選択
+  - あるいは、Show a place holder image を選択して好きな[ペットのシルエット画像](https://www.silhouette-ac.com/category.html?ct=3&sw=%E5%8B%95%E7%89%A9)を設定してもOKです
+
+![bg right h:700px](images/2021-11-04-01-35-13.png)
+
+<!-- ![bg right h:580px](images/2021-11-04-01-29-03.png) -->
+
+---
+ペット名のコンポーネントを編集
+- Add Magic TextでCurrent Pet's > Nameを選択
+
+![bg right h:680px](images/2021-11-04-01-38-01.png)
+
+
+---
+- Preview機能で確認すると、1匹目のペットとしてデータベースに登録したRecordが表示されます。
+
+![bg right h:680px](images/2021-11-04-01-42-14.png)
+
+---
+- ペットのListを構成するコンポーネントの中の2つ目のGroup(固定で表示していた2匹目のペット)は不要なので、削除しましょう
+
+![w:610px](images/2021-11-04-01-44-45.png)  ![w:460px](images/2021-11-04-01-45-12.png)
+
+---
+- Preview機能で確認すると、データベースに登録したペットだけが表示されるようになりました。
+  - ペットを追加で登録すれば、複数のペットが表示されます
+
+![bg right h:600px](images/2021-11-04-01-48-34.png) ![bg right h:600px](images/2021-11-04-01-54-10.png)
+
+---
+ペット一覧でペットをクリックした時に、そのペットの詳細画面に遷移できるようにします。
+- ペットのGroupコンポーネントに設定されているLinkのSend This Data to PetDetail ScreenにCurrent Petを設定します。
+
+![bg right h:630px](images/2021-11-04-01-56-06.png)
 
 ---
 次に、作成済みのペット詳細画面に、ペット一覧画面で選択したペットが表示されるようにします。
@@ -352,12 +419,15 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 
 ---
 
+
 ---
 次に、ペットの体重管理画面で過去に登録したペットの体重がグラフとして表示されるようにします。
 ![bg right h:700px](../Adalo1/images/2021-10-22-16-42-42.png)
 
 ---
 
+---
+TODO: ペットの体重の記録画面で特定のペットの体重を表示する画面として設定してから、ADDボタンでそのペットの体重が記録されるようにする
 
 ---
 #### データの更新(UPDATE)
