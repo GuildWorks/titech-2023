@@ -314,6 +314,18 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 
 
 ---
+- ペット登録画面のREGISTERボタンを選択し、「ADD ANOTHER ACTION」をクリック
+- Create > Pet を選択
+![bg right h:520px](images/2021-11-03-23-10-44.png)
+
+---
+以下を入力してからDONEをクリックする。
+- NameはOther ComponentsのInputを選択
+- BirthdayはOther ComponentsのDate Pickerを選択
+- ImageはOther ComponentsのImage Pickerを選択
+- UserはLogged In Userを選択
+- PetWeightLogsはEmptyのままにする
+![bg right h:700px](images/2021-11-03-23-16-38.png)
 
 ---
 次に、ペットの体重管理画面で現在の体重を登録できるようにします。
