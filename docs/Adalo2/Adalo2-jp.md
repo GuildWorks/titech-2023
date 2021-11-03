@@ -324,7 +324,7 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 - BirthdayはOther ComponentsのDate Pickerを選択
 - ImageはOther ComponentsのImage Pickerを選択
 - UserはLogged In Userを選択
-- PetWeightLogsはEmptyのままにする
+- PetWeightLogsはEmptyのまま(ペット登録時には不要)
 ![bg right h:700px](images/2021-11-03-23-16-38.png)
 
 ---
@@ -346,8 +346,8 @@ Pets CollectionにRecordが登録されたらOKです。
 以下を入力してDONE。
 - WeightKgはOther ComponentsのInputを選択
 - WeightRegisteredTimeはDate&Time > Current Timeを選択
-- PetはNothing Availableなので、一旦そのまま
-  (後で特定のペットの体重を表示する画面として設定してから、そのペットを選びます)
+- PetはNothing Availableなので、一旦Emptyのままにする
+  (後ほど、選択したペットの体重を登録できるように設定します)
 ![bg right h:700px](images/2021-11-04-01-08-12.png)
 
 
@@ -407,31 +407,125 @@ Imageコンポーネントを編集
 ![bg right h:600px](images/2021-11-04-01-48-34.png) ![bg right h:600px](images/2021-11-04-01-54-10.png)
 
 ---
-ペット一覧でペットをクリックした時に、そのペットの詳細画面に遷移できるようにします。
-- ペットのGroupコンポーネントに設定されているLinkのSend This Data to PetDetail ScreenにCurrent Petを設定します。
+ペット一覧でペットをクリックした時に、そのペットの詳細画面に遷移できるようになっていることを確認します。
+- ペットのGroupコンポーネントに設定されているLinkのSend This Data to PetDetail ScreenにCurrent Petが自動で設定されています。
 
 ![bg right h:630px](images/2021-11-04-01-56-06.png)
 
 ---
-次に、作成済みのペット詳細画面に、ペット一覧画面で選択したペットが表示されるようにします。
+次に、ペット詳細画面にペット一覧画面で選択したペットが表示されるようにします。
 
 ![bg right h:700px](../Adalo1/images/2021-10-22-04-07-06.png)
 
 ---
+Imageコンポーネントをクリックし、
+- Image SourceでDatabase > Current Pet's > Imageを選択
+- If there's no image...でDon`t show anythingを選択
+  - あるいは、Show a place holder image を選択して好きな[ペットのシルエット画像](https://www.silhouette-ac.com/category.html?ct=3&sw=%E5%8B%95%E7%89%A9)を設定してもOKです
+  
+![bg right h:550px](images/2021-11-04-02-34-00.png)
+
+---
+Birthday Valueコンポーネントをクリックし、
+- TextでCurrent Pet's > Birthdayを選択
+- Date FormatでNo Formattingを選択
+
+![bg right h:550px](images/2021-11-04-02-40-03.png)
+
+---
+- Latest Weight Valueコンポーネントをクリックし、MAKE LISTでリストにする
+
+※ 最新の1件を表示するためには、そのコンポーネントをListにします
+(次のページの設定で、最新の1件に絞り込みます)
+![bg right h:500px](images/2021-11-04-02-44-19.png)
+
+---
+- What is this a list of?でPetWeightLogsを選択
+- Filterで Current Pet > PetWeightLogsを選択
+- SortingでWeightRegisteredTime - Newest to Oldestを選択
+- Maximum number of itemsに1を設定
+
+これにより、最新の1件だけに絞り込まれます。
+![bg right h:630px](images/2021-11-04-03-11-59.png)
+
+---
+- Latest Weight Valueコンポーネントをクリックし、Textの"kg"の前にCurrent PetWeightLog's WeightKgを追加する
+
+![bg right h:630px](images/2021-11-04-03-35-14.png)
+
+---
+ペット詳細画面からペットの体重管理画面に遷移する際に選択したペットが受け渡せることを確認します。
+- Weight Logというリンクのコンポーネントを選択し、LinkのSend This Data to PetDetail ScreenにCurrent Petが自動で設定されています。
+
+![bg right h:630px](images/2021-11-04-03-20-16.png)
+
+---
+ペットの体重管理画面で選択したペットの体重をデータベースに登録できるようにします。
+- ADDボタンを選択し、CreateのActionで一旦EmptyのままにしていたPetにCurrent Petを設定
+
+![bg right h:600px](images/2021-11-04-03-25-06.png)
+
+---
+ペット詳細画面、ペットの体重管理画面に選択したペットの名前を表示しましょう。それぞれの画面で、
+- 画面上部のApp Barコンポーネントを選択し、TitleのTextに Current Pet's > Name を追加
+- その後ろに、's という文字列を追加
+![bg right h:550px](images/2021-11-04-03-48-14.png)
+
+---
+Preview機能で、以下を確認しましょう。
+- ペット一覧画面から選択したペットの詳細画面に遷移できること
+- ペット詳細画面から選択したペットの体重管理画面に遷移できること
+- ペットの体重を登録すると、データベースのPetWeightLogs CollectionにRecordが登録されること
+- ペット詳細画面に最新の体重が表示されること
 
 
 ---
 次に、ペットの体重管理画面で過去に登録したペットの体重がグラフとして表示されるようにします。
-![bg right h:700px](../Adalo1/images/2021-10-22-16-42-42.png)
+- まず、画像で貼り付けていたグラフを削除
+
+![bg right h:320px](images/2021-11-04-03-51-01.png)
 
 ---
+- ADD COMPONENTからEXPLORE MARKETPLACEを選択
+- Chart KitをINSTALL
+
+![bg right h:450px](images/2021-11-04-03-52-55.png)　![bg right h:450px](images/2021-11-04-03-54-31.png)
 
 ---
-TODO: ペットの体重の記録画面で特定のペットの体重を表示する画面として設定してから、ADDボタンでそのペットの体重が記録されるようにする
+- Line Chartを画面に追加
+![bg right h:500px](images/2021-11-04-03-56-43.png)
 
+---
+Line Chartを設定します。
+- What is this a chart of?でPetWEightLogsを選択
+- FilterでCurrent Pet > PetWeightLogsを選択
+- Custom Filterに WeightRegisteredTime Is after 30 days ago を設定
+- SortingでWeightRegisteredTime - Oldest to Newestを選択
+
+![bg right h:700px](images/2021-11-04-04-11-54.png)
+
+---
+- X Axis ValueにPetWeightLog > WeightRegisteredTimeを設定
+  - Date FormatにDate / Timeを設定
+- Y Axis ValueにPetWeightLog > WeightKgを設定
+![bg right h:350px](images/2021-11-04-04-12-21.png)
+![bg right h:250px](images/2021-11-04-04-13-46.png)
+
+---
+Preview機能でグラフの表示を確認しましょう。
+- 体重を複数追加すると、グラフが描画されます。
+
+※ 体重の登録日時が省略されてしまいます。同じ日に複数の体重を登録してテストをしたかったのでDate&Time型にしていますが、本来はDate型にして、1日に1回しか登録できないよう制御する方が良さそうです。
+<!-- 、連続で異なる体重を追加するとLineが上下に伸びてしまう -->
+<!-- ![bg right h:700px](images/2021-11-04-04-15-38.png) -->
+![bg right h:700px](images/2021-11-04-04-20-17.png)
+
+<!-- X軸、Y軸のラベルも設定できるよ -->
 ---
 #### データの更新(UPDATE)
-登録したデータをペットのデータを更新できるペット編集画面を新たに作ります。
+登録したペットのデータを更新できるペット編集画面を新たに作ります。
+
+
 
 ---
 TODO: Pet Collectionの編集フォームをFormコンポーネントで自動生成
