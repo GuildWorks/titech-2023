@@ -33,7 +33,6 @@ paginate: true
   - データベース設計
   - データベース操作
   - サンプルアプリを改善しよう
-  - 外部サービス連携
   - 演習
   - まとめ
 
@@ -42,8 +41,7 @@ paginate: true
 - 前回のレクチャーでは、ノーコードツールのAdaloについて紹介し、ペットの健康管理アプリを題材にアプリのUIを作成しました。
   - レクチャーでは、データベースを必要としない、シンプルなコンポーネントを使いました。(演習の中でデータベースを使った人もいるかもしれません)
 - 今回のレクチャーでは、引き続きAdaloを使って、前回作ったUIに合わせたデータベースを構築し、アプリからデータを操作できるようにしていきましょう。 
-- その後は、Adaloだけでは実現できないことを、Adaloと外部のサービスを連携させることで実現する方法をいくつかご紹介します。
-
+- その後はサンプルアプリの改善をしながらAdaloの機能を紹介し、最後にチームでのアプリ開発演習と発表をしていただきます。
 
 ---
 ## データベースについて学ぼう
@@ -304,7 +302,7 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 
 ---
 ## データベース操作
-設計・構築したデータベースを使って、サンプルアプリでデータを操作できるようにしましょう。
+設計・構築したデータベースを使って、サンプルアプリでデータのCRUD操作ができるようにしましょう。
 
 ---
 #### データの作成(CREATE)
@@ -624,14 +622,6 @@ Preview機能で削除を試してみましょう。
 ## サンプルアプリを改善しよう
 まだ紹介していないAdaloの機能を使いながら、サンプルアプリを改善していきます。
 
----
-TODO
-- ログアウト
-- Screenを訪れた時のAction(ペットが未登録の場合にペット一覧に来たら、ペット登録画面に遷移させる)
-- Link先を分岐させる条件設定(ペットが未登録の場合はログイン後にペット登録画面に遷移させる)
-- 選択式入力フォーム
-- Change Visibility
-
 <!-- バリデーション(必須チェック)はUPDATEのとこでやったのでOK -->
 <!-- Notificationは試したけどネイティブアプリでないと動かないみたいだったので、割愛 -->
 <!-- TODO: ペットの登録が0匹の時に登録を促すメッセージを表示させる方法の紹介
@@ -641,32 +631,125 @@ TODO
 
 ---
 #### ログアウト
-
-
-----
-
-
+- ペット一覧画面のAppBarを選択し、Right Icon 1を有効化
+- Iconをexit_to_appに変更する
+- ADD ACTION > More... > User Login > Log Outを選択
+- ADD ANOTHER ACTION > Link > Loginを選択
+![bg right h:580px](images/2021-11-04-23-51-45.png)
 
 ---
+Preview機能で確認しましょう。
+追加したアイコンをクリックするとログアウトし、ログイン画面に遷移するようになりました。
+
+----
+#### Actionの実行条件設定
+ペットが未登録の場合にペット一覧画面を表示したらペット登録画面へ遷移させます。
+- ペット一覧画面でActions > ADD ACTION > Link > Pet Registrationを選択
+- SHOW ADVANCEDをクリックし、When does this happen?をSometimesに変更
+![bg right h:600px](images/2021-11-05-00-06-55.png)
+
+---
+- This action will only happen if...でMore > Logged In User's > Pets' > Count を選択
+- Is equal to の下の数値を0に変更
+![bg right h:600px](images/2021-11-05-00-15-50.png)
+
+---
+Preview機能で確認しましょう。
+新しいユーザーでSignupすると、ペット一覧画面からペット登録画面に遷移します。
+
+---
+#### 選択式入力フォーム
+ペットの情報に性別を追加し、入力フォームで選択式入力ができるようにします。
+
+---
+- データベースにGenders Collectionを追加
+- 0 Records > ADD GENDERとクリックし、MaleとFemaleの2つのRecordを追加
+![h:400px](images/2021-11-05-00-42-41.png)
+
+---
+- Genders CollectionにPets Collectionとの1対多のRelationshipを追加する
+![bg right h:600px](images/2021-11-05-00-46-10.png)
+
+---
+- ペット登録画面のフォームを選択
+- Fields > ADD VISIBLE FIELD > Genderを選択
+![bg right h:500px](images/2021-11-05-00-37-26.png)
+
+---
+- ペット詳細画面に性別の表示欄を追加
+![bg right h:500px](images/2021-11-05-00-54-18.png)
+
+---
+Preview機能で確認しましょう。
+
+- ペット登録画面で性別が選択できます。
+- 選択した値がペット詳細画面に表示されます。
+
+![bg right h:650px](images/2021-11-05-00-58-14.png)
+![bg right h:650px](images/2021-11-05-00-58-53.png)
+
+---
+- 性別を選択できるようになる前に登録したペットについては、Pet CollectionのRecordを表示してそのペットをクリックし、性別を手動で設定しておきます。
+
+![h:450px](images/2021-11-05-01-16-39.png)
+
+---
+参考
+
+複数選択式の入力フォームは、MarketplaceのMultiselectDropdownを使って作れます。
+
+必要になったら、試してみてください。
+![bg right h:650px](images/2021-11-05-00-31-26.png)
+
+---
+#### コンポーネントの非表示設定
+表示しないコンポーネントを削除せずに残しておくことができます。
+- ペット詳細画面のコンポーネント一覧で、Link 2を含むGroupにマウスオーバーして、右側の目のアイコンをクリック
+![bg right h:550px](images/2021-11-05-01-05-44.png)
+
+---
+Preview機能で確認すると、Link 2が消えています。
+
+もう一度目のアイコンをクリックすれば、再度表示させられます。
+
+![bg right h:700px](images/2021-11-05-01-23-27.png)
+
+---
+#### 条件によってコンポーネントの表示or非表示を切り替える
+体重が未登録であれば、ペット詳細画面のLatest Weightは非表示にします。
+
+![bg right h:700px](images/2021-11-05-02-19-31.png)
+
+---
+- Latest Weightというラベルとその値を選択し、グループ化します
+
+![bg right h:550px](images/2021-11-05-01-07-47.png)
+
+---
+- Change Visibilityを選択します
+
+![bg right h:550px](images/2021-11-05-02-22-10.png)
+
+---
+- VisibilityをSometimes Visibleに変更
+- Will be visible if...でCurrent Pet > PetWeightLogs > Countを選択
+- Is not equal to 0と設定
+![bg right h:620px](images/2021-11-05-02-24-00.png)
+
+---
+Preview機能で確認すると、体重が未登録なペットのペット詳細画面では、Latest Weightが非表示になりました。
+
+![bg right h:620px](images/2021-11-05-02-41-24.png)
 
 
+サンプルアプリの改善は一旦ここまでとします。
 
 ---
 #### クローン用URL
-- 以下のURLから完成したアプリをクローンできますので、答え合わせに使ってください
+- 以下のURLからここまでの作業を反映したアプリをクローンできますので、答え合わせに使ってください。
 https://previewer.adalo.com/f1324ea8-ec47-4c22-a3a9-3258044eb754
 
-![bg right h:350px](images/2021-11-04-05-25-11.png)
-
----
-## 外部サービス連携
-TODO
-- Custom Action
-- External Collections(Zapierでできるかも？)
-- Zapier紹介
-  - Slack連携?
-  - Google Spreadsheet or Firestoreとの連携でレコード上限50件を回避させる？(せっかくAdaloのデータベースを学んだのに...というところはある)
-  - Twitter or Instagram連携?
+![bg right h:350px](images/2021-11-05-02-44-38.png)
 
 ---
 ## 演習
@@ -695,9 +778,11 @@ Development Phaseのチームメンバーと一緒に新規のアプリを開発
 
 ---
 参考
-- クローンできるアプリが色々と公開されているので、やりたいことに近いものがないか探してみても良いかもしれません。
-https://www.adalo.com/app-templates
-https://www.adalo.com/cloneable-kits
+- クローンできるアプリが公開されているので、やりたいことに近いものがないか探してみると良いかもしれません。
+  - App Templates
+  https://www.adalo.com/app-templates
+  - UI & Functional Kits
+  https://www.adalo.com/cloneable-kits
 
 ---
 クローンできるアプリの例
@@ -709,12 +794,35 @@ https://www.adalo.com/cloneable-kits
 - 商品販売アプリ https://www.adalo.com/cloneables/ecommerce-app
 
 ---
+参考
+- Adaloだけで実現できないことがある場合、外部サービスと連携することでそれを実現できるかもしれません。
+- Zapierというサービスを使えば、案内に従って操作することで、簡単にAdaloと外部サービスを連携させられます。興味があれば、試してみてください。
+  https://zapier.com/apps/adalo/integrations
+
+---
+ZapierでAdaloと連携させることが可能な外部サービスの例
+- Google Spreadsheet
+- Google Calender
+- Slack
+- Zoom
+- Twitter
+- Instagram
+- Spotify
+- Bubble
+- Google Meet
+- Strava
+
+---
 #### 演習結果の発表
 チームごとに演習で作ったアプリについて発表してください。
 
 ---
 ## まとめ
-- TODO
+- 今回のレクチャーでは、データベースを設計・構築し、アプリからそのデータベースに対してCRUD操作を行えるようにしました。
+- また、それ以外にも、アプリの改善に役立つAdaloの機能をいくつか紹介しました。
+- 以下のような、外部サービスとの連携に関するAdaloの機能はまだ紹介していないので、5回目のレクチャーかDevelopmentPhaseで時間が取れたら、改めて紹介したいと思います。
+  - Custom Action(Adaloから外部サービスのAPIを呼び出す機能)
+  - External Collections(外部サービスのAPIから取得したデータをAdaloのコレクションとして扱う機能)
 
 ---
 # 以上です！
