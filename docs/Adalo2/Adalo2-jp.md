@@ -10,7 +10,7 @@ paginate: true
 
 **Programming Boot Camp**
 
-# Adaloでのデータ操作と外部連携
+# Adaloでのデータベースの設計と操作
 
 **東京工業大学 2021/11/6**
 　
