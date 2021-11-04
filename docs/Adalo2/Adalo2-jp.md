@@ -622,16 +622,22 @@ Preview機能で削除を試してみましょう。
 
 ---
 ## サンプルアプリを改善しよう
-まだご紹介していないAdaloの機能を使いながら、サンプルアプリを改善していきます。
+まだ紹介していないAdaloの機能を使いながら、サンプルアプリを改善していきます。
 
 ---
 TODO
 - ログアウト
-- Screenを訪れた時のAction(ペットが未登録の場合に登録を促すメッセージを表示させる)
+- Screenを訪れた時のAction(ペットが未登録の場合にペット一覧に来たら、ペット登録画面に遷移させる)
 - Link先を分岐させる条件設定(ペットが未登録の場合はログイン後にペット登録画面に遷移させる)
 - 選択式入力フォーム
+- Change Visibility
 
 <!-- バリデーション(必須チェック)はUPDATEのとこでやったのでOK -->
+<!-- Notificationは試したけどネイティブアプリでないと動かないみたいだったので、割愛 -->
+<!-- TODO: ペットの登録が0匹の時に登録を促すメッセージを表示させる方法の紹介
+![bg right h:600](images/2021-11-03-00-28-02.png) -->
+<!-- - Share機能はスマホでないと動作しないので、割愛 -->
+<!-- Change Input Valueもあまり使い道がなさそうなので割愛。連続で登録するときとかにフォームをクリアするのに使える？ https://qwerty.work/blog/2021/06/adalo-form-cache-clear.php#toc0-->
 
 ---
 #### ログアウト
@@ -639,18 +645,10 @@ TODO
 
 ----
 
-TODO: ペットの登録が0匹の時に登録を促すメッセージを表示させる方法の紹介
-![bg right h:600](images/2021-11-03-00-28-02.png)
+
 
 ---
-TODO: バリデーションの紹介
-- 必須チェック
-  - happen Sometimes...の使い方
-<!-- - 他はテキストとVisibilityを駆使するとのこと。デフォルトのフォームでやれないのはとても面倒。。
-https://note.com/uramot/n/n035bc528aefc -->
 
----
-TODO: その他の改善方法を追加
 
 
 ---
@@ -663,6 +661,8 @@ https://previewer.adalo.com/f1324ea8-ec47-4c22-a3a9-3258044eb754
 ---
 ## 外部サービス連携
 TODO
+- Custom Action
+- External Collections(Zapierでできるかも？)
 - Zapier紹介
   - Slack連携?
   - Google Spreadsheet or Firestoreとの連携でレコード上限50件を回避させる？(せっかくAdaloのデータベースを学んだのに...というところはある)
@@ -693,7 +693,20 @@ Development Phaseのチームメンバーと一緒に新規のアプリを開発
 
 ※ 同時に複数人が同じ画面を編集すると、先に行われた編集が後から行われた編集に上書きされてしまいます。それぞれが別の画面を編集するか、みんなで同じPCを見ながら一緒に編集しましょう。
 
+---
+参考
+- クローンできるアプリが色々と公開されているので、やりたいことに近いものがないか探してみても良いかもしれません。
+https://www.adalo.com/app-templates
+https://www.adalo.com/cloneable-kits
 
+---
+クローンできるアプリの例
+- Eventカレンダー https://www.adalo.com/cloneables/event-calendar
+- スワイプで回答するクイズ https://www.adalo.com/cloneables/quiz-app
+- SNSのフォロー機能 https://www.adalo.com/cloneables/follow-function
+- Facebookのクローン https://www.adalo.com/cloneables/facebook-clone
+- ブログアプリ https://www.adalo.com/cloneables/minimal-blog-app
+- 商品販売アプリ https://www.adalo.com/cloneables/ecommerce-app
 
 ---
 #### 演習結果の発表
