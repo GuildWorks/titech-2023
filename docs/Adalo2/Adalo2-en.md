@@ -6,723 +6,884 @@ header: '　　　　　　　　　　　　　　　　　　　　　　　�
 
 page_number: true
 paginate: true
+
 ---
 
 **Programming Boot Camp**
 
-# Adalo Basics
+# Database Design and Data Manipulation with Adalo
 
-**Tokyo Institute of Technology 2021/10/23**
+**Tokyo Institute of Technology 2021/11/6**
 　
 　
 　
-　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**
+　
+　
+　　　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**
 
----
+<! -- ---.
+## Reference
+- https://nocodo.net/media/media-4553/
+- https://note.com/shinya_matsui/n/n05335098aaeb
+- [Pet Health Care Application Development Log](https://www.notion.so/72d6bec451574cadb3d333a1ebc9355c) -->
+
+---.
 ## Table of Contents
-  - What is Adalo?
-  - Adalo account registration
-  - Try template application
-  - Overview of application development with Adalo
-  - Sample application development
-  - Exercise
+  - Review of the previous session and check the goal of this session
+  - Let's learn about database
+  - Database design
+  - Database operations
+  - Let's improve the sample application.
+  - Exercises
   - Summary
 
----
-## What is Adalo?
-- [Adalo](https://www.adalo.com/) is a no-code tool from the United States. It allows you to develop applications without programming.
-- You can create an app by selecting the parts you want to use from those provided and dragging and dropping them onto the screen.
-- You can develop not only web apps(to be displayed in a browser), but also smartphone apps for Android and iOS. It is also possible to publish the developed application on Google Play and AppStore.
+---Summary
+## Reflection on the previous lecture and confirmation of the goal of this session
+- In the previous lecture, we introduced Adalo, a no-code tool, and created the UI of an application based on a pet health management application.
+  - In the lecture, we used a simple component that does not require a database. (Some of you may have used a database in the exercises).
+- In this lecture, we will continue to use Adalo to design a database that matches the UI we created in the previous session, so that we can manipulate the data from the app. 
+- After that, we will introduce the features of Adalo while improving a sample app, and finally, we will have a team app development exercise and presentation.
 
+---.
+## Let's learn about databases
+First, let's check what kind of database we will be working with.
 
----
-#### Example of apps created with Adalo
-- Union: https://union-jp.site/
-  - A social networking service limited to undergraduates, graduate students, university faculty and university staff developed by university students.
-  - Funding of 10 million yen was raised in 2021.
-    - https://prtimes.jp/main/html/rd/p/000000001.000076669.html
-- More examples on #MadeInAdalo
-  - https://www.adalo.com/made-in-adalo
-
----
-## Adalo account registration
-- Go to Adalo's SignUp page.
-  - https://app.adalo.com/signup
-![w:800px](images/signup.png)
-
----
-- You can register for free!
--  Enter your email address, password and full name.
--  Check the box to agree to the Terms of Use.
-- Click the  DO THIS! button to proceed.
-
----
-#### Reference: Limitations of the [Free Plan](https://www.adalo.com/pricing)
-- Cannot use external integration with other applications.
-  - However, trial use is available for 14 days
-- The maximum number of database records is 50.
-
-:white_check_mark:  Consider using a Pro Plan when you actually launch your app.
-
----
-#### Platform Selection
-- You can select Native Mobile App or Desktop Web App.
-- This time, select Native Mobile App.
-![bg 90% right](images/select-native-mobile-app.png)
-
----
-#### Selecting a template
-- Finished apps are provided as templates.
-- This time, select Chat template.
-![bg 90% right](images/select-chat-template.png)
-
-
----
-#### Branding
-- Enter the App Name, Primary Color, and Secondary Color.
-  - Primary Color is the base color that will be used most in your app.
-  - Secondary Color is the color for important parts (e.g. register button)
-![bg 90% right](images/branding-chat-app.png)
-
----
-- When you see Adalo's admin panel like this, you are good to go!
-- From now on, we will use this admin panel to develop our application.
-![w:900px](images/dev-tool-of-chat-app.png)
-
----
-## Try template application
-- First of all,  try to operate the Chat app template to see how the application created by Adalo works.
-- Click the Preview button in the upper right corner of the screen
-
-![w:1100px](images/preview-button.png)
-
----
-- The preview screen will be launched.
-- Let's operate the Chat application together!
-![w:800px](images/chat-app-preview.png)
-
----
-- Sign up.
-  -  Enter your Email and Password (remember them so that you can use again later).
-![bg 50% right](images/chat-app-signup.png)
-
----
-- The list is empty because no conversation has taken place yet
--  Press the + button at the bottom right of the screen.
-![bg 50% right](images/chat-app-no-conversation.png)
-
----
-- It looks like you can't chat because you just created the app and there are no other users.
-![bg 50% right](images/no-other-chat-app-user.png)
-
----
-- Let's share the app you created with others and have a conversation with them.
-- Close Preview mode with the x button in the upper left corner, and click SHARE in the menu.
-
-![w:1100px](images/share-button.png)
-
----
-- Click on the SHARE APP button and select COPY LINK.
-- Post the copied link to Slack so that all students can see it.
-
-![w:800px](images/share-chat-app.png)
-
----
-- Click on a links posted in slack to signup for their app and send them a message.
-  - You'll see the creator of the app (and other students) in the list of users!
-![bg 50% right](images/start-conversation.png)
-
----
-- (Around the time when the message would have been sent to everyone's apps,)
-Display the Preview screen of your app again.
-  - You should have received a message, so click on it to check it!
-![w:800px](images/preview-got-new-message.png)
-
----
-- Message received :tada:
-![bg 50% right](images/messages.png)
-
----
-- In addition to the Chat we tried this time, there are several other templates available.
-- If there is one that is similar to the application you want to build, you may be able to use that template to boost your development. When you have time, try out other templates.
-
----
-## Overview of application development with Adalo
-Next,  take a look at how to develop an app with Adalo.
-
----
-## Three basic concepts
-- Let's learn the following three basic concepts of Adalo.
-  - Components
-  - Database
-  - Actions
-
---- 
-#### Components
-- Elements that are placed on the screen to create a user interface.
-- Examples:
-  - Lists
-  - Buttons
-  - Text
-  - Image
-![bg 35% right](images/components.png)
-
----
-#### Database
+--- ## Database
+#### Database(Review of previous lesson)
 - A set of organized data.
-- Data can be registered, read (displayed), updated, and deleted.
-- Example: In the case of a Chat application
-![w:400px](images/2021-10-19-23-49-03.png)
-![bg 35% right](images/2021-10-19-23-13-47.png)
-
----
-#### Actions
-- This is used to specify what to do when a specific component is clicked.
-- Example :
-  - Transition to another screen.
-  - Registering, updating, and deleting data in the database.
-![bg 35% right](images/2021-10-19-23-12-42.png)
-
----
-### Explanation of Adalo's functions
-Next, take a look at the features available in Adalo's admin panel.
-![w:900px](images/dev-tool-of-chat-app.png)
-
----
-#### Canvas
-- A work area for creating screens.
-- Elements can be selected and moved by dragging and dropping.
-![w:680px](images/canvas.png)
-
-
----
-#### Left Toolbar
-Let's learn each function of the left toolbar.
-
-![w:60px](images/left-tool-bar.png)
-
----
-###### ![w:60px](images/add-panel.png) Add Panel
-- This allows you to select a component or screen to add to your app.
-![bg right 95%](images/2021-10-20-00-37-54.png)
-![bg right 93%](images/2021-10-20-00-44-42.png)
-
----
-###### ![w:60px](images/2021-10-20-00-52-07.png) Branding
-- You can change colors and fonts.
-![bg right 100%](images/2021-10-20-00-50-02.png)
-![bg right 92%](images/2021-10-20-00-50-42.png)
-
----
-###### ![w:60px](images/2021-10-20-00-54-44.png) Screens
-- List of screens and their configurations.
-![bg right 100%](images/2021-10-20-01-18-20.png)
-![bg right 93%](images/2021-10-20-01-14-53.png)
-
----
-###### ![w:60px](images/2021-10-20-01-20-56.png) Database
-- Displays the structure of the database and the data stored in it.
-- Collection: A collection of data that has the same properties.
-![w:214px](images/2021-10-20-01-38-57.png) ![w:878px](images/2021-10-20-01-30-09.png)
-
----
-###### ![w:60px](images/2021-10-20-01-45-09.png) Settings 
-- You can change the name of the app and set the app's icon.
-- You can configure display settings for the canvas.
-- You can set access permissions to the app.
-- You can copy or delete an app.
-![bg right 90%](images/2021-10-20-01-47-47.png)
-
----
-###### ![w:60px](images/2021-10-20-01-56-00.png)Publish
-- You can publish your apps (paid plan required).
-![bg right 90%](images/2021-10-20-01-59-11.png)
-
----
-###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
-- Show usage analysis report.
-![bg right 90%](images/2021-10-20-02-07-44.png)
-
----
-#### Top Bar
-Let's learn each function of the top toolbar.
-
-![w:1150px](images/2021-10-20-02-11-14.png)
-
----
-###### App Switcher
-- Displays the name of the opened app.
-- You can switch to other app.
-- New apps can be added.
-
-![bg right 90%](images/2021-10-20-02-27-22.png)
-
-
----
-###### Preview
-- You can run the app and try it out.
-- You can switch to devices with different screen sizes to check the display image.
-![w:830px](images/2021-10-20-02-42-08.png)
-
----
-###### Share
-- You can share the app to get others to use it.
-  No Adalo account required to use shared app.
-![w:830px](images/2021-10-20-02-44-28.png)
-
----
-###### Account Menu
-- Allows you to configure various settings.
-- Link to help and documentation.
-- Sign Out.
-![bg right 90%](images/2021-10-20-02-56-33.png)
-
----
-#### Tips
-- If you edit something by mistake, you can undo it with `Ctrl + Z` on Windows or `Command + Z ` on Mac!
-- Entering japanese text may not work well with Adalo's development tools. Use copy and paste instead.
-
----
-## Sample application development
-Let's create a new application.
-
-- In this lecture, we will create a static site without using a database (the content displayed will remain the same no matter which user accesses the site).
-- In the next lecture, we will create a dynamic app using a database (the content displayed will change for each user).
-
----
-#### UI of the sample application
-This is a health management application for your pet.
-First, check the UI.
-
-![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
-
-
----
-###### User Registration Screen
-- You can register as a user by entering the following information
-  - Email
-  - Password
-  - Full Name
-- For those who have already registered, there is a link to the login screen.
-![bg right h:700px](images/2021-10-20-06-09-56.png)
-
----
-###### Login screen
-- You can log in by entering the following information
-  - Email
-  - Password
-- There is a link for those who have forgotten their password.
-- There is a link to the user registration page.
-![bg right h:700px](images/2021-10-20-06-16-03.png)
-
----
-###### Pet Registration Screen
-- You can enter your pet's name.
-- You can select your pet's photo.
-- You can enter your pet's birthday.
-- You can click the "Register" button to register your pet and move to the pet list screen.
-![bg right h:700px](images/2021-10-22-02-23-09.png)
-
----
-###### Pet List screen
-- Registered pets can be displayed in a list.
-- Clicking on a pet will take you to the pet details screen for that pet.
-- Clicking the icon at the bottom right take you to the Pet Registration screen.
-![bg right h:700px](images/2021-10-22-02-40-24.png)
-
----
-###### Pet Detail Screen
-- There is a link to the weight Record screen.
-(Link2 is for exercise)
-- Birthday is displayed.
-- The latest weight is displayed.
-![bg right h:700px](images/2021-10-22-04-07-06.png)
-
----
-###### Weight Record screen
-- A graph showing the transition in weight is displayed.
-- You can enter your pet's current weight.
-- You can add your pet's weight by pressing the button
-![bg right h:700px](images/2021-10-22-16-42-42.png)
-
----
-#### Creating the application
-Now, let's start creating the application.
-
--  select CREATE NEW APP
-![bg right 90%](images/2021-10-20-05-31-12.png)
-
---- 
-- Select Native Mobile App !
-![bg right 90%](images/select-native-mobile-app.png)
-
----
--  select Template: Blank
-![bg right 90%](images/2021-10-20-05-35-47.png)
-
----
-- Enter App Name and Color as you like.
-- Leave Team setting as default.
-  (It won't be displayed to people who haven't set up a Team.)
-![bg right 90%](images/2021-10-20-05-40-11.png)
-
----
-- The application is ready!
-![h:550px](images/2021-10-20-05-45-06.png)
-
----
-###### User registration screen, login screen
-
-User registration screen and login screen are generated by default.
-![h:400px](images/2021-10-20-05-53-24.png)
-
----
-Check the preview function to see how they works.
-
-- User Registration Screen
-  - When you signup, you will be redirected to the Home screen.
-  - You can log out from the icon in the upper right corner of the Home screen.
-![bg right h:600px](images/2021-10-20-06-09-56.png)
-![bg right h:600px](images/2021-10-20-06-11-03.png)
-
----
-- Login screen
-  - Log in with the same Email and Password that you used to register earlier, then you will be redirected to the Home screen.
-
-![bg right h:600px](images/2021-10-20-06-16-03.png)
-![bg right h:600px](images/2021-10-20-06-11-03.png)
-
----
-It seems like the registration screen and login screen are fine as they are.
-Let's create the other four screens.
-
-
----
-###### Pet Registration Screen
-- You can enter your pet's name.
-- You can select your pet's photo.
-- You can enter your pet's birthday.
-- You can click the "Register" button to register your pet and move to the pet list screen.
-Let's create this screen!
-![bg right h:700px](images/2021-10-22-02-23-09.png)
-
----
-- Select "App Bar" from ADD SCREEN.
-![bg right h:700px](images/2021-10-20-06-26-12.png)
-
----
-- Enter the Screen Name.
-![w:900px](images/2021-10-20-06-28-11.png)
-
-
----
-The Screen has been added.
-
-Let's add components on this screen.
-
-![bg right h:700px](images/2021-10-20-06-37-56.png)
-
----
-- Select "Text" from ADD COMPONENT.
-![bg right h:500px](images/2021-10-20-06-47-19.png)
-
----
-- Place it on the screen.
-![bg right h:500px](images/2021-10-20-06-49-18.png)
-
----
-- Change the value of "Text" to Name.
-![bg right h:500px](images/2021-10-20-06-52-11.png)
-
----
-- Let's put text "Image" and "Birthday" in the same way.
-![bg right h:500px](images/2021-10-20-07-02-04.png)
-
----
-- Select "Text Input" from ADD COMPONENT
-![bg right h:500px](images/2021-10-20-06-53-05.png)
-
----
-- Place it on the screen and change the "Placeholder" value to "Enter Name"
-![bg right h:480px](images/2021-10-20-07-03-27.png)
-
----
-- Select "Image Picker" from ADD COMPONENT.
-![bg right h:600px](images/2021-10-20-07-05-23.png)
-
----
-- Place it on the screen.
-![bg right h:480px](images/2021-10-20-07-06-54.png)
-
----
-- Select "Date Picker" from ADD COMPONENT.
-![bg right h:480px](images/2021-10-20-07-08-35.png)
-
----
-- Place it on the screen and change the Style to "Date Picker".
-![bg right h:480px](images/2021-10-20-07-10-35.png)
-
----
-- Select "Button" from ADD COMPONENT.
-![bg right h:480px](images/2021-10-20-07-12-13.png)
-
----
-- Place it on the screen.
-- Change the "Text" value to Register.
-- Change "Button Color" to "Secondary".
-- Change the "Icon & Text Color" to "Default Background"(White)
-
-![bg right h:530px](images/2021-10-22-02-19-14.png)
-
----
-Let's Preview the appearance of the pet registration screen.
-- Since there is no link yet, we can't display this screen with screen transitions, so we'll set it to the Home Screen, which is the screen displayed after logging in.
-- Change the Screen Navigation Type of Pet Registration screen to Home Screen.
-![bg right h:400px](images/2021-10-20-07-28-52.png)
-
----
-- Open Preview. After logging in, you can see the Pet Registration screen.
-- You can enter a name, select an image, and select a birthday.
-- Nothing happens when you press the Register button yet.
-
-The pet registration screen is done.
-![bg right h:700px](images/2021-10-22-02-23-09.png)
-
----
-###### Pet List Screen
-- Registered pets can be displayed in a list.
-- Clicking on a pet will take you to the pet details screen for that pet.
-- Clicking the icon at the bottom right take you to the Pet Registration screen.
-![bg right h:700px](images/2021-10-22-02-40-24.png)
-
-Next, let's create this screen.
-
----
-- Select "App Bar" from ADD SCREEN and enter the Screen Name.
-![bg right h:700px](images/2021-10-20-06-26-12.png)
-
----
-- Select "Image" from ADD COMPONENT
-![bg right h:700px](images/2021-10-21-23-24-54.png)
-
----
-- Place it on the screen.
-- Upload a photo of your pet from "Image Source" -> "Upload"
-![bg right h:540px](images/2021-10-22-01-08-36.png)
-
----
-- Select "Text" from ADD COMPONENT
-![bg right h:500px](images/2021-10-22-00-07-29.png)
-
----
-- Enter your pet's name in "Text" value and change the text color to White.
-- Depending on the photo you choose, the white text may be difficult to see, so the next step is to make the text easier to read.
-![bg right h:450px](images/2021-10-22-01-10-24.png)
-
----
-- Select "Rectagle" from ADD COMPONENT
-![bg right h:500px](images/2021-10-22-01-13-13.png)
-
----
-- Place it over the pet's name.
-- After selecting Black as the Background color, change the value of A in RGBA to 10.
-  - RGBA is a form of color representation that combines the intensity of each of the three primary colors (Red, Green, and Blue) with a degree of transparency (Alpha).
-![bg right h:500px](images/2021-10-22-01-23-50.png)
-
----
-- Select the Pet List screen from Screens, and confirm that Rectangle is above Text in the Components order.
-  - The Rectangle is now hiding the Text because the one on top is displayed in front of the others.
-
-![bg right h:500px](images/2021-10-22-01-38-45.png)
-
---- 
-- Let's switch the order. Put Text at the top and Rectangle at the second.
-  - The Text is now in the foreground, and the Rectangle makes it easier to see the white text!
-![bg right h:500px](images/2021-10-22-01-41-54.png)
-
----
-Next, let's add one more pet.
-- Select the three components you added (Image, Rectangle, Text) on Canvas, and click "MAKE GROUP".
-![bg right h:500px](images/2021-10-22-01-53-38.png)
-
----
-- Copy and paste (`Ctrl + C` and `Ctrl + V` on Windows, `Command + C` and `Command + V` on Mac) the created Group while it is selected, and place the duplicated Group under first pet.
-![bg right h:700px](images/2021-10-22-02-01-32.png)
-
----
-- Change the second Image and Text to those of another pet.
-![bg right h:700px](images/2021-10-22-02-06-16.png)
-
----
-Next, add the link to the pet registration page.
-- Select "Action Button" from ADD COMPONENT
-![bg right h:370px](images/2021-10-22-02-11-11.png)
-
----
-- Place it in the lower right corner of the screen.
-- Change the "Icon and Text Color" to "Default Background"(White).
-![bg right h:500px](images/2021-10-22-02-26-03.png)
-
----
-- Select "ADD ACTION"
-  - Select "Link"
-    - Select [Pet Registration Screen Name]
-![bg right h:500px](images/2021-10-22-02-28-24.png)
-
----
-Let's add a link from the pet registration screen to the pet list screen.
-- Select the Register button on the Pet Registration page
-- ADD ACTION -> Link -> Select [Pet List Screen Name]
-You can't register your pets yet because you just added a link (Data registration is in the next lecture).
-![bg right h:500px](images/2021-10-22-02-33-55.png)
-
----
-- Change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to the Pet List screen.
-![bg right h:340px](images/2021-10-22-03-52-31.png)
-
----
-- The Home screen that was created by default is no longer needed. You can delete it.
-![bg right h:480px](images/2021-10-22-03-57-57.png)
-
----
-Preview the appearance of the Pet List screen.
-- Change the "Screen Navigation Type" of the Pet List screen to "Home Screen" as you did when you previewed the Pet Registration screen.
-- After logging, you can see the Pet List screen.
-
-Pet List screen seems OK.
-![bg right h:650px](images/2021-10-22-02-40-24.png)
-
----
-###### Pet Detail Screen
-- There is a link to the weight Record screen.
-(Link2 is for exercise)
-- Birthday is displayed.
-- The latest weight is displayed.
-
-Next, let's create this screen
-![bg right h:700px](images/2021-10-22-04-07-06.png)
-
----
-- Select "Info with Links" from ADD SCREEN and enter the Screen Name.
-![bg right h:650px](images/2021-10-22-02-58-46.png)
-
----
-- Upload one of the photos used in the Pet List screen in Image Source.
-![bg right h:500px](images/2021-10-22-03-05-37.png)
-
-
----
-- Rewrite the Text with the label "Birthday" and its value, and the label "Latest Weight" and its value.
-![bg right h:700px](images/2021-10-22-03-18-32.png)
-
----
-- Change the Text named "Link 1" to "Weight Log"
-- Leave Link 2 as it is.
-(This will be used as a link to the screen created in the exercise)
-
-![bg right h:700px](images/2021-10-22-03-28-26.png)
-
----
-Let's make it possible to move from the pet list screen to the pet detail screen.
-- Select the Group that contains the components for the first pet in the Pet List screen, and click "ADD ACTION" -> "Link" -> [PetDetailScreenName]
-
-![bg right h:450px](images/2021-10-22-03-31-30.png)
-
----
-- Preview the appearance of the Pet Detail screen.
-
-The pet detail screen seems OK.
-![bg right h:700px](images/2021-10-22-04-07-06.png)
-
----
-###### Weight Record screen
-- A graph showing the transition in weight is displayed.
-- You can enter your pet's current weight.
-- You can add your pet's weight by pressing the button.
-
-Let's create this screen.
-![bg right h:700px](images/2021-10-22-16-42-42.png)
-
----
-- To create a Chart, we need to prepare a database, which will be explained in the next lecture.
-- This time, paste the Chart image instead of using actual chart.
-  - I'll share the Chart image with you via Slack.
-  (You can also take a screenshot of the image on the right and use it)
-![bg right h:350px](images/pet-weight-log-chart.png)
-
----
-- Add an Image from ADD COMPONENT and upload the Chart image.
-![bg right h:500px](images/2021-10-22-16-33-13.png)
-
----
-- Add "Text Input" from ADD COMPONENT.
-- Change "Type" to "Number".
-- Change "Placeholder" to "Enter current weight".
-![bg right h:500px](images/2021-10-22-16-35-03.png)
-
----
-- Add a "Text" from ADD COMPONENT.
-- Change the value to "Weight(kg)".
-![bg right h:500px](images/2021-10-22-16-35-39.png)
-
----
-- Add "Button" from ADD COMPONENT.
-- Change Text to "Add".
-![bg right h:500px](images/2021-10-22-16-36-06.png)
-
----
-Set up a link from the pet detail screen to the weight record screen.
-- Set up a link to the weight record screen with "Click Action" of the Group containing "Text:'Weight Log'" in the pet detail screen.
-![bg right h:500px](images/2021-10-22-12-40-18.png)
-
----
-Let's preview the screen.
-
-The weight record screen seems OK.
-![bg right h:700px](images/2021-10-22-16-42-42.png)
-
----
-We have created all UI for the sample app :tada:
-
-![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
-
----
-#### URL for cloning
-- You can clone the application from the following URL, and use it to check completed version.
+- Data is registered, read (displayed), updated, and deleted.
+- Example: In the case of Chat application
+! [w:400px](...) /Adalo1/images/2021-10-19-23-49-03.png)
+<! -- ! [w:570px](images/2021-10-19-23-39-29.png) --> !
+! [bg 35% right](. /Adalo1/images/2021-10-19-23-13-47.png)
+
+--- [bg 35% right
+- Databases are often compared to "spreadsheet-like" software.
+- A database can be used to create (CREATE), read (READ), update (UPDATE), and delete (DELETE) data. These operations are collectively called CRUD.
+
+! [bg right w:630px](. /Adalo1/images/2021-10-20-01-30-09.png)
+
+---.
+#### Basics of Adalo's database
+! [w:60px](... /Adalo1/images/2021-10-20-01-20-56.png) You can access Adalo's database from this icon.
+There are three components of the Adalo database
+- Collection
+- Property
+- Record
+
+---Property Record
+###### What is a Collection?
+A collection of data that has the same attribute (Property)
+! [w:214px](... /Adalo1/images/2021-10-20-01-38-57.png) ! [w:878px](... /Adalo1/images/2021-10-20-01-30-09.png)
+
+---Collection
+- Collection is used to divide and organize the various data handled in a database into different types of data. (An analogous term is table.)
+- In many cases, a Collection is a group of data that a user can register, update, or delete in a single operation. <! -- (A collection is often said to be something that can be expressed as a noun.
+- By default, Users is prepared as a Collection, and the rest can be added according to the application to be developed.
+
+It is very difficult to decide what kind of collection to add. It is very difficult to decide what kind of collection to add, so practice and get used to it. (If you have any problems, we recommend you to consult with our mentors.)
+
+---.
+###### What is Record?
+- A record is a unit of storage for information in a collection.
+  - One row in the image is one Record.
+- In the example of Users Collection, the information of one user is registered as one Record.
+
+! [w:650px](. /Adalo1/images/2021-10-20-01-30-09.png)
+
+--- [w:650px
+- Record can be basically registered from the form on the screen of the application, but it is also possible to register from the form shown in the image on the right by pressing the "+Add xxxx" button on the upper right while displaying Record.
+- You can also search for Records in the Collection, and upload (import) and download CSV files.
+! [bg right h:460px](images/2021-11-03-13-47-25.png)
+
+---What is Property?
+###### What is Property?
+- Property is each and every item that makes up a Record.
+- The Users Collection consists of properties such as email, password, user name, and name.
+- The value of Property can be empty.
+
+! [bg right h:450px](images/2021-11-05-16-25-58.png)
+
+---[bg right h:450px](images/2021-11-05-16-25-58.png)
+To define what kind of data the Property is, select the Type when adding the Property.
+- Text
+- Number
+- True/False
+- Date/Time
+- Date/Time
+- Image
+- File
+- Relationship
+
+! [bg right h:600px](images/2021-11-05-16-44-52.png)
+
+---What is Relationship?
+What is Relationship?
+- Instead of storing a large number of properties for a single Record, we can set a special property to relate multiple Collections, called Relationship. This allows you to divide a Collection into manageable pieces.
+
+---.
+- For example, a message sent by a user in the Chat app is stored in the Messages Collection, which is separate from the Users Collection, and these two collections are related by Relationship.
+  - The Users side has a Relationship called Messages, and the Messages side has a Relationship called Sender (with Users).
+
+! [bg right h:450px](images/2021-11-05-16-57-18.png)
+! [bg right h:350px](images/2021-11-05-16-57-49.png)
+
+---Relationship
+Types of Relationship
+- In Adalo's Relationship, you can choose one of two types, one-to-many or many-to-many, depending on the number of Records associated with the Collection. 
+
+---One-to-many
+One-to-many Relationship
+- This means that one Record has a relationship with multiple Records in different collections. 
+- Depending on whether the Collection you are trying to set the Relationship to is one or many, two choices will appear.
+
+! [bg right h:280px](images/2021-11-03-07-40-33.png)
+
+--- [bg right h:280px](images/2021-11-03-07-40-33.png)
+Example of a one-to-many Relationship
+- In the Chat application, one user sends multiple messages, but the sender of the message is one user, so the Relationship in the Users Collection and Messages Collection is one-to-many.
+
+! [h:290px](images/2021-11-05-17-15-22.png) ! [h:290px](images/2021-11-05-17-17-31.png)
+
+<! -- For example, if there is only one organizer for an event, then the Relationship between the organizer and the event is one-to-many. -->
+<! -- For example, one user organizes multiple events, or there is one organizer for multiple events, both of which represent true one-to-many Relationships. -->
+
+---.
+Many-to-many Relationships
+- This means that one Record in both Collections is tied to multiple Records in the other Collection.
+
+! [bg right h:140px](images/2021-11-03-13-15-58.png)
+
+--- [bg right h:140px
+An example of a many-to-many Relationship
+- In a Chat application, one user can have multiple conversations (to keep track of who and what messages were exchanged), and one conversation can have multiple members (users), so the relationship between the Users Collection and the Conversations Collection is many-to-many. Relationship is many-to-many.
+
+! [h:240px](images/2021-11-05-17-15-22.png)! [h:240px](images/2021-11-05-17-13-11.png)!
+
+<! -- - For example, if a participant can attend more than one event, and an event has more than one participant, then the Relationship between participant and event is many-to-many. -->
+<! -- For example, an event can have multiple hosts, and a host can have multiple events. --> <!
+<! --
+"Suppose we want to create a relation that defines "an event has only one host" and "a participant can attend multiple events, and an event can have multiple participants. So, instead of reading the options as "User", we can replace "User" with the word "Host" to make it clearer which option to choose. In this case, it would be option 1. If you were to create a relationship between "Participant" and "Event", which one would you choose? Try it out for yourself.
+>If you click on a record in a collection, you will also see the records in that collection, so you can visualize the property containing the relationship as a column in Adalo's database as well. -->.
+
+---.
+## Database design
+
+<! -- ---
+TODO: Introduce the steps of database design with an example of a template application before the exercise, so that you can understand the flow once? --> ## database design
+
+While looking at the UI of the sample app created in the previous lecture, think about the data that needs to be saved and design the database.
+
+
+---.
+#### URL for cloning the app created in the previous lecture
+- Please clone the app from the following URL. We will use it to proceed with the lecture from here.
 https://previewer.adalo.com/014fd9d1-80c6-4325-899a-d943e778c865
 
-![bg right h:400px](images/2021-10-22-17-31-06.png)
+---.
+#### Let's design the database.
+Let's design the database by looking at the UI of the sample application. The steps are described in the next page.
+! [h:383px](. /Adalo1/images/2021-10-20-06-09-56.png)! [h:383px](... /Adalo1/images/2021-10-20-06-16-03.png)! [h:383px](... /Adalo1/images/2021-10-22-02-23-09.png)! [h:384px](... /Adalo1/images/2021-10-22-02-40-24.png)! [h:383px](... /Adalo1/images/2021-10-22-04-07-06.png)! [h:383px](... /Adalo1/images/2021-10-22-16-42-42.png)
+
+---.
+###### Database Design Steps
+While looking at the UI, make a list of the data that will need to be saved. Write them down in a text editor (e.g. Notepad application). 2.
+Think about what kind of collections the listed data can be classified into, and create the necessary collections for the Adalo database. 3.
+Add the data you listed in step 1 as a Property to the appropriate Collection. Make sure to select the appropriate Type. 4.
+For a collection that is related to another collection, set the Relationship Property.
+
+---See the next slide. 
+In the next slide and onwards, there will be explanations, but we recommend that you try your hand at it before looking at the answers.
+
+There is no absolute right answer. When in doubt, follow your instincts.
+
+---There is no absolute right answer.
+###### Explanation
+While looking at the UI, I made a list of the data that needs to be saved, and it looked like this
+````
+- User's Email
+- User's Password
+- User's FullName
+- Pet's Name
+- Pet's Photo
+- Pet's Birth Date
+- Pet's weight
+- Date and time the pet's weight was registered
+````
+
+- If anyone can name any other data, please let me know!
+
+<! -- ! [](images/2021-11-03-13-57-56.png) -->
+
+---.
+Thinking about what Collections the listed data can be classified into, we will classify them into these three categories.
+````Users
+- Users
+- Pets
+- PetWeightLogs
+``` Users
+
+- Many of you may have prepared two collections, one for users and one for pets.
+- Some people may not have prepared a collection for pet weight records. (It is not wrong to include the pet's weight and its registration date in the pet's Collection. We will explain it later.)
+- Have any of you prepared other Collection classifications?
+<! -- In extreme cases, you can do it with 1Collection -->.
+
+---.
+Additional information on Collection classification
+- When the relationship "if A is determined, then B is determined" is true, A is often a Collection and B is a Property of that Collection.
+  - If a user is determined, the user's email, password, and FullName will each be set to one.
+  - If a pet is determined, the pet's name, photo, and birthday are each set to one.
+- When the relationship "there are multiple B's for A" is true, A and B are often split into separate collections.
+  - For a (single) pet, there can be multiple pet weights and their registration dates.
+
+<! -- * TODO: Dependency explained in plain language -->
+<! -- The trick is to use a Collection name that allows you to decide on a single data set that is strongly related to each other --> <!
+<! The trick is to name the collection after something that can be used to unify multiple pieces of highly relevant data --> <!
+For example, if you have a pet, you can choose the pet's name, photo, and birthday in a collection called Pets. --> <!
+
+<! -- The pet's weight and its registration date are registered at the same time, so they are treated as a set -->.
+<! -- Since the pet's weight and its registration date are registered more than once for each pet, separate the collection (the weight of the pet and the pet's weight will have a one-to-many relationship) --> <!
+
+---.
+- Register the Collection into the Adalo database.
+- Users is created by default.
+! [bg right h:450px](images/2021-11-03-14-50-11.png)
+
+---.
+Next, I appended the data listed in 1 as a Property under the appropriate Collection, and the result was as follows. In () is the Type to select.
+````
+- Users
+  - Email(Text)
+  - Password(*Password)
+  - FullName(Text)
+- Pets
+  - Name(Text)
+  - Image(Image)
+  - Birthday(Date)
+- PetWeightLogs
+  - WeightKg(Number)
+  - RegisteredTime(Date&Time)
+````Password
+Password is a special Type that is set by default.
+<! -- This will be an encrypted version of Text. -->
+
+---``!
+- In Adalo, we will actually add the properties.
+- The Users Collection is already set by default and contains all the necessary items.
+- We don't need Username, but since we can't delete it, we'll leave it as is.
+! [bg right h:500px](images/2021-11-03-15-40-03.png)
+
+--- [bg right h:500px](images/2021-11-03-15-40-03.png)
+- The Pets Collection Property will look like this.
+! [bg right h:400px](images/2021-11-03-15-42-07.png)
+
+--- [bg right h:400px](images/2021-11-03-15-42-07.png)
+- The Property of the PetWeightLogs Collection will look like this.
+- The Name Property, which is set by default when you add a Collection, is not necessary, so delete it.
+  - You can remove it by dragging and dropping it so that the order is not at the top of the collection.
+
+<! -- The name property is not needed. [](images/2021-11-03-15-36-02.png) --> !
+! [bg right h:300px](images/2021-11-03-15-45-14.png)
+
+--- [bg right h:300px](images/2021-11-03-15-45-14.png)
+Finally, for collections that are related to other collections, set the Relationship Property.
+
+- Select the Users Collection to add a one-to-many Relationship with the Pet Collection.
+! [w:530px](images/2021-11-03-15-50-06.png)
+
+! [bg right h:700px](images/2021-11-03-16-02-05.png)
+
+--- [bg right h:700px](images/2021-11-03-16-02-05.png)
+- If you check the Pets Collection, you will see that a Relationship with the Users Collection has been automatically added because the Relationship setting was made on the Users Collection side.
+  - Since the Users Collection is 1, the "s" at the end is omitted and the Property name is User.
+
+! [bg right h:500px](images/2021-11-03-16-01-37.png)
+
+---PetWeight
+- Add a Relationship to the Pets Collection with the PetWeightLogs Collection.
+  - Select the Pets Collection to add a one-to-many Relationship with the PetWeightLogs Collection.
+! [w:490px](images/2021-11-03-15-58-38.png)
+! [bg right h:700px](images/2021-11-03-16-00-59.png)
+
+--- [bg right h:700px](images/2021-11-03-16-00-59.png)
+If you check the PetWeightLogs Collection, you will see that a Relationship with the Pets Collection has been automatically added because the Relationship setting was made on the Pets Collection side.
+  - Since the Pets Collection side is 1, the "s" at the end is omitted, and the Property name is Pet.
+
+! [bg right h:500px](images/2021-11-03-16-04-16.png)
+
+--- [bg right h:500px](images/2021-11-03-16-04-16.png)
+Reference: What happens if you include the weight of the pet and its registration date in the Pets Collection?
+
+The record will be registered as follows, but in this case, you will have a little trouble.
+! [w:1200px](images/2021-11-03-14-47-07.png)
+
+---
+The trouble
+- Because multiple Records with different pet weights and their registration dates are registered for one pet, the pet's information (Name, Image, Birthday) is registered in duplicate.
+  - In order to change the information of one pet, we have to update all the duplicated records, which makes the process more complicated.
+- Adalo has a convenient function to automatically generate a form to register a record in a single collection, but since the collection is not divided by the unit to register data, it cannot be used.
+
+---That's it for database design.
+That's it for the database design.
+
+It is recommended that you set up Adalo's database in the same state as the document to avoid confusion in the later work.
+
+---.
+## Database operations
+Let's use the database we designed so that we can perform CRUD operations on the data in the sample application.
+
+---.
+#### Creating Data (CREATE)
+First, let's make it possible to actually register a record of a pet in the already created pet registration screen.
+
+! [bg right h:700px](../Adalo1/images/2021-10-22-02-23-09.png)
+
+
+--- [bg right h:700px
+- Select the REGISTER button on the pet registration screen and click ADD ANOTHER ACTION
+- Select Create > Pet
+! [bg right h:520px](images/2021-11-03-23-10-44.png)
+
+---.
+Enter the following and DONE.
+- For Name, select Input in Other Components.
+- For Birthday, select Date Picker of Other Components.
+- For Image, select Image Picker of Other Components.
+- For User, select Logged In User.
+- Leave PetWeightLogs as Empty (not required for pet registration).
+! [bg right h:700px](images/2021-11-03-23-16-38.png)
+
+---.
+Let's try to register a pet with the Preview function.
+When the record is registered in the Pets Collection, it is OK.
+! [w:1200px](images/2021-11-04-01-40-49.png)
+
+--- [w:1200px](images/2021-11-04-01-40-49.png)
+Next, let's make it possible to register the current weight in the pet weight management screen.
+! [bg right h:700px](. /Adalo1/images/2021-10-22-16-42-42.png)
+
+
+---.
+- Select the ADD button on the pet weight management screen and click ADD ACTION.
+- Select Create > PetWeightLog
+! [bg right h:540px](images/2021-11-04-01-01-01.png)
+
+---.
+Enter the following and DONE.
+- For WeightKg, select Input of Other Components.
+- For WeightRegisteredTime, select Date&Time > Current Time.
+- Pet is Nothing Available, so leave it as Empty for now.
+  (Later, we will set it so that the weight of the selected pet can be registered)
+! [bg right h:700px](images/2021-11-04-01-08-12.png)
+
+
+--- [bg right h:700px](images/2021-11-04-01-08-12.png)
+#### Displaying Data (READ)
+First, we will make sure that the actual registered pets are displayed in the created pets list screen.
+
+! [bg right h:700px](. /Adalo1/images/2021-10-22-02-40-24.png)
+
+---.
+- Select the two components that display the pet's image and name, and click MAKE LIST
+! [bg right h:460px](images/2021-11-04-01-17-26.png)
+
+---What is this a list of?
+- Select Pets in What is this a list of?
+- Select Logged In User > Pets in Filter
+
+! [bg right h:700px](images/2021-11-04-01-23-07.png)
+
+---[bg right h:700px](images/2021-11-04-01-23-07.png)
+- Click on the first Group, which is the component that makes up the List you created.
+- Edit the Image component and the Pet Name component in the Group respectively.
+! [bg right w:300px](images/2021-11-04-01-24-06.png)
+! [bg right w:350px](images/2021-11-04-01-26-54.png)
+
+--- [bg right w:350px
+Edit the Image component
+- In Image Source, select Database > Current Pet's > Image
+- If there's no image... and select Don`t show anything
+  - Alternatively, you can select Show a place holder image and set your favorite [pet's silhouette image](https://www.silhouette-ac.com/category.html?ct=3&sw=%E5%8B%95%E7%89%A9)
+
+! [bg right h:700px](images/2021-11-04-01-35-13.png)
+
+<! -- ! [bg right h:580px](images/2021-11-04-01-29-03.png) --> !
+
+---.
+Edit the pet name component
+- Under Add Magic Text, select Current Pet's > Name
+
+! [bg right h:680px](images/2021-11-04-01-38-01.png)
+
+
+--- [bg right h:680px](images/2021-11-04-01-38-01.png)
+- When you check the Preview function, you will see the Record registered in the database as the first pet.
+
+! [bg right h:680px](images/2021-11-04-01-42-14.png)
+
+--- [bg right h:680px
+- Let's delete the second Group (the second pet that was displayed as fixed) in the component that makes up the List of pets, since it is not needed!
+
+! [w:610px](images/2021-11-04-01-44-45.png) ! [w:460px](images/2021-11-04-01-45-12.png)
+
+--- [w:460px](images/2021-11-04-01-45-12.png)
+- When you check the Preview function, only the pets you have registered in the database are now displayed.
+  - If you register additional pets, multiple pets will be displayed.
+
+! [bg right h:600px](images/2021-11-04-01-48-34.png) ! [bg right h:600px](images/2021-11-04-01-54-10.png)
+
+--- [bg right h:600px
+Make sure that when you click on a pet in the pet list, you can go to the detail screen of that pet.
+- The Current Pet is automatically set in the Send This Data to PetDetail Screen of the Link set in the Group component of the pet.
+
+! [bg right h:630px](images/2021-11-04-01-56-06.png)
+
+--- [bg right h:630px
+- Since Current Pet was set in Send This Data to PetDetail Screen of Link from Pet List Screen, Current Pet is set as Linked Data in Available Data of Pet Detail Screen.
+  - As a result, the pet selected in the Pet List screen (Current Pet) can be handled in the Pet Detail screen.
+
+! [bg right h:630px](images/2021-11-04-21-34-51.png)
+
+--- [bg right h:630px](images/2021-11-04-21-34-51.png)
+Next, we will make sure that the pet selected in the Pet List screen is displayed in the Pet Detail screen.
+
+! [bg right h:700px](. /Adalo1/images/2021-10-22-04-07-06.png)
+
+--- [bg right h:700px
+Click on the Image component and select
+- Image Source and select Database > Current Pet's > Image.
+- If there's no image... and select Don`t show anything
+  - Alternatively, you can select Show a place holder image and set your favorite [pet's silhouette image](https://www.silhouette-ac.com/category.html?ct=3&sw=%E5%8B%95%E7%89%A9)
+  
+! [bg right h:550px](images/2021-11-04-02-34-00.png)
+
+---[bg right h:550px](images/2021-11-04-02-34-00.png)
+Click on the Birthday Value component and select
+- Select Current Pet's > Birthday in Text
+- Select No Formatting in Date Format
+
+Click on the ! [bg right h:550px](images/2021-11-04-02-40-03.png)
+
+---Click on the Latest Weight Value component.
+- Click on the Latest Weight Value component and MAKE LIST to make a list.
+
+To display the most recent one, make the component a List.
+(The settings on the next page will narrow down the list to the most recent one.)
+! [bg right h:500px](images/2021-11-04-02-44-19.png)
+
+---What is this a list of?
+- Select PetWeightLogs in What is this a list of?
+- Select Current Pet > PetWeightLogs in Filter
+- In Sorting, select WeightRegisteredTime - Newest to Oldest
+- Set Maximum number of items to 1
+
+This will narrow down the list to only the most recent one.
+! [bg right h:630px](images/2021-11-04-03-11-59.png)
+
+---Click on the
+- Click on the Latest Weight Value component, add Current PetWeightLog's > WeightKg to the Text, and then add "kg" to the end.
+
+[bg right h:630 [bg right h:630px](images/2021-11-05-18-13-36.png)
+
+---[bg right h:630px](images/2021-11-05-18-13-36.png)
+Make sure that the selected pets can be passed on when moving from the Pet Detail screen to the Pet Weight Management screen.
+- Select the component with the link Weight Log, and the Current Pet is automatically set in the Send This Data to PetDetail Screen of the Link.
+
+! [bg right h:630px](images/2021-11-04-03-20-16.png)
+
+--- [bg right h:630px](images/2021-11-04-03-20-16.png)
+The remaining work of creating data (CREATE)
+
+Allow the weight of the selected pet in the Pet Weight Management screen to be registered in the database.
+- Select the ADD button, and set Current Pet to the Pet that was once left as Empty in the Create action.
+
+! [bg right h:600px](images/2021-11-04-03-25-06.png)
+
+--- [bg right h:600px](images/2021-11-04-03-25-06.png)
+Display the name of the selected pet in the header of the Pet Details screen and the Pet Weight Management screen. On each screen, select the
+- Select the App Bar component at the top of the screen and add Current Pet's > Name to the Title Text.
+- Add the string "'s" after it.
+! [bg right h:550px](images/2021-11-04-03-48-14.png)
+
+--- [bg right h:550px](images/2021-11-04-03-48-14.png)
+In the Preview function, check the following
+- That you can move to the detail screen of the selected Pette from the Pette List screen.
+- It is possible to move to the weight management screen of the selected pet from the pet detail screen.
+- When the weight of a pet is registered, the record is registered in the PetWeightLogs Collection of the database.
+- The latest weight is displayed on the pet detail screen.
+
+
+---The latest weight is displayed on the pet details screen.
+Next, we will display the weight of the pets registered in the past as a graph in the pet weight management screen.
+- First, delete the graph that was pasted as an image
+
+! [bg right h:320px](images/2021-11-04-03-51-01.png)
+
+--- [bg right h:320px
+- Select EXPLORE MARKETPLACE from ADD COMPONENT
+- INSTALL Chart Kit
+
+! [bg right h:450px](images/2021-11-04-03-52-55.png) ! [bg right h:450px](images/2021-11-04-03-54-31.png) !
+
+--- [bg right h:450px
+- Add Line Chart to the screen
+! [bg right h:500px](images/2021-11-04-03-56-43.png)
+
+---.
+Set up a Line Chart.
+- Select PetWeightLogs in What is this a chart of?
+- Select Current Pet > PetWeightLogs in Filter
+- In Custom Filter, set WeightRegisteredTime Is after 30 days ago and specify the display period.
+- In Sorting, select WeightRegisteredTime - Oldest to Newest
+
+! [bg right h:700px](images/2021-11-04-04-11-54.png)
+
+--- [bg right h:700px](images/2021-11-04-04-11-54.png)
+- Set X Axis Value to PetWeightLog > WeightRegisteredTime
+  - Set Date Format to Date / Time
+- Y Set Axis Value to PetWeightLog > WeightKg
+! [bg right h:400px](images/2021-11-04-04-12-21.png)
+! [bg right h:250px](images/2021-11-04-04-13-46.png) !
+
+--- [bg right h:250px](images/2021-11-04-04-13-46.png)
+Use the Preview function to check the display of the graph. If you add multiple weights, the graph will be drawn.
+
+If you add more than one weight, the graph will be drawn. * The registration date and time of the weight is too long and will be displayed abbreviated. I wanted to test it by registering multiple weights on the same day, so I used the Date&Time type, but it would be better to use the Date type and control it so that it can only be registered once a day.
+<! -- , if you add different weights in a row, the line will stretch up and down -->
+<! -- ! [bg right h:700px](images/2021-11-04-04-15-38.png) --> !
+! [bg right h:700px](images/2021-11-04-04-20-17.png)
+
+<! -- You can also set labels for the X and Y axis --> !
+<!
+#### Updating Data (UPDATE)
+Create a new pet information edit screen where you can update the information of registered pets.
+
+
+---First, let's update the pet information.
+First, add a lead line to the Edit Pet Info screen in the Pet Details screen.
+- Add Action Button from ADD COMPONENT
+- Change the Icon to "edit
+- Change Icon and Text Color to Default Background(white)
+! [bg right h:450px](images/2021-11-04-04-31-55.png)
+
+---.
+- Select Link > New Screen from ADD ACTION
+! [bg right h:630px](images/2021-11-04-04-32-24.png)
+
+
+--- [bg right h:630px](images/2021-11-04-04-32-24.png)
+- Enter a Screen Name
+- Select Form
+- Click CREATE SCREEN
+! [bg right h:620px](images/2021-11-04-04-33-34.png)
+
+---.
+Just make the following settings and the pet information editing screen is complete.
+- Select "Pets" in "Which data collection?
+  - The form will be automatically generated according to the selected collection.
+- Select "Update Current Pet" in "What do you want the form to do?
+- Change the order of Birthday and Image in Fields
+
+[bg right h:420 [bg right h:420px](images/2021-11-04-04-38-03.png)
+<! -- If there are any fields that don't need to be updated, we can delete the entry -->
+
+---.
+Make sure you can use the Preview function to edit the pet information screen.
+
+! [bg right h:700px](images/2021-11-04-21-01-32.png)
+
+--- [bg right h:700px
+Supplement
+- In the previous article, we created the input form for the pet registration screen by adding components one by one, but it can be automatically generated in the same way as we created the pet edit screen.
+
+---Let's try it.
+Let's try it.
+- Let's delete all components except the AppBar in the pet registration screen, add a Form component, and specify the Pet Collection to generate the form automatically.
+  - Please note that only the transition to the pet list screen after registration requires you to manually add an Action to the Submit Button.
+
+---The
+Additional Information
+- Using the Form component, you can check if the required fields are filled in by simply checking the Required Error Text in the Field.
+- Use the Form component as much as possible when creating an input form.
+! [bg right h:600px](images/2021-11-04-21-18-20.png)
+! [bg right h:600px](images/2021-11-04-21-05-30.png)
+
+--- [bg right h:600px](images/2021-11-04-21-05-30.png)
+Reference: The actual flow of application development in Adalo
+- In the sample application, we have proceeded with the following flow: UI creation > database design > linkage between them.
+  - This is because we thought it would be difficult to design the database without knowing what kind of screen we would need and what data we would need.
+- When actually developing an application with Adalo, I recommend that you first draw a UI sketch and identify the necessary data, and then design the database. By doing so, you can take advantage of automatic generation for subsequent UI creation.
+  - However, the actual development will not be a one-way flow, but a trial-and-error process, alternating between database and UI.
+
+---.
+#### Deleting Data (DELETE)
+Create a button to delete a registered pet in the pet details screen.
+
+---!
+<! -- ---
+- Select Icon from ADD COMPONENT and place it on the right side of the AppBar.
+- Change Icon to "delete
+- Change Color to Default Background(White)
+- Adjust Size
+
+! [bg right h:500px](images/2021-11-04-04-58-43.png)
+
+---Delete
+- Select Delete > Current Pet from ADD ACTION
+! [bg right h:500px](images/2021-11-04-04-59-34.png) -->
+
+- Select the App Bar and turn on the Right Icon 1 toggle
+- Change Icon to delete
+- Select Delete > Current Pet from ADD ACTION
+- Select Link > Mypets from ADD ANOTHER ACTION
+
+! [bg right h:500px](images/2021-11-04-05-12-13.png)
+
+<! -- TODO: I want to put a "Are you sure? between the two-->
+---.
+Let's try deleting with the Preview function.
+
+
+When the deletion is completed and you go to the Pette List screen, the deleted pets will not be displayed.
+
+
+! [bg right h:600px](images/2021-11-04-05-16-12.png)
+! [bg right h:600px](images/2021-11-04-05-16-26.png)
+
+--- [bg right h:600px](images/2021-11-04-05-16-26.png)
+We have now implemented all kinds of CRUD operations (CREATE, READ, UPDATE, DELETE) on the database.
+
+---.
+## Let's improve the sample application.
+Let's improve the sample application by using the features of Adalo that we haven't introduced yet.
+
+<! -- Validation (required check) is done in the UPDATE section, so it's OK -->
+<! -- I tried Notification, but it doesn't seem to work unless it's a native app, so I skipped it -->.
+<! -- TODO: Introduce a way to display a message to encourage registration when there are zero pets registered.
+! [bg right h:600](images/2021-11-03-00-28-02.png) -->
+<! -- - The Share function will only work on a smartphone, so skip it -->
+<! -- Change Input Value is also not very useful, so I omitted it. You can use it to clear the form when you register continuously. https://qwerty.work/blog/2021/06/adalo-form-cache-clear.php#toc0-->
+
+<!
+#### Logout
+- Select the AppBar in the pet list screen, and activate the Right Icon 1.
+- Change Icon to exit_to_app
+- ADD ACTION > More... > User Login > Select Log Out
+- Select ADD ANOTHER ACTION > Link > Login
+! [bg right h:580px](images/2021-11-04-23-51-45.png)
+
+--- [bg right h:580px](images/2021-11-04-23-51-45.png)
+Check it with the Preview function.
+Clicking on the added icon will now log you out and take you to the login screen.
+
+----
+#### Action execution condition setting
+If no pets have been registered and the Pet List screen is displayed, the user will be redirected to the Pet Registration screen.
+- On the Pet List screen, select Actions > ADD ACTION > Link > Pet Registration.
+- Click "SHOW ADVANCED" and change "When does this happen?
+! [bg right h:600px](images/2021-11-05-00-06-55.png)
+
+---This action will only happen if...
+- This action will only happen if... Select More > Logged In User's > Pets' > Count
+- Change the number under Is equal to to 0
+Change the number under Is equal to to 0. [bg right h:600px](images/2021-11-05-00-15-50.png)
+
+--- [bg right h:600px](images/2021-11-05-00-15-50.png)
+Check it out with the Preview function.
+When you sign up as a new user, you will be redirected from the Pet List screen to the Pet Registration screen.
+
+--- (in Japanese)
+#### Selective Input Form
+Add gender to the pet's information and allow selective input in the input form.
+
+---
+The choices used in the selective input form are prepared as records by adding a collection to the database.
+- Add a Genders Collection to the database (leave the Property as default)
+- 0 Click Records > ADD GENDER and add two Records, Male and Female.
+Click on ! [h:400px](images/2021-11-05-00-42-41.png)
+
+---[h:400px](images/2021-11-05-00-42-41.png)
+- Add a one-to-many Relationship to the Genders Collection with the Pets Collection
+  - Since one pet has one gender, and one gender is set for multiple pets
+! [bg right h:600px](images/2021-11-05-00-46-10.png)
+
+---
+- Select the form on the pet registration screen
+- Select Fields > ADD VISIBLE FIELD > Gender
+! [bg right h:500px](images/2021-11-05-00-37-26.png)
+
+--- [bg right h:500px](images/2021-11-05-00-37-26.png)
+- Add a Gender field to the Pet Detail screen.
+! [bg right h:500px](images/2021-11-05-00-54-18.png)
+
+--- [bg right h:500px](images/2021-11-05-00-54-18.png)
+Check it out in the Preview function.
+
+- You can select the gender on the pet registration screen.
+- The selected gender will be displayed on the Pet Details screen.
+
+! [bg right h:620px](images/2021-11-05-00-58-14.png)
+! [bg right h:620px](images/2021-11-05-00-58-53.png)
+
+--- [bg right h:620px
+Supplement
+- If you are bothered by the empty fields in the pets you registered before you were able to select the gender, you can go to the Pet Collection Record, click on the pet, and set the gender manually.
+<! -- (the gender will not change, so we will not add it to the edit screen item) --> !
+
+! [h:400px](images/2021-11-05-01-16-39.png)
+
+--- [h:400px
+Reference
+
+You can create a multiple-choice input form using Marketplace's MultiselectDropdown.
+
+If you need it, try it out.
+! [bg right h:650px](images/2021-11-05-00-31-26.png)
+
+---.
+#### Hiding components setting
+You can keep the components you do not want to display without deleting them.
+- In the component list of the Pet Details screen, mouse over the Group that contains Link 2, and click the eye icon on the right side
+! [bg right h:550px](images/2021-11-05-01-05-44.png)
+
+--- (images/2021-11-05-01-05-44.png)
+If you check the Preview function, you will see that Link 2 has disappeared.
+
+You can make it appear again by clicking on the icon a second time.
+
+! [bg right h:700px](images/2021-11-05-01-23-27.png)
+
+---.
+#### Show or hide components depending on conditions
+If the weight is not registered, the Latest Weight in the Pet Details screen will be hidden.
+
+! [bg right h:700px](images/2021-11-05-02-19-31.png)
+
+--- [bg right h:700px](images/2021-11-05-02-19-31.png)
+- Select the label "Latest Weight" and its value, and group them together
+
+! [bg right h:550px](images/2021-11-05-01-07-47.png)
+
+---[bg right h:550px](images/2021-11-05-01-07-47.png)
+- Select Change Visibility
+
+! [bg right h:550px](images/2021-11-05-02-22-10.png)
+
+--- [bg right h:550px
+- Change Visibility to Sometimes Visible
+- Will be visible if... Select Current Pet > PetWeightLogs > Count
+- Set to Is not equal to 0
+! [bg right h:620px](images/2021-11-05-02-24-00.png)
+
+--- [bg right h:620px](images/2021-11-05-02-24-00.png)
+Checking with the Preview function, if the weight is unregistered, the Latest Weight is now hidden.
+
+! [bg right h:620px](images/2021-11-05-02-41-24.png)
+
+
+This is the end of the improvement of the sample application.
+
+---.
+#### URL for cloning
+- You can use the following URL to clone the application that reflects the work done so far, and use it to check your answers.
+https://previewer.adalo.com/f1324ea8-ec47-4c22-a3a9-3258044eb754
+
+! [bg right h:350px](images/2021-11-05-02-44-38.png)
 
 ---
 ## Exercise
-- Create your own screen that will be the transition destination for "Link 2" on the pet details screen.
-- Alternatively, you can create a new app as you like.
+Work on this with your Development Phase team members. 1.
+Develop a team member management application with the following features.
+    - Registration of team members
+    - Display of member list
+    - Display member details
+    - Update member information
+    - Delete a member
+    - Original functions that you came up with yourself (any number of them are acceptable)
+2. develop one application freely (if there is enough time in Exercise 1).
 
-When you are ready, share the URL on Slack to make it available for everyone.
+---.
+If no team member other than yourself is participating in today's lecture, please join another team.
 
-![bg right h:500px](images/2021-10-22-18-37-12.png)
+If you are a remote participant, please join the other team members by connecting to Zoom and having a conversation or sharing your screen with them.
 
----
-#### Notes about the exercise
-- Components and Screens named "xxxxList" may be difficult to use because they need to be connected to the database, which will be explained in the next lecture.
-  - If you face a problem and can't solve by yourself, I recommend you to avoid using "xxxxList" for today.
-- While the NoCode tool allows you to create apps easily, it may not allow you to achieve complex UI and functions.
-  - If you are stuck, think about how you can achieve what you want to do with a simple UI and functions.
-    - For example: Avoid including too many components in one screen(separate them into multiple screens).
+At the end of the session, all teams will be asked to make a presentation.
 
----
-#### Presentation of exercise results
-(If there is enough time)
+When the app is ready to use, share the URL on Slack for everyone to see.
 
-Would you like to present the app you made in the exercise?
+<! -- - Try to design the database by looking at the screens of other template apps -->
+<! -- - Add a screen to the sample app and add the necessary Collection and Property to the database -->
 
----
+
+---.
+#### Additional information about the exercise
+- To co-edit one app with a team member, select Settings > AppAccess > Add Team Member > Invite New Team Member and enter the team member's email address.
+
+! [bg right h:600px](images/2021-11-04-20-14-37.png)
+
+--- [bg right h:600px](images/2021-11-04-20-14-37.png)
+When editing one application at the same time with other members, the edits made by others will not be reflected on your screen in real time. (Reloading seems to be necessary).
+
+When multiple people edit the same screen at the same time, the edits made earlier are overwritten by the edits made later. Each person should edit a different screen, or edit together while viewing the same computer.
+
+---If you are using the
+Reference
+- There are a number of Adalo apps available that can be cloned, so you may want to look for one that is similar to what you want to do.
+  - App Templates
+  https://www.adalo.com/app-templates
+  - UI & Functional Kits
+  https://www.adalo.com/cloneable-kits
+
+---App Templates
+Examples of apps that can be cloned
+- Event Calendar https://www.adalo.com/cloneables/event-calendar
+- Swipe-to-answer quiz https://www.adalo.com/cloneables/quiz-app
+- SNS follow function https://www.adalo.com/cloneables/follow-function
+- Facebook clone https://www.adalo.com/cloneables/facebook-clone
+- Blogging apps https://www.adalo.com/cloneables/minimal-blog-app
+- Product sales app https://www.adalo.com/cloneables/ecommerce-app
+
+---.
+Reference
+- If there is something you cannot achieve with Adalo alone, you may be able to achieve it by integrating with external services.
+- If you use a service called Zapier, you can easily integrate Adalo with external services by following the instructions. If you are interested, please give it a try.
+  https://zapier.com/apps/adalo/integrations
+
+---Zapier
+Examples of external services that can be linked to Adalo with Zapier
+- Google Spreadsheet
+- Google Calender
+- Slack
+- Zoom
+- Twitter
+- Instagram
+- Spotify
+- Bubble
+- Google Meet
+- Strava
+
+---Strava
+#### Presentation of the exercise results
+Each team should present the application that they made in the exercise.
+
+---# Summary
 ## Summary
-- In this lecture, we learned about Adalo and created the UI of the pet health management application.
-  - We used only simple components that do not require a database.
-- In the next lecture, we will continue to use Adalo to build a database that matches the UI we created today, and make it possible to manipulate data from the app. 
-  - By using a database, various functions can be realized and the UI can be easily created. I hope you'll enjoy it!
+- In this lecture, we designed a database and made it possible to perform CRUD operations on the database from the application.
+- We also introduced some of Adalo's features while improving the app.
+- I have not yet introduced the following Adalo features related to integration with external services, so I would like to introduce them again when I have time in the 5th lecture or Development Phase.
+  - Custom Action(Calling APIs of external services from Adalo)
+  - External Collections(function to handle data acquired from APIs of external services as Adalo's collections)
 
----
+---How to use
+- Based on what we've learned so far, I think it's a good idea for teams to think about whether the application they want to create in the Development Phase can be realized with Adalo.
+- Next time, I will give a lecture on Bubble, a no-code tool. Look forward to it!
+
+---.
 # That's all!
-# Thanks for your time!
+# Thank you for your hard work!
+
+
+
+
+
+
