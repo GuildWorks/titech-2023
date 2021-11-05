@@ -85,8 +85,8 @@ Adaloのデータベースの構成要素は、以下の3つです。
 ---
 ###### Recordとは
 - Recordは、Collection内へ情報を保存する際の単位です。
-  - 1行が1つのRecordとなります。
-- Users Collectionの例では、1人のユーザーが持つ情報をまとめて1レコードとして登録します。
+  - 画像の1行が1つのRecordとなります。
+- Users Collectionの例では、1人のユーザーが持つ情報をまとめて1Recordとして登録します。
 
 ![w:650px](../Adalo1/images/2021-10-20-01-30-09.png)
 
@@ -98,7 +98,7 @@ Adaloのデータベースの構成要素は、以下の3つです。
 ---
 ###### Propertyとは
 - Propertyは、Recordを構成する一つ一つの項目です。
-- Users Collectionは、Eメール、パスワード、名前といったPropertyで構成されます。
+- Users Collectionは、Eメール、パスワード、ユーザー名、氏名といったPropertyで構成されます。
 - Propertyの値は空で登録される場合もあります。
 
 ![bg right h:450px](images/2021-11-05-16-25-58.png)
@@ -129,12 +129,12 @@ Relationshipとは
 
 ---
 Relationshipの種類
-- AdaloのRelationshipでは、Collection間でリンクされるRecordの数に応じて、1対多と多対多という2つの種類のいずれかを選択します。 
+- AdaloのRelationshipでは、Collection間で紐付けられるRecordの数に応じて、1対多と多対多という2つの種類のいずれかを選択します。 
 
 ---
 1対多のRelationship
 - 1つのRecordが、別のコレクションにある複数のRecordと関係を持つことを意味します。 
-- 表示しているCollectionを1と多のどちらにするかで、2種類の選択肢が現れます。
+- Relationshipを設定しようとしているCollectionを1と多のどちらにするかで、2種類の選択肢が現れます。
 
 ![bg right h:280px](images/2021-11-03-07-40-33.png)
 
@@ -149,13 +149,13 @@ Relationshipの種類
 
 ---
 多対多のRelationship
-- 両方のCollectionの1レコードが、もう一方のCollectionの複数のRecordにリンクできることを意味します。
+- 両方のCollectionの1Recordが、もう一方のCollectionの複数のRecordに紐付けられることを意味します。
 
 ![bg right h:140px](images/2021-11-03-13-15-58.png)
 
 ---
 多対多のRelationshipの例
-- Chatアプリでは1人のユーザーが複数の会話(誰とどんなメッセージをやりとりしたかを管理するもの)を持ち、qつの会話には複数のメンバー(ユーザー)が所属するので、Users CollectionとConversations CollectionのRelationshipは多対多になります。
+- Chatアプリでは1人のユーザーが複数の会話(誰とどんなメッセージをやりとりしたかを管理するもの)を持ち、1つの会話には複数のメンバー(ユーザー)が所属するので、Users CollectionとConversations CollectionのRelationshipは多対多になります。
 
 ![h:240px](images/2021-11-05-17-15-22.png)![h:240px](images/2021-11-05-17-13-11.png)
 
