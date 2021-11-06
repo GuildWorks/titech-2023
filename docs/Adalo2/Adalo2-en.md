@@ -660,14 +660,13 @@ Check it with the Preview function.
 ---
 #### Action execution condition setting
 If no pets have been registered, redirect users from Pet List screen to Pet Registration screen.
-- In the Pet List screen, select Actions > ADD ACTION > Link > Pet Registration.
-- Click "SHOW ADVANCED" and change "When does this happen?
+- In the Pet List screen, select "Actions" > "ADD ACTION" > "Link" > "Pet Registration"
+- Click "SHOW ADVANCED" and change "When does this happen?"
 ![bg right h:600px](images/2021-11-05-00-06-55.png)
 
 ---
-- Set This action will only happen if... More > Logged In User's > Pets' > Count
-- Change the number under Is equal to to 0
-Change the number under Is equal to to 0.
+- Set "This action will only happen if..." "More" > "Logged In User's" > "Pets'" > "Count"
+- Change the number under "Is equal to" to 0.
 
 ![bg right h:600px](images/2021-11-05-00-15-50.png)
 
@@ -682,8 +681,8 @@ Add gender to the pet's information and allow selective input in the input form.
 ---
 The choices used in the selective input form are prepared as records by adding a collection to the database.
 - Add a Genders Collection to the database (leave the Property as default)
-- 0 Click Records > ADD GENDER and add two Records, Male and Female.
-Click on ![h:400px](images/2021-11-05-00-42-41.png)
+- Click "0 Records" > "ADD GENDER" and add two Records, "Male" and "Female".
+![h:400px](images/2021-11-05-00-42-41.png)
 
 ---
 - Add a one-to-many Relationship to the Genders Collection with the Pets Collection
@@ -692,7 +691,7 @@ Click on ![h:400px](images/2021-11-05-00-42-41.png)
 
 ---
 - Select the form on the pet registration screen
-- Select Fields > ADD VISIBLE FIELD > Gender
+- Select "Fields" > "ADD VISIBLE FIELD" > "Gender"
 ![bg right h:500px](images/2021-11-05-00-37-26.png)
 
 ---
@@ -710,7 +709,7 @@ Check it out in the Preview function.
 
 ---
 Supplement
-- If you are bothered by the empty fields in the pets you registered before you were able to select the gender, you can go to the Pet Collection Record, click on the pet, and set the gender manually.
+- If you are bothered by the empty fields in the pet you registered before you were able to select the gender, you can go to the Pet Collection Record, click on the pet, and set the gender manually.
 <!-- (the gender will not change, so we will not add it to the edit screen item) --> !
 
 ![h:400px](images/2021-11-05-01-16-39.png)
@@ -725,12 +724,12 @@ If you need it, try it out.
 
 ---
 #### Hiding components
-You can keep the components you do not want to display without deleting them.
-- In the component list of the Pet Details screen, mouse over the Group that contains Link 2, and click the eye icon on the right side
+You can keep the components which you do not want to display without deleting them.
+- In the component list of the Pet Details screen, mouse over the Group that contains "Link 2", and click the eye icon on the right side
 ![bg right h:550px](images/2021-11-05-01-05-44.png)
 
 ---
-If you check the Preview function, you will see that Link 2 has disappeared.
+If you check the Preview function, you will see that "Link 2" has disappeared.
 
 You can make it appear again by clicking on the icon a second time.
 
@@ -738,7 +737,7 @@ You can make it appear again by clicking on the icon a second time.
 
 ---
 #### Show or hide components depending on conditions
-If the weight is not registered, the Latest Weight in the Pet Details screen will be hidden.
+If the weight is not registered, the Latest Weight in the Pet Details screen should be hidden. Let's configure this.
 
 ![bg right h:700px](images/2021-11-05-02-19-31.png)
 
@@ -753,9 +752,9 @@ If the weight is not registered, the Latest Weight in the Pet Details screen wil
 ![bg right h:550px](images/2021-11-05-02-22-10.png)
 
 ---
-- Change Visibility to Sometimes Visible
-- Will be visible if... Select Current Pet > PetWeightLogs > Count
-- Set to Is not equal to 0
+- Change Visibility to "Sometimes Visible"
+- Set "Will be visible if..." as "Current Pet" > "PetWeightLogs" > "Count"
+- Set "Is not equal to 0"
 ![bg right h:620px](images/2021-11-05-02-24-00.png)
 
 ---
