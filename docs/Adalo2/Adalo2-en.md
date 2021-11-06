@@ -486,42 +486,42 @@ Display the name of the selected pet in the header of the Pet Details screen and
 ![bg right h:550px](images/2021-11-04-03-48-14.png)
 
 ---
-In the Preview function, check the following
-- That you can move to the detail screen of the selected Pette from the Pette List screen.
+In the Preview function, check the following.
+- You can move to the detail screen of the selected Pet from the Pet List screen.
 - It is possible to move to the weight management screen of the selected pet from the pet detail screen.
-- When the weight of a pet is registered, the record is registered in the PetWeightLogs Collection of the database.
+- When the pet weight is registered, the record is registered in the PetWeightLogs Collection of the database.
 - The latest weight is displayed on the pet detail screen.
 
 
 ---
-Next, we will display the weight of the pets registered in the past as a graph in the pet weight management screen.
+Next, we will display registered pet's weight logs as a graph in the pet weight management screen.
 - First, delete the graph that was pasted as an image
 
 ![bg right h:320px](images/2021-11-04-03-51-01.png)
 
 ---
-- Select EXPLORE MARKETPLACE from ADD COMPONENT
-- INSTALL Chart Kit
+- Select "EXPLORE MARKETPLACE" from "ADD COMPONENT"
+- Install "Chart Kit"
 
 ![bg right h:450px](images/2021-11-04-03-52-55.png) ![bg right h:450px](images/2021-11-04-03-54-31.png)
 
 ---
-- Add Line Chart to the screen
+- Add "Line Chart" to the screen
 ![bg right h:500px](images/2021-11-04-03-56-43.png)
 
 ---
 Set up a Line Chart.
-- Select PetWeightLogs in What is this a chart of?
-- Select Current Pet > PetWeightLogs in Filter
-- In Custom Filter, set WeightRegisteredTime Is after 30 days ago and specify the display period.
-- In Sorting, select WeightRegisteredTime - Oldest to Newest
+- Select "PetWeightLogs" in "What is this a chart of?"
+- Select "Current Pet" > "PetWeightLogs" in Filter
+- In Custom Filter, set "WeightRegisteredTime", "Is after", "30 days ago" to specify display period.
+- In Sorting, select "WeightRegisteredTime - Oldest to Newest"
 
 ![bg right h:700px](images/2021-11-04-04-11-54.png)
 
 ---
-- Set X Axis Value to PetWeightLog > WeightRegisteredTime
-  - Set Date Format to Date / Time
-- Set Y Axis Value to PetWeightLog > WeightKg
+- Set X Axis Value to "PetWeightLog" > "WeightRegisteredTime"
+  - Set Date Format to "Date / Time"
+- Set Y Axis Value to "PetWeightLog" > "WeightKg"
 ![bg right h:400px](images/2021-11-04-04-12-21.png)
 ![bg right h:250px](images/2021-11-04-04-13-46.png)
 
@@ -538,32 +538,32 @@ We used the Date&Time type to test it by registering multiple weights on the sam
 
 ---
 #### Updating Data
-Create a new pet information edit screen where you can update the information of registered pets.
+Create a new "EditPetInfo" screen where you can update the information of registered pet.
 
 
 ---
-First, add a lead line to the Edit Pet Info screen in the Pet Details screen.
-- Add Action Button from ADD COMPONENT
-- Change the Icon to "edit
-- Change Icon and Text Color to Default Background(white)
+First, add a link to the Edit Pet Info screen in the Pet Detail screen.
+- Add "Action Button" from "ADD COMPONENT"
+- Change the Icon to "edit"
+- Change Icon and Text Color to "Default Background"(white)
 ![bg right h:450px](images/2021-11-04-04-31-55.png)
 
 ---
-- Select Link > New Screen from ADD ACTION
+- Select "Link" > "New Screen" from ADD ACTION
 ![bg right h:630px](images/2021-11-04-04-32-24.png)
 
 
 ---
-- Enter a Screen Name
-- Select Form
-- Click CREATE SCREEN
+- Enter "EditPetInfo" in a Screen Name
+- Select "Form"
+- Click "CREATE SCREEN"
 ![bg right h:620px](images/2021-11-04-04-33-34.png)
 
 ---
-- Select "Pets" in "Which data collection?
+- Select "Pets" in "Which data collection?"
   - The form is automatically generated according to the collection.
-- Select "Update Current Pet" in "What do you want the form to do?
-- Change the order of Birthday and Image in Fields
+- Select "Update Current Pet" in "What do you want the form to do?"
+- Change the order of "Birthday" and "Image" in Fields
 
 EditPetInfo screen is ready.
 ![bg right h:420px](images/2021-11-04-04-38-03.png)
@@ -579,22 +579,22 @@ Supplement
 - In the previous article, we created the input form for the pet registration screen by adding components one by one, but it can be automatically generated in the same way as we created the pet edit screen.
 
 ---
-- Let's delete all components except the AppBar in the pet registration screen, add a Form component, and specify the Pet Collection to generate the form automatically.
-  - Please note that only the transition to the pet list screen after registration requires you to manually add an Action to the Submit Button.
+- Let's delete all components except "AppBar" in the pet registration screen, add a "Form" component, and specify "Pet Collection" to generate the form automatically.
+  - Then, manually add link to the pet list screen after registration by adding action to the Submit Button.
 
 ---
 Additional Information
-- Using the Form component, you can check if the required fields are filled in by simply checking the Required Error Text in the Field.
-- Use the Form component as much as possible when creating an input form.
+- Using the Form component, you can check if the required fields are filled in by just checking "the Required Error Text" of the field item.
+- Use the Form component as much as possible when creating input forms.
 ![bg right h:600px](images/2021-11-04-21-18-20.png)
 ![bg right h:600px](images/2021-11-04-21-05-30.png)
 
 ---
 Reference: The actual flow of application development in Adalo
 - In the sample application, we have proceeded with the following flow: UI creation > database design > linkage between them.
-  - This is because we thought it would be difficult to design the database without knowing what kind of screen we would need and what data we would need.
-- When actually developing an application with Adalo, I recommend that you first draw a UI sketch and identify the necessary data, and then design the database. By doing so, you can take advantage of automatic generation for subsequent UI creation.
-  - However, the actual development will not be a one-way flow, but a trial-and-error process, alternating between database and UI.
+  - This is because it seems difficult to design the database without knowing what kind of screen and data we need.
+- When actually developing an application with Adalo, It is recommended that first draw a UI sketch and identify the necessary data, and then design the database. By doing so, you can take advantage of automatic generation for UI creation.
+  - However, the actual development would not be a one-way flow, but a trial-and-error process, alternating between database design and UI design.
 
 ---
 #### Deleting Data
@@ -613,10 +613,10 @@ Create a button to delete a registered pet in the pet details screen.
 - Select Delete > Current Pet from ADD ACTION
 ![bg right h:500px](images/2021-11-04-04-59-34.png) -->
 
-- Select the App Bar and turn on the Right Icon 1 toggle
-- Change Icon to delete
-- Select Delete > Current Pet from ADD ACTION
-- Select Link > Mypets from ADD ANOTHER ACTION
+- Select the App Bar and turn on the "Right Icon 1"'s toggle
+- Change Icon to "delete"
+- Select "Delete" > "Current Pet" from "ADD ACTION"
+- Select "Link" > "Mypets" from "ADD ANOTHER ACTION"
 
 ![bg right h:500px](images/2021-11-04-05-12-13.png)
 
@@ -647,15 +647,15 @@ Let's improve the sample application by using the features of Adalo that we have
 
 ---
 #### Logout
-- Select the AppBar in the pet list screen, and activate the Right Icon 1.
-- Change Icon to exit_to_app
-- ADD ACTION > More... > User Login > Select Log Out
-- Select ADD ANOTHER ACTION > Link > Login
+- Select the AppBar in the pet list screen, and activate "Right Icon 1"
+- Change Icon to "exit_to_app
+- Select "ADD ACTION" > "More..." > "User Login" > "Log Out"
+- Select "ADD ANOTHER ACTION" > "Link" > "Login"
 ![bg right h:580px](images/2021-11-04-23-51-45.png)
 
 ---
 Check it with the Preview function.
-Clicking on the added icon will now log you out and take you to the login screen.
+
 
 ---
 #### Action execution condition setting
