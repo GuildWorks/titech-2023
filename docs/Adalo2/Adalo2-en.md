@@ -11,7 +11,7 @@ paginate: true
 
 **Programming Boot Camp**
 
-# Database Design and Data Manipulation with Adalo
+# Database design and data manipulation with Adalo
 
 **Tokyo Institute of Technology 2021/11/6**
 　
@@ -29,51 +29,52 @@ paginate: true
 
 ---
 ## Table of Contents
-  - Review of the previous session and check the goal of this session
-  - Let's learn about database
+  - Review previous lecture and check the goal of this lecture
+  - Introduction to databases
   - Database design
-  - Database operations
-  - Let's improve the sample application.
+  - Data manipulation
+  - Improve sample application
   - Exercises
   - Summary
 
 ---
-## Reflection on the previous lecture and confirmation of the goal of this session
-- In the previous lecture, we introduced Adalo, a no-code tool, and created the UI of an application based on a pet health management application.
-  - In the lecture, we used a simple component that does not require a database. (Some of you may have used a database in the exercises).
-- In this lecture, we will continue to use Adalo to design a database that matches the UI we created in the previous session, so that we can manipulate the data from the app. 
-- After that, we will introduce the features of Adalo while improving a sample app, and finally, we will have a team app development exercise and presentation.
+####  Review previous lecture and check the goal of this lecture
+
+- In the previous lecture, we learned Adalo, a no-code tool, and created the UI of the pet health management app.
+  - In the lecture, we used simple components that does not require a database. (Some of you may have used a database in the exercises).
+- In this lecture, we will design a database that matches the UI we created in the previous lecture, so that we can manipulate the data from the app. 
+- After that, we will improve the sample app learning some features of Adalo, and finally, we will do app development exercises and presentation.
 
 ---
-## Introduction to Database
-First, let's check what kind of database we will be working with.
+## Introduction to databases
+First, let's learn about databases.
 
 ---
-#### Database(Review of previous lesson)
+#### Database(Previous lesson)
 - A set of organized data.
-- Data is registered, read(displayed), updated, and deleted.
-- Example: Chat application
+- Data can be registered, read (displayed), updated, and deleted.
+- Example: In the case of a Chat application
 ![w:300px](../Adalo1/images/2021-10-19-23-49-03.png)
 <!-- ![w:570px](images/2021-10-19-23-39-29.png) --> !
 ![bg 35% right](../Adalo1/images/2021-10-19-23-13-47.png)
 
 ---
 - Databases are often compared to "spreadsheet-like" software.
-- A database can be used to create (CREATE), read (READ), update (UPDATE), and delete (DELETE) data. These operations are collectively called CRUD.
+- A database can be used to CREATE, READ, UPDATE, and DELETE data. These operations are collectively called CRUD operations.
 
 ![bg right w:630px](../Adalo1/images/2021-10-20-01-30-09.png)
 
 ---
 #### Basics of Adalo's database
 ![w:60px](../Adalo1/images/2021-10-20-01-20-56.png) You can access Adalo's database from this icon.
-There are three components of the Adalo database
+There are three components of the Adalo database.
 - Collection
 - Property
 - Record
 
 ---
 ###### What is a Collection?
-A collection of data that has the same attribute (Property)
+A collection of data that has the same property.
 ![w:214px](../Adalo1/images/2021-10-20-01-38-57.png) ![w:878px](../Adalo1/images/2021-10-20-01-30-09.png)
 
 ---
@@ -92,7 +93,7 @@ It is very difficult to decide what kind of collection to add. It is very diffic
 ![w:650px](../Adalo1/images/2021-10-20-01-30-09.png)
 
 ---
-- Record can be basically registered from the form on the screen of the application, but it is also possible to register from the form shown in the image on the right by pressing the "+Add xxxx" button on the upper right while displaying Record.
+- Records are basically registered from the form on the screen of the app, but it is also possible to register from the form by pressing the "+Add xxxx" button on the upper right in Record View.
 - You can also search for Records in the Collection, and upload (import) and download CSV files.
 ![bg right h:460px](images/2021-11-03-13-47-25.png)
 
@@ -105,7 +106,7 @@ It is very difficult to decide what kind of collection to add. It is very diffic
 ![bg right h:450px](images/2021-11-05-16-25-58.png)
 
 ---
-To define what kind of data the Property is, select the Type when adding the Property.
+To define what kind of data the Property is, select the Type when adding it.
 - Text
 - Number
 - True/False
@@ -122,8 +123,9 @@ What is Relationship?
 - Instead of storing a large number of properties for a single Record, we can set a special property to relate multiple Collections, called Relationship. This allows you to divide a Collection into manageable pieces.
 
 ---
-- For example, a message sent by a user in the Chat app is stored in the Messages Collection, which is separate from the Users Collection, and these two collections are related by Relationship.
-  - The Users side has a Relationship called Messages, and the Messages side has a Relationship called Sender (with Users).
+For example, a message sent by a user in the Chat app is stored in the Messages Collection, which is separate from the Users Collection, and these two collections are related by Relationship.
+
+The Users side has a Relationship called Messages, and the Messages side has a Relationship called Sender (with Users).
 
 ![bg right h:450px](images/2021-11-05-16-57-18.png)
 ![bg right h:350px](images/2021-11-05-16-57-49.png)
@@ -183,13 +185,13 @@ Let's design the database by looking at the UI of the sample application. The st
 4. For a collection that is related to another collection, set the Relationship Property.
 
 ---
-In the next slide and onwards, there will be explanations, but we recommend that you try your hand at it before looking at the answers.
+In the next slide and onwards, there are explanations, but it is highly recommended that you try it by yourself before checking them.
 
-There is no absolute right answer. When in doubt, follow your instincts.
+There is no absolute right answer. When in doubt, follow your intuitions.
 
 ---
-###### Explanation
-While looking at the UI, I made a list of the data that needs to be saved, and it looked like this
+###### Explanations
+While looking at the UI, made a list of the data that needs to be saved, and it looked like this
 ````
 - User's Email
 - User's Password
@@ -204,16 +206,15 @@ While looking at the UI, I made a list of the data that needs to be saved, and i
 - If anyone can name any other data, please let me know!
 
 ---
-Thinking about what Collections the listed data can be classified into, we will classify them into these three categories.
+Thinking about what Collections the listed data can be classified into, we will classify them into these three Collections.
 ```
 - Users
 - Pets
 - PetWeightLogs
 ```
-
 - Many of you may have prepared two collections, one for users and one for pets.
-- Some people may not have prepared a collection for pet weight records. (It is not wrong to include the pet's weight and its registration date in the pet's Collection. We will explain it later.)
-- Have any of you prepared other Collection classifications?
+- Some people may not have prepared a collection for pet weight records. (It is not wrong to include the pet's weight and its registration date in the pet's Collection. This will be explained later.)
+- Have any of you prepared other Collections?
 <!-- In extreme cases, you can do it with 1Collection -->.
 
 ---
@@ -295,27 +296,27 @@ If you check the PetWeightLogs Collection, you will see that a Relationship with
 ---
 Reference: What happens if you include the weight of the pet and its registration date in the Pets Collection?
 
-The record will be registered as follows, but in this case, you will have a little trouble.
+The record will be registered as follows, but in this case, you will have the troubles.
 ![w:1200px](images/2021-11-03-14-47-07.png)
 
 ---
-The trouble
+The troubles
 - Because multiple Records with different pet weights and their registration dates are registered for one pet, the pet's information (Name, Image, Birthday) is registered in duplicate.
   - In order to change the information of one pet, we have to update all the duplicated records, which makes the process more complicated.
 - Adalo has a convenient function to automatically generate a form to register a record in a single collection, but since the collection is not divided by the unit to register data, it cannot be used.
 
 ---
-That's it for the database design.
+That's it for the sample app database design.
 
 It is recommended that you set up Adalo's database in the same state as the document to avoid confusion in the later work.
 
 ---
-## Database operations
-Let's use the database we designed so that we can perform CRUD operations on the data in the sample application.
+## Data manipulation
+Let's use the database we designed so that we can perform CRUD operations in the sample application.
 
 ---
 #### Creating Data
-First, let's make it possible to actually register a record of a pet in the already created pet registration screen.
+First, let's make it possible to actually register a record of a pet in the pet registration screen.
 
 ![bg right h:700px](../Adalo1/images/2021-10-22-02-23-09.png)
 
@@ -326,12 +327,12 @@ First, let's make it possible to actually register a record of a pet in the alre
 ![bg right h:520px](images/2021-11-03-23-10-44.png)
 
 ---
-Enter the following and DONE.
-- For Name, select Input in Other Components.
-- For Birthday, select Date Picker of Other Components.
-- For Image, select Image Picker of Other Components.
+<!-- Enter the following. -->
+- For Name, select Input from Other Components.
+- For Birthday, select Date Picker from Other Components.
+- For Image, select Image Picker from Other Components.
 - For User, select Logged In User.
-- Leave PetWeightLogs as Empty (not required for pet registration).
+- Leave PetWeightLogs as Empty(not required here).
 ![bg right h:700px](images/2021-11-03-23-16-38.png)
 
 ---
@@ -351,21 +352,21 @@ Next, let's make it possible to register the current weight in the pet weight ma
 
 ---
 Enter the following and DONE.
-- For WeightKg, select Input of Other Components.
+- For WeightKg, select Input from Other Components.
 - For WeightRegisteredTime, select Date&Time > Current Time.
 - Pet is Nothing Available, so leave it as Empty for now.
-  (Later, we will set it so that the weight of the selected pet can be registered)
+  (Later, we will set it so that the weight of the selected pet is registered)
 ![bg right h:700px](images/2021-11-04-01-08-12.png)
 
 
 ---
 #### Displaying Data (READ)
-First, we will make sure that the actual registered pets are displayed in the created pets list screen.
+First, let's make registered pets displayed in pets list screen.
 
 ![bg right h:700px](../Adalo1/images/2021-10-22-02-40-24.png)
 
 ---
-- Select the two components that display the pet's image and name, and click MAKE LIST
+- Select the two components that display the pet's image and name, and click MAKE LIST.
 ![bg right h:460px](images/2021-11-04-01-17-26.png)
 
 ---
@@ -403,7 +404,7 @@ Edit the pet name component
 ![bg right h:680px](images/2021-11-04-01-42-14.png)
 
 ---
-- Let's delete the second Group (the second pet that was displayed as fixed) in the component that makes up the List of pets, since it is not needed!
+- Delete the second Group (displays static second pet) in the component that makes up the List of pets, since it is not needed.
 
 ![w:610px](images/2021-11-04-01-44-45.png) ![w:460px](images/2021-11-04-01-45-12.png)
 
@@ -440,15 +441,15 @@ Click on the Image component and select
 
 ---
 Click on the Birthday Value component and select
-- Select Current Pet's > Birthday in Text
-- Select No Formatting in Date Format
+- Current Pet's > Birthday in Text
+- No Formatting in Date Format
 
-Click on the ![bg right h:550px](images/2021-11-04-02-40-03.png)
+![bg right h:550px](images/2021-11-04-02-40-03.png)
 
 ---
-- Click on the Latest Weight Value component and MAKE LIST to make a list.
+- Click on the Latest Weight Value component and MAKE LIST.
 
-To display the most recent one, make the component a List.
+This is required to displaying the latest weight.
 (The settings on the next page will narrow down the list to the most recent one.)
 ![bg right h:500px](images/2021-11-04-02-44-19.png)
 
@@ -458,13 +459,13 @@ To display the most recent one, make the component a List.
 - In Sorting, select WeightRegisteredTime - Newest to Oldest
 - Set Maximum number of items to 1
 
-This will narrow down the list to only the most recent one.
+This will narrow down the list to only the latest one.
 ![bg right h:630px](images/2021-11-04-03-11-59.png)
 
 ---
 - Click on the Latest Weight Value component, add Current PetWeightLog's > WeightKg to the Text, and then add "kg" to the end.
 
-[bg right h:630 [bg right h:630px](images/2021-11-05-18-13-36.png)
+![bg right h:630px](images/2021-11-05-18-13-36.png)
 
 ---
 Make sure that the selected pets can be passed on when moving from the Pet Detail screen to the Pet Weight Management screen.
@@ -473,7 +474,7 @@ Make sure that the selected pets can be passed on when moving from the Pet Detai
 ![bg right h:630px](images/2021-11-04-03-20-16.png)
 
 ---
-The remaining work of creating data (CREATE)
+(The remaining work of creating data)
 
 Allow the weight of the selected pet in the Pet Weight Management screen to be registered in the database.
 - Select the ADD button, and set Current Pet to the Pet that was once left as Empty in the Create action.
@@ -504,7 +505,7 @@ Next, we will display the weight of the pets registered in the past as a graph i
 - Select EXPLORE MARKETPLACE from ADD COMPONENT
 - INSTALL Chart Kit
 
-![bg right h:450px](images/2021-11-04-03-52-55.png) ![bg right h:450px](images/2021-11-04-03-54-31.png) !
+![bg right h:450px](images/2021-11-04-03-52-55.png) ![bg right h:450px](images/2021-11-04-03-54-31.png)
 
 ---
 - Add Line Chart to the screen
@@ -522,18 +523,20 @@ Set up a Line Chart.
 ---
 - Set X Axis Value to PetWeightLog > WeightRegisteredTime
   - Set Date Format to Date / Time
-- Y Set Axis Value to PetWeightLog > WeightKg
+- Set Y Axis Value to PetWeightLog > WeightKg
 ![bg right h:400px](images/2021-11-04-04-12-21.png)
-![bg right h:250px](images/2021-11-04-04-13-46.png) !
+![bg right h:250px](images/2021-11-04-04-13-46.png)
 
 ---
-Use the Preview function to check the display of the graph. If you add multiple weights, the graph will be drawn.
-The registration time of the weight is too long and will be displayed abbreviated. I wanted to test it by registering multiple weights on the same day, so I used the Date&Time type, but it would be better to use the Date type and restrict multiple registration on the same day.
+Let's preview the graph. If you add multiple weights, the graph will be drawn.
+
+(The registration time of the weight is too long and will be displayed abbreviated...
+We used the Date&Time type to test it by registering multiple weights on the same day, but it would be better to use the Date type and restrict multiple registration on the same day.)
 <!-- , if you add different weights in a row, the line will stretch up and down -->
-<!-- ![bg right h:700px](images/2021-11-04-04-15-38.png) --> !
+<!-- ![bg right h:700px](images/2021-11-04-04-15-38.png) -->
 ![bg right h:700px](images/2021-11-04-04-20-17.png)
 
-<!-- You can also set labels for the X and Y axis --> !
+<!-- You can also set labels for the X and Y axis -->
 
 ---
 #### Updating Data
@@ -559,17 +562,17 @@ First, add a lead line to the Edit Pet Info screen in the Pet Details screen.
 ![bg right h:620px](images/2021-11-04-04-33-34.png)
 
 ---
-Just make the following settings and the pet information editing screen is complete.
 - Select "Pets" in "Which data collection?
-  - The form will be automatically generated according to the selected collection.
+  - The form is automatically generated according to the collection.
 - Select "Update Current Pet" in "What do you want the form to do?
 - Change the order of Birthday and Image in Fields
 
-[bg right h:420 [bg right h:420px](images/2021-11-04-04-38-03.png)
+EditPetInfo screen is ready.
+![bg right h:420px](images/2021-11-04-04-38-03.png)
 <!-- If there are any fields that don't need to be updated, we can delete the entry -->
 
 ---
-Make sure you can use the Preview function to edit the pet information screen.
+Make sure that you can edit the pet information.
 
 ![bg right h:700px](images/2021-11-04-21-01-32.png)
 
@@ -624,18 +627,18 @@ Create a button to delete a registered pet in the pet details screen.
 Let's try deleting with the Preview function.
 
 
-When the deletion is completed and you go to the Pette List screen, the deleted pets will not be displayed.
+When the deletion is completed, you will be redirected to the Pet List screen. The deleted pets will not be displayed.
 
 
 ![bg right h:600px](images/2021-11-04-05-16-12.png)
 ![bg right h:600px](images/2021-11-04-05-16-26.png)
 
 ---
-We have now implemented all kinds of CRUD operations (CREATE, READ, UPDATE, DELETE).
+We have now implemented all kinds of CRUD(CREATE, READ, UPDATE, DELETE) operations.
 
 ---
-## Let's improve the sample application
-Let's improve the sample application by using the features of Adalo that I haven't introduced yet.
+## Improve sample application
+Let's improve the sample application by using the features of Adalo that we haven't learned yet.
 
 <!-- Validation (required check) is done in the UPDATE section, so it's OK -->
 <!-- I tried Notification, but it doesn't seem to work unless it's a native app, so I skipped it -->.
@@ -658,15 +661,17 @@ Clicking on the added icon will now log you out and take you to the login screen
 
 ---
 #### Action execution condition setting
-If no pets have been registered and the Pet List screen is displayed, the user will be redirected to the Pet Registration screen.
-- On the Pet List screen, select Actions > ADD ACTION > Link > Pet Registration.
+If no pets have been registered, redirect users from Pet List screen to Pet Registration screen.
+- In the Pet List screen, select Actions > ADD ACTION > Link > Pet Registration.
 - Click "SHOW ADVANCED" and change "When does this happen?
 ![bg right h:600px](images/2021-11-05-00-06-55.png)
 
 ---
-- This action will only happen if... Select More > Logged In User's > Pets' > Count
+- Set This action will only happen if... More > Logged In User's > Pets' > Count
 - Change the number under Is equal to to 0
-Change the number under Is equal to to 0. [bg right h:600px](images/2021-11-05-00-15-50.png)
+Change the number under Is equal to to 0.
+
+![bg right h:600px](images/2021-11-05-00-15-50.png)
 
 ---
 Check it out with the Preview function.
@@ -721,7 +726,7 @@ If you need it, try it out.
 ![bg right h:650px](images/2021-11-05-00-31-26.png)
 
 ---
-#### Hiding components setting
+#### Hiding components
 You can keep the components you do not want to display without deleting them.
 - In the component list of the Pet Details screen, mouse over the Group that contains Link 2, and click the eye icon on the right side
 ![bg right h:550px](images/2021-11-05-01-05-44.png)
@@ -771,7 +776,7 @@ https://previewer.adalo.com/f1324ea8-ec47-4c22-a3a9-3258044eb754
 ![bg right h:350px](images/2021-11-05-02-44-38.png)
 
 ---
-## Exercise
+## Exercises
 Work on this with your Development Phase team members. 
 1. Develop a team member management app with following features.
     - Registration of team members
@@ -787,7 +792,7 @@ If no other team members are participating in today's lecture, please join anoth
 
 If you are a remote participant, please join the other team members by connecting to Zoom and having a conversation or sharing your screen with them.
 
-At the end of the session, all teams will be asked to make a presentation.
+At the end of the lecture, all teams will be asked to make a presentation.
 
 When the app is ready to use, share the URL on Slack for everyone to see.
 
