@@ -76,7 +76,7 @@ paginate: true
 ---
 
 - 利用に向けていくつかアンケートに回答
-- 最後に "Sbumit(thanks!)" クリック
+- 最後に "Submit(thanks!)" クリック
 
 ![bg right h:500px](images/2021-11-11-22-56-16.png)
 
