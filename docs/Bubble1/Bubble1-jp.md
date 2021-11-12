@@ -57,26 +57,26 @@ paginate: true
 ## Bubble に登録しよう
 - Bubble の TOP 画面からメールアドレスを入力してアカウント登録
   - https://bubble.io/
-  - Get started クリック
+  - Get started をクリック
 
 ![w:900px](images/2021-11-11-22-50-00.png)
 
 ---
 - アカウントは無料で登録できます
-- ご自身のメールアドレスとパスワードを入力して "Get started" クリック
+- ご自身のメールアドレスとパスワードを入力して "Get started" をクリック
 
 ![bg right h:600px](images/2021-11-11-22-52-48.png)
 
 ---
 
-- 利用規約への同意して "I agree..." クリック
+- 利用規約への同意して "I agree..." をクリック
 
 ![](images/2021-11-11-22-55-02.png)
 
 ---
 
 - 利用に向けていくつかアンケートに回答
-- 最後に "Submit(thanks!)" クリック
+- 最後に "Submit(thanks!)" をクリック
 
 ![bg right h:500px](images/2021-11-11-22-56-16.png)
 
@@ -89,7 +89,7 @@ paginate: true
 
 ---
 
-- Welcome ページが表示されるので、画面下までスクロールして "Create a new app" クリック
+- Welcome ページが表示されるので、画面下までスクロールして "Create a new app" をクリック
 
 ![w:900px](images/2021-11-11-22-58-52.png)
 
