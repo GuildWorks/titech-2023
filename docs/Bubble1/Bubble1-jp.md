@@ -980,7 +980,7 @@ paginate: true
 - リンクの名前は "PET REGISTER" としましょう
 - "Destination page" として遷移先は `pet_register` を選択
 - "This element is visible on page load" のチェックを外します
-  - このチェックを外す、要素は常に非表示となります
+  - このチェックを外すと、要素は常に非表示となります
   - この理由はこのあと説明しますね
 
 ![bg right w:420px](images/2021-11-12-01-38-44.png)
