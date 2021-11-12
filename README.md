@@ -4,8 +4,8 @@
 
 ### 2021/11/13
 
-* [Bubble の基本](./docs/Bubble1/Bubble1-jp.pdf){:target="_blank"}
-* [Bubble Basics](./docs/Bubble1/Bubble1-en.pdf){:target="_blank"}
+* [Bubble の基本](https://github.com/GuildWorks/titech-2021/raw/master/docs/Bubble1/Bubble1-jp.pdf)
+* [Bubble Basics](https://github.com/GuildWorks/titech-2021/raw/master/docs/Bubble1/Bubble1-en.pdf)
 
 
 ## 参考リンク集 / Reference Links

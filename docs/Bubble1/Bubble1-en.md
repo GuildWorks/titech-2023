@@ -12,7 +12,7 @@ paginate: true
 
 # Bubble Basics
 
-**東京工業大学 2021/11/13**
+**Tokyo Institute of Technology 2021/11/13**
 　
 　
 　
