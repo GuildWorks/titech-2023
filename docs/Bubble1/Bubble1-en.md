@@ -516,7 +516,7 @@ The following is an overview of how to develop an app in Bubble.
 --- 
 
 - Double-click on the element to set the details of the element.
-  - At the top of the Appearance tab, click the ". .edit me..." at the top of the Appearance tab. and type in "REGISTER
+  - At the top of the Appearance tab, click the ". .edit me..." and type in "REGISTER
 
 ![w:1000px](images/2021-11-07-11-32-37.png)
 
