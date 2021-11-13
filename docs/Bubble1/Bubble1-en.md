@@ -57,7 +57,7 @@ What is ## Bubble?
 ## Register with Bubble
 - Go to the top page of Bubble and enter your email address to register.
   - https://bubble.io/
-  - Get started Click
+  - Click Get started 
 
 ![w:900px](images/2021-11-11-22-50-00.png)
 
@@ -70,14 +70,14 @@ What is ## Bubble?
 
 ---
 
-- I agree to the terms of use and "I agree..." Click!
+- I agree to the terms of use and click "I agree...".
 
 ![](images/2021-11-11-22-55-02.png)
 
 ---
 
 - Answer a few questionnaires for use.
-- Finally, "Submit (thanks!)" Click !
+- Finally, click "Submit (thanks!)".
 
 ![bg right h:500px](images/2021-11-11-22-56-16.png)
 
@@ -236,7 +236,7 @@ The following is an overview of how to develop an app in Bubble.
 
 ---
 
-- Select the "App data" tab and click the "All Users" link on the right side.
+- Select the "App data" tab and click the "All Users" link.
 - You will see the list of registered users in the right panel, and the user you just "signed up" should be there.
 - Now you can see that the screen and the database are connected!
 
@@ -338,7 +338,7 @@ The following is an overview of how to develop an app in Bubble.
 
 #### Let's create the pet registration page.
 
-- Click on the `Search a page or ~` part in the upper right corner of the screen, and a popup will appear.
+- Click on the `Page: index` part in the upper left corner of the screen, and a popup will appear.
 - Click `Add a new page...` in the popup Click on `Add a new page...
 
 ![w:900px](images/2021-11-07-10-53-14.png)
@@ -561,7 +561,7 @@ The following is an overview of how to develop an app in Bubble.
 
 ---
 
-  - The button in the upper right corner of the header is 
+  - Is the button in the upper right corner of the header "LOG OUT"?
   - Are all the elements visible?
   - Can you enter values in all the input forms?
   - Does it display when an image is specified?
@@ -734,8 +734,8 @@ The following is an overview of how to develop an app in Bubble.
 ---
 
 - If you specify all of them, it looks like this
-
-![bg right h:700px](images/2021-11-08-22-40-07.png)
+<!-- Dropdown消し忘れver ![bg right h:700px](images/2021-11-08-22-40-07.png) -->
+![bg right h:700px](images/2021-11-13-00-11-40.png)
 
 ---
 
@@ -899,8 +899,8 @@ The following is an overview of how to develop an app in Bubble.
 
 ---
 
-- Now that we've set the image to fill the width of the cell, we need to change the "Run-mode rendering" value of the image element from `Streth` to `Zoom`.
-  - Change the value of the "Run-mode rendering" of the image element from `Streth` to `Zoom`, otherwise the image will automatically change its aspect ratio in the cell.
+- Now that we've set the image to fill the width of the cell, we need to change the "Run-mode rendering" value of the image element from `Stretch` to `Zoom`.
+  - Change the value of the "Run-mode rendering" of the image element from `Stretch` to `Zoom`, otherwise the image will automatically change its aspect ratio in the cell.
 
 ![bg right h:540px](images/2021-11-12-09-35-52.png)
 
@@ -1120,7 +1120,7 @@ The following is an overview of how to develop an app in Bubble.
 
 - When you're done, preview the settings.
 - The values are not displayed correctly, right?
-- This is because you haven't specified which pet's information is displayed in the list screen yet. This is because you haven't specified which pet's information you want to see in the list screen yet.
+- This is because you haven't specified which pet's information is displayed in the list screen yet.
   - The `Lorem ipsum` is a common dummy content idiom that Bubble will automatically give you
 
 ![bg right h:700px](images/2021-11-10-22-17-32.png)
