@@ -1120,7 +1120,7 @@ The following is an overview of how to develop an app in Bubble.
 
 - When you're done, preview the settings.
 - The values are not displayed correctly, right?
-- This is because you haven't specified which pet's information is displayed in the list screen yet. This is because you haven't specified which pet's information you want to see in the list screen yet.
+- This is because you haven't specified which pet's information is displayed in the list screen yet.
   - The `Lorem ipsum` is a common dummy content idiom that Bubble will automatically give you
 
 ![bg right h:700px](images/2021-11-10-22-17-32.png)
