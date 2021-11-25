@@ -102,6 +102,7 @@ bubbleとのzapier連携
   - Twitter(アカウント名を入れたら、その人の投稿一覧が表示できる)
     - DBからアカウント名を動的に取得すると、エラー。。 ![](images/2021-11-26-05-42-47.png)
   - Google Sign-In (Google Developer Accountが有料なのでやらない: アカウントを作成するには、1 回限りの登録料として 25 ドルをお支払いいただく必要があります。アカウントの登録を完了するには、有効な身分証明書による本人確認が求められることがあります。ご本人であることを確認できなかった場合、登録料の払い戻しは行われません。)
+  - Map(Google Map) GCPアカウント用にクレジットカード登録が必要なので、割愛
   - Video Calling
     - 通話できた。1440 Minutesまで無料らしい。 https://app.garlik.io/
 
@@ -129,7 +130,7 @@ Delete a Record -->
     - Auth(api-key)のセットアップも紹介する
 
 - Custom Action
-  - 郵便番号 https://www.youtube.com/watch?v=7k4x2CaAbCI
+  - 郵便番号からの住所入力 https://www.youtube.com/watch?v=7k4x2CaAbCI
 
 - API Documentを読み込んで設定をするのは大変なので、便利なツールを使いましょう
   - zapierは断念 https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739
