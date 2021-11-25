@@ -93,7 +93,7 @@ bubbleとのzapier連携
 ---
 #### Adaloでの外部連携
 
----
+<!-- ---
 ###### Zapier
 Twitter
 ![bg right h:400px](images/2021-11-24-07-43-51.png)
@@ -113,7 +113,26 @@ Twitter
 
 ---
 ![bg right h:400px](images/2021-11-24-07-46-26.png)
+https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739 -->
 
+---
+###### 外部コレクション
+https://andd.live/7970/adalo-resource%E3%83%BBapi%E3%81%AB%E3%82%88%E3%82%8B%E5%A4%96%E9%83%A8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%80%81%E5%A4%96%E9%83%A8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7/
+
+---
+APIの利用にクレジットカードが必要になる場合が多い
+- DeepL
+- GCP
+
+-> 今橋が登録して、アクセスキーをシェアする？
+
+---
+Adalo案
+POST 
+
+--- 
+参考
+https://help.adalo.com/integrations/external-collections-with-apis
 
 ---
 ## ノーコードツールでの共同作業のTips
