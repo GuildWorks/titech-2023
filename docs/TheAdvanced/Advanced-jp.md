@@ -96,6 +96,14 @@ bubbleとのzapier連携
 ---
 やること
 
+- Market Placeの外部連携コンポーネント
+  - TODO: フリートライアル期間かどうかでMarket Placeのコンポーネント数が変わるのかは要確認
+  - Youtube(固定の動画を見せられるだけ)
+  - Twitter(アカウント名を入れたら、その人の投稿一覧が表示できる)
+    - DBからアカウント名を動的に取得すると、エラー。。 ![](images/2021-11-26-05-42-47.png)
+  - Google Sign-In (Google Developer Accountが有料なのでやらない: アカウントを作成するには、1 回限りの登録料として 25 ドルをお支払いいただく必要があります。アカウントの登録を完了するには、有効な身分証明書による本人確認が求められることがあります。ご本人であることを確認できなかった場合、登録料の払い戻しは行われません。)
+  - Video Calling
+    - 通話できた。1440 Minutesまで無料らしい。 https://app.garlik.io/
 
 <!-- - IFTTTという選択肢もある？→ Adaloなかった -->
 <!-- - pipedreamも使える？https://pipedream.com/apps/adalo/integrations/google-sheets
@@ -109,7 +117,6 @@ bubbleとのzapier連携
       - Adaloではリストの選択や絞り込みで1リソースを表示するので、Get One Recordは不要っぽい
     - id以外のColumnを使ってもAPIコールできる? -> {{}}で指定できそうだけど、エラーになるのでダメみたい。idを使うことにしよう。
     - External Collection のEdit Settingsを開くと毎回EndPointsが初期値になるので、要注意
-    - 後から説明する連携ツールで
 <!-- Get All Records
 Get One Record
 Create a Record
@@ -120,6 +127,9 @@ Delete a Record -->
   - 参考: https://qiita.com/wakiwaki/items/5016404ce0c15a755188
   - メモ
     - Auth(api-key)のセットアップも紹介する
+
+- Custom Action
+  - 郵便番号 https://www.youtube.com/watch?v=7k4x2CaAbCI
 
 - API Documentを読み込んで設定をするのは大変なので、便利なツールを使いましょう
   - zapierは断念 https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739
@@ -137,9 +147,8 @@ Delete a Record -->
     - メール送信
       - HTMLなら改行を<br>で入れる
     - Zoomは後でもう一度試す
-    - Google Map
-    - Google Translate
-    - Weather
+    - TODO: Google Map
+    - TODO: Webhook
 
 External Collections -> Custom Action -> Integromat の流れが良い？
 
@@ -183,6 +192,8 @@ https://qiita.com/sakuraya/items/6f1030279a747bcce648#%E3%83%A1%E3%82%BF%E6%83%8
 Instagramは大変なわりに開発者の投稿しか表示できないっぽい(ユーザー自身で認証して投稿を取得させるには、アプリレビューが必要)ので、断念 
 https://www.e-pokke.com/blog/instagram-basic-display-api.html
 >テストユーザーとして登録したご自身のInstagramアカウントについては、追加の権限の設定が不要なため、アプリを公開（ライブモード）する際に 「アプリレビュー」が不要 となっています。
+
+Micro API https://m3o.com/
 
 ---
 ## ノーコードツールでの共同作業のTips
