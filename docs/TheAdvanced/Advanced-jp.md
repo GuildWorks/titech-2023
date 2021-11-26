@@ -33,15 +33,13 @@ paginate: true
 
 ---
 ## 今回やることの確認
+TODO: 書く
 
 ---
 ## 外部連携
-
----
-### 外部連携とは
 AdaloやBubbleだけで実現できないことがある場合、外部サービスと連携することでそれを実現できるかもしれません。
 
----
+<!-- ---
 ### 外部連携の方法
 Adalo
 - Zapier
@@ -81,14 +79,14 @@ ZapierでAdaloと連携させることが可能な外部サービスの例
 - 超調整さん(Adaloで作ったフォームで入力したイベントの出欠情報をGoogle Spreadsheetで一覧表示させる。Calendlyに負けそうではある。)
 <!-- - 会議室予約管理システム(インターフェースはAdalo,データはGoogleCalender)
 ![bg right h:400px](images/2021-11-20-18-02-06.png) -->
-- Zoom or meetの会議参加者管理システム
+<!-- - Zoom or meetの会議参加者管理システム
 - facebook-groupsからポストを抽出して山田道場ホームページ？
-- stravaで運動ログを ?
-
+- stravaで運動ログを ? -->
+<!-- 
 ---
 bubbleとのzapier連携
 - notion
-
+ -->
 
 ---
 #### Adaloでの外部連携
@@ -638,14 +636,9 @@ TODO: 時間に余裕があれば資料化。難しければ、資料なしで�
   - お気に入りから削除もできるようにする
 
 
-
-<!-- TODO: お気に入りの猫の画像URLをユーザー毎に保存したい -->
-<!-- TODO: 猫詳細で受け取ったCurrent Catのデータをそのまま使わず、ID指定?でAPIから取得する(Inputを使う例になる) -->
-
-
 <!-- ---
 
-API連携先のデータのCRUDを実演したかったから選んだテーマだけど、The Cat APIでCRDは教えられる(Uはないけど)し、SpreadSheetにデータを保持する意味もあまりないので、こちらは割愛。
+SpreadSheet連携はAPI連携先のデータのCRUDを実演したかったから選んだテーマだけど、The Cat APIでCRDは教えられる(Uはないけど)し、SpreadSheetにデータを保持する意味もあまりないので、こちらは割愛。
 ###### APIから取得したGoogle SpreadSheetのデータをAdaloのCollectionとして扱う
 API連携先のデータは取得するだけではなく、登録、更新、削除することもできます。
 Google SpreadSheetを使ってそれを試してみましょう。
