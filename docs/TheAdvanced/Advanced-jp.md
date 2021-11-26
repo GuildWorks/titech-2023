@@ -176,41 +176,190 @@ Twitter Timelineコンポーネントを配置します。
 ![bg right h:500px](images/2021-11-26-22-41-05.png)
 
 ---
-
-
----
-
-![bg right h:400px](images/2021-11-26-09-04-10.png)
+- "ALREADY HAVE AN ACCOUNT?"というリンクがフォームに重なってしまっていたので、下に移動
+![bg right h:700px](images/2021-11-26-22-57-22.png)
 
 ---
-
-![bg right h:400px](images/2021-11-26-09-05-33.png)
-
----
-
-![bg right h:400px](images/2021-11-26-09-03-19.png)
+登録済のユーザーにTwitterHandleNameを設定しておきましょう
+- Users Collectionの "1 Record" ボタンをクリック
+![bg right h:500px](images/2021-11-26-22-44-36.png)
 
 ---
-Preview
-表示されるはずだけど、エラー。不具合？
-![bg right h:400px](images/2021-11-26-09-07-25.png)
+- 登録済のユーザーのレコードをクリック
+- TwitterHandleNameを入力(自分のアカウントでも、好きなアカウントでもOK)
+![bg right h:500px](images/2021-11-26-22-49-11.png)
 
 ---
-HandleNameをベタ打ちすれば表示される。
-![bg right h:400px](images/2021-11-26-09-08-27.png)
-![bg right h:400px](images/2021-11-26-09-09-21.png)
+- Twitter TimelineコンポーネントのTwitter Handle Nameを"Logged In User's TwitterHandleName"に変更
+![bg right h:500px](images/2021-11-26-22-51-21.png)
 
 ---
-###### Youtube
+理論上はこれでログインユーザー自身が設定したTwitterアカウントの投稿一覧が表示されるはずです。
+
+Preview機能で確認してみましょう。
+
+---
+エラーが起きると思います。
+![bg right h:700px](images/2021-11-26-22-59-00.png)
+
+---
+Twitter Timelineは有志の方が無償公開してくれているコンポーネントです。
+
+誰かが作ってくれているものが、いつも自分の思い通りに動くとは限りません。
+![bg right h:700px](images/2021-11-26-23-00-24.png)
+
+---
+「できないなら紹介しないでよ」と思った方もいるかもしれませんね。ごめんなさいmm
+
+試行錯誤をして「エラーを回避する方法を見つけた！」と思ったので資料に書いたのですが、後からそれが勘違いだったことに気づきました。。(ブラウザにはキャッシュという仕組みがあって、時々幻のようなものを見せてきます)
+
+「そんなこともあるんだな」くらいは覚えておいてもらえると嬉しいです。
+
+<!-- ---
+試行錯誤の結果、エラーを回避する方法を見つけたので、紹介しますね。
+
+---
+- Text InputコンポーネントをTwitter Timeline画面に配置
+- Nameに "Invisible Input for TwitterHandleName" と入力
+- Default Valueに "Logged In User's TwitterHandleName" を設定
+![bg right h:570px](images/2021-11-26-23-11-54.png)
+
+---
+- Twitter TimelineコンポーネントのTwitter Handle Nameを "Invisible Input for TwitterHandleName"に変更
+![bg right h:570px](images/2021-11-26-23-16-59.png)
+
+---
+"Invisible Input for TwitterHandleName" は画面上に表示する必要はないので、非表示にします
+- Canvas上で画面名"Twitter Timeline"をクリックして、"Invisible Input for TwitterHandleName"の右側の目のアイコンをクリック
+![bg right h:540px](images/2021-11-26-23-20-08.png)
+
+---
+もう一度Preview機能で確認してみましょう。
+
+# エラー回避できたと思ったら、できてなかった！キャッシュのせいで幻を見ていただけだった！
+
+--- -->
+
+---
+参考: Twitter Timelineコンポーネントのコードは公開されているので、修正して使うこともできそうです。(今回はやりません)
+https://github.com/amezousan/adalo-twitter-timeline/
+
+---
+- Twitter TimelineコンポーネントのTwitter Handle Nameは直接値を入力した状態に戻しておきましょう
+
+![bg right h:600px](images/2021-11-26-23-53-51.png)
 
 ---
 ##### Video Calling
+次に、ビデオ通話コンポーネントを紹介します。
 
 ---
-今回紹介しなかったコンポーネントも
+- Marketplaceで "No-Code Video Calling"コンポーネントをINSTALL
+![bg right h:600px](images/2021-11-27-00-01-27.png)
 
 ---
+ビデオ通話コンポーネントを配置するための新しい画面を作りましょう。
+- Home画面にビデオ通話用画面へのLinkボタンを追加
+- ADD ACTIONからNew ScreenへのLinkを追加
+![bg right h:600px](images/2021-11-27-01-48-43.png)
 
+---
+- Templateで"App Bar"を選択し、"Video Calling" 画面を作成
+![bg right h:600px](images/2021-11-26-23-58-20.png)
+
+---
+- Video Callingコンポーネントを画面上に配置
+- Unique Conversation IDに "all-in-one" と入力
+  - これは、全ユーザーを一つのビデオ通話に参加させる設定です
+- Unique User id に "Logged In User's Email" を設定
+![bg right h:600px](images/2021-11-27-00-04-47.png)
+
+---
+補足
+
+今回は全ユーザーを一つのビデオ通話に参加させる設定にしましたが、複数のユーザーが所属するグループを作ってグループメンバーだけで通話することも可能だと思います。
+
+興味があれば、挑戦してみてください。
+
+---
+Preview画面で確認してみると、"register your Adalo App ID to your Garlick.io accout for free" というメッセージが表示されます。案内に従いましょう。
+
+- "Click to Register Adalo App" をクリック
+![bg right h:700px](images/2021-11-27-00-06-56.png)
+
+---
+ログイン画面が表示されますが、まだアカウントを作成していません。
+- "Or, Sign Up"をクリック
+![bg right h:600px](images/2021-11-27-00-08-08.png)
+
+---
+- Development Planを選択(無料です)
+![bg right h:500px](images/2021-11-27-00-08-39.png)
+
+---
+- Emailを入力して "Continue to checkout" をクリック
+  - Googleアカウントを持っていれば、Sign in with GoogleをクリックしてもOKです。
+
+![bg right h:500px](images/2021-11-27-00-09-58.png)
+
+---
+- 3つのチェックボックスにチェックをつけて、"Complete sign up" をクリック
+![bg right h:500px](images/2021-11-27-00-10-51.png)
+
+---
+- 届いたメールを開いて、 "Confirm your account" をクリック
+![bg right h:500px](images/2021-11-27-00-12-24.png)
+
+---
+- Passwordを設定
+![bg right h:500px](images/2021-11-27-00-14-27.png)
+
+---
+アカウント登録が完了しました。
+次は、Adalo App IDを登録します。
+![h:600px](images/2021-11-27-00-15-27.png)
+
+---
+- Adaloの管理画面を開いて、URLに含まれるApp IDをコピー
+  - 以下のURLの "xxx..." の部分です。
+  https://app.adalo.com/apps/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/screens/preview
+
+![h:700px](images/2021-11-27-00-15-09.png)
+
+---
+- Garlick.ioの管理画面でAdalo App IDを入力して、 "Register App" をクリック
+![h:400px](images/2021-11-27-00-18-45.png)
+
+---
+AdaloのPreview画面をリロードして再度ビデオ通話画面を表示すると、ビデオ通話の参加者待ちの状態になります。
+![bg right h:700px](images/2021-11-27-00-20-20.png)
+
+---
+他のユーザーがログインしてビデオ通話画面を表示すると、通話ができます。
+![bg right h:700px](images/2021-11-27-00-27-46.png)
+
+---
+# 質問: ビデオ通話を試してみますか？
+
+試してみたいというリアクションがもらえたら、実験用のアプリのURLをシェアします。
+<!-- ![bg right h:700px](images/2021-11-27-00-27-04.png)
+![bg right h:700px](images/2021-11-27-00-27-24.png) -->
+
+---
+無料プランだと合計通話時間が1440分に到達したら通話ができなくなるようですが、開発時のテストには十分だと思います。
+<!-- また、一度の通話の時間は5分までに制限されているようです。 -->
+ビデオ通話機能が必要になったら、活用してください。
+![](images/2021-11-27-01-33-57.png)
+
+---
+この他にも外部サービスと連携するためのコンポーネントがいくつか提供されています。興味があれば、試してみましょう。
+
+例: 
+- Youtube(無料)
+- Google Map(フリートライアルが使える)
+- Google Signin($25)
+
+---
 ##### Custom Action
 APIから取得したデータをAdaloの画面上で扱う方法を紹介します。
 
