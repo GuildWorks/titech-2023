@@ -100,20 +100,86 @@ bubbleとのzapier連携
 
 ---
 ##### Marketplaceの外部連携コンポーネント
-Marketplaceにはこちらからアクセスできます。
-![bg right h:400px](images/2021-11-26-16-35-18.png)
+Marketplaceから外部連携を可能にするコンポーネントを追加できます。
+
+![bg right h:600px](images/2021-11-26-21-49-01.png)
 
 ---
-###### Twitter
-テンプレート: BlankでCREATE NEW APP
+まずはアプリを新規作成しましょう。
+- Adaloにログイン
+https://app.adalo.com/login
+- CREATE NEW APPをクリック
+![bg right h:300px](images/2021-11-26-22-00-12.png)
+---
+- PlatformはNative Mobile Appを選択
+![bg right h:500px](images/2021-11-26-21-53-43.png)
 
-![bg right h:400px](images/2021-11-26-09-00-44.png)
+---
+- TemplateはBlankを選択
+![bg right h:500px](images/2021-11-26-09-00-44.png)
+
+---
+- App NameにはMarketplaceComponentTrialを入力
+- Colorは自由に設定してください
+![bg right h:500px](images/2021-11-26-21-56-35.png)
+
+---
+###### Twitter Timeline コンポーネント
+- +ボタンを押してADD COMPONENTの中のExplore Marketplaceをクリック
+![bg right h:700px](images/2021-11-26-22-02-19.png)
+
+
+---
+- Twitter TimelineコンポーネントをINSTALL
+![bg right h:450px](images/2021-11-26-08-57-37.png)
+
+---
+Twitter Timelineコンポーネントを配置します。
+- Home ScreenにTwitter用画面へのLinkボタンを追加
+![bg right h:600px](images/2021-11-26-22-21-56.png)
+
+---
+- ADD ACTIONからNew ScreenへのLinkを追加
+![bg right h:600px](images/2021-11-26-22-23-29.png)
+
+---
+- Templateで"App Bar"を選択し、"Twitter Timeline" 画面を作成
+![bg right h:600px](images/2021-11-26-22-14-40.png)
+
+---
+- Twitter Timelineコンポーネントを配置
+![bg right h:550px](images/2021-11-26-22-16-29.png)
+
+---
+- Twitter Handle Nameに "tokyotech_jp" と入力
+![bg right h:550px](images/2021-11-26-22-18-43.png)
+
+---
+- Preview機能でSignupして、Twitterボタンをクリック
+![bg right h:670px](images/2021-11-26-22-20-46.png)
+![bg right h:670px](images/2021-11-26-22-26-55.png)
+
+---
+- 東京工業大学公式Twitterアカウントの投稿が一覧表示されます
+![bg right h:700px](images/2021-11-26-22-28-24.png)
+
+---
+ログインしたユーザー自身のTwitterアカウントの投稿が一覧表示されるように修正しましょう。
+- Users CollectionにTwitterHandleName Propertyを追加
+  - TypeはTextを選択
+![bg right h:700px](images/2021-11-26-22-33-36.png)
+
+---
+- Signup画面のFormをクリック
+- Fields > ADD VISIBLE FIEDLD > TwitterHandleName
+- Not Requiredに変更
+![bg right h:500px](images/2021-11-26-22-41-05.png)
 
 ---
 
-![bg right h:400px](images/2021-11-26-08-57-37.png)
 
 ---
+
 ![bg right h:400px](images/2021-11-26-09-04-10.png)
 
 ---
@@ -179,6 +245,11 @@ The Cat APIでもAPIキーが必要になりますので、発行してもらい
 API Documentationを確認します。
 https://docs.thecatapi.com/
 
+まずは、ランダムな子猫の画像を取得するAPIを試してみましょう。
+
+![bg right h:600px](images/2021-11-26-18-13-42.png)
+
+---
 
 ---
 
@@ -221,6 +292,10 @@ https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fac
 Google SpreadSheetのデータをAPIで操作できるようにするために、SheetDBというサービスを使います。
 https://sheetdb.io/
 ![h:500px](images/2021-11-26-17-56-27.png)
+
+---
+補足
+連携サービスで、Adaloとは直接連携させられなくても、Google SpreadSheetとであれば連携させられるという場合が多いかと思います。そのような場合は、今回ご紹介したようにGoogle SpreadSheetをデータのハブとして活用すると良いかもしれません。
 
 ---
 ##### 連携サービス
