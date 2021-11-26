@@ -92,17 +92,154 @@ bubbleとのzapier連携
 
 ---
 #### Adaloでの外部連携
+以下4種類の外部連携の方法を紹介します。
+- Marketplaceの外部連携コンポーネント
+- Custom Action
+- External Collection
+- 連携サービス
+
+---
+##### Marketplaceの外部連携コンポーネント
+Marketplaceにはこちらからアクセスできます。
+![bg right h:400px](images/2021-11-26-16-35-18.png)
+
+---
+###### Twitter
+テンプレート: BlankでCREATE NEW APP
+
+![bg right h:400px](images/2021-11-26-09-00-44.png)
+
+---
+
+![bg right h:400px](images/2021-11-26-08-57-37.png)
+
+---
+![bg right h:400px](images/2021-11-26-09-04-10.png)
+
+---
+
+![bg right h:400px](images/2021-11-26-09-05-33.png)
+
+---
+
+![bg right h:400px](images/2021-11-26-09-03-19.png)
+
+---
+Preview
+表示されるはずだけど、エラー。不具合？
+![bg right h:400px](images/2021-11-26-09-07-25.png)
+
+---
+HandleNameをベタ打ちすれば表示される。
+![bg right h:400px](images/2021-11-26-09-08-27.png)
+![bg right h:400px](images/2021-11-26-09-09-21.png)
+
+---
+###### Youtube
+
+---
+##### Video Calling
+
+---
+今回紹介しなかったコンポーネントも
+
+---
+
+##### Custom Action
+APIから取得したデータをAdaloの画面上で扱う方法を紹介します。
+
+---
+APIとは
+>アプリケーションプログラミングインタフェース（API、英: Application Programming Interface）とは、広義ではソフトウェアコンポーネント同士が互いに情報をやりとりするのに使用するインタフェースの仕様である。
+
+https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9
+
+---
+まずは、API連携を試してみましょう。
+無料で試せるThe Cat APIを使います。
+https://thecatapi.com/
+
+![h:400px](images/2021-11-26-17-04-35.png)
+
+---
+APIを使用する際には、APIの提供者からAPIキーを発行してもらう必要がある場合が多いです。
+The Cat APIでもAPIキーが必要になりますので、発行してもらいましょう。
+- SIGNUP FOR FREEをクリック
+![bg right h:600px](images/2021-11-26-17-08-19.png)
+
+---
+- E-mail、App Description、type of projectを入力し、SIGNUP
+![bg right h:600px](images/2021-11-26-17-10-01.png)
+
+---
+- メールで送られてきたAPIキーを確認(後で使います)
+![h:580px](images/2021-11-26-17-16-56.png)
+
+---
+API Documentationを確認します。
+https://docs.thecatapi.com/
+
+
+---
+
+>Use it as the 'x-api-key' header when making any request to the API, or by adding as a query string parameter e.g. 'api_key=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+
+
+---
+
+TODO: お気に入りの猫の画像URLをユーザー毎に保存したい
+
+---
+
+##### External Collection
+APIから取得したデータをAdaloのCollectionとして扱う方法を紹介します。
+
+---
+###### APIから取得した猫のデータをAdaloのCollectionとして扱う
+猫の品種
+https://docs.thecatapi.com/example-by-breed
+
+---
+
+参考: 犬派の人には、The Dog APIもあるよ
+https://www.thedogapi.com/
+<!-- こちらも登録してAPI Keyを発行する必要はある -->
+
+
+---
+###### APIから取得したGoogle SpreadSheetのデータをAdaloのCollectionとして扱う
+API連携先のデータは取得するだけではなく、登録、更新、削除することもできます。
+Google SpreadSheetを使ってそれを試してみましょう。
+
+---
+Googleアカウントを作成します。
+既に持っていればそのアカウントを使えば良いので、作成は不要です。
+持っていない人は、一緒に作成してください。
+https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+
+---
+Google SpreadSheetのデータをAPIで操作できるようにするために、SheetDBというサービスを使います。
+https://sheetdb.io/
+![h:500px](images/2021-11-26-17-56-27.png)
+
+---
+##### 連携サービス
+![h:580px](images/2021-11-26-16-42-00.png)
+
+---
+元々はZapierを紹介しようと思っていたのですが、数日前からAdaloとのアカウント連携ができないトラブルが起きてしまっています。
+参考: [Bad request error when connecting to Adalo](https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739)
+![h:400px](images/2021-11-26-16-44-33.png)
+
+---
+そのため、今回はIntegromatを紹介します。
+https://www.integromat.com/en
+![h:550px](images/2021-11-26-16-49-38.png)
+
+---
 
 ---
 やること
-
-- Market Placeの外部連携コンポーネント
-  - TODO: フリートライアル期間かどうかでMarket Placeのコンポーネント数が変わるのかは要確認
-  - Youtube(固定の動画を見せられるだけ)
-  - Twitter(アカウント名を入れたら、その人の投稿一覧が表示できる)
-    - DBからアカウント名を動的に取得すると、エラー。。 ![](images/2021-11-26-05-42-47.png)
-  - Google Sign-In (Google Developer Accountが有料なのでやらない: アカウントを作成するには、1 回限りの登録料として 25 ドルをお支払いいただく必要があります。アカウントの登録を完了するには、有効な身分証明書による本人確認が求められることがあります。ご本人であることを確認できなかった場合、登録料の払い戻しは行われません。)
-  - Map(Google Map) GCPアカウント用にクレジットカード登録が必要なので、割愛
   - Video Calling
     - 通話できた。1440 Minutesまで無料らしい。 https://app.garlik.io/
 
@@ -155,28 +292,6 @@ External Collections -> Custom Action -> Integromat の流れが良い？
 
 ※ Adaloの変更が反映されなかったり、連携先のツールが動かなくなったりするタイミングがあります。
 
----
-Integromat
-![](images/2021-11-25-23-10-17.png)
-
----
-SheetDB
-![](images/2021-11-26-03-42-06.png)
-
----
-
----
-メモ
-- APIの利用にクレジットカードが必要になる場合が多い
-- DeepL
-- GCP
-
--> 今橋が登録して、アクセスキーをシェアする？
----
-###### 外部コレクション
-
-
----
 
 
 
