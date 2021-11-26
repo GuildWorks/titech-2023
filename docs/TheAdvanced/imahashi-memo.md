@@ -71,3 +71,26 @@ External Collections -> Custom Action -> Integromat の流れが良い？
 
 ---
 - データベースの一番上のプロパティは消せないよ
+
+--
+
+
+
+
+--- 
+参考
+https://help.adalo.com/integrations/external-collections-with-apis
+
+https://andd.live/7970/adalo-resource%E3%83%BBapi%E3%81%AB%E3%82%88%E3%82%8B%E5%A4%96%E9%83%A8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%80%81%E5%A4%96%E9%83%A8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7/
+
+https://qwerty.work/blog/2021/06/adalo-sheetdb-googlespreadsheet.php
+
+https://qiita.com/sakuraya/items/6f1030279a747bcce648#%E3%83%A1%E3%82%BF%E6%83%85%E5%A0%B1%E3%81%AF%E3%83%98%E3%83%83%E3%83%80%E3%81%A7%E3%81%BE%E3%81%8B%E3%81%AA%E3%81%88%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E5%A4%9A%E3%81%84
+
+Instagramは大変なわりに開発者の投稿しか表示できないっぽい(ユーザー自身で認証して投稿を取得させるには、アプリレビューが必要)ので、断念 
+https://www.e-pokke.com/blog/instagram-basic-display-api.html
+>テストユーザーとして登録したご自身のInstagramアカウントについては、追加の権限の設定が不要なため、アプリを公開（ライブモード）する際に 「アプリレビュー」が不要 となっています。
+
+Micro API https://m3o.com/
+
+---
