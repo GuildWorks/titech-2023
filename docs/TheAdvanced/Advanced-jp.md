@@ -2,7 +2,7 @@
 marp: true
 theme: gaia
 size: 16:9
-header: '　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Copyright Ryo Imahashi, Naotake Kyogoku'
+header: '　　　　　　　　　　　　　　　　　　　　　　　　　　　　Copyright Ryo Imahashi, Naotake Kyogoku'
 
 page_number: true
 paginate: true
@@ -18,7 +18,7 @@ paginate: true
 　
 　
 　
-　　　　　　　　　　　　　　　　　　　　　　　　**Ryo Imahashi**
+　　　　　　　　　　　　　　　　**Ryo Imahashi, Naotake Kyogoku**
 
 
 
@@ -1321,7 +1321,7 @@ TODO: 書く
 - 画面ごとの分担は必須になるけど、共同編集もできなくはなさそう。
 - 他の人の担当画面をうっかり触ってしまわないように、画面を話して開発する　といったコツは必要になりそう。
 - DatabaseへのCollection追加も、同時編集したら、最後に編集した人の状態で上書きされる(先に追加したCollectionは消える)
-- Actionも同じ画面に同時に追加すると、後の方だけが保存される。 (edited) 
+- Actionも同じ画面に同時に追加すると、後の方だけが保存される。
 
 <!-- ※ 他のメンバーと同時に一つのアプリを編集する際、他の人が行った編集は自分の画面にリアルタイムで反映されません。(リロードが必要なようです)
 
@@ -1361,6 +1361,10 @@ TODO: 書く
 - データベース設計は最初にみんなでやろう
 - 登録画面担当、一覧画面担当、詳細画面担当を決めよう
 など
+
+---
+#### 演習結果の発表
+チームごとに演習で作ったアプリについて発表してください。
 
 ---
 ## ふりかえり
