@@ -97,7 +97,6 @@ bubbleとのzapier連携
 - Custom Action
 - External Collection
 - 連携サービス
-
 ---
 ##### Marketplaceの外部連携コンポーネント
 Marketplaceから外部連携を可能にするコンポーネントを追加できます。
@@ -361,17 +360,17 @@ AdaloのPreview画面をリロードして再度ビデオ通話画面を表示�
 
 ---
 ##### Custom Action
-APIから取得したデータをAdaloの画面上で扱う方法を紹介します。
+外部連携コンポーネントの次は、APIから取得したデータをAdaloの画面上で扱う方法を紹介します。
 
 ---
-APIとは
+参考
 >アプリケーションプログラミングインタフェース（API、英: Application Programming Interface）とは、広義ではソフトウェアコンポーネント同士が互いに情報をやりとりするのに使用するインタフェースの仕様である。
 
 https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9
 
 ---
 まずは、API連携を試してみましょう。
-無料で試せるThe Cat APIを使います。
+無料で試せるThe Cat APIを使います。以下のURLにアクセスしてください。
 https://thecatapi.com/
 
 ![h:400px](images/2021-11-26-17-04-35.png)
@@ -379,11 +378,11 @@ https://thecatapi.com/
 ---
 APIを使用する際には、APIの提供者からAPIキーを発行してもらう必要がある場合が多いです。
 The Cat APIでもAPIキーが必要になりますので、発行してもらいましょう。
-- SIGNUP FOR FREEをクリック
+- 下にスクロールしてPricingの欄の "SIGNUP FOR FREE" をクリック
 ![bg right h:600px](images/2021-11-26-17-08-19.png)
 
 ---
-- E-mail、App Description、type of projectを入力し、SIGNUP
+- E-mail、App Description、type of projectを入力し、 "SIGNUP" をクリック
 ![bg right h:600px](images/2021-11-26-17-10-01.png)
 
 ---
@@ -391,23 +390,157 @@ The Cat APIでもAPIキーが必要になりますので、発行してもらい
 ![h:580px](images/2021-11-26-17-16-56.png)
 
 ---
-API Documentationを確認します。
+次に、APIドキュメントでAPIの使い方を確認しましょう。
+- 以下のURLへアクセス(先程のメールにも"API Documentation"というリンクが記載されています)
 https://docs.thecatapi.com/
 
-まずは、ランダムな子猫の画像を取得するAPIを試してみましょう。
+---
+トップページに記載されている、ランダムな子猫の画像を取得するAPIを使います。
 
+Exampleと同じように、ボタンを押すと画像が切り替わるようにしましょう。
 ![bg right h:600px](images/2021-11-26-18-13-42.png)
 
 ---
+- Adaloの管理画面でCREATE NEW APP
+- 設定は以下の通り
+  - Platform: Native Mobile App
+  - Template: Blank
+  - App Name: ApiIntegrationTrial
+
+![bg right h:250px](images/2021-11-27-02-15-47.png)
 
 ---
-
->Use it as the 'x-api-key' header when making any request to the API, or by adding as a query string parameter e.g. 'api_key=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
-
+- Home画面に子猫画像表示画面へのリンクボタンを追加
+- ADD ACTIONからNew ScreenへのLinkを設定
+![bg right h:500px](images/2021-11-27-02-45-19.png)
 
 ---
+- TemplateにApp Barを選択し、Kittens画面を作成
+![bg right h:500px](images/2021-11-27-02-49-26.png)
 
-TODO: お気に入りの猫の画像URLをユーザー毎に保存したい
+---
+- Imageコンポーネントを画面上に配置
+- コンポーネントの設定はそのままにしておく(後で設定します)
+![bg right h:500px](images/2021-11-27-03-02-07.png)
+
+---
+- Change Kitten Image Buttonを追加
+![bg right h:650px](images/2021-11-27-03-55-04.png)
+
+---
+- ADD ACTIONからNew Custom Actionを選択
+![bg right h:650px](images/2021-11-27-03-57-01.png)
+
+---
+14日間のIntegration Pack Trial(無料)の開始を促されます。
+- "START INTEGRATION PACK TRIAL" をクリック
+![bg right h:400px](images/2021-11-27-03-59-22.png)
+
+---
+トライアルが開始しました。
+- "CREATE NEW CUSTOM ACTION" をクリック
+![h:500px](images/2021-11-27-04-05-53.png)
+
+---
+- 以下を入力してNEXTをクリック
+  - Name: GetRandomKitten
+  - Type: Create
+
+![h:400px](images/2021-11-27-04-25-58.png)
+
+---
+次に、送信するAPI Requestを設定していきます。
+![h:600px](images/2021-11-27-04-26-54.png)
+
+<!-- そもそもなんでこのドキュメントが使用するAPIのものだと分かるのか は口頭で補足したい -->
+---
+以下のURLにアクセスして、使用するAPIのドキュメントから設定項目を確認します。
+https://docs.thecatapi.com/api-reference/images/images-search
+- API Base URLは https://api.thecatapi.com/v1/images/search
+- MethodはGET
+- Headerに x-api-keyというNameでAPI keyを設定
+![bg right h:350px](images/2021-11-27-05-22-05.png)
+
+---
+- 確認した結果を踏まえてAPI Requestを設定
+  - API Base URLは https://api.thecatapi.com/v1/images/search
+  - MethodはGET
+  - Headerに x-api-keyというNameでAPI keyを設定
+- "RUN TEST REQUEST" をクリック
+![bg right h:500px](images/2021-11-27-05-28-00.png)
+
+---
+Testが成功すると、APIから取得したデータ(Magic Text Output Properties)が表示されます。これらは、後続のアクションで使用できます。
+- "SAVE CUSTOM ACTION" をクリック
+![h:500px](images/2021-11-27-05-33-42.png)
+
+---
+次に、APIから取得した子猫の画像のURLをImageコンポーネントのImage Sourceに設定します。
+
+そのままでは、選択肢の中にAPIから取得したデータは出てきません。
+![h:100px](images/2021-11-27-05-52-10.png)
+
+![bg right h:500px](images/2021-11-27-05-54-04.png)
+![bg right h:500px](images/2021-11-27-05-54-35.png)
+
+---
+- Text Inputコンポーネントを画面上に追加
+- Nameを "Invisible Kitten Image URL Input" に変更
+![bg right h:520px](images/2021-11-27-05-58-21.png)
+
+---
+- "Change Kitten Image Button" をクリック
+- ADD ANOTHER ACTION から Change Input Value を選択
+
+![bg right h:520px](images/2021-11-27-06-01-07.png)
+
+---
+- Inputに "Invisible Kitten Image URL Input" を設定
+- Valoueに "GetRandomKitten > url" を設定
+- "DONE" をクリック
+![bg right h:500px](images/2021-11-27-06-02-37.png)
+
+---
+- Imageコンポーネントをクリック
+- URLに "Invisible Kitten Image URL Input" を設定
+![bg right h:550px](images/2021-11-27-06-06-13.png)
+
+---
+- 画面名 "Kittens" をクリック
+- "Invisible Kitten Image URL Input" の右側の目のアイコンをクリックして非表示にする
+![bg right h:550px](images/2021-11-27-06-07-46.png)
+
+---
+Preview機能で確認します。
+
+CHANGEボタンをクリックすると、子猫の画像が表示されました。
+![bg right h:700px](images/2021-11-27-06-10-42.png)
+
+---
+補足
+
+- Custom ActionでAPIから取得したデータは、後続のActionで使用できます。そのデータをコンポーネントで使いたい場合は、以下のいずれかの方法を使いましょう。
+  - 今回のように、後続のActionのChange Input Valueで同一画面上のText InputのValueにデータを設定し、それを読み込みましょう。
+  - あるいは、そのデータを後続のActionでデータベースに保存して、それを他のコンポーネントから読み込むことも可能です。この場合、画面遷移後にもアクセスできます。
+    - 例: https://help.adalo.com/integrations/custom-actions
+
+<!-- ![bg right h:400px](images/2021-11-27-06-13-06.png) -->
+
+---
+注意事項
+
+現状、Custom Actionにはいくつかの制限があります。
+- Custom ActionはFormコンポーネントのSubmitボタンでは動作しません。
+- Custom Actionが画面全体のActionとして使用されている場合、APIのレスポンスとして取得したデータは皇族のActionで使用できません。
+- アプリをCloneしてもCustom Actionはコピーされません。Custom Actionを含むアプリをCloneしたら、手動で作成し直してください。
+<!-- https://help.adalo.com/integrations/custom-actions -->
+
+---
+\>アプリをCloneしてもCustom Actionはコピーされません。Custom Actionを含むアプリをCloneしたら、手動で作成し直してください。
+
+14日間のIntegration Pack Trialは、Development Phaseの真っ只中で終了すると思われます。
+
+Custom Actionを多用する可能性がある場合、Development Phaseの作業開始前に新しくAdaloのアカウントを作成し、Integration Pack Trialを新たに開始することをおすすめします。
 
 ---
 
@@ -425,8 +558,25 @@ https://docs.thecatapi.com/example-by-breed
 https://www.thedogapi.com/
 <!-- こちらも登録してAPI Keyを発行する必要はある -->
 
+---
 
 ---
+###### 追加コンテンツ
+TODO: 時間に余裕があれば資料化。難しければ、資料なしで時間が余った時に実演。
+
+- 子猫画像表示画面で選択した品種だけを表示できるようにする
+- 表示した子猫の画像をお気に入りに登録して、お気に入り一覧画面に表示されるようにする
+  - お気に入りから削除もできるようにする
+
+
+
+<!-- TODO: お気に入りの猫の画像URLをユーザー毎に保存したい -->
+<!-- TODO: 猫詳細で受け取ったCurrent Catのデータをそのまま使わず、ID指定?でAPIから取得する(Inputを使う例になる) -->
+
+
+<!-- ---
+
+API連携先のデータのCRUDを実演したかったから選んだテーマだけど、The Cat APIでCRDは教えられる(Uはないけど)し、SpreadSheetにデータを保持する意味もあまりないので、こちらは割愛。
 ###### APIから取得したGoogle SpreadSheetのデータをAdaloのCollectionとして扱う
 API連携先のデータは取得するだけではなく、登録、更新、削除することもできます。
 Google SpreadSheetを使ってそれを試してみましょう。
@@ -444,7 +594,7 @@ https://sheetdb.io/
 
 ---
 補足
-連携サービスで、Adaloとは直接連携させられなくても、Google SpreadSheetとであれば連携させられるという場合が多いかと思います。そのような場合は、今回ご紹介したようにGoogle SpreadSheetをデータのハブとして活用すると良いかもしれません。
+連携サービスで、Adaloとは直接連携させられなくても、Google SpreadSheetとであれば連携させられるという場合が多いかと思います。そのような場合は、今回ご紹介したようにGoogle SpreadSheetをデータのハブとして活用すると良いかもしれません。 -->
 
 ---
 ##### 連携サービス
@@ -566,6 +716,7 @@ Micro API https://m3o.com/
 
 ---
 TODO: 共同編集について検証した内容を実演して見せられるようにする
+Bubbleはほぼ問題ないので、実演はAdaloだけで良さそう
 
 ---
 ###### 共同編集のルール
