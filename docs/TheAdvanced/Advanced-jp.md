@@ -376,6 +376,12 @@ https://thecatapi.com/
 ![h:400px](images/2021-11-26-17-04-35.png)
 
 ---
+参考: 犬派の人のために、The Dog APIもあります。おそらくThe Cat APIと同様のことができると思います。(試せていないので、まずは一緒にThe Cat APIを使うことをおすすめします)
+https://www.thedogapi.com/
+
+![h:400px](images/2021-11-27-06-36-43.png)
+
+---
 APIを使用する際には、APIの提供者からAPIキーを発行してもらう必要がある場合が多いです。
 The Cat APIでもAPIキーが必要になりますので、発行してもらいましょう。
 - 下にスクロールしてPricingの欄の "SIGNUP FOR FREE" をクリック
@@ -547,18 +553,81 @@ Custom Actionを多用する可能性がある場合、Development Phaseの作�
 ##### External Collection
 APIから取得したデータをAdaloのCollectionとして扱う方法を紹介します。
 
+複数のデータを一括取得してそれらを画面上に一覧表示するような場合はCustom Actionではなく、External Collectionを使います。
+
 ---
-###### APIから取得した猫のデータをAdaloのCollectionとして扱う
-猫の品種
-https://docs.thecatapi.com/example-by-breed
+このAPIを使って、猫の品種の一覧を取得&表示しましょう。
+https://docs.thecatapi.com/api-reference/breeds/breeds-list#send-a-test-request
+<!-- ![h:500px](images/2021-11-27-06-42-55.png) -->
+![h:400px](images/2021-11-27-06-50-04.png)
+
+---
+- DatabaseのExternal Collectionsで "ADD COLLECTION" をクリック
+![bg right h:700px](images/2021-11-27-06-44-13.png)
 
 ---
 
-参考: 犬派の人には、The Dog APIもあるよ
-https://www.thedogapi.com/
-<!-- こちらも登録してAPI Keyを発行する必要はある -->
+- Collection Name: Breeds
+- Base URL: https://api.thecatapi.com/v1/breeds
+- Method: GET
+- Auth Setup
+  - Header x-api-key: 発行したAPI Key
+
+![bg right h:530px](images/2021-11-27-06-55-32.png)
+
 
 ---
+Adaloでは、APIでアクセスするリソース(この例ではbreeds)毎に5つのEndpoints(アクセス方法)が設定できます。
+
+APIの仕様によってはそれに合わせるための修正が必要になりますが、今回はそのままNEXTをクリックしてOKです。
+<!-- (使用するEndpointである Get All はデフォルトでAPIの仕様を満たす設定になっています) -->
+![bg right h:500px](images/2021-11-27-06-56-48.png)
+
+---
+- テストを実行して成功したら、"CREATE COLLECTION" をクリック
+![bg right h:650px](images/2021-11-27-07-11-41.png)
+
+
+---
+External Collectionが作成されました。
+
+APIから取得するデータが全てプロパティとして設定されています。
+![bg right h:700px](images/2021-11-27-07-17-10.png)
+
+---
+取得したデータを一覧表示しましょう。
+- Home画面に "Breeds Link" ボタンを追加
+- ADD ACTIONからNEW SCREENヘのLINKを追加
+![bg right h:600px](images/2021-11-27-07-19-58.png)
+
+--- 
+- Nameに "Breeds"と入力
+- TemplateでImage Listを選択
+- CREATE SCREEN をクリック
+
+![bg right h:600px](images/2021-11-27-07-24-09.png)
+
+---
+- List TitleのTextを"Cat Breeds"に変更
+- Image ListをBreeds Collectionのリストとして設定
+- ImageのURLに "Breed Image > url" を設定
+- "If there's no image..." に "Don't show anything" を設定
+- 右下の+ボタンは不要なので削除
+![bg right h:600px](images/2021-11-27-07-30-23.png)
+
+---
+- Textを "Breed name" に変更
+![bg right h:600px](images/2021-11-27-07-37-24.png)
+
+---
+戻るアイコンが非表示になっているので、表示します。
+- App Barをクリック
+- Left IconのトグルをONに変更
+![bg right h:550px](images/2021-11-27-07-32-24.png)
+
+---
+Preview機能で確認すると、猫の品種の一覧が表示されました。
+![bg right h:700px](images/2021-11-27-07-39-21.png)
 
 ---
 ###### 追加コンテンツ
@@ -598,10 +667,16 @@ https://sheetdb.io/
 
 ---
 ##### 連携サービス
-![h:580px](images/2021-11-26-16-42-00.png)
+Custom ActionやExtenal Collectionでは、連携先のサービスのAPIの仕組みをドキュメントから理解するのが大変かもしれません。
+
+次は、そんなことをしなくても簡単に連携の設定ができるサービスをご紹介します。
 
 ---
-元々はZapierを紹介しようと思っていたのですが、数日前からAdaloとのアカウント連携ができないトラブルが起きてしまっています。
+連携サービスにも色々なものがあります。
+![h:600px](images/2021-11-26-16-42-00.png)
+
+---
+元々はZapierを紹介しようと思っていたのですが、数日前からAdaloとのアカウント連携ができないトラブルが起きてしまっています。(焦りました。。。)
 参考: [Bad request error when connecting to Adalo](https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739)
 ![h:400px](images/2021-11-26-16-44-33.png)
 
