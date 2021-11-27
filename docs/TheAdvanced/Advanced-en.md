@@ -166,7 +166,7 @@ What someone else makes doesn't always work the way you want it to.
 ![bg right h:700px](images/2021-11-26-23-00-24.png)
 
 ---
-Some of you may be thinking, "If you can't do it, don't introduce it." Sorry mm.
+Some of you may be thinking, "If you can't do it, don't introduce it." Sorry...
 
 After some trial and error, "I found a way to avoid the error!" I thought I had found a way to avoid the error by trial and error, so I wrote about it in the document, but later I realized that it was a misunderstanding. (Browsers have a mechanism called caching, which sometimes shows us something like an illusion.)
 
@@ -464,8 +464,6 @@ Supplemental
   - Alternatively, you can save the data to the database in a subsequent Action and load it from another component. In this case, it can be accessed even after the screen transition.
     - Example: https://help.adalo.com/integrations/custom-actions
 
-<! -- ![bg right h:400px](images/2021-11-27-06-13-06.png) -->
-
 ---
 Notes
 
@@ -490,6 +488,9 @@ If you want to retrieve multiple data at once and list them on the screen, use E
 ---
 Let's use this API to retrieve and display a list of cat breeds.
 https://docs.thecatapi.com/api-reference/breeds/breeds-list#send-a-test-request
+![h:400px](images/2021-11-27-06-50-04.png)
+
+---
 - Click "ADD COLLECTION" in External Collections of Database
 ![bg right h:700px](images/2021-11-27-06-44-13.png)
 
@@ -1239,7 +1240,7 @@ Each team should present the application that they made in the exercise.
 
 ---
 # That's all!
-# Thanks for your help!
+# Thanks for your time!
 
 
 
