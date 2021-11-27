@@ -154,6 +154,7 @@ Twitter Timelineコンポーネントを配置します。
 
 ---
 - Twitter Handle Nameに "tokyotech_jp" と入力
+  - 好きなTwitterアカウントのHandle Nameに変更してもOKです
 ![bg right h:550px](images/2021-11-26-22-18-43.png)
 
 ---
@@ -162,11 +163,12 @@ Twitter Timelineコンポーネントを配置します。
 ![bg right h:670px](images/2021-11-26-22-26-55.png)
 
 ---
-- 東京工業大学公式Twitterアカウントの投稿が一覧表示されます
+- 入力したHandle NameのTwitterアカウントの投稿が一覧表示されます
 ![bg right h:700px](images/2021-11-26-22-28-24.png)
 
 ---
-ログインしたユーザー自身のTwitterアカウントの投稿が一覧表示されるように修正しましょう。
+~~ログインしたユーザー自身のTwitterアカウントの投稿が一覧表示されるように修正しましょう。~~ 
+スライドの枚数的に時間が足りなくなりそうなので、割愛します...
 - Users CollectionにTwitterHandleName Propertyを追加
   - TypeはTextを選択
 ![bg right h:700px](images/2021-11-26-22-33-36.png)
