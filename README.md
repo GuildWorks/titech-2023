@@ -1,24 +1,26 @@
-# titech-2021
-
+# titech-2022
 
 ## 講義資料 / Lecture materials
 
-### 2021/10/23
-* [Adaloの基本](https://github.com/GuildWorks/titech-2021/raw/master/docs/Adalo1/pdf/Adalo1-jp.pdf)
-* [Adalo Basics](https://github.com/GuildWorks/titech-2021/raw/master/docs/Adalo1/pdf/Adalo1-en.pdf)
+### 2022/11/5
+* [Adaloの基本](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo1/pdf/Adalo1-jp.pdf)
+* [Adalo Basics](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo1/pdf/Adalo1-en.pdf)
 
 
-### 2021/11/6
-* [Adaloでのデータベースの設計と操作](https://github.com/GuildWorks/titech-2021/raw/master/docs/Adalo2/pdf/Adalo2-jp.pdf)
-* [Database design and data manipulation with Adalo](https://github.com/GuildWorks/titech-2021/raw/master/docs/Adalo2/pdf/Adalo2-en.pdf)
+### 2022/11/13
+* [Adaloでのデータベースの設計と操作](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo2/pdf/Adalo2-jp.pdf)
+* [Database design and data manipulation with Adalo](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo2/pdf/Adalo2-en.pdf)
 
-### 2021/11/13
+### 2022/11/19
+* [Bubble の基本](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble1/Bubble1-jp.pdf)
+* [Bubble Basics](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble1/Bubble1-en.pdf)
 
-* [Bubble の基本](https://github.com/GuildWorks/titech-2021/raw/master/docs/Bubble1/Bubble1-jp.pdf)
-* [Bubble Basics](https://github.com/GuildWorks/titech-2021/raw/master/docs/Bubble1/Bubble1-en.pdf)
+### 2022/11/26
+* TODO
 
-
-## 参考リンク集 / Reference Links
+## 講師用参考リンク集 / Reference links for lecturers
+- [スケジュール](https://github.com/GuildWorks/titech-2022/raw/master/BootCamp2022Schedule_ver1.1.xlsx)
+- [講義参加予定](https://docs.google.com/spreadsheets/d/1lTi95-gA4KyoqiwqZaTtN33F4Ckm2fUxvhdkBHy-V-A/edit#gid=0&range=A1)
 - [Marp](https://ktkr3d.github.io/2020/05/27/Marp-for-VS-Code/)
     - 使い方は `/how-to-use-marp.pdf` 参照
 - [DeepL](https://www.deepl.com/ja/translator)
