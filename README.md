@@ -3,6 +3,8 @@
 ## 講義資料 / Lecture materials
 
 ### 2022/11/5
+* [ノーコード開発とは](https://github.com/GuildWorks/titech-2022/raw/master/docs/NoCode/pdf/NoCodeDevelopment-jp.pdf)
+* [What is No-Code Development?](https://github.com/GuildWorks/titech-2022/raw/master/docs/NoCode/pdf/NoCodeDevelopment-en.pdf)
 * [Adaloの基本](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo1/pdf/Adalo1-jp.pdf)
 * [Adalo Basics](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo1/pdf/Adalo1-en.pdf)
 
