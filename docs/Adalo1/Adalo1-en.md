@@ -60,9 +60,10 @@ paginate: true
 #### Reference: Limitations of the [Free Plan](https://www.adalo.com/pricing)
 - Cannot use external integration with other applications.
   - However, trial use is available for 14 days
-- The maximum number of database records is 50.
+- The maximum number of database records is 200.
+- App actions are limited to 1,000 times per month.
 
-:white_check_mark:  Consider using a Pro Plan when you actually launch your app.
+:white_check_mark:  Consider using a Paid Plan when you actually launch your app.
 
 ---
 #### Platform Selection
@@ -74,7 +75,7 @@ paginate: true
 #### Selecting a template
 - Finished apps are provided as templates.
 - This time, select Chat template.
-![bg 90% right](images/select-chat-template.png)
+![bg 90% right](images/2022-11-04-23-15-25.png)
 
 
 ---
@@ -236,11 +237,12 @@ Let's learn each function of the left toolbar.
 
 ---
 ###### ![w:60px](images/2021-10-20-01-45-09.png) Settings 
-- You can change the name of the app and set the app's icon.
+- You can configure app name, icon etc.
 - You can configure display settings for the canvas.
 - You can set access permissions to the app.
 - You can copy or delete an app.
-![bg right 90%](images/2021-10-20-01-47-47.png)
+- You can set api key for geolocation feature.
+![bg right 90%](images/2022-11-04-23-24-28.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-56-00.png)Publish
@@ -254,8 +256,8 @@ Let's learn each function of the left toolbar.
 
 ---
 ###### ![w:60px](images/2022-11-02-08-01-35.png) Version History
-- You can check version history (paid plan required).
-![bg right 90%](images/2022-11-02-08-02-32.png)
+- You can create version history and restore version (paid plan required).
+![bg right 80%](images/2022-11-04-23-29-30.png)
 
 ---
 #### Top Bar
@@ -376,9 +378,7 @@ Now, let's start creating the application.
 
 ---
 - Enter App Name and Color as you like.
-- Leave Team setting as default.
-  (It won't be displayed to people who haven't set up a Team.)
-![bg right 90%](images/2021-10-20-05-40-11.png)
+![bg right 90%](images/2022-11-04-23-51-03.png)
 
 ---
 - The application is ready!
@@ -656,6 +656,10 @@ The pet detail screen seems OK.
 
 Let's create this screen.
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
+
+---
+- Select "App Bar" from ADD SCREEN and enter the Screen Name.
+![bg right h:700px](images/2021-10-20-06-26-12.png)
 
 ---
 - To create a Chart, we need to prepare a database, which will be explained in the next lecture.

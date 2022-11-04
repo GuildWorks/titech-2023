@@ -816,7 +816,9 @@ Development Phaseのチームメンバーと一緒に取り組みましょう。
 
 ---
 #### 演習についての補足
-- チームメンバーと一つのアプリを共同編集するには、Settings > AppAccess > Add Team Member > Invite New Team Memberを選択してチームメンバーのメールアドレスを入力しましょう。
+TODO: Adaloのチームメンバー招待が有料になったので、共用アカウントを作ってみんな同じアカウントでログインしてもらうしかなくなった。同時編集は昨年同様、同じスクリーンに対するものだと後勝ちになるが、別スクリーンに対するものであればどちらも反映される。
+
+- OLD: チームメンバーと一つのアプリを共同編集するには、Settings > AppAccess > Add Team Member > Invite New Team Memberを選択してチームメンバーのメールアドレスを入力しましょう。
 
 ![bg right h:600px](images/2021-11-04-20-14-37.png)
 
