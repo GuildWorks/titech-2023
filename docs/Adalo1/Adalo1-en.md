@@ -12,7 +12,7 @@ paginate: true
 
 # Adalo Basics
 
-**Tokyo Institute of Technology 2021/10/23**
+**Tokyo Institute of Technology 2022/11/5**
 　
 　
 　
@@ -107,13 +107,22 @@ paginate: true
 ![bg 50% right](images/chat-app-signup.png)
 
 ---
+- Add profile picture.
+![bg 50% right](images/2022-11-02-07-48-39.png)
+
+---
 - The list is empty because no conversation has taken place yet
 -  Press the + button at the bottom right of the screen.
 ![bg 50% right](images/chat-app-no-conversation.png)
 
 ---
-- It looks like you can't chat because you just created the app and there are no other users.
-![bg 50% right](images/no-other-chat-app-user.png)
+- You can see the list of sample users.
+- Click anyone.
+![bg 50% right](images/2022-11-02-07-51-03.png)
+
+---
+- You can send messages.
+![bg 50% right](images/2022-11-02-07-54-34.png)
 
 ---
 - Let's share the app you created with others and have a conversation with them.
@@ -136,11 +145,11 @@ paginate: true
 - (Around the time when the message would have been sent to everyone's apps,)
 Display the Preview screen of your app again.
   - You should have received a message, so click on it to check it!
-![w:800px](images/preview-got-new-message.png)
+![bg 50% right](images/2022-11-02-07-58-19.png)
 
 ---
 - Message received :tada:
-![bg 50% right](images/messages.png)
+![bg 50% right](images/2022-11-02-07-59-15.png)
 
 ---
 - In addition to the Chat we tried this time, there are several other templates available.
@@ -199,7 +208,7 @@ Next, take a look at the features available in Adalo's admin panel.
 #### Left Toolbar
 Let's learn each function of the left toolbar.
 
-![w:60px](images/left-tool-bar.png)
+![w:60px](images/2022-11-02-08-00-18.png)
 
 ---
 ###### ![w:60px](images/add-panel.png) Add Panel
@@ -242,6 +251,11 @@ Let's learn each function of the left toolbar.
 ###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
 - Show usage analysis report.
 ![bg right 90%](images/2021-10-20-02-07-44.png)
+
+---
+###### ![w:60px](images/2022-11-02-08-01-35.png) Version History
+- You can check version history (paid plan required).
+![bg right 90%](images/2022-11-02-08-02-32.png)
 
 ---
 #### Top Bar

@@ -12,7 +12,7 @@ paginate: true
 
 # Adaloの基本
 
-**東京工業大学 2021/10/23**
+**東京工業大学 2022/11/5**
 　
 　
 　
@@ -113,13 +113,22 @@ paginate: true
 ![bg 50% right](images/chat-app-signup.png)
 
 ---
+- プロフィール写真を追加しましょう
+![bg 50% right](images/2022-11-02-07-48-39.png)
+
+---
 - まだ会話が行われていないため、リストが空の状態です
 - 画面右下の + ボタンを押してみましょう
 ![bg 50% right](images/chat-app-no-conversation.png)
 
 ---
-- 作成したばかりのアプリで他のユーザーがいないため、Chatができないようです。。
-![bg 50% right](images/no-other-chat-app-user.png)
+- サンプルユーザーのリストが表示されます
+- 一人を選んでクリックしてください
+![bg 50% right](images/2022-11-02-07-51-03.png)
+
+---
+- メッセージを送信できます
+![bg 50% right](images/2022-11-02-07-54-34.png)
 
 ---
 - 作ったアプリを他の人にシェアして会話してみましょう
@@ -142,11 +151,11 @@ paginate: true
 - (みんなのアプリにメッセージが送られたであろう頃に、)
 自分のアプリのPreview画面をもう一度表示してください
   - メッセージが届いているはずなので、クリックして表示してみましょう
-![w:800px](images/preview-got-new-message.png)
+![bg 50% right](images/2022-11-02-07-58-19.png)
 
 ---
 - メッセージが受信できました :tada:
-![bg 50% right](images/messages.png)
+![bg 50% right](images/2022-11-02-07-59-15.png)
 
 ---
 - 今回試したChat以外にも、いくつかのテンプレートが提供されています。
@@ -209,7 +218,7 @@ paginate: true
 #### Left Toolbar
 左側のツールバーの各機能を紹介します。
 
-![w:60px](images/left-tool-bar.png)
+![w:60px](images/2022-11-02-08-00-18.png)
 
 ---
 ###### ![w:60px](images/add-panel.png) Add Panel
@@ -252,6 +261,12 @@ paginate: true
 ###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
 - 利用状況を分析したレポートを見ることができる
 ![bg right 90%](images/2021-10-20-02-07-44.png)
+
+
+---
+###### ![w:60px](images/2022-11-02-08-01-35.png) Version History
+- バージョン履歴を見ることができる(有料プランのみ)
+![bg right 90%](images/2022-11-02-08-02-32.png)
 
 ---
 #### Top Bar
