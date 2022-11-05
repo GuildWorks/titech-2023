@@ -1,6 +1,7 @@
 # titech-2022
 
 ## 講義資料 / Lecture materials
+[自己紹介スライド](https://github.com/GuildWorks/titech-2022/raw/master/ProgrammingBootCamp2022_LearningPhase.key)
 
 ### 2022/11/5
 * [ノーコード開発とは](https://github.com/GuildWorks/titech-2022/raw/master/docs/NoCode/pdf/NoCodeDevelopment-jp.pdf)
