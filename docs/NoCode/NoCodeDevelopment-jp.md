@@ -104,7 +104,7 @@ Zapier: 自動化 -->
 
 ---
 ## Programming Boot Campで扱うノーコード開発ツールの紹介
-Programming Boot Campでは、2つのノーコード開発ツールを皆さんにレクチャーしていきます。
+Programming Boot Campでは、2つのノーコード開発ツールを学んでいきます。
 
 - Adalo
   - 使い方が分かりやすく、シンプルなモバイルアプリであれば簡単に開発をすることができる
