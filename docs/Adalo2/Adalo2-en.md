@@ -11,9 +11,9 @@ paginate: true
 
 **Programming Boot Camp**
 
-# Database design and data manipulation with Adalo
+# Database design, Data manipulation, External integration with Adalo
 
-**Tokyo Institute of Technology 2021/11/6**
+**Tokyo Institute of Technology 2022/11/13**
 　
 　
 　
@@ -34,6 +34,8 @@ paginate: true
   - Database design
   - Data manipulation
   - Improve sample application
+  - External integration
+  - Team development with Adalo
   - Exercises
   - Summary
 
@@ -41,9 +43,9 @@ paginate: true
 ####  Review previous lecture and check the goal of this lecture
 
 - In the previous lecture, we learned Adalo, a no-code tool, and created the UI of the pet health management app.
-  - In the lecture, we used simple components that does not require a database. (Some of you may have used a database in the exercises).
+  - In the lecture, we used simple components that does not require a database.
 - In this lecture, we will design a database that matches the UI we created in the previous lecture, so that we can manipulate the data from the app. 
-- After that, we will improve the sample app learning some features of Adalo, and finally, we will do app development exercises and presentation.
+- After that, we will improve the sample app learning some features of Adalo, learn external integration and team development. Finally, we will do app development exercises and presentation.
 
 ---
 ## Introduction to databases
@@ -114,9 +116,9 @@ To define what kind of data the Property is, select the Type when adding it.
 - Date/Time
 - Image
 - File
-- Relationship
+- Location
 
-![bg right h:600px](images/2021-11-05-16-44-52.png)
+![bg right h:600px](images/2022-11-05-12-38-25.png)
 
 ---
 What is Relationship?
@@ -139,7 +141,7 @@ One-to-many Relationship
 - This means that one Record has a relationship with multiple Records in different collections. 
 - Depending on whether the Collection you are trying to set the Relationship to is one or many, two choices will appear.
 
-![bg right h:280px](images/2021-11-03-07-40-33.png)
+![bg right h:320px](images/2022-11-05-12-42-56.png)
 
 ---
 Example of a one-to-many Relationship
@@ -154,7 +156,7 @@ Example of a one-to-many Relationship
 Many-to-many Relationships
 - This means that one Record in both Collections is tied to multiple Records in the other Collection.
 
-![bg right h:140px](images/2021-11-03-13-15-58.png)
+![bg right h:140px](images/2022-11-05-12-48-16.png)
 
 ---
 An example of a many-to-many Relationship
@@ -482,7 +484,7 @@ Allow added weight in the Pet Weight Management screen to be registered in the d
 ---
 Display the name of the selected pet in the header of the Pet Details screen and the Pet Weight Management screen. On each screen,
 - Select the App Bar component at the top of the screen and add "Current Pet's" > "Name" to the Title Text.
-- Add the string "'s" after it.
+- Add the string "'s PetDetail" after it.
 ![bg right h:550px](images/2021-11-04-03-48-14.png)
 
 ---
@@ -773,8 +775,651 @@ https://previewer.adalo.com/f1324ea8-ec47-4c22-a3a9-3258044eb754
 ![bg right h:350px](images/2021-11-05-02-44-38.png)
 
 ---
+## External Integration
+If there is something you cannot achieve with Adalo alone, you may be able to achieve it by integrating your adalo app with external services.
+
+I will show you how to do that.
+
+---
+Let's learn following four methods of external integration.
+- Marketplace external integration component
+- Custom Action
+- External Collection
+- Connector service
+
+---
+#### Marketplace external integration components
+You can add a component that enables external integration from Marketplace.
+
+![bg right h:600px](images/2021-11-26-21-49-01.png)
+
+---
+First, let's create a new application.
+- Login to Adalo
+Go to https://app.adalo.com/login
+- Click CREATE NEW APP
+![bg right h:300px](images/2021-11-26-22-00-12.png)
+
+---
+- Select Native Mobile App for Platform
+- Click "Next"
+![bg right h:500px](images/2021-11-26-21-53-43.png)
+
+---
+- Select Blank for Template.
+![bg right h:500px](images/2021-11-26-09-00-44.png)
+
+---
+- For App Name, enter "MarketplaceComponentTrial".
+- Please set the Color freely.
+![bg right h:500px](images/2021-11-26-21-56-35.png)
+
+---
+##### Twitter Timeline Component
+- Press the + button and click Explore Marketplace in ADD COMPONENT
+![bg right h:700px](images/2021-11-26-22-02-19.png)
+
+
+---
+- INSTALL the Twitter Timeline component
+![bg right h:450px](images/2021-11-26-08-57-37.png)
+
+---
+Let's use Twitter Timeline component.
+- Add a link button to the Twitter screen to the Home Screen.
+![bg right h:600px](images/2021-11-26-22-21-56.png)
+
+---
+- Add Link to New Screen from ADD ACTION
+![bg right h:600px](images/2021-11-26-22-23-29.png)
+
+---
+- Select "App Bar" in Template and create a "Twitter Timeline" screen.
+![bg right h:600px](images/2021-11-26-22-14-40.png)
+
+---
+- Place the Twitter Timeline component
+![bg right h:550px](images/2021-11-26-22-16-29.png)
+
+---
+- Enter "tokyotech_jp" as the Twitter Handle Name
+  - You can also change it to the Handle Name of your favorite Twitter account!
+
+![bg right h:550px](images/2021-11-26-22-18-43.png)
+
+---
+- Signup in the Preview function and click the Twitter button.
+![bg right h:670px](images/2021-11-26-22-20-46.png)
+![bg right h:670px](images/2021-11-26-22-26-55.png)
+
+---
+- The posts of the Twitter account with the Handle Name you entered will be listed.
+![bg right h:700px](images/2021-11-26-22-28-24.png)
+
+---
+Let's modify it so that it lists the posts of the logged-in user's own Twitter account.
+- Add a TwitterHandleName Property to the Users Collection.
+  - Select Text as the Type
+![bg right h:700px](images/2021-11-26-22-33-36.png)
+
+---
+- Click Form on the Signup screen
+- Fields > ADD VISIBLE FIEDLD > TwitterHandleName
+- Change to Not Required
+![bg right h:500px](images/2021-11-26-22-41-05.png)
+
+---
+- "ALREADY HAVE AN ACCOUNT?" link is overlapping the form, so move it to the bottom
+![bg right h:700px](images/2021-11-26-22-57-22.png)
+
+---
+Let's set the TwitterHandleName for the registered users
+- Click the "1 Record" button in the Users Collection
+![bg right h:500px](images/2021-11-26-22-44-36.png)
+
+---
+- Click on the record of the registered user.
+- Enter TwitterHandleName (You can use your own account or any account you like.)
+![bg right h:500px](images/2021-11-26-22-49-11.png)
+
+---
+- Change the Twitter Handle Name in the Twitter Timeline component to "Logged In User's TwitterHandleName".
+![bg right h:500px](images/2021-11-26-22-51-21.png)
+
+---
+Theoretically, this should display the list of posts of the Twitter account set by the logged-in user himself.
+
+Let's check it out with the Preview function.
+
+---
+I think an error will occur at first.
+
+If so, go home screen by clicking "←" icon. After that, open "Twitter Timeline" screen again. You can see the posts of the logged-in user's own Twitter account.
+![bg right h:700px](images/2021-11-26-22-59-00.png)
+![bg right h:700px](images/2022-11-12-12-06-22.png)
+
+---
+Twitter Timeline is a component that has been made available for free by volunteers.
+
+What someone else makes doesn't always work the way you want it to.
+![bg right h:380px](images/2022-11-12-12-08-17.png)
+
+---
+There are several other components provided to integrate with external services. If you are interested, you can try them.
+
+Example: 
+- Youtube (free)
+- Google Map(free trial is available by registering credit card)
+
+---
+#### Custom Action
+Next to the external integration component, I will show you how to handle the data retrieved from the API on the Adalo screen.
+
+---
+Reference
+>In a broad sense, an Application Programming Interface (API) is a specification of an interface used by software components to exchange information with each other.
+
+ https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9
+
+---
+First, let's try API integration.
+We will use The Cat API, which is free to try. Please access the following URL.
+https://thecatapi.com/
+
+![h:400px](images/2021-11-26-17-04-35.png)
+
+---
+Note: For the dog people, there is also The Dog API. It probably does the same thing as The Cat API. (I have not tried it, so I recommend using The Cat API with it first)
+https://www.thedogapi.com/
+
+![h:400px](images/2021-11-27-06-36-43.png)
+
+---
+When using an API, it is often necessary to have an API key issued by the API provider.
+The Cat API also requires an API key, so have it issued to you.
+- Scroll down to the bottom and click "SIGNUP FOR FREE" in the Pricing section.
+![bg right h:600px](images/2021-11-26-17-08-19.png)
+
+---
+- Enter your email, App Description, type of project and click "SIGNUP" !
+![bg right h:600px](images/2021-11-26-17-10-01.png)
+
+---
+- Check the API key that was sent to you by email (you will use it later).
+![h:580px](images/2021-11-26-17-16-56.png)
+
+---
+Next, let's check the API documentation to see how to use the API.
+- Go to the following URL (you can also find the link "API Documentation" in the email you received earlier)
+https://docs.thecatapi.com/
+
+---
+Use the API to get a random kitten image as described in the top page.
+
+As in the example, make sure that the image changes when the button is pressed.
+![bg right h:600px](images/2021-11-26-18-13-42.png)
+
+---
+- CREATE NEW APP in Adalo's admin panel
+- The settings are as follows
+  - Platform: Native Mobile App
+  - Template: Blank
+  - App Name: ApiIntegrationTrial
+
+![bg right h:250px](images/2021-11-27-02-15-47.png)
+
+---
+- Add a link button to the kitten image display screen on the Home screen.
+- Set Link to New Screen from ADD ACTION
+![bg right h:500px](images/2021-11-27-02-45-19.png)
+
+---
+- Select App Bar as Template and create Kittens screen.
+![bg right h:500px](images/2021-11-27-02-49-26.png)
+
+---
+- Place the Image component on the screen
+- Leave the component settings as they are (we'll set them later)
+![bg right h:500px](images/2021-11-27-03-02-07.png)
+
+---
+- Add a Change Kitten Image Button
+![bg right h:650px](images/2021-11-27-03-55-04.png)
+
+---
+- Select New Custom Action from ADD ACTION
+![bg right h:650px](images/2021-11-27-03-57-01.png)
+
+---
+You will be prompted to start a 14-day Free Trial.
+- Click on "START FREE TRIAL"
+![bg right h:400px](images/2022-11-12-17-25-25.png)
+
+---
+The trial has started.
+- Click on "CREATE NEW CUSTOM ACTION" !
+![h:500px](images/2022-11-12-17-26-26.png)
+
+---
+- Enter the following and click NEXT
+  - Name: GetRandomKitten
+  - Type: Create
+
+![h:400px](images/2021-11-27-04-25-58.png)
+
+---
+Next, we will configure the API Request to be sent.
+![h:600px](images/2021-11-27-04-26-54.png)
+
+---
+Go to the following URL to check the configuration items.
+https://docs.thecatapi.com/api-reference/images/images-search
+- API Base URL is https://api.thecatapi.com/v1/images/search
+- Method is GET
+- Set the API key in the Header with the name x-api-key
+![bg right h:350px](images/2021-11-27-05-22-05.png)
+
+---
+- Set the API Request based on the results of the check.
+  - API Base URL is https://api.thecatapi.com/v1/images/search
+  - Method is GET
+  - Set the API key in the Header with the name x-api-key
+- Click "RUN TEST REQUEST".
+![bg right h:500px](images/2021-11-27-05-28-00.png)
+
+---
+If the Test is successful, the data retrieved from the API (Magic Text Output Properties) will be displayed. These can be used in subsequent actions.
+- Click on "SAVE CUSTOM ACTION
+![h:420px](images/2021-11-27-05-33-42.png)
+
+---
+Next, set the URL of the kitten image retrieved from the API to the Image Source of the Image component.
+
+As it is, the data retrieved from the API will not appear in the choices.
+![h:100px](images/2021-11-27-05-52-10.png)
+
+![bg right h:500px](images/2021-11-27-05-54-04.png)
+![bg right h:500px](images/2021-11-27-05-54-35.png)
+
+---
+- Add a Text Input component to the screen
+- Change the Name to "Invisible Kitten Image URL Input".
+![bg right h:520px](images/2021-11-27-05-58-21.png)
+
+---
+- Click on the "Change Kitten Image Button
+- Select "Change Input Value" from ADD ANOTHER ACTION
+
+![bg right h:520px](images/2021-11-27-06-01-07.png)
+
+---
+- Set "Invisible Kitten Image URL Input" as Input
+- Set Valoue to "GetRandomKitten > url".
+- Click "DONE
+![bg right h:500px](images/2021-11-27-06-02-37.png)
+
+---
+- Click on the Image component
+- Set the URL to "Invisible Kitten Image URL Input".
+![bg right h:550px](images/2021-11-27-06-06-13.png)
+
+---
+- Click on the screen name "Kittens".
+- Click on the eye icon to the right of "Invisible Kitten Image URL Input" to hide it.
+![bg right h:550px](images/2021-11-27-06-07-46.png)
+
+---
+Check it with the Preview function.
+
+Click on the CHANGE button and the kitten image is now displayed.
+![bg right h:700px](images/2021-11-27-06-10-42.png)
+
+---
+Supplemental
+
+- Data acquired from the API in Custom Action can be used in subsequent Actions. If you want to use the data in your component, use one of the following methods.
+  - Set the data to the Text Input value on the same screen using the Change Input Value of the subsequent Action and load it.
+  - Alternatively, you can save the data to the database in a subsequent Action and load it from another component. In this case, it can be accessed even after the screen transition.
+    - Example: https://help.adalo.com/integrations/custom-actions
+
+---
+Notes
+
+Currently, Custom Action has some limitations.
+- Custom Actions will not work with the Submit button of the Form component.
+- If a Custom Action is used as an Action for the entire screen, data obtained as an API response cannot be used in the Imperial Action.
+- Cloning an app does not copy the Custom Action; if you clone an app that contains a Custom Action, you will need to recreate it manually.
+
+---
+\>Cloning an app does not copy the Custom Action; if you clone an app that contains a Custom Action, you will need to recreate it manually.
+
+The 14-day free trial will end before Development Phase.
+
+If you are likely to use a lot of Custom Actions, we recommend that you create a new Adalo account and start a new free trial before you start working on the Development Phase.
+
+---
+#### External Collection
+This section describes how to handle data retrieved from the API as an Adalo collection.
+
+If you want to retrieve multiple data at once and list them on the screen, use External Collection instead of Custom Action.
+
+---
+Let's use this API to retrieve and display a list of cat breeds.
+https://docs.thecatapi.com/api-reference/breeds/breeds-list#send-a-test-request
+![h:400px](images/2021-11-27-06-50-04.png)
+
+---
+- Click "ADD COLLECTION" in External Collections of Database
+![bg right h:700px](images/2021-11-27-06-44-13.png)
+
+---
+- Collection Name: Breeds
+- Base URL: https://api.thecatapi.com/v1/breeds
+- Method: GET
+- Auth Setup
+  - Header x-api-key: the issued API Key
+
+![bg right h:530px](images/2021-11-27-06-55-32.png)
+
+
+---
+In Adalo, you can set up five Endpoints (access methods) for each resource (in this example, breeds) that you want to access with the API.
+
+Depending on the specifications of the API, you may need to modify it to fit your needs, but in this case, you can just click NEXT.
+![bg right h:500px](images/2021-11-27-06-56-48.png)
+
+---
+- Run the test and if it succeeds, click "CREATE COLLECTION".
+![bg right h:650px](images/2021-11-27-07-11-41.png)
+
+
+---
+The External Collection has been created.
+
+All the data to be retrieved from the API is set as properties.
+![bg right h:700px](images/2021-11-27-07-17-10.png)
+
+---
+Let's list the retrieved data.
+- Add a "Breeds Link" button to the Home screen.
+- Add a LINK to the NEW SCREEN from ADD ACTION.
+![bg right h:600px](images/2021-11-27-07-19-58.png)
+
+---
+- Enter "Breeds" in Name.
+- Select Image List in Template
+- Click CREATE SCREEN
+
+![bg right h:600px](images/2021-11-27-07-24-09.png)
+
+---
+- Change the List Title Text to "Cat Breeds".
+- Set the Image List as the Breeds Collection list.
+- Set Image URL to "image > url".
+- "If there's no image..." Set "Don't show anything" to "If there's no image...".
+- Remove the + button at the bottom right.
+![bg right h:600px](images/2021-11-27-07-30-23.png)
+
+---
+- Change Text to "name".
+![bg right h:600px](images/2021-11-27-07-37-24.png)
+
+---
+Show the back icon since it is hidden.
+- Click on the App Bar
+- Change the Left Icon toggle to ON.
+![bg right h:550px](images/2021-11-27-07-32-24.png)
+
+---
+Checking with the Preview function, the list of cat breeds is now displayed.
+![bg right h:700px](images/2021-11-27-07-39-21.png)
+
+
+---
+- If you use a service called Zapier, you can easily integrate Adalo with external services by following the instructions. If you are interested, please give it a try.
+  https://zapier.com/apps/adalo/integrations
+
+
+
+---
+
+---
+#### Connector Service
+It is required to understand api document to use Custom Action and Extenal Collection, but it may be difficult.
+
+Next, I will introduce connector service that can be more easily used to integrate adalo app with external services.
+
+---
+The following is a no-code mapping which contains connector services.
+There are some connector services, but this time we will use a service called Zapier.
+![h:500px](images/2021-11-26-16-42-00.png)
+
+
+
+---
+##### Zapier
+- Using Zapier, you can easily integrate services by following the instructions. Let's give it a try.
+
+![h:400px](images/2022-11-12-19-35-24.png)
+
+--- 
+Adalo does not have an email sending function.
+
+This time, we will use Zapier to integrate Adalo with Gmail so that Welcome email will be automatically sent to people who SignUp to the application.
+
+![bg right h:200px](images/2022-11-12-19-46-27.png)
+
+--- 
+- Create a Google account, as you will need it to use Gmail.
+  - If you already have one, you can use that account, so you do not need to create new one.
+  - If you do not have one, please create one with me. Click following URL.
+  https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+
+---
+- Once you have your Google account ready, go to https://zapier.com/apps/adalo/integrations and click on "Connect Adalo to 5,000+ apps".
+
+![h:550px](images/2022-11-12-19-35-24.png)
+
+
+
+---
+- Sign up by any method you like.
+
+![h:550px](images/2022-11-12-19-56-28.png)
+
+
+
+---
+- Enter roles and number of employees and click "Continue".
+![h:550px](images/2022-11-12-20-01-58.png)
+
+
+---
+- Add Adalo and Gmail to the list of applications to use and click "Finish setup".
+
+![h:310px](images/2022-11-12-20-03-15.png) ![h:310px](images/2022-11-12-20-04-23.png)
+
+
+
+---
+You will see an edit screen for service integration settings, called Zap.
+
+![h:450px](images/2022-11-12-20-08-43.png)
+
+
+
+---
+- Click on Trigger (= rectangle containing "1. Adalo")
+- Set "New Record" as Event
+- Click "Continue
+
+![h:450px](images/2022-11-12-20-48-27.png)
+
+---
+- Click "Sign in"
+
+![h:450px](images/2022-11-12-20-50-01.png)
+
+---
+- Enter the Email Address and Password of your Adalo account and click "SIGN IN" !
+
+![h:500px](images/2022-11-12-20-52-35.png)
+
+
+---
+- Click "ALLOW ACCESS"
+
+![h:500px](images/2022-11-12-20-54-28.png)
+
+
+---
+- Confirm that your Adalo account has been set up and click "Continue"
+
+![h:500px](images/2022-11-12-20-55-17.png)
+
+
+---
+- Set "ApiIntegrationTrial" in App.
+- Set "Users" in Table
+- Click "Continue"
+
+![h:400px](images/2022-11-12-20-56-45.png)
+
+
+---
+- Click "Test trigger" !
+
+![h:500px](images/2022-11-12-20-59-37.png)
+
+
+---
+- Click "Continue" after Zapier found a record
+
+![h:500px](images/2022-11-12-21-03-13.png)
+
+---
+- Select Gmail as the App to execute the Action.
+
+![h:500px](images/2022-11-12-21-57-05.png)
+
+---
+- Set "Send Email" to "Event".
+- Click "Continue
+
+![h:500px](images/2022-11-12-22-00-04.png)
+
+
+---
+- Click "Sign in"
+
+![h:500px](images/2022-11-12-22-01-08.png)
+
+---
+- Select the account from which you want the Welcome email to be sent.
+
+![h:500px](images/2022-11-12-22-03-00.png)
+
+---
+- Confirm that the Gmail account is set, and click "Continue".
+
+![h:500px](images/2022-11-12-22-06-10.png)
+
+---
+- Set Email in To
+- Set your Gmail address in From
+- Set your app's name in From Name
+- Enter Subject and Body as you like.
+- Click "Continue"
+![bg right h:700px](images/2022-11-12-22-12-36.png)
+
+
+---
+- If the "to:" address is your real email address, click "Test action" to confirm receipt of the email.
+  - If the address is not your real email address, do not click "Test action" (because the email will fail to be sent).
+- Click on "Publish Zap"
+
+![h:380px](images/2022-11-12-22-16-10.png) ![h:380px](images/2022-11-12-22-25-17.png) !
+
+---
+- Click "Publish & Turn On"
+
+![h:500px](images/2022-11-12-22-29-42.png)
+
+--- 
+Let's confirm that Welcome email will be sent in ApiIntegrationTrial app.
+- In the Preview function, enter your real email address and Signup
+
+![bg right h:700px](images/2022-11-12-22-36-44.png)
+
+---
+You will not receive an email immediately after Signup.
+For 14 days, Zap will run every 2 minutes for the free trial period of Zapier's Professional Plan. After that, you will be on the Free Plan and Zap will run every 15 minutes. (Reference: https://zapier.com/app/pricing)
+
+![h:400px](images/2022-11-12-22-58-19.png)
+
+---
+You can also manually run a Zap immediately from the Zap listing screen.
+- Go to https://zapier.com/app/zaps
+- Select the Zap you want to run and click "Run"
+
+![h:500px](images/2022-11-12-22-49-32.png)
+
+---
+Two minutes after Signup or after manually running the Zap, you will see that you have received a Welcome email at the email address you signed up with.
+
+![h:300px](images/2022-11-12-23-02-50.png)
+
+---
+With Zapier, you can integrate many other services.
+
+When you find something you can't achieve with Adalo alone, it may be good to think about whether you can achieve it by integrating your app with other services.
+
+
+Reference: [Popular ways to use Adalo workflows](https://zapier.com/apps/adalo/integrations#zap-template-list)
+
+![bg right h:600px](images/2022-11-12-23-14-29.png)
+
+---
+That's it for external integration of Adalo.
+
+
+
+---
+## Team Development with Adalo
+Before exercises, let me tell you how to collaborate in Adalo's app development for team development in Development Phase.
+
+
+---
+Adalo has the ability to invite team members as co-editors, but this is only available with a paid plan.
+![](images/2022-11-12-23-26-13.png) ![w:700px](images/2022-11-12-23-26-46.png)
+
+--- 
+Therefore, everyone in same team should log in with the same Adalo account to edit same app.
+- When you start developing your team's apps on Adalo, create a Google account for your team and sign up for Adalo with that account
+ https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+- Everyone should log in using that email address and password for collaborative editing
+
+---
+#### Notes on collaborative editing in Adalo
+- Edits made by others will not be reflected on your screen in real time. You need to reload to reflect them.
+- If you edit the same screen at the same time, the edits made earlier will be overwritten by the edits made later, and the screen will be in the state of the last person who made the edits.
+  - The earlier edits will be undone, even if the edited components are different.
+- For Actions, if you add them to the same screen at the same time, only the later one will be saved.
+- Database, too, will be overwritten with the state of the last person who edited it if it is edited at the same time.
+
+---
+- If you edit on different screens at the same time, both will be saved and you will be fine. When editing, share with your team members which screen you are editing. It is also recommended to decide who is in charge of each screen.
+- Before switching the screen to be edited, reload the screen to reflect the latest state (this will prevent you from reverting to the old state when someone else has edited the screen).
+- To avoid inadvertently touching other people's screens, it is also recommended that you develop the screens apart from each other on Canvas.
+- For the Database, decide on one person to be in charge and let that person update the database.
+
+---
+This is it about how to do team development with Adalo.
+
+When you start team development in Development Phase, please check the above notes while actually doing collaborative editing with team members. (Because it is sad to see your work lost :cry: )
+
+---
 ## Exercises
-Work on this with your Development Phase team members. 
 1. Develop a team member management app with following features.
     - Registration of team members
     - Display of member list
@@ -785,28 +1430,10 @@ Work on this with your Development Phase team members.
 2. Develop new app freely (if there is enough time after exercise 1).
 
 ---
-If no other team members are participating in today's lecture, please join another team.
-
-If you are a remote participant, please join the other team members by connecting to Zoom and having a conversation or sharing your screen with them.
-
-At the end of the lecture, all teams will be asked to make a presentation.
+At the end of the excersises, each one of you will present the app you made in the exercise.
 
 When the app is ready to use, share the URL on Slack for everyone to see.
 
-<!-- - Try to design the database by looking at the screens of other template apps -->
-<!-- - Add a screen to the sample app and add the necessary Collection and Property to the database -->
-
-
----
-#### Additional information about the exercise
-- To co-edit one app with a team member, select Settings > AppAccess > Add Team Member > Invite New Team Member and enter the team member's email address.
-
-![bg right h:600px](images/2021-11-04-20-14-37.png)
-
----
-When editing one application at the same time with other members, the edits made by others will not be reflected on your screen in real time. (Reloading seems to be necessary).
-
-When multiple people edit the same screen at the same time, the edits made earlier are overwritten by the edits made later. Each person should edit a different screen, or edit together while viewing the same computer.
 
 ---
 Reference
@@ -819,46 +1446,34 @@ Reference
 ---
 Examples of apps that can be cloned
 - Event Calendar https://www.adalo.com/cloneables/event-calendar
-- Swipe-to-answer app quiz https://www.adalo.com/cloneables/quiz-app
 - SNS follow function https://www.adalo.com/cloneables/follow-function
 - Facebook clone https://www.adalo.com/cloneables/facebook-clone
 - Blog app https://www.adalo.com/cloneables/minimal-blog-app
 - Ecommerce app https://www.adalo.com/cloneables/ecommerce-app
 
 ---
-Reference
-- If there is something you cannot achieve with Adalo alone, you may be able to achieve it by integrating with external services.
-- If you use a service called Zapier, you can easily integrate Adalo with external services by following the instructions. If you are interested, please give it a try.
-  https://zapier.com/apps/adalo/integrations
 
----
-Examples of external services that can be linked to Adalo with Zapier
-- Google Spreadsheet
-- Google Calender
-- Slack
-- Zoom
-- Twitter
-- Instagram
-- Spotify
-- Bubble
-- Google Meet
-- Strava
-
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
 ---
 #### Presentation of the exercise results
-Each team should present the application that they made in the exercise.
+Please present the application that you made in the exercises.
 
 ---
 ## Summary
-- In this lecture, we designed a database and made it possible to perform CRUD operations on the database from the application.
-- We also introduced some of Adalo's features while improving the app.
-- I have not yet introduced the following Adalo features related to integration with external services, so I would like to introduce them again when I have time in the 5th lecture or Development Phase.
+- In this lecture, you designed a database and made it possible to perform CRUD operations on the database of sample application.
+- You learned some of Adalo's features and improved sample app.
+- You also learned how to integrate your adalo app with external services.
+  - Marketplace 
   - Custom Action(Calling APIs of external services from Adalo)
   - External Collections(function to handle data acquired from APIs of external services as Adalo's collections)
 
 ---
-- Based on what we've learned so far, I think it's a good idea for teams to think about whether the application they want to create in the Development Phase can be realized with Adalo.
-- Next time, I will give a lecture on Bubble, a no-code tool. Look forward to it!
+- Based on what we've learned so far, I think it's a good idea for teams to think about whether you can create your application using Adalo or not.
+- Next time, We will give a lecture about Bubble, a no-code tool. Look forward to it!
 
 ---
 # That's all!
