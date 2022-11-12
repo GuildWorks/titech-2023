@@ -1174,15 +1174,6 @@ Show the back icon since it is hidden.
 Checking with the Preview function, the list of cat breeds is now displayed.
 ![bg right h:700px](images/2021-11-27-07-39-21.png)
 
-
----
-- If you use a service called Zapier, you can easily integrate Adalo with external services by following the instructions. If you are interested, please give it a try.
-  https://zapier.com/apps/adalo/integrations
-
-
-
----
-
 ---
 #### Connector Service
 It is required to understand api document to use Custom Action and Extenal Collection, but it may be difficult.
@@ -1190,7 +1181,7 @@ It is required to understand api document to use Custom Action and Extenal Colle
 Next, I will introduce connector service that can be more easily used to integrate adalo app with external services.
 
 ---
-The following is a no-code mapping which contains connector services.
+<!-- The following is a no-code mapping which contains connector services. -->
 There are some connector services, but this time we will use a service called Zapier.
 ![h:500px](images/2021-11-26-16-42-00.png)
 
@@ -1315,7 +1306,7 @@ You will see an edit screen for service integration settings, called Zap.
 ![h:500px](images/2022-11-12-22-01-08.png)
 
 ---
-- Select the account from which you want the Welcome email to be sent.
+- Select the account which sends Welcome email. (Select account of From Address)
 
 ![h:500px](images/2022-11-12-22-03-00.png)
 
@@ -1466,10 +1457,11 @@ Please present the application that you made in the exercises.
 ## Summary
 - In this lecture, you designed a database and made it possible to perform CRUD operations on the database of sample application.
 - You learned some of Adalo's features and improved sample app.
-- You also learned how to integrate your adalo app with external services.
-  - Marketplace 
-  - Custom Action(Calling APIs of external services from Adalo)
-  - External Collections(function to handle data acquired from APIs of external services as Adalo's collections)
+- You also learned how to integrate your adalo app with external services with following methods.
+  - Marketplace external integration component
+  - Custom Action
+  - External Collection
+  - Connector service
 
 ---
 - Based on what we've learned so far, I think it's a good idea for teams to think about whether you can create your application using Adalo or not.
