@@ -10,7 +10,7 @@ paginate: true
 
 **Programming Boot Camp**
 
-# Adaloでのデータベースの設計と操作
+# Adaloでのデータベースの設計と操作、外部連携
 
 **東京工業大学 2021/11/6**
 　
@@ -33,15 +33,17 @@ paginate: true
   - データベース設計
   - データベース操作
   - サンプルアプリを改善しよう
+  - 外部連携
+  - Adaloでのチーム開発のやり方
   - 演習
   - まとめ
 
 ---
 ## 前回のふりかえりと今回のゴールの確認
 - 前回のレクチャーでは、ノーコードツールのAdaloについて紹介し、ペットの健康管理アプリを題材にアプリのUIを作成しました。
-  - レクチャーでは、データベースを必要としない、シンプルなコンポーネントを使いました。(演習の中でデータベースを使った人もいるかもしれません)
+  - レクチャーでは、データベースを必要としない、シンプルなコンポーネントを使いました。
 - 今回のレクチャーでは、引き続きAdaloを使って、前回作ったUIに合わせたデータベースを設計し、アプリからデータを操作できるようにしていきましょう。 
-- その後はサンプルアプリの改善をしながらAdaloの機能を紹介し、最後にチームでのアプリ開発演習と発表をしていただきます。
+- また、サンプルアプリの改善をしながらAdaloの機能をいくつか紹介したり、外部連携の方法や、チーム開発のやり方についてもお伝えします。最後には演習と成果発表も行います。
 
 ---
 ## データベースについて学ぼう
@@ -112,9 +114,9 @@ Propertyがどのようなデータかを定義するため、Property追加時�
 - Date
 - Image
 - File
-- Relationship
+- Location
 
-![bg right h:600px](images/2021-11-05-16-44-52.png)
+![bg right h:600px](images/2022-11-05-12-38-25.png)
 
 ---
 Relationshipとは
@@ -136,7 +138,7 @@ Relationshipの種類
 - 1つのRecordが、別のコレクションにある複数のRecordと関係を持つことを意味します。 
 - Relationshipを設定しようとしているCollectionを1と多のどちらにするかで、2種類の選択肢が現れます。
 
-![bg right h:280px](images/2021-11-03-07-40-33.png)
+![bg right h:320px](images/2022-11-05-12-42-56.png)
 
 ---
 1対多のRelationshipの例
@@ -151,7 +153,8 @@ Relationshipの種類
 多対多のRelationship
 - 両方のCollectionの1Recordが、もう一方のCollectionの複数のRecordに紐付けられることを意味します。
 
-![bg right h:140px](images/2021-11-03-13-15-58.png)
+![bg right h:140px](images/2022-11-05-12-48-16.png)
+<!-- ![bg right h:140px](images/2022-11-05-12-45-59.png) -->
 
 ---
 多対多のRelationshipの例
@@ -501,7 +504,7 @@ Birthday Valueコンポーネントをクリックし、
 ---
 ペット詳細画面、ペットの体重管理画面のヘッダーに選択したペットの名前を表示しましょう。それぞれの画面で、
 - 画面上部のApp Barコンポーネントを選択し、TitleのTextに Current Pet's > Name を追加
-- その後ろに、"'s" という文字列を追加
+- その後ろに、"'s PetDetail" という文字列を追加
 ![bg right h:550px](images/2021-11-04-03-48-14.png)
 
 ---
@@ -789,43 +792,710 @@ https://previewer.adalo.com/f1324ea8-ec47-4c22-a3a9-3258044eb754
 
 ![bg right h:350px](images/2021-11-05-02-44-38.png)
 
+
+---
+## 外部連携
+Adaloだけで実現できないことがある場合、外部サービスと連携することでそれを実現できるかもしれません。
+
+その方法をご紹介します。
+
+---
+以下4種類の外部連携の方法を紹介します。
+- Marketplaceの外部連携コンポーネント
+- Custom Action
+- External Collection
+- 連携サービス
+
+---
+#### Marketplaceの外部連携コンポーネント
+Marketplaceから外部連携を可能にするコンポーネントを追加できます。
+
+![bg right h:600px](images/2021-11-26-21-49-01.png)
+
+---
+まずはアプリを新規作成しましょう。
+- Adaloにログイン
+https://app.adalo.com/login
+- CREATE NEW APPをクリック
+![bg right h:300px](images/2021-11-26-22-00-12.png)
+---
+- PlatformはNative Mobile Appを選択
+![bg right h:500px](images/2021-11-26-21-53-43.png)
+
+---
+- TemplateはBlankを選択
+![bg right h:500px](images/2021-11-26-09-00-44.png)
+
+---
+- App NameにはMarketplaceComponentTrialを入力
+- Colorは自由に設定してください
+![bg right h:500px](images/2021-11-26-21-56-35.png)
+
+---
+##### Twitter Timeline コンポーネント
+- +ボタンを押してADD COMPONENTの中のExplore Marketplaceをクリック
+![bg right h:700px](images/2021-11-26-22-02-19.png)
+
+
+---
+- Twitter TimelineコンポーネントをINSTALL
+![bg right h:450px](images/2021-11-26-08-57-37.png)
+
+---
+Twitter Timelineコンポーネントを配置します。
+- Home ScreenにTwitter用画面へのLinkボタンを追加
+![bg right h:600px](images/2021-11-26-22-21-56.png)
+
+---
+- ADD ACTIONからNew ScreenへのLinkを追加
+![bg right h:600px](images/2021-11-26-22-23-29.png)
+
+---
+- Templateで"App Bar"を選択し、"Twitter Timeline" 画面を作成
+![bg right h:600px](images/2021-11-26-22-14-40.png)
+
+---
+- Twitter Timelineコンポーネントを配置
+![bg right h:550px](images/2021-11-26-22-16-29.png)
+
+---
+- Twitter Handle Nameに "tokyotech_jp" と入力
+  - 好きなTwitterアカウントのHandle Nameに変更してもOKです
+![bg right h:550px](images/2021-11-26-22-18-43.png)
+
+---
+- Preview機能でSignupして、Twitterボタンをクリック
+![bg right h:670px](images/2021-11-26-22-20-46.png)
+![bg right h:670px](images/2021-11-26-22-26-55.png)
+
+---
+- 入力したHandle NameのTwitterアカウントの投稿が一覧表示されます
+![bg right h:700px](images/2021-11-26-22-28-24.png)
+
+---
+ログインしたユーザー自身のTwitterアカウントの投稿が一覧表示されるように修正しましょう。
+<!-- スライドの枚数的に時間が足りなくなりそうなので、割愛します... -->
+- Users CollectionにTwitterHandleName Propertyを追加
+  - TypeはTextを選択
+![bg right h:700px](images/2021-11-26-22-33-36.png)
+
+---
+- Signup画面のFormをクリック
+- Fields > ADD VISIBLE FIEDLD > TwitterHandleName
+- Not Requiredに変更
+![bg right h:500px](images/2021-11-26-22-41-05.png)
+
+---
+- "ALREADY HAVE AN ACCOUNT?"というリンクがフォームに重なってしまっていたので、下に移動
+![bg right h:700px](images/2021-11-26-22-57-22.png)
+
+---
+登録済のユーザーにTwitterHandleNameを設定しておきましょう
+- Users Collectionの "1 Record" ボタンをクリック
+![bg right h:500px](images/2021-11-26-22-44-36.png)
+
+---
+- 登録済のユーザーのレコードをクリック
+- TwitterHandleNameを入力(自分のアカウントでも、好きなアカウントでもOK)
+![bg right h:500px](images/2021-11-26-22-49-11.png)
+
+---
+- Twitter TimelineコンポーネントのTwitter Handle Nameを"Logged In User's TwitterHandleName"に変更
+![bg right h:500px](images/2021-11-26-22-51-21.png)
+
+---
+理論上はこれでログインユーザー自身が設定したTwitterアカウントの投稿一覧が表示されるはずです。
+
+Preview機能で確認してみましょう。
+
+---
+最初はエラーが起きると思います。
+
+一度戻るボタンでホーム画面に戻ってから再度タイムラインを表示すると、設定したTwitterアカウントの投稿一覧が表示されます。
+![bg right h:700px](images/2021-11-26-22-59-00.png)
+![bg right h:700px](images/2022-11-12-12-06-22.png)
+
+---
+Twitter Timelineは有志の方が無償公開してくれているコンポーネントです。
+
+誰かが作ってくれているものが、いつも自分の思い通りに動くとは限りません。
+
+「不具合があったりもするんだな」くらいは覚えておいてもらえると嬉しいです。
+![bg right h:380px](images/2022-11-12-12-08-17.png)
+
+---
+この他にも外部サービスと連携するためのコンポーネントがいくつか提供されています。興味があれば、試してみましょう。
+
+例: 
+- Youtube(無料)
+- Google Map(クレジットカードの登録が必要だが、無料枠で利用可能)
+
+---
+#### Custom Action
+外部連携コンポーネントの次は、APIから取得したデータをAdaloの画面上で扱う方法を紹介します。
+
+---
+参考
+>アプリケーションプログラミングインタフェース（API、英: Application Programming Interface）とは、広義ではソフトウェアコンポーネント同士が互いに情報をやりとりするのに使用するインタフェースの仕様である。
+
+https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9
+
+---
+まずは、API連携を試してみましょう。
+無料で試せるThe Cat APIを使います。以下のURLにアクセスしてください。
+https://thecatapi.com/
+
+![h:400px](images/2021-11-26-17-04-35.png)
+
+---
+参考: 犬派の人のために、The Dog APIもあります。おそらくThe Cat APIと同様のことができると思います。(試せていないので、まずは一緒にThe Cat APIを使うことをおすすめします)
+https://www.thedogapi.com/
+
+![h:400px](images/2021-11-27-06-36-43.png)
+
+---
+APIを使用する際には、APIの提供者からAPIキーを発行してもらう必要がある場合が多いです。
+The Cat APIでもAPIキーが必要になりますので、発行してもらいましょう。
+- 下にスクロールしてPricingの欄の "SIGNUP FOR FREE" をクリック
+![bg right h:600px](images/2021-11-26-17-08-19.png)
+
+---
+- E-mail、App Description、type of projectを入力し、 "SIGNUP" をクリック
+![bg right h:600px](images/2021-11-26-17-10-01.png)
+
+---
+- メールで送られてきたAPIキーを確認(後で使います)
+![h:580px](images/2021-11-26-17-16-56.png)
+
+---
+次に、APIドキュメントでAPIの使い方を確認しましょう。
+- 以下のURLへアクセス(先程のメールにも"API Documentation"というリンクが記載されています)
+https://docs.thecatapi.com/
+
+---
+トップページに記載されている、ランダムな子猫の画像を取得するAPIを使います。
+
+Exampleと同じように、ボタンを押すと画像が切り替わるようにしましょう。
+![bg right h:600px](images/2021-11-26-18-13-42.png)
+
+---
+- Adaloの管理画面でCREATE NEW APP
+- 設定は以下の通り
+  - Platform: Native Mobile App
+  - Template: Blank
+  - App Name: ApiIntegrationTrial
+
+![bg right h:250px](images/2021-11-27-02-15-47.png)
+
+---
+- Home画面に子猫画像表示画面へのリンクボタンを追加
+- ADD ACTIONからNew ScreenへのLinkを設定
+![bg right h:500px](images/2021-11-27-02-45-19.png)
+
+---
+- TemplateにApp Barを選択し、Kittens画面を作成
+![bg right h:500px](images/2021-11-27-02-49-26.png)
+
+---
+- Imageコンポーネントを画面上に配置
+- コンポーネントの設定はそのままにしておく(後で設定します)
+![bg right h:500px](images/2021-11-27-03-02-07.png)
+
+---
+- Change Kitten Image Buttonを追加
+![bg right h:650px](images/2021-11-27-03-55-04.png)
+
+---
+- ADD ACTIONからNew Custom Actionを選択
+![bg right h:650px](images/2021-11-27-03-57-01.png)
+
+---
+14日間のフリートライアル(無料)の開始を促されます。
+- "START FREE TRIAL" をクリック
+![bg right h:400px](images/2022-11-12-17-25-25.png)
+
+---
+トライアルが開始しました。
+- "CREATE NEW CUSTOM ACTION" をクリック
+![h:500px](images/2022-11-12-17-26-26.png)
+
+---
+- 以下を入力してNEXTをクリック
+  - Name: GetRandomKitten
+  - Type: Create
+
+![h:400px](images/2021-11-27-04-25-58.png)
+
+---
+次に、送信するAPI Requestを設定していきます。
+![h:600px](images/2021-11-27-04-26-54.png)
+
+<!-- そもそもなんでこのドキュメントが使用するAPIのものだと分かるのか は口頭で補足したい -->
+---
+以下のURLにアクセスして、使用するAPIのドキュメントから設定項目を確認します。
+https://docs.thecatapi.com/api-reference/images/images-search
+- API Base URLは https://api.thecatapi.com/v1/images/search
+- MethodはGET
+- Headerに x-api-keyというNameでAPI keyを設定
+![bg right h:350px](images/2021-11-27-05-22-05.png)
+
+---
+- 確認した結果を踏まえてAPI Requestを設定
+  - API Base URLは https://api.thecatapi.com/v1/images/search
+  - MethodはGET
+  - Headerに x-api-keyというNameでAPI keyを設定
+- "RUN TEST REQUEST" をクリック
+![bg right h:500px](images/2021-11-27-05-28-00.png)
+
+---
+Testが成功すると、APIから取得したデータ(Magic Text Output Properties)が表示されます。これらは、後続のアクションで使用できます。
+- "SAVE CUSTOM ACTION" をクリック
+![h:500px](images/2021-11-27-05-33-42.png)
+
+---
+次に、APIから取得した子猫の画像のURLをImageコンポーネントのImage Sourceに設定します。
+
+そのままでは、選択肢の中にAPIから取得したデータは出てきません。
+![h:100px](images/2021-11-27-05-52-10.png)
+
+![bg right h:500px](images/2021-11-27-05-54-04.png)
+![bg right h:500px](images/2021-11-27-05-54-35.png)
+
+---
+- Text Inputコンポーネントを画面上に追加
+- Nameを "Invisible Kitten Image URL Input" に変更
+![bg right h:520px](images/2021-11-27-05-58-21.png)
+
+---
+- "Change Kitten Image Button" をクリック
+- ADD ANOTHER ACTION から Change Input Value を選択
+
+![bg right h:520px](images/2021-11-27-06-01-07.png)
+
+---
+- Inputに "Invisible Kitten Image URL Input" を設定
+- Valoueに "GetRandomKitten > url" を設定
+- "DONE" をクリック
+![bg right h:500px](images/2021-11-27-06-02-37.png)
+
+---
+- Imageコンポーネントをクリック
+- URLに "Invisible Kitten Image URL Input" を設定
+![bg right h:550px](images/2021-11-27-06-06-13.png)
+
+---
+- 画面名 "Kittens" をクリック
+- "Invisible Kitten Image URL Input" の右側の目のアイコンをクリックして非表示にする
+![bg right h:550px](images/2021-11-27-06-07-46.png)
+
+---
+Preview機能で確認します。
+
+CHANGEボタンをクリックすると、子猫の画像が表示されました。
+![bg right h:700px](images/2021-11-27-06-10-42.png)
+
+---
+補足
+
+- Custom ActionでAPIから取得したデータは、後続のActionで使用できます。そのデータをコンポーネントで使いたい場合は、以下のいずれかの方法を使いましょう。
+  - 今回のように、後続のActionのChange Input Valueで同一画面上のText InputのValueにデータを設定し、それを読み込みましょう。
+  - あるいは、そのデータを後続のActionでデータベースに保存して、それを他のコンポーネントから読み込むことも可能です。
+    - 例: https://help.adalo.com/integrations/custom-actions
+
+<!-- ![bg right h:400px](images/2021-11-27-06-13-06.png) -->
+
+---
+注意事項
+
+現状、Custom Actionにはいくつかの制限があります。
+- Custom ActionはFormコンポーネントのSubmitボタンでは動作しません。
+- Custom Actionが画面全体のActionとして使用されている場合、APIのレスポンスとして取得したデータは後続のActionで使用できません。
+- アプリをCloneしてもCustom Actionはコピーされません。Custom Actionを含むアプリをCloneしたら、手動で作成し直してください。
+<!-- https://help.adalo.com/integrations/custom-actions -->
+
+---
+\>アプリをCloneしてもCustom Actionはコピーされません。Custom Actionを含むアプリをCloneしたら、手動で作成し直してください。
+
+14日間のフリートライアルは、Development Phaseの前に終了します。
+
+Custom Actionを多用する可能性がある場合、Development Phaseの作業開始前に新しくAdaloのアカウントを作成し、フリートライアルを新たに開始することをおすすめします。
+
+---
+
+#### External Collection
+APIから取得したデータをAdaloのCollectionとして扱う方法を紹介します。
+
+複数のデータを一括取得してそれらを画面上に一覧表示するような場合はCustom Actionではなく、External Collectionを使います。
+
+---
+このAPIを使って、猫の品種の一覧を取得&表示しましょう。
+https://docs.thecatapi.com/api-reference/breeds/breeds-list#send-a-test-request
+<!-- ![h:500px](images/2021-11-27-06-42-55.png) -->
+![h:400px](images/2021-11-27-06-50-04.png)
+
+---
+- DatabaseのExternal Collectionsで "ADD COLLECTION" をクリック
+![bg right h:700px](images/2021-11-27-06-44-13.png)
+
+---
+
+- Collection Name: Breeds
+- Base URL: https://api.thecatapi.com/v1/breeds
+- Auth Setup
+  - Header x-api-key: 発行したAPI Key
+
+![bg right h:530px](images/2021-11-27-06-55-32.png)
+
+
+---
+Adaloでは、APIでアクセスするリソース(この例ではbreeds)毎に5つのEndpoints(アクセス方法)が設定できます。
+
+APIの仕様によってはそれに合わせるための修正が必要になりますが、今回はそのままNEXTをクリックしてOKです。
+<!-- (使用するEndpointである Get All はデフォルトでAPIの仕様を満たす設定になっています) -->
+![bg right h:500px](images/2021-11-27-06-56-48.png)
+
+---
+- テストを実行して成功したら、"CREATE COLLECTION" をクリック
+![bg right h:650px](images/2021-11-27-07-11-41.png)
+
+
+---
+External Collectionが作成されました。
+
+APIから取得するデータが全てプロパティとして設定されています。
+![bg right h:700px](images/2021-11-27-07-17-10.png)
+
+---
+取得したデータを一覧表示しましょう。
+- Home画面に "Breeds Link" ボタンを追加
+- ADD ACTIONからNEW SCREENヘのLINKを追加
+![bg right h:600px](images/2021-11-27-07-19-58.png)
+
+--- 
+- Nameに "Breeds"と入力
+- TemplateでImage Listを選択
+- CREATE SCREEN をクリック
+
+![bg right h:600px](images/2021-11-27-07-24-09.png)
+
+---
+- List TitleのTextを"Cat Breeds"に変更
+- Image ListをBreeds Collectionのリストとして設定
+- ImageのURLに "image > url" を設定
+- "If there's no image..." に "Don't show anything" を設定
+- 右下の+ボタンは不要なので削除
+![bg right h:600px](images/2021-11-27-07-30-23.png)
+
+---
+- Textを "name" に変更
+![bg right h:600px](images/2021-11-27-07-37-24.png)
+
+---
+戻るアイコンが非表示になっているので、表示します。
+- App Barをクリック
+- Left IconのトグルをONに変更
+![bg right h:550px](images/2021-11-27-07-32-24.png)
+
+---
+Preview機能で確認すると、猫の品種の一覧が表示されました。
+![bg right h:700px](images/2021-11-27-07-39-21.png)
+
+<!-- ---
+###### 追加コンテンツ
+TODO: 時間に余裕があれば資料化。難しければ、資料なしで時間が余った時に実演。
+
+- 子猫画像表示画面で選択した品種だけを表示できるようにする
+- 表示した子猫の画像をお気に入りに登録でき、お気に入り一覧画面に表示されるようにする
+  - お気に入りからの削除もできるようにする -->
+
+
+<!-- ---
+
+SpreadSheet連携はAPI連携先のデータのCRUDを実演したかったから選んだテーマだけど、The Cat APIでCRDは教えられる(Uはないけど)し、SpreadSheetにデータを保持する意味もあまりないので、こちらは割愛。
+###### APIから取得したGoogle SpreadSheetのデータをAdaloのCollectionとして扱う
+API連携先のデータは取得するだけではなく、登録、更新、削除することもできます。
+Google SpreadSheetを使ってそれを試してみましょう。
+
+---
+Googleアカウントを作成します。
+既に持っていればそのアカウントを使えば良いので、作成は不要です。
+持っていない人は、一緒に作成してください。
+https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+
+---
+Google SpreadSheetのデータをAPIで操作できるようにするために、SheetDBというサービスを使います。
+https://sheetdb.io/
+![h:500px](images/2021-11-26-17-56-27.png)
+
+---
+補足
+連携サービスで、Adaloとは直接連携させられなくても、Google SpreadSheetとであれば連携させられるという場合が多いかと思います。そのような場合は、今回ご紹介したようにGoogle SpreadSheetをデータのハブとして活用すると良いかもしれません。 -->
+
+<!-- ---
+##### 連携サービス
+Custom ActionやExtenal Collectionでは、連携先のサービスのAPIの仕組みをドキュメントから理解するのが大変かもしれません。
+
+次は、そんなことをしなくても簡単に連携の設定ができるサービスをご紹介します。
+
+---
+連携サービスにも色々なものがあります。
+![h:600px](images/2021-11-26-16-42-00.png)
+
+---
+元々はZapierを紹介しようと思っていたのですが、数日前からAdaloとのアカウント連携ができないトラブルが起きてしまっています。(焦りました。。。)
+参考: [Bad request error when connecting to Adalo](https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739)
+![h:400px](images/2021-11-26-16-44-33.png)
+
+
+
+---
+そのため、今回はIntegromatを紹介します。
+https://www.integromat.com/en
+![h:550px](images/2021-11-26-16-49-38.png)
+
+---
+TODO: Integromatでメール送信 -->
+
+---
+#### 連携サービス
+Custom ActionやExtenal Collectionでは、連携先のサービスのAPIの仕組みをドキュメントから理解するのが大変かもしれません。
+
+次は、もっと簡単に外部サービスとの連携ができるサービスをご紹介します。
+
+---
+連携サービスにも色々なものがありますが、今回はZapierというサービスを紹介します。
+![h:500px](images/2021-11-26-16-42-00.png)
+
+
+
+---
+
+##### Zapier
+- Zapierを使えば、案内に従って操作することで、簡単に外部サービスを連携させられます。試してみましょう。
+
+![h:400px](images/2022-11-12-19-35-24.png)
+
+---
+Adaloにはメール送信機能がありません。
+
+今回は、Zapierを使って、AdaloとGmailを連携させることで、アプリへSignUpした人に自動でWelcomeメールが送信されるようにしていきます。
+
+![bg right h:200px](images/2022-11-12-19-46-27.png)
+
+---
+- Gmailを使うために必要なので、Googleアカウントを作成します。
+  - 既に持っていればそのアカウントを使えば良いので、作成は不要です。
+  - 持っていない人は、こちらのURLから私と一緒に作成してください。
+https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+
+
+
+
+---
+- Googleアカウントが用意できたら、https://zapier.com/apps/adalo/integrations にアクセスして、"Connect Adalo to 5,000+ apps" をクリック
+![h:550px](images/2022-11-12-19-35-24.png)
+
+
+
+---
+- 好きな方法でSign upしてください
+![h:550px](images/2022-11-12-19-56-28.png)
+
+
+
+---
+- ロールと従業員の数を入力して、"Continue"をクリック
+![h:550px](images/2022-11-12-20-01-58.png)
+
+
+---
+- 使用するアプリにAdaloとGmailを追加して、"Finish setup"をクリック
+
+![h:310px](images/2022-11-12-20-03-15.png) ![h:310px](images/2022-11-12-20-04-23.png)
+
+
+
+---
+Zapと呼ばれる、サービス連携設定の編集画面が表示されます。
+
+![h:450px](images/2022-11-12-20-08-43.png)
+
+
+
+---
+- Trigger("1. Adalo"と書かれている長方形)をクリック
+- Eventに"New Record"を設定
+- "Continue"をクリック
+![h:450px](images/2022-11-12-20-48-27.png)
+
+---
+- "Sign in" をクリック
+![h:450px](images/2022-11-12-20-50-01.png)
+
+---
+- AdaloのアカウントのEmail AddressとPasswordを入力して、"SIGN IN"をクリック
+![h:500px](images/2022-11-12-20-52-35.png)
+
+
+---
+- "ALLOW ACCESS"をクリック
+![h:500px](images/2022-11-12-20-54-28.png)
+
+
+---
+- Adalo accountが設定されたのを確認して、"Continue"をクリック
+![h:500px](images/2022-11-12-20-55-17.png)
+
+
+---
+- Appに"ApiIntegrationTrial"を設定
+- Tableに"Users"を設定
+- "Continue"をクリック
+
+![h:400px](images/2022-11-12-20-56-45.png)
+
+
+---
+- "Test trigger"をクリック
+
+![h:500px](images/2022-11-12-20-59-37.png)
+
+
+---
+- レコードが見つかったら、"Continue"をクリック
+
+![h:500px](images/2022-11-12-21-03-13.png)
+
+---
+- Actionを実行するAppにGmailを選択
+![h:500px](images/2022-11-12-21-57-05.png)
+
+---
+- Eventに"Send Email"を設定
+- "Continue"をクリック
+![h:500px](images/2022-11-12-22-00-04.png)
+
+
+---
+- "Sign in" をクリック
+![h:500px](images/2022-11-12-22-01-08.png)
+
+---
+- Welcomeメールの送信元にするアカウントを選択
+![h:500px](images/2022-11-12-22-03-00.png)
+
+---
+- Gmail accountが設定されたことを確認して、"Continue"をクリック
+![h:500px](images/2022-11-12-22-06-10.png)
+
+---
+- ToにEmailを設定
+- Fromに自分のGmailアドレスを設定
+- From Nameに自分のアプリの名前を設定
+- Subject, Bodyを自由に入力
+- "Continue"をクリック
+![bg right h:700px](images/2022-11-12-22-12-36.png)
+
+
+---
+- to: のアドレスが実際の自分のメールアドレスになっていれば、"Test action"をクリックしてメール受信を確認する
+  - 実際の自分のメールアドレスになっていなければ、"Test action"はクリックしない(メール送信が失敗するため)
+- "Publish Zap"をクリック
+
+![h:380px](images/2022-11-12-22-16-10.png) ![h:380px](images/2022-11-12-22-25-17.png)
+
+---
+- "Publish & Turn On"をクリック
+
+![h:500px](images/2022-11-12-22-29-42.png)
+
+---
+AdaloのApiIntegrationTrialアプリでWelcomeメールが送信されることを確認しましょう。
+- Preview機能で、実際の自分のメールアドレスを入力してSignup
+
+![bg right h:700px](images/2022-11-12-22-36-44.png)
+
+---
+Signupしても、すぐにはメールが届きません。
+14日間はZapierのProfessional Planのフリートライアル期間のため、2分間隔でZapが実行されます。それ以後はFree Planとなり、15分間隔でZapが実行されます。(参考: https://zapier.com/app/pricing)
+
+![h:400px](images/2022-11-12-22-58-19.png)
+
+---
+Zapの一覧画面から、手動ですぐにZapを実行することもできます。
+- https://zapier.com/app/zaps にアクセス
+- 実行したいZapを選んで"Run"をクリック
+
+![h:500px](images/2022-11-12-22-49-32.png)
+
+---
+Signupから2分経つか、手動でZapを実行した後に、SignupしたメールアドレスでWelcomeメールを受信していることが確認できます。
+
+![h:300px](images/2022-11-12-23-02-50.png)
+
+---
+Zapierを使えば、他にも様々なサービスを連携させることができます。
+
+今後Adaloだけでうまく実現できないことが出てきた時には、他のサービスと組み合わせることで実現できないかを考えてみると良いかもしれません。
+
+
+参考: [Popular ways to use Adalo workflows](https://zapier.com/apps/adalo/integrations#zap-template-list)
+
+![bg right h:600px](images/2022-11-12-23-14-29.png)
+
+---
+
+Adaloでの外部連携についての紹介は以上です。
+
+---
+## Adaloでのチーム開発のやり方
+演習に入る前に、DevelopmentPhaseでのチーム開発に向けて、Adaloでの共同作業の方法をお伝えしておきます。
+
+
+---
+Adaloにはチームメンバーを共同編集者として招待する機能がありますが、これは有料プランでないと使えません。
+![](images/2022-11-12-23-26-13.png)![w:700px](images/2022-11-12-23-26-46.png)
+
+---
+そのため、チームの全員が同じAdaloアカウントでログインして、共同編集をしていきましょう。
+- 自分たちのアプリの開発をAdaloで始める時には、チーム用のGoogleアカウントを1つ作成して、そのアカウントでAdaloに登録してください
+https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+- 全員がそのメールアドレスとパスワードを使ってログインすることで、共同編集ができます
+
+---
+#### Adaloでの同時編集の注意点
+- 他の人が行った編集は自分の画面にリアルタイムで反映されません。反映させるためにはリロードが必要です。
+- 同じ画面を同時編集すると、先に行われた編集が後から行われた編集に上書きされて、最後に編集した人の画面の状態になります。
+  - 編集したコンポーネントは別でも、先に行われた編集は取り消されます。
+- Actionも、同じ画面に同時に追加すると、後の方だけが保存されます。
+- Databaseも、同時編集した場合は最後に編集した人の状態で上書きされます。
+
+---
+- 別画面の同時編集なら、どちらも保存されるので大丈夫です。編集する時は、どの画面かをチームメンバーに共有しましょう。みんなで同じPCを見ながら一緒に編集するか、画面ごとに担当者を決めるのがおすすめです。
+- 編集する画面を切り替える前には、画面をリロードして最新の状態を反映しましょう(そうすることで、他の人が編集した画面を自分が古い状態に戻してしまうことを防げます)
+- 他の人の担当画面をうっかり触ってしまわないように、Canvas上で画面同士の距離を離してから開発するのもおすすめです。
+- Databaseは、誰か1人担当者を決めてその人が更新するようにしましょう。
+
+---
+Adaloでのチーム開発のやり方については以上です。
+
+DevelopmentPhaseでチーム開発を始める際に、実際にチームメンバー同士で同時編集をしながら、上記の注意点について確認することをおすすめします。(作業内容が消えてしまうのは悲しいので:cry: )
+
 ---
 ## 演習
-Development Phaseのチームメンバーと一緒に取り組みましょう。
 1. 以下の機能を持つチームメンバー管理アプリを開発してください。
     - チームメンバーの登録
     - メンバー一覧の表示
     - メンバー詳細の表示
     - メンバー情報の更新
     - メンバー削除
-    - 自分たちで考えたオリジナル機能(いくつあっても良い)
+    - 自分で考えたオリジナル機能(いくつあっても良い)
 2. (演習1で時間が余れば)アプリを1つ自由に開発してください。
 
 ---
-※ 今日のレクチャーに自分以外のチームメンバーが参加していない場合は、他のチームに加わってください。
-
-※ リモート参加の人は、チームメンバーとZoomを繋いで会話や画面共有をしながら作業に加わってください。
-
-※ 最後は全チームに発表していただきます。
+※ (時間が許せば)最後は全員に発表していただきたいと考えています。
 
 ※ アプリが使えるようになったら、SlackでURLを共有して、みなさんに見てもらいましょう。
-
-<!-- - 他のテンプレートアプリの画面を見ながらデータベース設計をしてみる -->
-<!-- - サンプルアプリに画面を追加し、必要なCollectionやPropertyをデータベースに追加する -->
-
-
----
-#### 演習についての補足
-TODO: Adaloのチームメンバー招待が有料になったので、共用アカウントを作ってみんな同じアカウントでログインしてもらうしかなくなった。同時編集は昨年同様、同じスクリーンに対するものだと後勝ちになるが、別スクリーンに対するものであればどちらも反映される。
-
-- OLD: チームメンバーと一つのアプリを共同編集するには、Settings > AppAccess > Add Team Member > Invite New Team Memberを選択してチームメンバーのメールアドレスを入力しましょう。
-
-![bg right h:600px](images/2021-11-04-20-14-37.png)
-
----
-※ 他のメンバーと同時に一つのアプリを編集する際、他の人が行った編集は自分の画面にリアルタイムで反映されません。(リロードが必要なようです)
-
-※ 同時に複数人が同じ画面を編集すると、先に行われた編集が後から行われた編集に上書きされてしまいます。それぞれが別の画面を編集するか、みんなで同じPCを見ながら一緒に編集しましょう。
 
 ---
 参考
@@ -838,42 +1508,32 @@ TODO: Adaloのチームメンバー招待が有料になったので、共用ア
 ---
 クローンできるアプリの例
 - Eventカレンダー https://www.adalo.com/cloneables/event-calendar
-- スワイプで回答するクイズ https://www.adalo.com/cloneables/quiz-app
 - SNSのフォロー機能 https://www.adalo.com/cloneables/follow-function
 - Facebookのクローン https://www.adalo.com/cloneables/facebook-clone
 - ブログアプリ https://www.adalo.com/cloneables/minimal-blog-app
 - 商品販売アプリ https://www.adalo.com/cloneables/ecommerce-app
 
----
-参考
-- Adaloだけで実現できないことがある場合、外部サービスと連携することでそれを実現できるかもしれません。
-- Zapierというサービスを使えば、案内に従って操作することで、簡単にAdaloと外部サービスを連携させられます。興味があれば、試してみてください。
-  https://zapier.com/apps/adalo/integrations
 
 ---
-ZapierでAdaloと連携させることが可能な外部サービスの例
-- Google Spreadsheet
-- Google Calender
-- Slack
-- Zoom
-- Twitter
-- Instagram
-- Spotify
-- Bubble
-- Google Meet
-- Strava
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
 
 ---
 #### 演習結果の発表
-チームごとに演習で作ったアプリについて発表してください。
+演習で作ったアプリについて発表してください。
 
 ---
 ## まとめ
 - 今回のレクチャーでは、データベースを設計し、アプリからそのデータベースに対してCRUD操作を行えるようにしました。
 - また、アプリの改善をしながら、Adaloの機能をいくつか紹介しました。
-- 以下のような、外部サービスとの連携に関するAdaloの機能はまだ紹介していないので、5回目のレクチャーかDevelopment Phaseで時間が取れたら、改めて紹介したいと思います。
-  - Custom Action(Adaloから外部サービスのAPIを呼び出す機能)
-  - External Collections(外部サービスのAPIから取得したデータをAdaloのコレクションとして扱う機能)
+- 外部サービスとの連携方法として以下4つを紹介しました。
+  - Marketplaceの外部連携コンポーネント
+  - Custom Action
+  - External Collection
+  - 連携サービス
 
 ---
 - ここまでの内容を踏まえて、Development Phaseで自分たちが作りたいアプリがAdaloで実現できそうかは、チームで考えてみると良いと思います。
