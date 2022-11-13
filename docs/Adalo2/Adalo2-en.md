@@ -1242,7 +1242,7 @@ You will see an edit screen for service integration settings, called Zap.
 ---
 - Click on Trigger (= rectangle containing "1. Adalo")
 - Set "New Record" as Event
-- Click "Continue
+- Click "Continue"
 
 ![h:450px](images/2022-11-12-20-48-27.png)
 
@@ -1252,7 +1252,7 @@ You will see an edit screen for service integration settings, called Zap.
 ![h:450px](images/2022-11-12-20-50-01.png)
 
 ---
-- Enter the Email Address and Password of your Adalo account and click "SIGN IN" !
+- Enter the Email Address and Password of your Adalo account and click "SIGN IN"
 
 ![h:500px](images/2022-11-12-20-52-35.png)
 
@@ -1278,7 +1278,7 @@ You will see an edit screen for service integration settings, called Zap.
 
 
 ---
-- Click "Test trigger" !
+- Click "Test trigger"
 
 ![h:500px](images/2022-11-12-20-59-37.png)
 
@@ -1295,7 +1295,7 @@ You will see an edit screen for service integration settings, called Zap.
 
 ---
 - Set "Send Email" to "Event".
-- Click "Continue
+- Click "Continue"
 
 ![h:500px](images/2022-11-12-22-00-04.png)
 
@@ -1319,7 +1319,7 @@ You will see an edit screen for service integration settings, called Zap.
 - Set Email in To
 - Set your Gmail address in From
 - Set your app's name in From Name
-- Enter Subject and Body as you like.
+- Enter Subject and Body as you like
 - Click "Continue"
 ![bg right h:700px](images/2022-11-12-22-12-36.png)
 
@@ -1344,7 +1344,7 @@ Let's confirm that Welcome email will be sent in ApiIntegrationTrial app.
 
 ---
 You will not receive an email immediately after Signup.
-For 14 days, Zap will run every 2 minutes for the free trial period of Zapier's Professional Plan. After that, you will be on the Free Plan and Zap will run every 15 minutes. (Reference: https://zapier.com/app/pricing)
+For 14 days, Zap will run every 2 minutes for the free trial period of Zapier's Professional Plan. After that, you will be on the Free Plan and Zap will run every 15 minutes. (Reference: [Pricing](https://zapier.com/app/pricing))
 
 ![h:400px](images/2022-11-12-22-58-19.png)
 
@@ -1356,7 +1356,7 @@ You can also manually run a Zap immediately from the Zap listing screen.
 ![h:500px](images/2022-11-12-22-49-32.png)
 
 ---
-Two minutes after Signup or after manually running the Zap, you will see that you have received a Welcome email at the email address you signed up with.
+Two minutes after Signup or after manually running the Zap, you will see that you have received a Welcome email at the email address you used for signing up.
 
 ![h:300px](images/2022-11-12-23-02-50.png)
 
