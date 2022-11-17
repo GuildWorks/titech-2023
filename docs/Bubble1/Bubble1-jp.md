@@ -12,7 +12,7 @@ paginate: true
 
 # Bubble の基本
 
-**東京工業大学 2021/11/13**
+**東京工業大学 2022/11/19**
 　
 　
 　
@@ -23,13 +23,14 @@ paginate: true
 ---
 
 ## 目次
-  - Bubble とは
-  - Bubble に登録しよう
-  - Bubble でのアプリ開発の概要説明
-  - まずはペット登録から一覧表示まで作ってみよう
-  - ペット詳細画面を作ってみよう
-  - ペットの体重を管理しよう
-  - まとめ
+- Bubble とは (P3 〜)
+- まずはユーザ登録を作ってみよう (P28 〜)
+- Bubble でのアプリ開発の概要説明 (P44 〜)
+- ペット登録から一覧表示まで作ってみよう (P57 〜)
+- ペット詳細画面を作ってみよう (P162 〜)
+- ヘッダー部品を作っていこう (P201 〜)
+- ペットの体重を管理しよう (P273 〜)
+- まとめ (P303 〜)
 
 ---
 
@@ -42,63 +43,145 @@ paginate: true
 ---
 
 #### Bubble で作られたアプリの例
-- LIBRIS（リブリス）: https://libris.ne.jp/
-  - 2021年3月リリース
-  - 行きたい本屋が見つかる検索サイト
-  - 個人経営のお店やブックカフェやライブラリなど、全国の本屋を検索できる
-  - 開発者は、本好きの非エンジニアの方だそうです
+- あいホームバーチャル展示場: https://aihome-vr.com/
+  - 物件のオンライン内見アプリ
+  - 物件をストリートビューのような形でオンライン内見できるアプリです。
+  - 参考: https://note.com/apopopo/n/n155b0df7f78c
+    - Bubble のノウハウというよりノーコード開発の知見が書かれている
 
-- その他
-  - https://nocode-freaks.com/?p=200
-  - ゲームもありました（笑）
+- 他にも色々あるので「Bubble 事例」などで調べてみてください！
+  - 例: https://nocodedb.world/archives/3337
 
 ---
 
-## Bubble に登録しよう
+### Bubble に登録しよう
 - Bubble の TOP 画面からメールアドレスを入力してアカウント登録
   - https://bubble.io/
-  - Get started をクリック
+  - "Get started" をクリック
 
-![w:900px](images/2021-11-11-22-50-00.png)
+![w:900px](images/2022-11-06-16-24-15.png)
 
 ---
 - アカウントは無料で登録できます
-- ご自身のメールアドレスとパスワードを入力して "Get started" をクリック
+- ご自身のメールアドレスとパスワードを入力して "Start building" をクリック
 
-![bg right h:600px](images/2021-11-11-22-52-48.png)
-
----
-
-- 利用規約へ同意して "I agree..." をクリック
-
-![](images/2021-11-11-22-55-02.png)
+![bg right h:600px](images/2022-11-06-16-25-31.png)
 
 ---
 
-- 利用に向けていくつかアンケートに回答
-- 最後に "Submit(thanks!)" をクリック
+- 今日の目標を聞かれるので "BUILD" を選択して Next
 
-![bg right h:500px](images/2021-11-11-22-56-16.png)
-
----
-
-- するとエディタ画面が表示され、チュートリアルが始まりますが、これは後からでも実施できるので閉じます
-- 画面右上のアイコンをクリックし "My applications" 選択
-
-![w:900px](images/2021-11-11-22-57-49.png)
+![w:900px](images/2022-11-06-16-38-59.png)
 
 ---
 
-- Welcome ページが表示されるので、画面下までスクロールして "Create a new app" をクリック
+- Bubble をどこで知ったのか聞かれるので、適当に選択して Complete
 
-![w:900px](images/2021-11-11-22-58-52.png)
+![w:900px](images/2022-11-06-16-40-03.png)
+
+---
+
+- すると、入力したメールアドレス宛に確認メールが送信されるので、ご自身のメールボックスを確認
+
+![bg right h:600px](images/2022-11-06-16-40-35.png)
+
+---
+
+- "Verify Your Bubble Account" というタイトルで Bubble からメールが来ていると思うので、本文に記載の "Click here to confirm your email address" のリンクをクリック
+
+![bg right h:500px](images/2022-11-06-16-41-29.png)
+
+---
+
+- Bubble の画面が表示され "Thanks for confirming!" と表示されていれば OK
+- "Start building" をクリック
+
+![w:900px](images/2022-11-06-16-42-33.png)
+
+---
+
+- Welcome ページが表示されるので、これから作成する演習用の名前をつけて "Create app" をクリック
+
+![w:900px](images/2022-11-06-16-45-17.png)
+
+---
+
+- ただし、（世界中の）他の人と同じ名前のアプリは作成できないため、下記のような命名にしましょう
+  - `titech2022-bubble-{Your Name}`
+  - アプリ名を入力してエラーメッセージが表示されなければ OK
+
+![w:800px](images/2022-11-06-16-45-17.png)
+
+---
+
+- 今から作成するアプリのプランを聞かれるので Free の "Start building" をクリック
+
+![w:650px](images/2022-11-06-16-47-02.png)
+
+---
+
+- 作成されると、Bubble のエディタ画面が表示され、初期設定の入力ガイドが表示されるので従っていきます
+
+![w:900px](images/2022-11-06-16-55-13.png)
+
+---
+
+- Step 1/5 はこれから作成する Web アプリケーションの画面上での表示名を聞かれます
+- おそらく先ほど入力したアプリ名が初期値として入っていると思うので一旦そのままで OK
+- Next step をクリック
+
+![bg right h:700px](images/2022-11-06-16-55-57.png)
+
+---
+
+- Step 2/5 はアプリのメイン言語を選択します
+- 各自好きな言語を選択して Next step をクリック
+![bg right h:600px](images/2022-11-06-16-56-38.png)
+
+---
+
+- Step 3/5 はアプリのアイコン（favicon）を選択します
+- 今回はバブル標準のもので進めますので、そのまま Next step をクリック
+  - 余裕のある人は好きなアイコンを設定しても OK です :ok_woman:
+![bg right h:600px](images/2022-11-06-16-57-21.png)
+
+---
+
+- Step 4/5 はアプリに対して別のアプリケーションとの接続をするかを選択します
+- 後の手順で接続するため "Install API Connector" を選択
+![bg right h:600px](images/2022-11-06-16-58-15.png)
+
+---
+
+- すると Install New Plugins というポッうアップが表示され、そこに "API Connector" が表示されているので、その "Install" をクリック
+
+![w:800px](images/2022-11-06-16-58-44.png)
+
+---
+
+- ボタンが "Uninstall" になったら無事インストールされたので DONE をクリック
+
+![w:800px](images/2022-11-06-16-59-16.png)
+
+---
+
+- 元の画面に戻ってきたら Next step クリック
+
+![bg right h:600px](images/2022-11-06-16-58-15.png)
+
+---
+
+- Step 5/5 はさらにアプリに対して高度なプラグインを導入するかを選択します
+- 他に必要になったものは後から追加もできるので、ここでは何もインストールしません
+- 最後に "Get started building" をクリック
+
+![bg right h:600px](images/2022-11-06-17-00-08.png)
 
 ---
 
 - このような画面が表示されたら OK です
-- これは Bubble が自動生成したテンプレートが初期状態として表示されています
-- 左パネルの New Application Assistant が表示された方は、下の "Close the assistant" を選択
-![w:900px](images/2021-10-31-20-42-10.png)
+
+![w:800px](images/2022-11-06-17-01-31.png)
 
 ---
 
@@ -106,46 +189,98 @@ paginate: true
 
 - 画面右上の Preview ボタンをクリックしてください
 
-![](images/2021-10-31-20-50-28.png)
+![w:600px](images/2022-11-06-17-02-18.png)
 
 ---
 
 - プレビュー画面が起動します
-
-![w:850px](images/2021-10-31-20-52-42.png)
+- が、真っ白の画面しか表示されません
+- Adalo と違ってテンプレートなどを選択していないため、何もオブジェクトが配置されていない状態の画面となります
 
 ---
 
-### Sign up してみよう
+- さすがに少し動きを見ていきたいので、Adalo と同じくアカウントのサインアップ・ログインを試してみましょう
+- Bubble では、サインアップ・ログインの「画面」は用意されていませんが「部品」は用意されています
+- その部品を組み込んでログイン画面を表現してみたいと思います
 
-- 画面右上の "SIGN UP OR LOGIN" をクリック
-- モーダルが表示されるので Email / Password / Confirm password を入力して "SIGN UP" クリック
+---
+
+## まずはユーザ登録を作ってみよう
+
+- :warning: 画面の色々な部品を触っていきますが、各パーツの説明は後ほど行います
+- まずは最低限の部品の説明を行い、ユーザ登録画面を作ってみます
+
+---
+
+### 3 つのメイン操作
+
+- Bubble では主に 3 つの操作を使い分けていきます
+  1. Design
+  2. Workflow
+  3. Data
+- 左メニューからそれぞれを行き来することができます
+
+![bg right h:400px](images/2021-10-31-21-28-32.png)
+
+--- 
+
+#### Design
+
+- このうち Design の説明だけ先に行います
+- ユーザーインターフェースを作るために画面上にコンポーネントを配置するモード
+- 左パネルに UI のコンポーネント類、右パネルに実際の画面編集領域となっています
+
+---
+
+- 画面のテイストは Adalo と同じですね
+
+![w:1050px](images/2022-11-16-22-35-09.png)
+
+---
+
+- それでは、ユーザ登録を作っていきましょう！
+
+![bg right h:600px](images/2022-11-16-22-25-11.png)
+
+---
+
+- まずは Bubble に標準で用意されているサインアップ・ログインの部品を、配置していきます
+- 左パネルの UI Builder から Element templates の中にある "Signup Login form" をクリック
+
+![bg right h:600px](images/2022-11-06-17-30-09.png)
+
+---
+
+- 右パネルの適当な場所でクリックすると、ユーザ登録のフォームが表示されます
+
+![w:900px](images/2022-11-06-17-31-33.png)
+
+---
+
+- ⚠️この部品は「サインアップ」と「ログイン」が一緒になっている部品のため、移動させる際などは注意
+- 仕組みとしては、今見えている「サインアップ」の部品の上に「ログイン」のパーツがあるのですが、それが非表示になっています
+
+![w:600px](images/2022-11-06-17-47-47.png)
+
+---
+
+- ここでプレビューを実施してみます
+- するとサインアップの画面が表示されると思うので、メールアドレスとパスワードを入力してサインアップしてみましょう
   - 入力した Email と Password はメモしておいてください(後で使います)
-![bg right h:600px](images/2021-10-31-20-54-19.png)
+![bg right h:600px](images/2022-11-06-17-49-07.png)
 
 ---
 
-- すると画面右上のボタンが "LOG OUT" になったと思います
-- つまりアカウント登録が行われ、ログイン状態になったということです
-![bg right h:500px](images/2021-10-31-20-56-39.png)
+- おそらく何も起きないと思いますが今は大丈夫です
+- これでサインアップとログインは使いまわせそうなので、次に進んでいきましょう 🙋‍♀️
 
 ---
 
-### Login してみよう
+- プレビューを閉じて Data タブを選択し、右パネルから "App data" タブを選び、 "All Users" をクリック
+- すると、右パネルに登録済みのユーザ一覧のデータが表示され、そこに先程 "Sign up" したユーザが存在するはずです
+- これで画面とデータベースが連携していることを確認できましたね
 
-- 画面右上の "LOG OUT" をクリックして一度ログアウトします
-- 再度右上の "SIGN UP OR LOGIN" をクリック
-- モーダルの下にある "OR LOGIN" をクリック
-
-![bg right h:500px](images/2021-10-31-20-59-38.png)
-
----
-
-- ログイン用のモーダルが表示されるので、そこで先程入力したメールアドレスとパスワードを入力
-- 最後に "LOG IN" をクリック
-- 成功すると画面右上のボタンが "LOG OUT" になったと思います
-- これでサインアップとサインインが動いていることが確認できます
-![bg right h:500px](images/2021-10-31-20-59-38.png)
+![w:800px](images/2021-11-11-23-19-02.png)
 
 ---
 
@@ -159,7 +294,8 @@ paginate: true
 - まずは動きを見てみましょう
 - ブラウザの横幅を縮めてみてください
 
-![bg right h:500px](images/2021-10-31-21-06-15.png)
+https://matsushitahome.com/
+
 
 ---
 
@@ -186,6 +322,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - もう少し噛み砕いて言うと、画面サイズに応じて、要素が伸びる／縮む、折り返す／折り返さない、表示する／表示しないを制御する
 - これを各項目レベルで設定してあげることで、自動でレスポンシブデザインに対応させることができます
   - 実際の開発時には、設定してプレビューして動作確認していくと良いと思います
+- Bubble のアプリケーションをレスポンシブ対応させていく話は次回 Bubble 2 回目の講義で説明予定です🙋‍♀️
 
 ---
 
@@ -197,24 +334,12 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ### 3 つのメイン操作
 
-- Bubble では主に 3 つの操作を使い分けていきます
+- 残りの 2 つの操作を見ていきます
   1. Design
   2. Workflow
   3. Data
-- 左メニューからそれぞれを行き来することができます
 
 ![bg right h:400px](images/2021-10-31-21-28-32.png)
-
---- 
-
-#### Design
-
-- ユーザーインターフェースを作るために画面上にコンポーネントを配置するモード
-- 左パネルに UI のコンポーネント類、右パネルに実際の画面編集領域
-
----
-
-![w:1150px](images/2021-10-31-21-34-08.png)
 
 ---
 
@@ -222,9 +347,19 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - 画面に動きをつけるためのモード
   - 例）ボタンが押された時に、画面遷移する
+  - 例）ボタンが押された時に、データを操作する
 - ここが、少しプログラミングの考え方を必要とする部分となります
 
-![w:1150](images/2021-10-31-21-38-05.png)
+![w:900](images/2022-11-06-17-55-58.png)
+
+---
+
+- ちなみに、すでにいくつかの箱があると思います
+- これは Bubble が標準で用意してくれているワークフローの定義となります
+  - この中に、先程組み込んだサインアップやログインに関するワークフローも含まれています
+  - 内容については後ほど詳しく見ていきます
+
+![w:850](images/2022-11-06-17-55-58.png)
 
 ---
 
@@ -232,111 +367,75 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - データを定義したり操作したりするモード
 
-![w:1100px](images/2021-10-31-21-40-26.png)
+![w:1100px](images/2022-11-06-17-59-02.png)
 
 ---
 
 - "App data" タブを選び、 "All Users" のリンクをクリック
-- すると、右パネルに登録済みのユーザ一覧のデータが表示され、そこに先程 "Sign up" したユーザが存在するはずです
+- すると、右パネルに登録済みのユーザ一覧のデータが表示され、そこに先程サインアップしたユーザが存在するはずです
 - これで画面とデータベースが連携していることを確認できましたね
 
-![w:900px](images/2021-11-11-23-19-02.png)
+![w:1150px](images/2022-11-06-18-00-12.png)
 
 ---
 
 #### その他の操作について
 
-- Styles
-  - スタイルに名前をつけてあげることで、汎用的に使える
-  - 部品ごとに個別に指定することもできる
-  - 今回は基本的にありもののスタイルを使っていきますので、今回の講義では扱いません
-
-![w:1000px](images/2021-11-11-23-22-42.png)
+その他の操作（メニュー）についても簡単に説明します
 
 ---
 
-- Plugins
-  - Adalo で折れ線グラフのコンポーネントを追加したように、Bubble にもアプリケーションを拡張するための様々なコンポーネントが公開されています
-  - Bubble ではこれをプラグインと呼びます
-  - Bubble のプラグインには無料 / 有料のものがあるので、お使いになる際には確認しましょう
+#### Styles
+
+- スタイルに名前をつけてあげることで、アプリケーション全体で汎用的に使用可能（部品ごとに個別指定も可能）
+
+![w:800px](images/2022-11-06-18-01-22.png)
 
 ---
 
-- Settings
-  - Bubble のプランの変更やアカウントに関する操作
+#### Plugins
+
+- Adalo で折れ線グラフのコンポーネントを追加したように、Bubble にもアプリケーションを拡張するための様々なコンポーネントが公開されています
+- Bubble ではこれを「プラグイン」と呼びます
+- Bubble のプラグインには無料 / 有料のものがあるので、お使いになる際には確認しましょう
+
+---
+
+#### Settings
+
+- Bubble のプランの変更やアカウントに関する操作
+- 今回の講義では扱いません
 
 ---
 
 - Settings の Languages では Bubble が提供しているメッセージを一元管理できます
-    - アプリケーションを使うメインユーザ向けにロケール（言語設定）を変更可能
-    - このメッセージを変更することで、システム全体でメッセージ管理を統一できます
-    - アプリ全体で共通に使えるメッセージ類を変えられるし、デフォルトのメッセージを変えることも可能
-    - アプリ固有のメッセージを追加することも可能
-  - 今回の講義では扱いません
+  - アプリケーションを使うメインユーザ向けにロケール（言語設定）を変更可能
+  - このメッセージを変更することで、システム全体でメッセージ管理を統一できます
+  - アプリ全体で共通に使えるメッセージ類を変えられるし、デフォルトのメッセージを変えることも可能
+  - アプリ固有のメッセージを追加することも可能
+- 今回の講義では扱いません
 
 ---
 
-- Logs
-  - アプリケーションを動かしたときのログを見ることができます
-  - ただ、アプリケーションをプレビュー表示しながらログを見ることもできるので、今回の講義では扱いません
+#### Logs
+
+- アプリケーションを動かしたときのログを見ることができます
+- アプリケーションをプレビュー表示しながらログを見ることも可能です
+- 今回の講義では扱いません
 
 ---
 
 #### これから作っていく画面の全体像
 
-![w:850px](images/2021-11-12-10-21-56.png)
+![w:1000px](images/2022-11-16-23-04-43.png)
 
 ---
 
-## まずはペット登録から一覧表示まで作ってみよう
+## ペット登録から一覧表示まで作ってみよう
 
 - Adalo での会で作成した画面要素やデータ構造と同じものを作っていきます
-- そのため、Bubble の会では画面とデータベース操作を一緒に作っていきます
-- また、認証に関する部分は Bubble で用意されたデフォルトのものを流用します
-- まずはペットの登録画面を作成し、そのペットを一覧に表示するところまで作ってみましょう！
-
----
-
-#### ペットの一覧画面の枠だけ用意する
-
-- まず最初に動作確認に使ったページをペットの一覧ページとして使い回します
-- そのため、Bubble が自動生成したパーツを一度すべて削除します
-- Design メニューを選択し index ページを表示します
-- index ページの何か一つの要素を選択したら "Ctrl + A" で全要素を選択します
-- そして Delete ボタンをクリックすると画面がまっさらになると思います
-
----
-
-##### 要素削除前
-
-![w:700px](images/2021-11-07-10-34-57.png)
-
----
-
-##### 要素削除後
-
-![w:700px](images/2021-11-07-10-35-53.png)
-
----
-
-- Bubble のテンプレートに用意されていたヘッダーを使い回します
-- Design タブを選択し、"UI Builder" の部分を下にスクロールすると `Reusable elements` という項目の中に Header というのがあると思いますので、そちらをクリックします
-
-![bg right h:600px](images/2021-11-11-23-32-01.png)
-
----
-
-- そして、右側の描画エリアの上の方で範囲選択（ドラッグ）すると、その部分に共通の Header 要素が追加されます
-
-![w:1100px](images/2021-11-11-23-35-16.png)
-
----
-
-- 場所がちょうど一番上に配置できない場合は Header 選択しドラッグで画面中央上部に配置します
-  - 要素を選んで右クリックし `Center horizontally` を選択すると、要素の横位置を中央に移動します
-  - `Center vertically` を選択すると、要素の縦位置を中央に移動します
-  - 今後要素を中央に寄せたい時などはお使いください
-- ヘッダーの中身は後で変更していきます
+- そのため、Bubble の会では画面とデータベース操作を一緒に作っていきます❗️❗️
+- まずはペットの登録画面を作成し、そのペットを一覧に表示するところまで作ってみましょう❗️
 
 ---
 
@@ -345,7 +444,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 画面左上の `Page: index` をクリックするとポップアップが表示されます
 - ポップアップの中から `Add a new page...` をクリック
 
-![w:900px](images/2021-11-07-10-53-14.png)
+![w:600px](images/2022-11-06-20-54-27.png)
 
 ---
 
@@ -361,26 +460,26 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Page name` は画面の名前となるので、空白などを含めずに英数字だけで入力します
   - 今回は `pet_register` としましょう
 
-![bg right h:350px](images/2021-11-07-10-57-54.png)
+![bg right h:350px](images/2022-11-06-21-00-49.png)
 
 ---
 
 - `Clone from` は似たような画面を作りたい時に、コピー元となる画面を選択してその画面のコピーを作ることができます
 
-![bg right h:350px](images/2021-11-07-10-57-54.png)
+![bg right h:350px](images/2022-11-06-21-00-49.png)
 
 ---
 
 - 例えば登録画面と編集画面などは画面要素がほとんど同じになるので、登録画面を作った後に編集画面を作る時に "Clone from" に登録画面を選択すると、開発工数の削減につながります
 
-![bg right h:350px](images/2021-11-07-10-57-54.png)
+![bg right h:350px](images/2022-11-06-21-00-49.png)
 
 ---
 
-- 今回は折角なので先ほどヘッダーだけを用意した index を選択して複製しましょう
-- 必要な情報を入力したら "CREATE" ボタンをクリック
+- 今回は未選択のままとします
+- "CREATE" ボタンをクリック
 
-![bg right h:350px](images/2021-11-07-10-57-54.png)
+![bg right h:350px](images/2022-11-06-21-00-49.png)
 
 ---
 
@@ -395,9 +494,9 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - まずはペットの名前を入力するテキストボックスを配置します
 - 左パネルの "UI Builder" から `Input forms` の中にある `Input` を選択
-- そして右パネル上で配置したい場所でドラッグをすると入力欄を表示されます
+- そして右パネル上で配置したい場所でクリックすると入力欄が表示されます
 
-![bg right h:600px](images/2021-11-11-23-41-41.png)
+![bg right h:550px](images/2022-11-06-22-02-52.png)
 
 ---
 
@@ -405,21 +504,28 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Placeholder` はテキストボックスが未入力状態の時に表示される補助文言です
   - 今回は「pet name」とします
 
-![bg right h:550px](images/2021-11-07-11-13-05.png)
+![bg right h:550px](images/2022-11-06-22-02-52.png)
 
 ---
 
 - `Content format` はテキストボックスに入力できる値の形式を指定できます
   - 今回は文字列の入力となるので "Text" のままとします
 
-![bg right h:550px](images/2021-11-07-11-13-05.png)
+![bg right h:550px](images/2022-11-06-22-02-52.png)
 
 ---
 
 - `This input should not be empty` は入力必須にするかどうかを指定できます
   - 今回は必須としたいのでチェックをつけます
 
-![bg right h:550px](images/2021-11-07-11-13-05.png)
+![bg right h:550px](images/2022-11-06-22-02-52.png)
+
+---
+
+- ダイアログ先頭の部分をクリックすると、このテキストボックスの要素に対して名前を付けることができます
+- これは後々ワークフローを定義するときに便利になるのでここでは "Input pet name" と指定しましょう
+
+![bg right h:550px](images/2022-11-06-22-02-52.png)
 
 ---
 
@@ -429,28 +535,21 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
-- もう一つだけ設定する項目があります
-- ダイアログ先頭の部分をクリックすると、このテキストボックスの要素に対して名前を付けることができます
-- これは後々ワークフローを定義するときに便利になるのでここでは `Input pet name` と指定しましょう
-
-![bg right h:350px](images/2021-11-08-22-36-23.png)
-
----
-
 #### ペットの画像
 
 - 次にペットの画像をアップロードする要素を配置します
-- 左パネルから `Picture Uploader` を選択し、右パネル上でドラッグして要素を配置します
+- 左パネルから `Picture Uploader` を選択し、右パネル上でペットの名前の下に **ドラッグして** 要素を配置します
 
 ![bg right h:700px](images/2021-11-11-23-46-49.png)
 
 ---
 
 - この要素も同じくダブルクリックから要素の情報を設定します
-  - 今回は `Placeholder` に「Click to upload pet image」と入力します
-  - 要素の名前として `Input pet image` を指定します
+  - 今回は `Placeholder` に "Click to upload pet image" と入力します
+  - 要素の名前として "Input pet image" を指定します
+  - `This input should not be empty` はチェックをつけて必須にします
 
-![w:800px](images/2021-11-11-23-48-59.png)
+![bg right h:550px](images/2022-11-06-22-15-16.png)
 
 ---
 
@@ -468,45 +567,45 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
     - ここで Date & Time を選択することで日付と時刻の入力が可能です
     - 今回は Date とします
 
-![bg right h:700px](images/2021-11-11-23-51-15.png)
+![bg right h:550px](images/2022-11-06-22-13-48.png)
 
 ---
 
 - `This input should not be empty` はチェックをつけて必須にします
 - 要素の名前として `Input pet birthday` を指定します
 
-![bg right h:700px](images/2021-11-11-23-51-15.png)
+![bg right h:550px](images/2022-11-06-22-13-48.png)
 
 ---
 
 #### ペットの性別
 
 - 最後にペットの性別を選択するための要素を配置します
-- 左パネルから `Dropdown` を選択し、右パネル上でドラッグして要素を配置します
+- 左パネルから `Dropdown` を選択し、右パネル上でクリックして要素を配置します
 
-![bg right h:700px](images/2021-11-11-23-52-41.png)
+![bg right h:600px](images/2021-11-11-23-52-41.png)
 
 ---
 
 - こちらも要素をダブルクリックして要素の詳細を設定します
-  - `Placeholder` に「pet gender」と入力します
+  - `Placeholder` に "pet gender" と入力します
   - `Choices` に "Male" と入力したら Enter キーで改行し、次の行に "Female" と入力します
 
-![bg right h:700px](images/2021-11-11-23-55-03.png)
+![bg right h:600px](images/2022-11-06-22-20-15.png)
 
 ---
 
 - `This input should not be empty` はチェックをつけて必須にします
 - 要素の名前として `Input pet gender` を指定します
 
-![bg right h:700px](images/2021-11-11-23-55-03.png)
+![bg right h:600px](images/2022-11-06-22-20-15.png)
 
 ---
 
 #### 登録ボタン
 
 - ここまでペット情報の入力ができたら登録ボタンを配置します
-- 左パネルの `Visual elements` の中にある `Button` を選択し、右パネルでドラッグして要素を配置します
+- 左パネルの `Visual elements` の中にある `Button` を選択し、右パネルでクリックして要素を配置します
 
 ![bg right h:600px](images/2021-11-11-23-56-17.png)
 
@@ -515,7 +614,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - こちらも要素をダブルクリックして要素の詳細を設定します
   - Appearance タブの上部にある「...edit me...」と入力されている部分を編集して「REGISTER」と入力します
 
-![w:1000px](images/2021-11-07-11-32-37.png)
+![w:1000px](images/2022-11-06-22-22-45.png)
 
 ---
 
@@ -530,45 +629,82 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - 配置する際、高さは 30px 以上になるように配置してください
   - そうしないと、要素の中身が正しく表示されないためです！
-  - 要素を配置した後に詳細ダイアログの `H` の値を編集することもできます！
+  - 要素を配置した後に詳細ダイアログ Layout タブから `H` の値を編集することもできます！
 
-![bg right h:270px](images/2021-11-13-12-33-27.png)
+![w:900px](images/2022-11-06-22-24-44.png)
 
 ---
 
-- こちらも要素をダブルクリックして要素の詳細を設定します
+- こちらも要素の詳細を設定します
   - Appearance タブの上部にある「...edit me...」と入力されている部分を編集して「Name」と入力します
-  - ダイアログ中段にある `Style` に `H3 Sub Heading - Dark` を選択します
+  - ダイアログ中段にある `Style` に `Heading 5` を選択します
 
-![bg right h:270px](images/2021-11-13-12-33-27.png)
+![bg right h:430px](images/2022-11-06-22-26-21.png)
 
 ---
 
 - 同じ要領でその他のラベルもつけてみましょう
+  - Name
+  - Image
+  - Birthday
+  - Gender
+
+![bg right h:700px](images/2022-11-06-22-29-15.png)
+
+---
+
 - 同じ手順でもよいですが、先ほど作った Name のラベルをコピーして使い回すことで手間を省けます
   - コピー（Ctrl + C）してペースト（Ctrl + P）し、ラベルの内容だけ書き換える
+  - Mac であればコピー（Command + C）とペースト（Command + P）
+
+![bg right h:700px](images/2022-11-06-22-29-15.png)
+
+---
+
 - 最後にすべての要素の幅を 220px に統一してください
   - 各要素をダブルクリックしたときのダイアログから `W` (Width) の値を 220 に統一します
   - これは画面表示したときの見栄えを整えるためです
 
-![w:500px](images/2021-11-07-11-45-50.png)
+---
+
+- 一つずつ変更していくこともできますが、要素が多いので一括で変更してみましょう
+- 要素を全て選択した状態で右クリック、Edit を選択
+  - 全ての要素をドラッグで選択
+
+![bg right h:700px](images/2022-11-06-22-31-47.png)
+
+---
+
+- 全て選択している状態で、どれか一つの要素を右クリック
+- 表示されるサブメニューから Edit を選択
+
+![w:600px](images/2022-11-06-22-32-56.png)
+
+---
+
+- するとダイアログが表示されるので、選択中の要素数が「9」であることを確認
+- 問題なければ、ダイアログの中にある `Width` の部分をクリック
+
+![bg right h:600px](images/2022-11-06-22-36-57.png)
+
+---
+
+- すると洗濯中の要素に対して幅（W）と高さを一律で設定できるので、`W` に 220 を入力
+- "Apply changes to eleents" をクリック
+
+![bg right h:600px](images/2022-11-06-22-38-26.png)
 
 ---
 
 #### 最後に要素を整理してプレビュー
 
-- 右パネルに配置した（Header を除く）すべての要素をドラッグで選択し右クリックから `Center horizontally` を選択し、入力フォームの横位置を中央に統一します
+- 先程と同じくすべての要素をドラッグで選択し右クリックから `Center horizontally` を選択し、入力フォームの横位置を中央に統一します
 
-![bg right h:700px](images/2021-11-12-00-00-35.png)
+![bg right h:700px](images/2022-11-06-22-39-59.png)
 
 ---
 
 - ここまで出来たら画面右上にある `Preview` をクリックしてプレビューを表示して動きを見てみましょう！
-- この時、ログイン中の状態であることを確認してください！
-  - これは、この後の一覧表示と連携するときに必要な情報となるためです
-  - ヘッダーの右上のボタンが LOG OUT になっていれば OK
-
-![](images/2021-11-12-09-22-41.png)
 
 ---
 
@@ -576,22 +712,23 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - すべての入力フォームに値を入力できますか？
 - 画像を指定すると表示されますか？
 
-![bg right h:500px](images/2021-11-12-00-05-36.png)
+![bg right h:640px](images/2022-11-06-22-41-30.png)
+![bg right h:640px](images/2022-11-06-22-43-23.png)
 
 ---
 
 ### データベースとつなげてみよう
 
-- ここまでで画面レイアウトが整ったので、いよいよデータベースとつなげてみましょう
+- これで画面レイアウトが整ったので、いよいよデータベースとつなげてみましょう
 
 ---
 
 #### まずはペットの情報を保存するための箱を用意します
 
 - 左メニューのタブから Data を選択
-- すると Data types タブが有効になっていると思うのでその下にある Custom data types の中から `New type` と書かれたテキストボックスに「Pets」と入力してください
+- すると Data types タブが有効になっていると思うのでその下にある Custom data types の中から `New type` と書かれたテキストボックスに "Pets" と入力してください
 
-![bg right h:500px](images/2021-11-07-12-07-08.png)
+![bg right h:450px](images/2022-11-12-13-07-10.png)
 
 ---
 
@@ -614,11 +751,15 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - 作成した Pets の type に対して要素（field）を追加していきます
 - `Custome data types` から `Pets` を選択
-- 右側の `Fields for type pets` の下にある `Create a new field` をクリック
+- 右側の `Fields for type Pets` の下にある `Create a new field` をクリック
 
-![w:880px](images/2021-11-12-00-14-09.png)
+![w:880px](images/2022-11-12-13-09-36.png)
+
+---
 
 - するとポップアップが表示されるので必要な情報を入力します
+
+![w:900px](images/2022-11-12-13-10-12.png)
 
 ---
 
@@ -648,7 +789,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - Birthday: date
 - Gender: text
 
-![bg right h:500px](images/2021-11-07-12-21-23.png)
+![bg right h:470px](images/2022-11-12-13-11-59.png)
 
 ---
 
@@ -661,6 +802,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 ---
 
 - 左メニューから Design タブを選択
+- 左上から "pet_register" 画面を選択
 - 右パネルからペット登録画面の "REGISTER" のボタンをダブルクリックします
 - "Appearance" タブにある `Start/Edit workflow` をクリックします
 
@@ -671,7 +813,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - すると Workflow タブに切り替わり、When の部分に `Button REGISTER is clicked` と表示されていると思います
   - これは文字通り "REGISTER" ボタンを押したときのワークフロー定義になります
 
-![w:800px](images/2021-11-07-12-29-27.png)
+![w:700px](images/2021-11-07-12-29-27.png)
 
 ---
 
@@ -684,17 +826,17 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Click here to add an action...` を選択すると、様々なアクションを指定できるポップアップが表示されます
 - 今回のようにデータベースに関する操作（アクション）の場合 `Data(Things)` を選びます
 
-![bg right h:630px](images/2021-11-08-22-23-30.png)
+![bg right h:600px](images/2021-11-08-22-23-30.png)
 
 ---
 
 - すると下位要素がさらに表示されると思いますので、その中から `Create a new thing...` を選択します
 
-![bg right h:630px](images/2021-11-08-22-23-30.png)
+![bg right h:600px](images/2021-11-08-22-23-30.png)
 
 ---
 
-- `Create a new Pets...` のダイアログが表示されるので、今回登録するタイプを指定します
+- `Create a new thing...` のダイアログが表示されるので、今回登録するタイプを指定します
   - 今回は Pets ですね
 - すると `Set another field` というボタンが表示されるので、タイトルの通り画面で入力された項目を Pets の "field" にセットしていきます
 
@@ -745,8 +887,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - すべて指定するとこんな感じ
 
-<!-- Dropdown消し忘れver ![bg right h:700px](images/2021-11-08-22-40-07.png) -->
-![bg right h:700px](images/2021-11-13-00-11-40.png)
+![bg right h:600px](images/2021-11-13-00-11-40.png)
 
 ---
 
@@ -761,7 +902,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - プレビューを閉じ Data タブを開いて App data を選択、そして左パネル `All Pets` を選択したときに、先ほど画面から入力された情報が保存されていることを確認してください
 
-![w:850px](images/2021-11-08-22-45-05.png)
+![w:1150px](images/2022-11-12-13-19-04.png)
 
 ---
 
@@ -771,29 +912,58 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
-#### 画面遷移してみよう
 
+#### ペットの一覧画面の枠だけ用意する
+
+- まず最初にペットの一覧ページの枠だけを用意します
+
+- 画面左上の `Page: index` をクリックするとポップアップが表示されます
+- ポップアップの中から `Add a new page...` をクリック
+
+![w:750px](images/2022-11-12-13-41-48.png)
+
+---
+
+- `Add a new page...` をクリックすると新しい画面のポップアップが表示されます
+- `Page name` は`pet_list` としましょう
+- `Clone form` は今回は空欄
+- "CREATE" ボタンをクリック
+
+![bg right h:350px](images/2022-11-06-20-56-07.png)
+
+---
+
+- 真っ白な画面だと何画面か分からなくなるので、Visual elements から Text ラベルだけ配置して、ペット一覧としておきましょう
+- これで先にペット一覧画面の枠だけできました
+
+![w:600px](images/2022-11-12-13-44-21.png)
+
+---
+
+#### ペット一覧画面への画面遷移をしてみよう
+
+- 左上から pet_reigster のページを選択
 - 左メニューから Workflow タブをクリック
 - 先ほど設定した "REGISTER" ボタンをクリックした時の振る舞いが表示されていると思います
 
-![](images/2021-11-08-22-57-42.png)
+![bg right h:550px](images/2022-11-12-13-47-01.png)
 
 ---
 
 - ここで "Create a new Pets..." の右にある `Click here to add an action...` をクリック
 
-![](images/2021-11-08-22-57-42.png)
+![bg right h:550px](images/2021-11-08-22-57-42.png)
 
 ---
 
 - 今度は `Navigation` を選択し、下位要素として `Go to page...` をクリック
 
-![](images/2021-11-08-22-57-42.png)
+![bg right h:550px](images/2021-11-08-22-57-42.png)
 
 ---
 
 - するとダイアログが表示されるので "Destination" に遷移したい画面を選択します
-- 今回はペット一覧画面へ遷移したいので `index` を選択します
+- 今回はペット一覧画面へ遷移したいので `pet_list` を選択します
 
 ![bg right h:500px](images/2021-11-08-22-59-29.png)
 
@@ -801,8 +971,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - それではプレビューしてみましょう
 - ペット登録画面が表示されたと思うので、先ほどと同じようにペット情報を入力し "REGISTER" ボタンをクリックします
-- すると、まっさらなページに遷移したと思います
-  - まだペット一覧画面を作っていないので今は問題ありません
+- すると、ペット一覧画面に遷移したと思います
 
 - これで画面遷移もマスターしました！ :tada::tada:
 
@@ -810,14 +979,23 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ### ペットの一覧表示
 
-- 次にペットの一覧表示を作ってみましょう
+- 次にペットの一覧画面を作り込んでいきましょう
 
-![w:1000px](images/2021-11-12-01-20-27.png)
+![w:700px](images/2022-11-12-21-30-48.png)
 
 ---
 
-- 左上のページ一覧から `index` を選択
-- 同じ要素を繰り返し表示する場合、 `Containers` の中から `Repeating Group` を選択
+- 左上のページ一覧から `pet_list` を選択
+- 先程用意したペット一覧の text は削除しておきましょう
+  - 要素を選択して Backspace で OK
+
+![bg right w:500px](images/2022-11-12-13-51-48.png)
+
+---
+
+#### ペット一覧画面を作り込んでいきます
+
+- 今回のように、同じ要素を繰り返し表示する場合、 `Containers` の中から `Repeating Group` を選択
 - 右パネルのキャンバスにドラッグします
 
 ![bg right h:500px](images/2021-11-09-20-00-45.png)
@@ -829,43 +1007,66 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Type of content` には、繰り返し表示するデータのタイプを指定します
   - 今回は `Pets` ですね
 
-![bg right h:500px](images/2021-11-12-00-54-44.png)
+![bg right h:520px](images/2022-11-12-13-56-03.png)
 
 ---
 
-- `Rows` はデフォルトで表示する際の行数
-  - データが複数あれば自動的に複数行になるためここでは `1` とします
-- `Columns` は 1 行あたりの列数
-  - 今回は `3` とします
+- 一覧表の行数と列数を指定します
+- 行数は動的に変わるものとしたいので、 `Set fixed number of rows` のチェックを外します
+- 代わりに 1 行の最小となる高さを指定しておきます
+  - 今回は "200px" とします
 
-![bg right h:500px](images/2021-11-12-00-54-44.png)
-
----
-
-- もし 4 件以上のペットデータがあったときに、一覧を自動的に広げるために "Layout style" に `Full list` を選択しておきます
-- また、それぞれのセルの中で画像の横幅をいっぱいに表示したいので Cell min width に括弧書きで記載されている current width と同じ値を設定しておきます（画像の例だと 193）
-
-![bg right h:700px](images/2021-11-12-09-32-31.png)
+![bg right w:450px](images/2022-11-12-21-05-11.png)
 
 ---
 
-- そして `Data source` の Click から `Do a search for` をクリック
-  - これは一覧表示対象のデータ元を指定するためのものです
-- 別のポップアップが表示されますので Type に `Pets` を指定します
+- 列数は今回 1 行当たり 3 つの画像を表示したいので `Set fixed number of columns` のチェックは ON のまま
+- Columns の値を "3" とします
 
-![bg right h:500px](images/2021-11-12-00-57-12.png)
+![bg right w:450px](images/2022-11-12-21-05-11.png)
+
+---
+
+- 表全体の高さは 2 行分の高さを確保しておきたいので、 `Layout` を選択し `H` の値を "400" としておきます
+
+![bg right w:450px](images/2022-11-12-21-08-43.png)
+
+---
+
+- 次に一覧表に表示するデータを指定します
+
+- `Appearance` タブから `Data source` の Click から `Do a search for` をクリック
+  - これは一覧表示対象のデータを指定するためのものです
+
+![bg right w:450px](images/2022-11-12-21-10-46.png)
+
+---
+
+
+- Do a search for のポップアップが表示されますので Type に `Pets` を指定
+
+![bg right w:450px](images/2022-11-12-21-12-37.png)
 
 ---
 
 - これだけだと、未ログイン状態でもペットの一覧が表示できてしまうため、ログインユーザが登録したペットだけを表示するように条件を追加していきます
 - "Add a new constraint" をクリックし、さらに条件を追加します
-  - どんな設定内容になりますか？
 
 ![bg right h:500px](images/2021-11-12-01-58-11.png)
 
 ---
 
+- どんな設定内容になりますか？
 - 設定する条件としては「ペットの作成者（Created By）が "Current User" と同一であること」
+- 次ページに答えが載っています
+
+![bg right w:450px](images/2022-11-12-21-13-57.png)
+
+---
+
+- こんな感じですね
+
+- これで一覧表で表示するデータの指定は完了です
 
 ![bg right h:500px](images/2021-11-12-02-00-38.png)
 
@@ -882,9 +1083,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - このとき先ほど配置した "Repeating Group" の中に含める形でドラッグすると、後で移動する手間が無くなります
   - 後から Repeating Group に含めることも可能
   - 配置した後に Repeating Group の中の Cell いっぱいにドラッグして広げます
-- 要素名に `pet list image` と名付けましょう
 
-![w:600px](images/2021-11-12-01-03-31.png)
+![w:600px](images/2022-11-12-14-01-29.png)
+
+---
+
+- 要素名には `pet list image` と名付けましょう
+
+![bg right w:600px](images/2022-11-12-14-02-35.png)
 
 ---
 
@@ -910,7 +1116,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
-- 先ほどセルの横幅いっぱいに画像を表示する設定にしたのですが、画像要素の "Run-mode rendering" の値を `Stretch` から `Zoom` に変えておきましょう
+- 先ほどセルの横幅いっぱいに画像を表示する設定にしたのですが、画像要素の `Run-mode rendering` の値を "Stretch" から "Zoom" に変えておきましょう
   - こうしないと、セルの中で画像の縦横比率を自動で変えられてしまうため、拡大表示に変更します
 
 ![bg right h:540px](images/2021-11-12-09-35-52.png)
@@ -921,10 +1127,29 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Visual elements` から `Shape` を選択し、右パネルにドラッグ
   - こちらも "Repeating Group" の中に含める形でドラッグ
   - 配置した後に Repeating Group の下部に移動して横幅いっぱいにドラッグして広げます
-- 配置した Shape の Color の横の数値を `30` にします
-  - これは画像の透過率となり 100 が非透明、0 が透明となります
 
-![w:800px](images/2021-11-09-20-16-58.png)
+![w:750px](images/2022-11-12-14-04-54.png)
+
+---
+
+- 配置した Shape の透過率を少し下げてみましょう
+- Shape の要素をダブルクリックしていつものポップアップを表示します
+- Style の内容が "Shape" になっていることを確認したらその下にある "Edit style" をクリック
+
+![bg right w:500px](images/2022-11-12-14-27-18.png)
+
+---
+
+- すると、Styles タブに移動し、先程選択されていた "Shape" のスタイル編集画面が表示されます
+
+![w:1000px](images/2022-11-12-14-30-10.png)
+
+---
+
+- ここで Color の内容を選択すると、色と透過率を変更するポップアップが表示されるので、"Primary" と書いている右側の数値を 30% から 10% に変更します
+  - この数値が透過率となっており、100 が非透明、0 が透明となります
+
+![bg right w:500px](images/2022-11-12-14-31-33.png)
 
 ---
 
@@ -939,10 +1164,18 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 ---
 
 - ペットの画像と同様、ペットの名前も Dynamic data を使います
-- `...edit me...` となっている部分をクリックすると、画像の時と同様 `Insert dynamic data` が表示されるので
-  そこから `Current cell's Pets` --> `'s Name` を選択
+- `...edit me...` となっている部分をクリックすると、画像の時と同様 `Insert dynamic data` が表示されるので、そこから「現在セルのペットの名前」を設定してみましょう
+- 次ページに答えが載っています
 
-![w:800px](images/2021-11-09-20-29-45.png)
+![bg right w:450px](images/2022-11-12-21-20-10.png)
+
+---
+
+- `Current cell's Pets` --> `'s Name` を選択
+
+- これで一覧表で表示する内容の設定は完了です
+
+![bg right w:450px](images/2022-11-12-21-21-07.png)
 
 ---
 
@@ -950,87 +1183,53 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - ペットの一覧として、ペットの画像とペットの名前が表示されていますか？
 
-![w:1000px](images/2021-11-12-01-20-27.png)
+![bg right w:550px](images/2022-11-12-21-22-51.png)
 
 ---
 
-- ちなみに Repeating Group はレスポンシブに対応しているため、画面の横幅を変えると自動的に画像のサイズが変わると思います！
+##### 演習1
 
-![bg right h:600px](images/2021-11-12-09-40-57.png)
+- ペットの名前が左上寄せになっているので、中央寄せにして文字を少し大きくしてみましょう
+
+![bg right w:550px](images/2022-11-12-21-30-48.png)
+
+---
+
+- Hint :bulb:
+  - 新しい "Style" を作成して "pet list name" に設定する
+
+![bg right w:500px](images/2022-11-12-21-29-52.png)
 
 ---
 
 #### ペット一覧から登録画面の導線を用意しましょう
 
 - ペットの一覧画面が出来たので、一覧画面から登録画面への導線を用意しましょう
-- この導線は Header からいつでも遷移出来るように導線を用意してみましょう
+- この導線はペット一覧画面の上部に用意してみましょう
 
-![w:900px](images/2021-11-12-01-55-32.png)
-
----
-
-- 左上のメニューをクリックし、その中から Header を選択します
-
-![w:900px](images/2021-11-12-01-25-24.png)
+![w:800px](images/2022-11-12-21-49-31.png)
 
 ---
 
-- するとヘッダー部分の要素が右パネルに表示されるので、ここを編集していきます
+* 左上のメニューをクリックし、pet_list（ペット一覧画面）を選択します
+- そして、 `Visual elements` の中から `Link` を選択して画面の上部にドラッグします
 
-![w:1100px](images/2021-11-12-01-26-29.png)
-
----
-
-- まず元々ある `Bubble Forum` と `FAQs` のリンクは不要なので削除します
-- そして `Visual elements` の中から `Link` を選択してヘッダー領域にドラッグします
-
-![w:1000px](images/2021-11-12-01-30-55.png)
+![w:800px](images/2022-11-12-21-43-46.png)
 
 ---
 
 - リンクの名前は "PET REGISTER" としましょう
-- "Destination page" として遷移先は `pet_register` を選択
-- "This element is visible on page load" のチェックを外します
-  - このチェックを外すと、要素は常に非表示となります
+- 遷移先として `Destination page` に ペット登録画面を選択
 
-![bg right w:420px](images/2021-11-12-01-38-44.png)
-
----
-
-- このペット登録のリンクは、ユーザがログインしているときだけ表示させたいので、その制御を設定していきます
-- 同じダイアログから `Conditional` タブを選択し `Define another condition` をクリック
-
-![bg right h:400px](images/2021-11-12-01-41-08.png)
-
----
-
-- ここでは、このリンク自体に対して簡単な振る舞いを定義することができます
-- 今回の場合、ユーザがログインしているときだけ表示させたいので、まず When のところで、表示させたいときの条件を設定します
-
-![bg right h:600px](images/2021-11-12-01-43-35.png)
-
----
-
-- Click から `Current User` を選択し、次に `is logged in` を選択することで、「現在のユーザがログインしている場合」という条件を指定できます
-
-![bg right h:500px](images/2021-11-12-01-46-14.png)
-
----
-
-- 続いて、When を満たしたときの振る舞いを設定します
-- `Select a property to change when true` のプルダウンの中から `This element is visible` を選択します
-  - これは文字通り、この要素を表示する、という振る舞いになります
-- 選択したら、その振る舞いにチェックを付けます
-
-![bg right h:500px](images/2021-11-12-01-48-31.png)
+![bg right w:450px](images/2022-11-12-21-46-27.png)
 
 ---
 
 #### ではプレビューしてみましょう！
 
-- 一度 index へ戻り、プレビューを実行
-- 現在はログイン済みの状態のはずなので、"PET REGISTER" のリンクが表示されていると思います
-- そこから右上の LOG OUT をクリックすると、"PET REGISTER" のリンクが非表示になりましたか？
+- ペット一覧の上部に設置された "PET REGISTER" のリンクをクリックして、ペット登録画面へ遷移しましたか？
+
+![w:800px](images/2022-11-12-21-49-31.png)
 
 ---
 
@@ -1039,7 +1238,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 次にペット詳細画面を作っていきます
 - ここでのポイントは、一覧画面で選択されたペットの情報の受け渡し部分ですね
 
-![bg right h:700px](images/2021-11-12-02-07-02.png)
+![bg right h:700px](images/2022-11-12-22-04-47.png)
 
 ---
 
@@ -1049,16 +1248,19 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - "Page name" は `pet_detail`
 - "Clone from" は画面構成が似ているので `pet_register` を選びましょう
 
+![bg right w:500px](images/2022-11-12-21-50-53.png)
+
 ---
 
 - クローン（コピー）してきたままだと、登録画面と同じになってしまうので見直していきます
 
-![bg right h:700px](images/2021-11-10-21-22-02.png)
+![bg right h:700px](images/2022-11-12-21-51-45.png)
 
 ---
 
 - まずは入力項目として用意した入力要素をすべて削除します
-![bg right h:700px](images/2021-11-10-21-23-28.png)
+
+![bg right h:700px](images/2022-11-12-21-52-38.png)
 
 ---
 
@@ -1070,7 +1272,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - Gender: Text
 - 要素の幅（w）はすべて 220px としてください
 
-![bg right h:700px](images/2021-11-10-21-55-27.png)
+![bg right h:700px](images/2022-11-12-21-54-40.png)
 
 ---
 
@@ -1082,14 +1284,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 右パネルの左上の部分から `pet_detail` を選択すると、ダイアログが表示されます
   - 要素がいくつも重なっているときなどはここから要素を選ぶことも出来て便利です！
 
-![](images/2021-11-10-21-59-18.png)
+![bg right w:600px](images/2022-11-12-21-56-44.png)
 
 ---
 
 - その中から `Type of content` という項目があるので、そこで `Pets` を指定します
 - こうすることで、この画面を表示する元となるデータベースのタイプが何なのかを指定でき、各項目にはそのタイプのどのフィールドを使うのかを指定するだけで済みます
 
-![bg right h:600px](images/2021-11-10-22-01-45.png)
+![bg right h:600px](images/2022-11-12-21-58-17.png)
 
 ---
 
@@ -1124,8 +1326,6 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 設定が済んだらペット詳細に関するすべての要素を選択して中央寄せにしましょう
   - 要素を選択した状態から右クリック --> `Center horizontally`
 
-![bg right h:700px](images/2021-11-10-22-14-56.png)
-
 ---
 
 - 設定が済んだらプレビューしてみましょう
@@ -1133,7 +1333,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - これはまだ一覧画面からどのペットの情報なのか？を指定していないからです
   - `Lorem ipsum` と出ているのはよくあるダミーコンテンツのイディオムを Bubble が自動的に出しています
 
-![bg right h:700px](images/2021-11-10-22-17-32.png)
+![bg right h:700px](images/2022-11-12-22-00-33.png)
 
 ---
 
@@ -1145,7 +1345,13 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
-- ペット画像をダブルクリックし `Start/Edit workflow` をクリックします
+- 要素一覧から "pet list image" をクリック
+- 詳細設定用ダイアログから `Start/Edit workflow` をクリックします
+
+![bg right w:550px](images/2022-11-12-22-03-01.png)
+
+---
+
 - すると "When pet list image is clicked" の箱に対して振る舞いを設定する前の状態になっているかと思います
 
 ![bg right h:400px](images/2021-11-10-22-22-27.png)
@@ -1153,13 +1359,13 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 ---
 
 - なので "Click here to add an action" から Navigation -> Go to page を選択
-- ダイアログが表示されるので `Destination` (遷移先) には `pet_detail` を指定
+- ダイアログが表示されるので `Destination` (遷移先) には "pet_detail" を指定
 
 ![bg right h:500px](images/2021-11-10-22-32-42.png)
 
 ---
 
-- そして `Data to send` に `Current cell's Pets` を指定
+- そして `Data to send` に "Current cell's Pets" を指定
   - これでペット詳細画面へ遷移するときに、現在のセルのペット情報を遷移先へ送る、という指定ができました
 
 ![bg right h:500px](images/2021-11-10-22-32-42.png)
@@ -1169,20 +1375,24 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - それではプレビューしてみましょう
 - 一覧画面でペットの画像を選択すると、そのペットの詳細画面が表示されることを確認できましたか？
 
----
+![bg right h:700px](images/2022-11-12-22-04-47.png)
 
-### Appendix
+---
 
 - ここで表示のアドバイス
 - Birthday と Gender の表示が少し味気ないので、表示の書式を変えてみましょう
 
-![bg right h:700px](images/2021-11-10-22-36-08.png)
+![bg right h:700px](images/2022-11-12-22-05-40.png)
 
 ---
 
-### Appendix1: 誕生日の書式を日本風に変えてみます
+##### 演習2: 誕生日の書式を日本風に変えてみます
 
-- pet_detail 画面を Design タブで開きます
+![bg right h:700px](images/2022-11-12-22-09-13.png)
+
+---
+
+- pet_detail 画面で Design タブで開きます
 - そして Birthday の表示要素をダブルクリックし、詳細設定用ダイアログを表示します
 
 ---
@@ -1197,7 +1407,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 今回は一番上の `:formatted as DD/MM/YY` をクリックします
   - DD/MM/YY には本日日付が入っていると思います
 
-![bg right h:700px](images/2021-11-10-22-42-24.png)
+![bg right h:600px](images/2021-11-10-22-42-24.png)
 
 ---
 
@@ -1213,15 +1423,15 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - 一度 index ページを開いた上で、プレビュー実行
 - ペット一覧からペット詳細を開いてみると Birthday の日付が指定した書式になっていると思います
 
-![bg right h:700px](images/2021-11-10-22-45-42.png)
+![bg right h:700px](images/2022-11-12-22-09-13.png)
 
 ---
 
-### Appendix2: 性別のラベルを変えてみよう
+##### 演習3: 性別のラベルを変えてみよう
 
 - 性別が "Male" だったら "男の子"、"Female" だったら "女の子" と表示してみましょう！
 
-![bg right h:700px](images/2021-11-13-08-58-29.png)
+![bg right h:700px](images/2022-11-12-22-16-39.png)
 
 ---
 
@@ -1237,35 +1447,35 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
-- 続いて Conditinal タブを開き、Definel another condition ボタンをクリックし条件を追加します
+- 続いて Conditinal タブを開き、 `Definel another condition` ボタンをクリックし条件を追加します
 
-![bg right h:450px](images/2021-11-13-09-03-46.png)
+![bg right w:550px](images/2022-11-12-22-10-30.png)
 
 ---
 
 - まず「現在表示しているペットの性別が "Male" の場合」という条件を When に指定します
 - Male だけ手入力で、それ以外はプルダウンから選択ですね
 
-![bg right h:450px](images/2021-11-13-12-15-26.png)
+![bg right w:550px](images/2022-11-12-22-13-55.png)
 
 ---
 
 - When が設定できたら、その条件が true の時の振る舞いを設定します
-- 今回の場合、特定も文字列を表示したいので "Select a property..." のプルダウンから Text を選択します
+- 今回の場合、特定も文字列を表示したいので "Select a property..." のプルダウンから "Text" を選択します
 
-![bg right h:500px](images/2021-11-13-12-17-26.png)
+![bg right w:450px](images/2022-11-12-22-14-32.png)
 
 ---
 
 - すると、文字列の入力欄が表示されるのでそこに「男の子」と入力します
 
-![bg right h:500px](images/2021-11-13-12-18-50.png)
+![bg right w:500px](images/2022-11-12-22-15-20.png)
 
 ---
 
 - 同じ要領の「女の子」の設定をしてみましょう
 
-![bg right h:700px](images/2021-11-13-12-20-51.png)
+![bg right h:700px](images/2022-11-12-22-16-02.png)
 
 ---
 
@@ -1285,11 +1495,11 @@ Female だった場合には「女の子」を表示する
 - それでは index ページからプレビュー実行してみましょう
 - ペット一覧からペット詳細を開いてみると Gender の値が「男の子」「女の子」になっていると思います
 
-![bg right h:700px](images/2021-11-10-22-57-59.png)
+![bg right h:700px](images/2022-11-12-22-16-39.png)
 
 ---
 
-### Appendix3: 詳細画面から一覧画面への導線を設けてみよう
+##### 演習4: 詳細画面から一覧画面への導線を設けてみよう
 
 - 詳細画面から一覧へ戻るための導線を用意してみましょう
 - これまでの講義を踏まえるときっとイメージは沸いていると思うので、完成イメージとヒントだけ記載しておきます
@@ -1302,19 +1512,543 @@ Female だった場合には「女の子」を表示する
 - Link 要素の場合、画面遷移は Workflow ではなく、要素自身に "Destination page" を設定できます
 - 完成イメージ
 
-![bg right h:700px](images/2021-11-10-23-12-19.png)
+![bg right h:700px](images/2022-11-12-22-18-53.png)
+
+---
+
+## ヘッダー部品を作っていこう
+
+- ここで画面作成から少し離れ、"共通部品" の作成をしていきます
+- "共通部品" とは複数の画面で同じように使われる要素をまとめたものを指し、今回はヘッダー部品を題材に作成していきます
+
+---
+
+#### 作成するヘッダー部品の機能
+
+- ペット登録画面へのリンク
+- ログイン状態に応じたログイン / ログアウトボタンの制御
+
+![w:1150px](images/2022-11-13-21-05-11.png)
+
+---
+
+#### なぜ共通部品を作成するか？
+
+- ヘッダー部品のような、複数の画面で利用したい要素を、それぞれの画面に個別に準備するのは手間ですよね
+- また、個別に準備した場合、その内容を変更しようとした時に、それぞれの画面に対して修正が必要になり、開発の手間が増えてしまいます
+
+---
+
+- そこで Bubble では "Reusable elements" のコンポーネントを用いて、そのような問題を解決します
+- 今回はヘッダー部品を "Reusable elements" として作成し、ペットの一覧・登録・詳細画面に配置していきます
+
+---
+
+#### ヘッダー部品の作成
+
+- 左上の画面一覧を開き、その中にある "Add a new reusable element..." をクリック
+
+![bg right w:550px](images/2022-11-13-16-49-33.png)
+
+---
+
+- すると、画面作成時と同じポップアップが表示されるので、今回は共通部品の名前として "header" と入力して CREATE をクリック
+
+![bg right w:550px](images/2022-11-13-16-50-35.png)
+
+---
+
+- すると右パネルに縦横 200px のエリアが表示されると思います
+- このままでは少し横幅が狭いので、まずはエリアの領域を調整します
+
+![bg right w:550px](images/2022-11-13-16-51-19.png)
+
+---
+
+- 右パネルのエリア内で右クリック --> Edit
+- 見慣れたポップアップが表示されるので "Layout" タブを選択
+- その中にある `Width` を "1200"、 `Height` を "72" に変更
+
+![bg right w:550px](images/2022-11-13-17-02-25.png)
+
+---
+
+- それではヘッダーの共通部品を作り込んで行くのですが、ここで便利な機能を使います
+- Bubble の画面上部にあるメニューの中に "Components" というものがあります
+
+![w:950px](images/2022-11-13-16-54-56.png)
+
+---
+
+- これは Bubble が標準で用意してくれている、よくある部品のライブラリとなっています
+- 今回はこの中にある "Header" 部品の中から一番上の部品を選択して、右パネルにドラッグします
+- 配置したら Component Library の下にある Close ボタンをクリックして閉じます
+
+![w:700px](images/2022-11-13-16-57-13.png)
+
+---
+
+- すると Bubble が用意している Header のサンプルが右パネルに表示されていますね
+- 今回はこれをカスタマイズしていきます
+
+![w:1200px](images/2022-11-13-17-04-34.png)
+
+---
+
+- まずは今回のヘッダー部品として不要なものを削除します
+- 下記 2 つの要素を選択して削除しておきます
+  - FAQs
+  - Blog
+- 誤って他の要素を削除しないよう注意してくださいね
+- "Bubble Forum" の要素は次のステップで使い回すので残しておきます
+
+![w:1200px](images/2022-11-13-17-07-31.png)
+
+---
+
+- 削除後はこんな感じです
+
+![w:1200px](images/2022-11-13-17-08-05.png)
+
+---
+
+#### ペット登録画面へのリンクの設置
+
+- まずはペット登録画面へのリンクを設置してみましょう
+
+![w:1100px](images/2022-11-13-17-33-12.png)
+
+---
+
+- 先程残しておいた "Bubble Forum" の要素をダブルクリックして編集ポップアップを表示します
+- そのポップアップの下の方にある `Replace` というボタンをクリック
+
+![bg right w:500px](images/2022-11-13-17-10-54.png)
+
+---
+
+- これは、選択中の要素の種類を変更する機能となります
+- 今回はこの Text 要素を Link 要素に置き換えていきます
+- `New element type` の中から "Link" を選択して REPLACE をクリック
+
+![bg right w:550px](images/2022-11-13-17-13-22.png)
+
+---
+
+- これで要素の種類が Link に置き換わりました
+- ただ、もともとの要素に設定されていた `Style` や `Conditional` は残っているので、これを変更していきます
+
+---
+
+- まずは `Style` をリンクに変更します
+- 要素の編集ポップアップから `Style` に "Standard Link" を選択
+- そのままだと、要素内の文字列が上寄せになっているので、縦位置を中央寄せにしておきます
+
+![bg right w:550px](images/2022-11-13-17-24-08.png)
+
+---
+
+- "Standard Link" 下の "Edit style" をクリック
+- Styles タブに移動し、Standard Link のスタイル編集画面になるので、Appearance タブにある `Center the text vertically` にチェックを入れます
+  - これで、リンクの文字列が縦中央寄せになります
+
+![bg right w:600px](images/2022-11-13-17-26-18.png)
+
+---
+
+- Design タブに戻り、先程上寄せになっていた文字が縦中央寄せになっていれば OK
+- 文字列の内容も "Pet Register" に変更
+- 遷移先も "pet_register" を設定
+
+![bg right w:500px](images/2022-11-13-22-04-19.png)
+
+---
+
+- Style を変更したことで `Conditional` の内容も削除されています
+- キャプチャの通りになっていれば OK
+
+![bg right w:500px](images/2022-11-13-17-31-21.png)
+
+---
+
+- これでペット登録画面へのリンクの設置は完了です
+
+![w:1100px](images/2022-11-13-17-33-12.png)
+
+---
+
+#### ログイン状態に応じたログイン / ログアウトボタンの制御
+
+- 次にログイン、ログアウトボタンの準備をしていきます
+
+![w:1150px](images/2022-11-13-21-05-11.png)
+
+---
+
+- ここでやることは 4 つです
+
+1. ログインボタンは「未ログイン状態の時だけ表示する」
+2. ログインボタンを押すとログイン画面（index）に遷移する
+3. サインアップボタンをログアウトボタンに変更し、「ログイン済み状態の時だけ表示する」
+4. ログアウトボタンを押すと、ログアウト状態にした上でログイン画面（index）に遷移する
+
+- まずはログインボタンの制御を組み込んでいきます
+
+---
+
+#### 1. ログインボタンは「未ログイン状態の時だけ表示する」
+
+- 制御のイメージとしては下記のようになります
+  - ログインボタンは非表示にしておく
+  - Conditional の条件で、現在ユーザが未ログイン状態であれば、ログインボタンを表示する
+
+---
+
+- まずログインボタンの編集ダイアログを表示
+- Layout タブの `This element is visible on page load` のチェックを外します
+- これにより、画面表示時に、この要素は表示しない、という制御になります
+
+![bg right w:550px](images/2022-11-13-17-42-08.png)
+
+---
+
+- 次に、ログイン状態による制御を行います
+- Conditional タブから `Define another condition` をクリック
+- When の条件に「現在ユーザが未ログイン状態」という内容を設定してみましょう
+
+![bg right w:450px](images/2022-11-13-17-44-23.png)
+
+---
+
+- こんな感じですね
+  - "Current User is logged out"
+
+![bg right w:450px](images/2022-11-13-17-45-32.png)
+
+---
+
+- そして、When の条件を満たした時に行う処理を `Select a property to change when true` で選択します
+- 何を選択するか分かりますか？
+
+![bg right w:450px](images/2022-11-13-17-46-38.png)
+
+---
+
+- "This element is visible"
+- これを選択し、チェックをつければ OK です
+
+- これで、下記の状態が準備できました
+  - ログインボタンは非表示にしておく
+  - Conditional の条件で、現在ユーザが未ログイン状態であれば、ログインボタンを表示する
+
+![bg right w:450px](images/2022-11-13-17-49-05.png)
+
+---
+
+#### 2. ログインボタンを押すとログイン画面（index）に遷移する
+
+- 次に "Log in" ボタンを押したらログイン画面へ遷移するワークフローを設定します
+- 単純な画面遷移だけなので、みなさん設定してみましょう！
+
+---
+
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+
+- 設定するワークフローは Go to page
+- Destination にログイン画面である index を選択すれば OK
+
+![bg right w:550px](images/2022-11-13-17-53-59.png)
+
+---
+
+- これでログインボタンの制御は完了です
+- 続いてログアウトボタンの制御を行っていきましょう
+
+---
+
+#### 3. サインアップボタンをログアウトボタンに変更し、「ログイン済み状態の時だけ表示する」
+
+- まず "Sign up" ボタンのラベルを "Log out" に変更しておきます
+
+![bg right w:550px](images/2022-11-13-18-00-48.png)
+
+---
+
+- そして表示・非表示の制御については、先ほどのログインボタンとほぼ同じです
+  - ログアウトボタンは非表示にしておく
+  - Conditional の条件で、現在ユーザがログイン済み状態であれば、ログインボタンを表示する
+
+- 先ほどの内容を参考に、設定してみましょう
+
+---
+
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+
+- まずログインボタンの編集ダイアログを表示
+- Layout タブの `This element is visible on page load` のチェックを外します
+- これにより、画面表示時に、この要素は表示しない、という制御になります
+
+![bg right w:550px](images/2022-11-13-18-01-28.png)
+
+---
+
+- そして Conditional の内容はこんな感じです
+- When の条件としては "Current User is logged in"
+- これで、下記の状態が準備できました
+  - ログアウトボタンは非表示にしておく
+  - Conditional の条件で、現在ユーザがログイン済み状態であれば、ログアウトボタンを表示する
+
+![bg right w:450px](images/2022-11-13-18-03-22.png)
+
+---
+
+- 実はもう 1 箇所、これと同じ Conditional の条件を設定して、現在ユーザがログイン済み状態の時だけ要素を表示する制御を行う箇所があります
+- どこか分かりますか？
+
+---
+
+- 最初に追加した "Pet Register" のリンクです
+- ペットのデータは、ログイン中のユーザに対して関連づけるデータです
+- そのため、ログイン済み状態のときだけペット登録画面へ遷移できるよう "Pet Register" のリンクにも Conditional をセットしておきましょう
+
+---
+
+- 先ほどのログアウトボタンと同じ制御なので分かりますよね :smile:
+
+---
+
+- こんな感じです :+1:
+
+![bg right w:500px](images/2022-11-13-21-41-39.png)
+
+---
+
+#### 4. ログアウトボタンを押すと、ログアウト状態にした上でログイン画面（index）に遷移する
+
+- 最後に "Log out" ボタンを押した時のワークフローを設定します
+- こちらもまずはみなさんで設定してみましょう！
+
+---
+
+- ログアウト状態にするワークフローのヒントは "Account" の中のどれかのアクションです
+
+![bg right w:550px](images/2022-11-13-20-58-51.png)
+
+---
+
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+
+- ログアウト状態にするアクションは "Account" の "Log the user out" です
+- その後に画面遷移のアクションを設定すれば OK
+
+![bg right w:450px](images/2022-11-13-21-01-36.png)
+
+---
+
+- これでヘッダー部品に関する設定が完了しました
+
+![w:1150px](images/2022-11-13-21-05-11.png)
+
+---
+
+やったこと
+
+- ペット登録画面へのリンク
+- ログイン状態に応じたログイン / ログアウトボタンの制御
+  1. ログインボタンは「未ログイン状態の時だけ表示する」
+  2. ログインボタンを押すとログイン画面（index）に遷移する
+  3. サインアップボタンをログアウトボタンに変更し、「ログイン済み状態の時だけ表示する」
+  4. ログアウトボタンを押すと、ログアウト状態にした上でログイン画面（index）に遷移する
+
+---
+
+ちなみに...
+
+- みなさんのヘッダー部品では "Log in" と "Log out" ボタンが表示されていないと思います
+- これは設定の中で、初期状態では非表示設定にしたからですが、その状態でも要素を表示する方法があります
+
+![w:1150px](images/2022-11-13-21-08-36.png)
+
+---
+
+- 左パネルの中から `Elements tree` を開き、その中にあるオブジェクトの `+` を押して要素を表示します
+
+![bg right w:400px](images/2022-11-13-21-12-37.png)
+
+---
+
+- ここに表示されている要素は、今表示している画面（共通部品）に含まれている全ての要素です
+- 表示順序にも意味があり、下に表示されているのが、画面上でいうところの最前面に表示されているものになります
+
+![bg right w:400px](images/2022-11-13-21-12-37.png)
+
+---
+
+- そして、その中で一番最前面（一番下）にある要素の中で、"Log in" ボタンと "Log out"（Sign in）ボタンの右にある「目」のアイコン
+- これが ON と OFF の状態があり、ON が右パネル上に表示、OFF が右パネル上に非表示、を表します
+
+![bg right w:400px](images/2022-11-13-21-11-55.png)
+
+---
+
+- 今回は、この "Log in" ボタンと "Log out"（Sign in）ボタンの「目」のアイコンを一度 OFF にして、再度 ON にすると、右パネル上でもボタンが表示されます
+- これは右パネル上での表示 / 非表示の制御であり、実際のアプリケーション上での表示 / 非表示とは関係ないので注意してください
+
+![w:1150px](images/2022-11-13-21-05-11.png)
+
+---
+
+- 最後に、現在のヘッダー部品の幅と、画面の幅を合わせるため、`Elements tree` から下記要素を選んで、`Width` の値を "1080" に変更します
+  - "Reusable header"
+  - "Group Header Standard with Menu"
+
+![bg right w:550px](images/2022-11-13-21-34-06.png)
+
+---
+
+- `Width` を変更したことで、"Pet Register" のリンクやログインのボタンが見えなくなった場合は、先ほどと同じ手順で、`Elements tree` からボタンなどの要素の「目」のアイコンをクリックして表示 ON にすると見えるはずです
+
+---
+
+### 各画面に組み込んでみよう
+
+- ヘッダー部品ができたので、まずはペット一覧画面に組み込んでみましょう
+
+![w:1100px](images/2022-11-13-21-46-31.png)
+
+---
+
+- "pet_list" を開き、最初に配置した "PET REGISTER" のリンクを削除します
+
+![w:900px](images/2022-11-13-21-21-39.png)
+
+---
+
+- 左パネルから `Reusable elements` の中にある "header" をクリックして、右パネルの上部にドラッグします
+- 画面の最上部に設置しておきましょう
+
+![w:1000px](images/2022-11-13-21-44-47.png)
+
+---
+
+それではプレビューしてみましょう 🙋‍♀️
+
+---
+
+#### ログイン状態の場合
+
+- ペット登録のリンクが表示されていること
+- ログアウトボタンが表示されていること
+- ログアウトボタンを押すとサインアップ画面へ遷移すること
+
+![w:1100px](images/2022-11-13-21-46-31.png)
+
+---
+
+#### ログアウト状態の場合
+
+- ペット登録のリンクが表示されていないこと
+- ログインボタンが表示されていること
+- ログインボタンを押すとサインアップ画面へ遷移すること
+
+![w:1100px](images/2022-11-13-21-49-03.png)
+
+---
+
+- 問題なければ残りの画面へ同じように組み込んでいきたいのですが、その前に 1 つワークフローを設定しておきます
+- それは、サインアップ / ログインに成功した時にペット一覧画面へ遷移するワークフローです
+
+Let's Try!! :fire:
+
+---
+
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+
+- 今の皆さんには簡単ですね！
+- index ページのワークフローを開き、下記 2 つの When に対して、"Go to page pet_list" のアクションを追加するだけです
+  - "When Button Log in is clicked"
+  - "When Button Sign up is clicked"
+
+---
+
+- 念の為プレビューを行い、ログインボタンを押した時、サインアップボタンを押した時、それぞれペット一覧画面へ遷移することを確認しておきましょう！
+- プレビューが問題なければ、のこり 2 画面にも同様にヘッダー共通部品を配置しておきましょう
+  - ペット登録画面
+  - ペット詳細画面
+
+---
+
+- ペット登録画面
+
+![w:900px](images/2022-11-13-22-00-02.png)
+
+---
+
+- ペット詳細画面
+
+![w:900px](images/2022-11-13-22-00-49.png)
+
+---
+
+- 登録画面と詳細画面もプレビューで確認してみましょう
+
+---
+
+#### ペット登録画面
+
+![w:900px](images/2022-11-13-22-05-23.png)
+
+---
+
+#### ペット詳細画面
+
+![w:900px](images/2022-11-13-22-05-57.png)
+
+---
+
+##### 演習5: ペット登録画面のリンクも出し分けしてみよう
+
+- 余裕のある人はペット登録画面ではヘッダーの "Pet Register" のリンクを表示しない設定をしてみましょう
+- Hint :bulb:
+  - "Current page name"
+  - ペット登録画面のページ名は "pet_register"
 
 ---
 
 ## ペットの体重を管理しよう
 
-- 続いてペットの体重管理を見ていきましょう
+- いよいよ最後です :fire:
+- ペットの体重管理を見ていきましょう
 
-![bg right h:700px](images/2021-11-12-02-17-49.png)
+![bg right h:600px](images/2022-11-16-22-16-28.png)
 
 ---
 
-- まずは Type を用意していきます
+- まずはデータベースの Type を用意していきます
 - Data タブから New type として `PetWeightLogs` を入力し、`Make this data type private by default` のチェックを入れて Create します
 - 続いて field を設定していきます
 
@@ -1323,9 +2057,9 @@ Female だった場合には「女の子」を表示する
 - 画面から入力されたペットの体重
   - WeightKg: number
 - どのペットの体重かを紐付ける
-  - pet: Pets
+  - Pet: Pets
 
-![](images/2021-11-10-23-37-27.png)
+![w:900px](images/2021-11-10-23-37-27.png)
 
 ---
 
@@ -1338,16 +2072,16 @@ Female だった場合には「女の子」を表示する
 
 ---
 
-- この画面も、ペット詳細から遷移する前提であるため `pet_weight_register` 画面に対する詳細設定ダイアログから、 `Type of content` に Pets を指定します
+- この画面も、ペット詳細から遷移する前提であるため `pet_weight_register` 画面に対する詳細設定ダイアログから、 `Type of content` に "Pets" を指定します
 
-![bg right h:550px](images/2021-11-11-08-21-17.png)
+![bg right h:550px](images/2022-11-13-23-15-58.png)
 
 ---
 
 - コピー元のペット登録画面の要素が残っているので、不要なものは削除しつつ参考画像のような要素を配置します
 - ただし、グラフ描画エリアは現時点では配置しません
 
-![bg right h:550px](images/2021-11-10-23-28-08.png)
+![bg right h:550px](images/2022-11-13-23-19-43.png)
 
 
 ---
@@ -1356,14 +2090,14 @@ Female だった場合には「女の子」を表示する
 - ペットの体重入力要素をダブルクリックし `Content format` に `Decimal` を選択します
   - ちなみに `Integer` は小数点なしの整数入力の場合に選択します
 
-![bg right h:700px](images/2021-11-10-23-30-42.png)
+![bg right h:600px](images/2022-11-13-23-19-08.png)
 
 ---
 
 - 次に、体重保存のボタンクリックに対してワークフローを設定していきます
 - ADD ボタンをダブルクリックし、詳細設定ダイアログから Start/Edit workflow を選択
 
-![w:800px](images/2021-11-11-08-23-59.png)
+![w:700px](images/2022-11-13-23-20-34.png)
 
 ---
 
@@ -1423,6 +2157,7 @@ Female だった場合には「女の子」を表示する
 
 - これでペットの体重登録が出来たので、詳細画面からの導線を用意しましょう
 - 詳細画面を開き、Image と Birthday の間にリンクを用意しましょう
+- もし画面の高さが足りない人は、pet_detail 自身の Height を広げましょう
 - リンクは `Visual elements` の `Link` を使いましょう
 
 ---
@@ -1438,7 +2173,7 @@ Female だった場合には「女の子」を表示する
 
 - こんな感じ！
 
-![w:1000px](images/2021-11-11-08-56-41.png)
+![w:900px](images/2022-11-13-23-27-30.png)
 
 ---
 
@@ -1450,22 +2185,22 @@ Female だった場合には「女の子」を表示する
 - 設定できたら一覧画面に戻ってプレビューを実行してみましょう
 - 一覧、詳細、体重管理へ遷移した後、Weight に値を入力して ADD を押すと画面が再描画されましたかね？
 
-![bg right h:700px](images/2021-11-11-09-18-33.png)
+![bg right h:650px](images/2022-11-13-23-29-35.png)
 
 ---
 
 - 念のため、データベースにデータが登録されていることを確認してみましょう
 - Data の App data タブから `All PetWeightLogs` を選択すると左側にデータが登録されていますよね？
 
-![w:1200px](images/2021-11-11-09-20-13.png)
+![w:1200px](images/2022-11-13-23-32-30.png)
 
 ---
 
-## ペットの体重をグラフィカルに表示してみよう
+### ペットの体重をグラフィカルに表示してみよう
 
 - 登録したペットの体重を Adalo の時と同様グラフを使って表示してみましょう
 
-![bg right h:700px](images/2021-11-12-02-25-30.png)
+![bg right h:600px](images/2022-11-16-22-16-28.png)
 
 ---
 
@@ -1479,7 +2214,7 @@ Female だった場合には「女の子」を表示する
 - 左メニューから Plugins を選択し、プラグイン画面を表示します
 - そして、右上の `+ Add plugins` を押して追加するプラグインを検索します
 
-![w:1100px](images/2021-11-11-20-21-36.png)
+![w:1100px](images/2022-11-13-23-33-57.png)
 
 ---
 
@@ -1491,9 +2226,9 @@ Female だった場合には「女の子」を表示する
 ---
 
 - インストールが完了したら DONE をクリックしてポップアップを閉じます
-- Installed Plugins に Chart Element が入っていれば OK デス
+- Installed Plugins に Chart Element が入っていれば OK です
 
-![bg right h:700px](images/2021-11-11-20-40-34.png)
+![bg right h:600px](images/2022-11-13-23-35-54.png)
 
 ---
 
@@ -1518,25 +2253,31 @@ Female だった場合には「女の子」を表示する
 
 ---
 
+- このような形にサイズを調整します
+
+![bg right h:700px](images/2022-11-13-23-39-03.png)
+
+---
+
 - 描画するとこれまでと同じく詳細設定用のダイアログが表示されますので、各項目を設定していきましょう
 - `Chart type` はグラフの種類を指定します
   - 今回は折れ線グラフなので `Line` とします
 
-![bg right h:600px](images/2021-11-11-20-48-33.png)
+![bg right h:600px](images/2022-11-13-23-40-57.png)
 
 ---
 
 - `Type of data` はグラフ描画するデータのタイプを指定します
   - 今回はペットの体重表示となるので `PetWeightLogs` とします
 
-![bg right h:600px](images/2021-11-11-20-48-33.png)
+![bg right h:600px](images/2022-11-13-23-40-57.png)
 
 ---
 
 - 続けて `Data source` に対象データの条件を指定します
   - 一覧画面での条件指定と同じように、まずは `Do a search for` を選択
 
-![bg right h:600px](images/2021-11-11-20-48-33.png)
+![bg right h:600px](images/2022-11-13-23-41-36.png)
 
 ---
 
@@ -1557,23 +2298,23 @@ Female だった場合には「女の子」を表示する
 - まずは Click をクリックすると Type に指定した `PetWeightLogs` が持っているフィールドが表示されます
 - 今回は `PetWeightLogs` に関連する `Pet` の情報が、現在表示しているペットと同じデータを対象とします
 
-![bg right h:550px](images/2021-11-11-20-55-37.png)
+![bg right h:550px](images/2022-11-13-23-43-00.png)
 
 ---
 
 - これを条件として表現するとこのようになりますので、それを設定してみましょう
   ```
-  pet = Current Page Pets
+  Pet = Current Page Pets
   ```
 
-![bg right h:550px](images/2021-11-11-20-55-37.png)
+![bg right h:550px](images/2022-11-13-23-43-00.png)
 
 ---
 
 - 最後にデータの並び順を指定します
   - グラフの見せ方として、登録した体重を新しいもの順にしたいと思います
 
-![bg right h:700px](images/2021-11-12-02-33-14.png)
+![bg right h:600px](images/2022-11-16-22-16-28.png)
 
 ---
 
@@ -1582,7 +2323,7 @@ Female だった場合には「女の子」を表示する
 - `Descending` に `"yes"` を指定します
   - これでキーの新しいもの順（降順）と指定しました
 
-![bg right h:700px](images/2021-11-11-21-00-40.png)
+![bg right h:600px](images/2022-11-13-23-44-11.png)
 
 ---
 
@@ -1594,7 +2335,7 @@ Female だった場合には「女の子」を表示する
 - 最後にグラフに描画する X 軸と Y 軸を指定します
 - 今回の場合、X 軸は登録日時、Y 軸は体重となります
 
-![bg right h:700px](images/2021-11-12-02-33-14.png)
+![bg right h:600px](images/2022-11-16-22-16-28.png)
 
 ---
 
@@ -1615,11 +2356,11 @@ Female だった場合には「女の子」を表示する
 - 一覧で選択したペットに対して登録された体重がグラフとして表示されましたか？
 - 同じ画面で Weight をどんどん追加するとグラフの内容が変化しますか？
 
-![bg right h:700px](images/2021-11-11-21-09-48.png)
+![bg right h:600px](images/2022-11-16-22-16-28.png)
 
 ---
 
-### Appendix4: グラフの X 軸のラベルを変えてみよう
+##### 演習6: グラフの X 軸のラベルを変えてみよう
 
 - 現時点の X 軸のラベルは長ったらしい日時の書式になっているので、皆さんでお好きなフォーマットに変えてみてください
 - 例えばこんな感じ
@@ -1628,17 +2369,17 @@ Female だった場合には「女の子」を表示する
 
 ---
 
-### Appendix5: 体重データが 1 件もない場合にメッセージを出してみよう
+##### 演習7: 体重データが 1 件もない場合にメッセージを出してみよう
 
 - 現在の開発内容だと、ペットの体重が 1 件も登録されていない場合、グラフ描画エリアが空白になってしまい、ページとしての見栄えが悪いですね
 
-![bg right h:680px](images/2021-11-11-21-55-31.png)
+![bg right h:650px](images/2022-11-13-23-51-01.png)
 
 ---
 
 - そこで、ペットの体重が 1 件も登録されていない場合に専用のメッセージを表示して、ユーザビリティを向上させてみましょう
 
-![bg right h:680px](images/2021-11-11-22-27-19.png)
+![bg right h:650px](images/2022-11-13-23-56-47.png)
 
 ---
 
@@ -1658,47 +2399,36 @@ Female だった場合には「女の子」を表示する
 
 ---
 
-### Appendix6: ペット一覧にメッセージを出し分けてみよう
+##### 演習8: 未ログイン状態では常にログイン画面へ遷移させてみよう
 
-- ペット一覧はログインしていないと表示されません
-- さらに、ログインしていてもペットが 1 件も登録されていないと何も表示されません
-- しかし、ユーザからすると、なぜペット一覧が表示されていないのかが判断つきません
-
----
-
-- そこで、それぞれの状態に応じてメッセージを出し分けて見ましょう
-
-![w:900px](images/2021-11-12-18-12-17.png)
-![w:900px](images/2021-11-12-18-13-40.png)
+- ヘッダー部品を配置した画面は、全てログイン状態でなければ使わせたくないですよね
+- そこで、ヘッダー部品を配置した画面に、未ログイン状態で遷移した場合にはログイン画面（index）へ強制遷移させるようにしてみましょう
 
 ---
 
-- 設定の考え方は先ほどのペットの体重が 0 件の時の出し分けと同じです
-- それぞれのメッセージを用意しつつ、デフォルトでは非表示設定にしておきます
-- その上で、それぞれの条件に合致する場合に、メッセージを表示させます
-  - 現在のユーザがログイン済みかどうか？
-  - 現在のユーザがログイン済みで、かつそのユーザが登録したペットが 1 件以上存在するか？
+- Hint :bulb:
+  - ヘッダー部品を配置した画面に対してワークフローを設定するのではなく、ヘッダー部品そのものにワークフローを設定します
+  - 設定する内容はシンプル
+  - When: 現在ユーザが未ログインであれば "Go to page index"
+
 - 次のページに答え（設定内容）を書いています！
 
 ---
 
-- 現在のユーザがログイン済みかどうか？
+- ヘッダー部品に対して
+  - When: User is logged out
+  - Go to page index
+- 他のワークフローと違ってボタンをトリガーにしないため、分かりやすく色を変えました
 
-![w:600px](images/2021-11-12-18-16-33.png)
+![bg right w:600px](images/2022-11-14-00-09-55.png)
 
----
+----
 
-- 現在のユーザがログイン済みで、かつそのユーザが登録したペットが 1 件以上存在するか？
-
-![w:550px](images/2021-11-12-18-17-30.png)
-
----
-
-#### Appendix7: 詳細画面から更新画面への導線を設け、更新機能を作ってみよう
+##### 演習9: 詳細画面から更新画面への導線を設け、更新機能を作ってみよう
 
 - ポイントとしては次のシートの通りです！ぜひ実践してみてください！
 
-![bg right h:700px](images/2021-11-12-09-56-23.png)
+![bg right h:700px](images/2022-11-14-00-18-26.png)
 
 ---
 
@@ -1717,7 +2447,22 @@ Female だった場合には「女の子」を表示する
 
 ---
 
-# まとめ
+##### 演習10
+
+今日学んだ機能を使って、自由に機能追加してみてください
+できたら Slack でログイン画面の URL を共有して、みなさんに見てもらいましょう
+
+---
+
+##### 演習10の結果発表
+
+(時間があれば)
+
+演習で作った画面・機能を紹介してみませんか :smile: ?
+
+---
+
+## まとめ
 
 - 今回のレクチャーでは Bubble の使い方から始まり、実際に画面をデザインするところから、データベースとの連携まで行いました
 - 基本的な流れは Adalo と似ている部分もありつつ、ワークフロー周りの考え方はビジュアルプログラミングツールと呼ばれる所以をを少しは感じていただけたかなと思います
