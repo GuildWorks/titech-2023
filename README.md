@@ -20,7 +20,7 @@
 
 ### 2022/11/26
 * [Bubble の基本 #2-2](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble2-2/pdf/Bubble2-2-jp.pdf)
-* [Bubble Basics #2-2](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble2-2/pdf/Bubble2-2-jp.pdf)
+* [Bubble Basics #2-2](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble2-2/pdf/Bubble2-2-en.pdf)
 
 ## 講師用参考リンク集 / Reference links for lecturers
 - [スケジュール](https://github.com/GuildWorks/titech-2022/raw/master/BootCamp2022Schedule_ver1.1.xlsx)
