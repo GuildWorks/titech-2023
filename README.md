@@ -15,11 +15,12 @@
 * [Database design and data manipulation with Adalo](https://github.com/GuildWorks/titech-2022/raw/master/docs/Adalo2/pdf/Adalo2-en.pdf)
 
 ### 2022/11/19
-* [Bubble の基本](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble1/Bubble1-jp.pdf)
-* [Bubble Basics](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble1/Bubble1-en.pdf)
+* [Bubble の基本](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble1/pdf/Bubble1-jp.pdf)
+* [Bubble Basics](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble1/pdf/Bubble1-en.pdf)
 
 ### 2022/11/26
-* TODO
+* [Bubble の基本 #2-2](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble2-2/pdf/Bubble2-2-jp.pdf)
+* [Bubble Basics #2-2](https://github.com/GuildWorks/titech-2022/raw/master/docs/Bubble2-2/pdf/Bubble2-2-jp.pdf)
 
 ## 講師用参考リンク集 / Reference links for lecturers
 - [スケジュール](https://github.com/GuildWorks/titech-2022/raw/master/BootCamp2022Schedule_ver1.1.xlsx)
