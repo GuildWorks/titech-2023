@@ -10,7 +10,7 @@ paginate: true
 
 Programming Boot Camp Learning Phase #4
 
-# Bubble Basic #2
+# Bubble Basic #2-1
 
 2022/11/26
 
@@ -62,31 +62,25 @@ Programming Boot Camp Learning Phase #4
 
 トップページ
 
-![w:800](images/2021-11-19-06-50-51.png)　![w:200](images/2021-11-19-06-52-07.png)
+![w:700](images/2022-11-26-02-50-05.png)![w:350](images/2022-11-26-02-50-24.png)
 
 ---
 
 ペットリスト
 
-![w:800](images/2021-11-19-06-53-47.png)　![w:200](images/2021-11-19-06-54-08.png)
+![w:700](images/2022-11-26-02-51-38.png)![w:300](images/2022-11-26-02-51-20.png)
 
 ---
 
 ペット詳細
 
-![w:800](images/2021-11-19-06-55-06.png)　![w:200](images/2021-11-19-06-55-31.png)
+![w:700](images/2022-11-26-02-52-36.png)![w:300](images/2022-11-26-02-52-54.png)
 
 ---
 
 アドバイザー用ペットリスト
 
-![w:800](images/2021-11-19-06-57-37.png)
-
----
-
-アドバイザー用ペット詳細
-
-![w:800](images/2021-11-19-06-58-27.png)
+![w:900](images/2022-11-26-02-57-34.png)
 
 ---
 
@@ -1551,9 +1545,9 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 
 ---
 
-## アドバイザーの一覧画面、詳細画面を作成する
+## アドバイザーの一覧画面を作成する
 
-アドバイザーの一覧画面、詳細画面を作りましょう
+アドバイザーの一覧画面を作りましょう
 
 - bロゴ横のメニューを開いて、`Add a new page...`
 - `Page name`に`pet_list_for_advisor`と入力する
@@ -1570,37 +1564,19 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
   - Data sourceの`Do search for`をクリックする
   - `Created By = Current User`と条件指定されている部分をゴミ箱アイコンをクリックして削除
 - アドバイザーはたくさんのペットを閲覧する必要があるので、一つ一つのセルのサイズは小さくする。
-  - `Min width`と`Min height`はともに150pxに変更
-![bg right w:600](images/2022-11-26-02-05-36.png)
+  - `Min width`に150pxと`Min height`に120pxを指定
+![bg right w:600](images/2022-11-26-02-13-13.png)
 
 ---
 
-便宜上、`Repeating Group`のセルの中を`Group`で囲っておきます
+アドバイザーがログインした場合は、アドバイザー用の一覧画面に遷移するようにします
 
-- 左に並んでいる中に`Group`とあるので、画面に配置します。
-- `Rpeating Group`の1つのセルの中に入るくらいの大きさにして、RepeatingGroupに入れます。
-- 入れたあとにセルの上下左右いっぱいまで引き延ばしておきます。
-- Type of contentに`Pets`、Data sourceに`Current cell's Pets`を指定します。
+- `index`ページを開く
+- 左メニューから`Workflow` > 並んでいる正方形の中から`Button Sign up is clicked` > 並んでいるActionから`Sign the user up`の順に移動する
+- Actionの設定画面内の`Change another field`ボタンをクリックする
+- 入力欄がでてくるので、`Role` = `Dropdown Role` `'s value`と選択する
 
-![](images/2021-11-20-07-07-00.png)
-
----
-
-リストに要素を置いていきます。
-- Image
-  - Dynamic image：`Parent group's Pets` `'s Image`
-  - Run-mode rendering: `Zoom`
-- Name
-  - テキスト入力欄：`Parent group's Pets` `'s Name`
-- Birthday
-  - テキスト入力欄：`Parent group's Pets` `'s Birthday` `:formatted ad 2021/11/20`
-- Owner
-  - テキスト入力欄：`Parent group's Pets` `'s Creator` `'s email`
-
-※画面イメージは次のページ
-
----
-![](images/2021-11-20-07-17-51.png) 
+![bg right w:600](images/2021-11-20-06-45-29.png)
 
 ---
 
@@ -1644,107 +1620,46 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 
 ![](images/2021-11-20-07-32-23.png)
 
-では、同じように`PetWeightLogs`と`Users`にもルールを追加してください。
+では、同じように`PetWeightLogs`にもルールを追加してください。
 これでアドバイザーはすべてのデータを見れるようになっているはずです。
 
 ---
 
 ## プレビューしましょう
 わーい
-![](images/2021-11-20-07-50-54.png)
-
----
-
-アドバイザー用の詳細もつくります。
-これはほぼ複製だけでつくれちゃいます。
-
-- 左上のbロゴから`Add a new page...`
-- Page nameに`pet_detail_for_advisor`を入力
-- Clone fromに`pet_detail`を入力
-- Createボタンを押す
-
-![bg right w:600](images/2021-11-20-07-41-09.png)
-
----
-
-このままでもいいのですが、更新への導線は不要なので、`UPDATE`ボタンと`Weight Logs`のリンクは消しておきます。
-
-あと、`Back to list`リンクの戻り先は`pet_list_for_advisor`にしておきます。
-
-![bg right w:600](images/2021-11-20-07-43-54.png)
-
----
-
-次に、pet_list_for_advisorからの導線がないので、つくります。
-
-- pet_list_for_advisorの画面を開く
-- `Repeating Group`のセルの中につくった`Group`を選択する
-- `Start/Edit workflow`ボタンをクリックする
-- `Click here to add an action`>`Navigation`>`Go to page`と選択していく
-![bg right w:600](images/2021-11-20-07-47-20.png)
-
----
-
-- Destinationに `pet_detail_for_advisor`を入力する
-- Data to sendに`Current cell's Pets`を選択する
-
-![bg right w:500](images/2021-11-20-07-49-08.png)
-
----
-
-## プレビュー＆動作確認してみましょう
-
-行をクリックしたら
-![](images/2021-11-20-07-51-18.png)
-
----
-
-でたでた
-![](images/2021-11-20-07-51-44.png)
+![](images/2022-11-26-02-14-09.png)
 
 ---
 
 次に、ログイン時の遷移先を制御します。
-実はすでに、トップページでログイン状態だったら、ペットリストに遷移するという設定をいれています。そこを編集していきます。
 
-- indexページのWorkflowをひらく
-- `User is logged in`を選択
-- `Go topage pet_list`のActionの設定を開く
-- `Only when`に`Current User` `'sRole` `is` `Pet Owner`を選択する
-
-飼い主だけpet_listに遷移します
-
-![bg right w:700](images/2021-11-20-08-06-31.png)
+アドバイザーの場合は、pet_listに遷移した際に、pet_list_for_advisorに遷移するというActionを追加します
 
 ---
 
-次にアドバイザーの場合はpet_list_for_advisorに遷移するというActionを追加します
-
+- indexページのWorkflowをひらく
+- `Click here to add an event..`をクリックする
+- `General` > `Page is loaded`を選択
 - `Click here to add an action..`をクリックする
 - `Navigation` > `Go to page..`をクリックする
 - 設定が開くので、Destinationに`pet_list_for_advisor`を選択する
 - `Only when`に`Current User` `'sRole` `is` `Pet Advisor`を選択する
 
-![bg right w:700](images/2021-11-20-07-59-48.png)
+![bg right w:700](images/2022-11-26-02-24-57.png)
 
 --- 
 
 ## プレビュー＆動作確認しましょう
 
 アドバイザーでログインしたら
-![](images/2021-11-20-08-07-17.png)
+![w:900](images/2022-11-26-02-27-58.png)
 
 --- 
 
 飼い主でログインしたら
-![](images/2021-11-20-08-08-03.png)
+![w:900](images/2022-11-26-02-28-44.png)
 
 よしよし
-
----
-
-## ちょっと一息
-ここまでで何か質問ありますか
 
 ---
 
@@ -1786,7 +1701,7 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 
 #### ＜Advanced＞
 
-追加されたフィールドに`default`という欄があるので、`no`を設定しておく。
+追加されたフィールドに`default`という欄があるので、`no`（もしくは`いいえ`）を設定しておく。
 作成されたタイミングでは、未承認状態となる。
  
  ![](images/2021-11-20-08-18-00.png)
@@ -1810,7 +1725,7 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 - `Visible to advisor`のWhenの条件が記載されている部分の末尾の`Pet Advisor`をクリックする
 - `More`があらわれるので`More`をクリックする
 - `and` `Current User` `'s Approved As Advisor` `is "yes"`と選択する
-- `User`と`PetWeightLogs`も同様にする
+- `PetWeightLogs`も同様にする
 
 ---
 
@@ -1819,7 +1734,8 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 動作確認してみよう
 `Approved As Advisor`が`no`のユーザーでログインしてみる
 
-![](images/2021-11-20-08-27-55.png)
+![](images/2022-11-26-02-36-18.png)
+
 よし
 
 ---
@@ -1828,7 +1744,8 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 
 `Approved As Advisor`が`yes`にしたら？
 
-![](images/2021-11-20-08-28-45.png)
+![](images/2022-11-26-02-35-51.png)
+
 よし
 
 ---
@@ -1846,7 +1763,7 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 
 #### ＜Advanced＞
 
-- メニューからWorkflowに移動する
+- メニューからWorkflowに移動する
 - `Click here to add an event..`>`Page is loaded`とクリックする
 - `Click here to add an action..`>`Element Actions`>`Show`とクリックする
 - Elementに`Popup A`を指定する
@@ -1861,7 +1778,7 @@ Usersの中のすべての行がの`Role`が`Pet Owner`になっていればOK
 ## 動作確認してみよう
 
 yesのアドバイザーなら
-![w:900](images/2021-11-20-08-38-52.png)
+![](images/2022-11-26-02-35-51.png)
 
 よし
 
@@ -1870,7 +1787,7 @@ yesのアドバイザーなら
 #### ＜Advanced＞
 
 noなら
-![](images/2021-11-20-08-39-21.png)
+![](images/2022-11-26-02-39-20.png)
 
 よし
 
@@ -1892,11 +1809,12 @@ noなら
 
 ## システム管理者にメール通知されるようにしょう
 
-- `Signup / Login Popup`ページを開く
-- メニューからWorkflowに移動して、`Button SIGN UP is clicked`を選ぶ
+- `index`ページを開く
+- メニューからWorkflowに移動して、`Button Sign up is clicked`を選ぶ
 - `Click here to ad an action...`> `Email`>`Send Email`とクリックする
+- Actionの位置を`Go to page pet_list`の前にドラッグして移動する
 
-![bg right w:600](images/2021-11-20-08-43-12.png)
+![bg right w:600](images/2022-11-26-02-41-30.png)
 
 ---
 
@@ -1905,14 +1823,15 @@ noなら
 - Toに自分のメールアドレスを設定する
 - Sender nameは`PetLog`
 - Subjectは `New Advisor Registered`
-- Bodyは以下に`dynamic data isert`で`Input Email(sign up)` `'s value`を選択
+- Bodyは以下の本文の末尾に`dynamic data isert`で`Input Email(sign up)` `'s value`を選択
 ```
 New Advisor has been Registered.
 Please check it.
 
 Email: 
 ```
-![bg right w:500](images/2021-11-20-08-47-17.png)
+
+![bg right w:400](images/2022-11-26-02-43-23.png)
 
 ---
 
@@ -1961,10 +1880,10 @@ Email:
 ### デザインを作り込みました
 
 - ディスプレイサイズに合わせた画面をつくりました
-  - レスポンシブウェブデザインという手法を使って、ディスプレイサイズに合わせて以下のように見た目を制御しました
-    - 伸びる／縮む
-    - 折り返す／折り返さない
-    - 表示する／表示しない　
+  - レスポンシブウェブデザインという手法を使って、以下のようなルールを用いて、ディスプレイサイズに合わ見た目を制御しました.
+    - 親要素内の配置ルール
+    - 要素のサイズ決定ルール
+    - 表示の有無ルール
 - Styleを使ってみました
   - Styleを編集・追加したり、個別にスタイルをあてました
 
@@ -1983,7 +1902,7 @@ Bubbleで様々なところにロジックを埋め込めるのを一緒に見�
 ## 最後に
 
 以上で、Bubbleの基礎講義は終わりになります。
-来週はAdaloとBubbleの応用編を考えています。
+このあとはBubbleの応用編になります。
 
 触れられなかった機能もたくさんありますが、
 Bubbleはマニュアルとリファレンスが充実していますので、
