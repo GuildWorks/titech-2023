@@ -10,9 +10,9 @@ paginate: true
 
 **Programming Boot Camp**
 
-# Adaloの基本
+# Adaloでのアプリ開発と外部連携
 
-**東京工業大学 2022/11/5**
+**東京工業大学 2023/11/3**
 　
 　
 　
@@ -35,6 +35,12 @@ paginate: true
 - [Adalo](https://www.adalo.com/)は、アメリカ発のノーコードツールです。プログラミング不要でアプリを開発することができます。
 - 用意されているパーツから使用したいものを選び、それを画面にドラッグ＆ドロップしていくことで、アプリを作ることが可能です。
 - ブラウザで表示するWebアプリだけでなく、AndroidやiOS向けのスマートフォンアプリも開発できます。開発したアプリのGooglePlayやAppStoreでの公開も可能です。
+- シンプルで分かりやすいので、ノーコード開発を初めて学ぶためのツールに適しています。
+
+--- 
+#### 注意点
+- 一つのアプリを複数人で同時編集するのが難しく、Development Phaseでのチーム開発に利用するのはあまりおすすめできません
+  - ただし、画面の開発を担当するのが1人だけで、それ以外のメンバーは全員APIの開発を担当するという分担であれば、問題なく使えます
 
 
 ---
@@ -72,15 +78,23 @@ paginate: true
 :white_check_mark: 実際にサービスを運用していく際は、有料プランへの移行を検討してください
 
 ---
+- 利用目的を聞かれるので、 For teaching or taking a class を選択して、Go Build Apps! ボタンを押してください
+![w:900px](images/2023-10-29-13-06-38.png)
+
+---
 #### プラットフォームの選択
-- Native Mobile AppとDesktop Web Appが選べます
-- 今回は、Native Mobile Appを選択しましょう
-![bg 90% right](images/select-native-mobile-app.png)
+- Responsive AppとMobile Onlyが選べます
+- PCとMobileの両方に対応できる、Responsive Appを選択しましょう
+
+![bg 90% right](images/2023-10-29-13-09-34.png)
+
 ---
 #### テンプレートの選択
 - 完成されたアプリがテンプレートとして提供されています
 - 今回は、Chatを選択しましょう
-![bg 90% right](images/2022-11-04-23-15-25.png)
+![bg 90% right](images/2023-10-29-13-34-34.png)
+
+<!-- - ADVANCED OPTIONSは変更せず、そのままで大丈夫です -->
 
 ---
 #### ブランディング
@@ -88,12 +102,12 @@ paginate: true
 - App Name、Primary Color、Secondary Colorを自由に入力してください
   - Primary Colorは、アプリで最も使われるベースになる色です
   - Secondary Colorは、目立たせたい時に使う色です。重要なボタンなどに使われます。
-![bg 90% right](images/branding-chat-app.png)
-<!-- - ADVANCED OPTIONSは変更せず、そのままで大丈夫です -->
+![bg 90% right](images/2023-10-29-13-36-48.png)
+
 ---
 - このようなAdaloの管理画面が表示されたらOKです
 - 今後はこの管理画面を使って、アプリを開発していきます
-![w:900px](images/dev-tool-of-chat-app.png)
+![w:900px](images/2023-10-29-13-37-30.png)
 
 ---
 ## テンプレートアプリを操作してみよう
@@ -105,57 +119,37 @@ paginate: true
 ---
 - プレビュー画面が起動します
 - 一緒にChatアプリを操作してみましょう
-![w:800px](images/chat-app-preview.png)
+![w:800px](images/2023-10-29-14-41-39.png)
 
 ---
 - Signupしましょう
   - EmailとPasswordはメモしておいてください(後で使います)
-![bg 50% right](images/chat-app-signup.png)
+![w:900px](images/2023-10-29-14-44-05.png)
 
----
-- プロフィール写真を追加しましょう
-![bg 50% right](images/2022-11-02-07-48-39.png)
 
 ---
 - まだ会話が行われていないため、リストが空の状態です
-- 画面右下の + ボタンを押してみましょう
-![bg 50% right](images/chat-app-no-conversation.png)
+- 画面右上の NEW CHAT ボタンを押してみましょう
+![w:900px](images/2023-10-29-14-46-41.png)
 
 ---
 - サンプルユーザーのリストが表示されます
-- 一人を選んでクリックしてください
-![bg 50% right](images/2022-11-02-07-51-03.png)
+- Will Wを選んでクリックしてください
+![w:900px](images/2023-10-29-14-48-59.png)
 
 ---
 - メッセージを送信できます
-![bg 50% right](images/2022-11-02-07-54-34.png)
+![w:900px](images/2023-10-29-14-50-08.png)
 
 ---
-- 作ったアプリを他の人にシェアして会話してみましょう
-- Previewモードを左上の×ボタンで閉じて、メニューにあるSHAREをクリックしてください
-
-![w:1100px](images/share-button.png)
-
----
-- SHARE APPボタンをクリックして、COPY LINKを選択してください
-- コピーしたリンクを、参加者全員が見られるようにSlackに投稿しましょう
-  <!-- - TODO: 時間がかからないようにペアを作るなどの工夫が必要 -->
-![w:800px](images/share-chat-app.png)
-
----
-- 他の人の投稿したリンクをクリックしてその人のアプリにSignupし、メッセージを送りましょう
-  - ユーザーのリストにアプリの作成者(と他の登録者)が表示されると思います
-![bg 50% right](images/start-conversation.png)
-
----
-- (みんなのアプリにメッセージが送られたであろう頃に、)
-自分のアプリのPreview画面をもう一度表示してください
-  - メッセージが届いているはずなので、クリックして表示してみましょう
-![bg 50% right](images/2022-11-02-07-58-19.png)
-
----
-- メッセージが受信できました :tada:
-![bg 50% right](images/2022-11-02-07-59-15.png)
+他にも以下のような機能がありますので、試してみましょう。
+- プロフィール写真の更新
+- パスワードの変更
+- ログアウト
+- ログイン
+  - 以下のように入力すると、サンプルユーザーの Will W としてログインができます
+    - Email: will@email.com
+    - Password: 123
 
 ---
 - 今回試したChat以外にも、いくつかのテンプレートが提供されています。
@@ -187,7 +181,7 @@ paginate: true
 - 整理されたデータの集合。
 - データの登録、読込(表示)、更新、削除が行われる。
 - 例: Chatアプリの場合
-![w:400px](images/2021-10-19-23-49-03.png)
+![w:400px](images/2023-10-29-15-08-00.png)
 <!-- ![w:570px](images/2021-10-19-23-39-29.png) -->
 ![bg 35% right](images/2021-10-19-23-13-47.png)
 
@@ -203,13 +197,13 @@ paginate: true
 ---
 ### Adaloの機能説明
 次に、Adaloの管理画面で利用できる機能を紹介していきます
-![w:900px](images/dev-tool-of-chat-app.png)
+![w:900px](images/2023-10-29-15-10-32.png)
 
 ---
 #### Canvas
 - 画面を作る作業領域
 - 要素を選択したり、ドラッグアンドドロップで動かしたりできる
-![w:680px](images/canvas.png)
+![w:670px](images/2023-10-29-15-11-49.png)
 <!-- - スクロール、拡大、縮小ができる -->
 <!-- ![w:650px](images/2021-10-19-23-57-52.png) -->
 
@@ -218,31 +212,33 @@ paginate: true
 #### Left Toolbar
 左側のツールバーの各機能を紹介します。
 
-![w:60px](images/2022-11-02-08-00-18.png)
+![w:70px](images/2023-10-29-15-13-02.png)
 
 ---
 ###### ![w:60px](images/add-panel.png) Add Panel
 - コンポーネントや画面を選択してアプリに追加できる
-![bg right 95%](images/2021-10-20-00-37-54.png)
-![bg right 93%](images/2021-10-20-00-44-42.png)
+- 機能のテンプレートを追加することも可能
+![bg right 95%](images/2023-10-29-15-16-43.png)
+![bg right 95%](images/2023-10-29-15-17-09.png)
 <!-- 画面とコンポーネントの追加を実演する -->
 ---
 ###### ![w:60px](images/2021-10-20-00-52-07.png) Branding
 - 色やフォントを変えられる
-![bg right 100%](images/2021-10-20-00-50-02.png)
-![bg right 92%](images/2021-10-20-00-50-42.png)
+![bg right 98%](images/2023-10-29-15-25-23.png)
+![bg right 94%](images/2023-10-29-15-25-47.png)
 <!-- 色とフォントの変更を実演する -->
+
 ---
 ###### ![w:60px](images/2021-10-20-00-54-44.png) Screens
 - 画面の一覧や、その画面の構成を表示できる
-![bg right 100%](images/2021-10-20-01-18-20.png)
-![bg right 93%](images/2021-10-20-01-14-53.png)
+![bg right 100%](images/2023-10-29-15-26-42.png)
+![bg right 93%](images/2023-10-29-15-27-37.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-20-56.png) Database
 - データベースの構成や保存されているデータを表示できる
 - Collection: 同じ属性(プロパティ)を持ったデータの集まり
-![w:214px](images/2021-10-20-01-38-57.png) ![w:878px](images/2021-10-20-01-30-09.png)
+![w:200px](images/2023-10-29-15-29-22.png) ![w:850px](images/2023-10-29-15-30-54.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-45-09.png) Settings 
@@ -251,18 +247,17 @@ paginate: true
 - アプリへのアクセス権限の設定ができる
 - アプリの複製や削除ができる
 - 位置情報機能を使うためのAPIキーの設定ができる
-![bg right 90%](images/2022-11-04-23-24-28.png)
+![bg right 80%](images/2023-10-29-15-32-03.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-56-00.png)Publish
 - 作ったアプリを公開できる(有料プランのみ)
-![bg right 90%](images/2021-10-20-01-59-11.png)
+![bg right 90%](images/2023-10-29-15-33-39.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
 - 利用状況を分析したレポートを見ることができる
-![bg right 90%](images/2021-10-20-02-07-44.png)
-
+![bg right 95%](images/2023-10-29-15-34-38.png)
 
 ---
 ###### ![w:60px](images/2022-11-02-08-01-35.png) Version History
@@ -285,23 +280,18 @@ paginate: true
 
 
 ---
-######  Preview
+######  Preview, Share
 - アプリを実行して試すことができる
-- 画面サイズの異なるデバイスに切り替えて表示の確認ができる
-![w:830px](images/2021-10-20-02-42-08.png)
-
----
-###### Share
-- アプリをシェアして他の人に使ってもらうことができる。
-  Adaloのアカウントを持っていない人でも利用可能。
-![w:830px](images/2021-10-20-02-44-28.png)
+![w:930px](images/2023-10-29-15-36-52.png)
 
 ---
 ###### Account Menu
 - 各種設定ができる
 - ヘルプやドキュメントを開ける
+- Adaloのエキスパートを探せる
 - ログアウトできる
-![bg right 90%](images/2021-10-20-02-56-33.png)
+![bg right 90%](images/2023-10-29-15-41-03.png)
+
 ---
 #### 開発に役立つTipsを覚えておこう
 - 間違って編集してしまった時は、Windowsなら`Ctrl + Z`、Macなら `Command + Z ` で元に戻せます
