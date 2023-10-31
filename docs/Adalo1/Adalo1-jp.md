@@ -55,7 +55,9 @@ paginate: true
 ## Adaloに登録しよう
 - AdaloのSignUp画面にアクセスしてください
   - https://app.adalo.com/signup
-![w:800px](images/signup.png)
+![w:600px](images/signup.png)
+- 使用するブラウザは、Google Chromeを推奨します
+  - インストール: https://www.google.com/intl/ja_jp/chrome/
 
 ---
 - 無料で登録できます
@@ -297,18 +299,15 @@ paginate: true
 - 間違って編集してしまった時は、Windowsなら`Ctrl + Z`、Macなら `Command + Z ` で元に戻せます
 - Adaloの開発ツールでは、日本語の直接入力がうまくいかないことがあります。日本語のテキスト入力はコピー＆ペーストで行ってください。
 
+
+<!-- ---
+## チュートリアル
+Learn Adaloのコンテンツをやってみる？ -->
+
 ---
 ## アプリを作ってみよう
 次に、新しくアプリを作ってみましょう。
 
-<!-- 
-データベースにはあまり触れずに作るには？
-  - 静的サイトとして作る？
-  - データベースは作成済みのテンプレートをクローンしてもらう？ -->
-
-- 今回のレクチャーでは、データベースを使わない静的な(いつどのユーザーがアクセスしても表示される内容が変わらない)画面を作成します。
-- 次回のレクチャーで、データベースを使った動的な(ユーザー毎に表示される内容が変わる)画面に仕上げていきます。
-<!-- 例: https://kt-life.net/seitekisite-doutekisite/# -->
 
 ---
 #### 作りたいアプリのUI
@@ -316,8 +315,6 @@ paginate: true
 まずはUIを確認していきます。
 
 ![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
-<!-- ![h:385px](images/2021-10-20-05-02-23.png)![h:385px](images/2021-10-20-05-06-03.png)![h:385px](images/2021-10-20-04-40-45.png)![h:385px](images/2021-10-20-04-35-13.png)![h:385px](images/2021-10-20-04-36-11.png)![h:385px](images/2021-10-20-04-36-37.png) -->
-<!-- ![h:380px](images/2021-10-20-04-37-19.png) -->
 
 
 ---
@@ -379,45 +376,65 @@ paginate: true
 それでは、実際にアプリを作っていきます。
 
 - CREATE NEW APPを選択してください
-![bg right 90%](images/2021-10-20-05-31-12.png)
+![bg right 95%](images/2023-10-29-18-03-42.png)
 
 ---
-- Native Mobile Appを選択してください
-![bg right 90%](images/select-native-mobile-app.png)
+- Responsive Appを選択してください
+![bg right 95%](images/2023-10-29-18-04-45.png)
 
 ---
-- テンプレート: Blankを選択してください
-![bg right 90%](images/2021-10-20-05-35-47.png)
+- テンプレート: Blank Mobile First を選択してください
+![bg right 95%](images/2023-10-29-18-05-48.png)
+  <!-- - TODO: Blank Desktop Firstの方が良いかも？
+![bg right 50%](images/2023-11-01-08-06-52.png) -->
+
+<!-- モバイルを提供するのであれば、まずモバイルから始めることをお勧めします。画面を小さくするよりも、画面を大きくしてコンポーネントを並べ替える方が簡単です。このシナリオでは、コンポーネントがモバイルの画面からはみ出す傾向があります。 -->
+<!-- We definitely recommend starting with mobile first if you plan to offer it. It's easier to make screens bigger and rearrange components, than it is to make them smaller - components tend to hang off the mobile screen in that scenario. -->
+
+
 
 ---
-- App Name、Colorを自由に決めてください
-![bg right 90%](images/2022-11-04-23-51-03.png)
+- App Name、Users of this app、Colorを自由に決めてください
+![bg right 95%](images/2023-10-29-18-07-55.png)
 
 ---
 - アプリができました
-![h:550px](images/2021-10-20-05-45-06.png)
+![h:550px](images/2023-11-01-07-56-10.png)
 
 ---
 ###### 会員登録画面、ログイン画面
 
 :white_check_mark: 会員登録画面、ログイン画面はデフォルトで生成されるようになっています。
-![h:400px](images/2021-10-20-05-53-24.png)
+- 画面右上のPREVIEWボタンをクリックして、プレビュー機能で動作を確認してみましょう。
+![bg right h:600px](images/2023-11-01-07-59-08.png)
+
+
+<!-- TODO: welcome画面を消す？ -->
 
 ---
-プレビュー機能で動作を確認してみましょう。
+Mobile Firstでアプリを作っていくため、ここからはブラウザの開発者ツールを使い、Mobileサイズでプレビューをします。
+- Chromeの場合、以下の手順で開発者ツールを開きます
+  - 右上の三点リーダ > More Tools > Developer Tools 
+![h:400px](images/2023-11-01-08-30-43.png)
+
+---
+Chromeの開発者ツールでは、様々なデバイスの画面サイズで表示を確認することができます。
+- iPhone 12 Proを選択してプレビューをします
+![h:450px](images/2023-11-01-08-32-23.png)
+
+---
 
 - 会員登録画面
   - 会員登録をすると、Home画面に遷移します
-  - Home画面右上のアイコンからログアウトしましょう
-![bg right h:600px](images/2021-10-20-06-09-56.png)
-![bg right h:600px](images/2021-10-20-06-11-03.png)
+  - ブラウザの戻るボタン(←)で戻り、 ALREADY HAVE AN ACCOUNT? をクリックしてログイン画面に遷移しましょう
+![bg right h:600px](images/2023-11-01-08-37-06.png)
+![bg right h:600px](images/2023-11-01-08-39-34.png)
 
 ---
 - ログイン画面
   - 先程会員登録したのと同じEmail、Passwordでログインすると、Home画面に遷移します
-
-![bg right h:600px](images/2021-10-20-06-16-03.png)
-![bg right h:600px](images/2021-10-20-06-11-03.png)
+![bg right h:600px](images/2023-11-01-08-42-17.png)
+![bg right h:600px](images/2023-11-01-08-39-34.png)
 
 ---
 会員登録画面、ログイン画面はそのままで問題ないことがわかりました。
