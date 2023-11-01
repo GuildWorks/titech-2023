@@ -817,97 +817,68 @@ Screenが追加されました。
 次は、こちらの画面を作りましょう
 
 ---
-- ADD SCREENからApp Barを選択して、Screen Nameを入力してください
-![bg right h:700px](images/2021-10-20-06-26-12.png)
+- ADD SCREENからBlank Mobile Firstを選択して、Screen Nameを入力します
+![h:500px](images/2023-11-01-22-48-24.png) ![h:300px](images/2023-11-02-05-01-05.png)
 
 ---
-- ADD COMPONENTからImageを選択してください
-![bg right h:700px](images/2021-10-21-23-24-54.png)
+- ADD COMPONENTからApp Barを選択して、画面上に配置します
+- Title > Textの値を画面名(MyPets)に変えます
+![bg right h:600px](images/2023-11-02-05-07-19.png)
 
 ---
-- 画面上に配置してください
-- Image Source -> Uploadから、ペットの写真をアップロードしてください
-![bg right h:540px](images/2021-10-22-01-08-36.png)
+- ADD COMPONENTからCard Listを選択して、画面上に配置します
+![bg right w:600px](images/2023-11-02-05-10-27.png)
 
 ---
-- ADD COMPONENTからTextを選択してください
-![bg right h:500px](images/2021-10-22-00-07-29.png)
+- What is this a list of?でPetsを選択します
+- FilterでLogged In User > Petsを選択します
+- Columnsの値を1に変更します
+![bg right h:600px](images/2023-11-02-05-13-14.png)
 
 ---
-- Textにペットの名前を入力し、文字色をWhiteに変更しましょう
-- 選んだ写真によっては白い文字が見えづらくなりますので、次は文字を見やすくします
-![bg right h:450px](images/2021-10-22-01-10-24.png)
-
----
-- ADD COMPONENTからRectagleを選択してください
-![bg right h:500px](images/2021-10-22-01-13-13.png)
-
----
-- ペットの名前の上に重ねて配置してください
-- Backgroundの色でBlackを選択した後、RGBAのAの値を10に変更してください
-  - RGBAは色を表す形式のひとつで、色をRed、Green、Blueの三原色のそれぞれの強度と、透明度(Alpha)の組み合わせで表現します
-![bg right h:500px](images/2021-10-22-01-23-50.png)
-
----
-- Screensからペット一覧画面を選択し、Componentsの並び順でRectangleがTextよりも上になっていることを確認してください
-  - 上にあるものが手前に表示されるため、今はRectangleがTextを隠してしまっています
-<!-- ![bg right h:500px](images/2021-10-22-01-33-23.png) -->
-![bg right h:500px](images/2021-10-22-01-38-45.png)
-
----
-- 順番を入れ替えて、Textを一番上に、Rectangleを2番目にしましょう
-  -  Textが手前に表示され、Rectangleのおかげで白い文字が見やすくなりました
-![bg right h:500px](images/2021-10-22-01-41-54.png)
-
----
-次に、ペットをもう一匹表示しましょう
-- 追加した3つのコンポーネント(Image, Rectangle, Text)をCanvas上で選択し、MAKE GROUPをクリックします
-![bg right h:500px](images/2021-10-22-01-53-38.png)
-
----
-- 作成したGroupを選択した状態でコピー&ペースト(Windowsなら`Ctrl + C`と`Ctrl + V`、Macなら`Command + C`と`Command + V`)をして、複製されたGroupを下に配置します
-![bg right h:700px](images/2021-10-22-02-01-32.png)
-
----
-- 2つ目のImage、Textを別のペットのものに変更しましょう
-![bg right h:700px](images/2021-10-22-02-06-16.png)
+- 不要なSubtitleとBodyのトグルをOFFにして、非表示にします
+![bg right h:600px](images/2023-11-02-05-16-40.png)
 
 ---
 次に、ペット登録画面への導線を追加します
 - ADD COMPONENTからAction Buttonを選択してください
-![bg right h:370px](images/2021-10-22-02-11-11.png)
+![bg right h:500px](images/2023-11-02-05-18-12.png)
 
 ---
 - 画面右下に配置してください
 - Icon and Text ColorをDefault Background(White)に変更してください
-![bg right h:500px](images/2021-10-22-02-26-03.png)
+![bg right h:600px](images/2023-11-02-05-19-29.png)
 
 ---
-- ADD ACTION -> Link -> [ペット登録画面名] を選択してください
-![bg right h:500px](images/2021-10-22-02-28-24.png)
+- ADD ACTION -> Link -> PetRegistration を選択してください
+- TransitionはNoneのままでOKです
+![bg right h:500px](images/2023-11-02-05-20-09.png)
 
 ---
 ペット登録画面からペット一覧画面への導線も追加しておきましょう
-- ペット登録画面のRegisterボタンを選択してください
-- ADD ACTION -> Link -> [ペット一覧画面名] を選択してください
-※ 導線を追加しただけなので、まだペットの登録はできません(データの登録は次回のレクチャーでやります)
-![bg right h:500px](images/2021-10-22-02-33-55.png)
+- ペット登録画面で Form > Submit Button を選択してください
+- ADD ANOTHER ACTION -> Link -> MyPets を選択してください
+![bg right h:500px](images/2023-11-02-05-24-39.png)
 
 ---
-- SignUp画面のSIGNUPボタンとLogin画面のLOGINボタンの遷移先も、Homeからペット一覧画面に変更しておきましょう
-<!-- ![](images/2021-10-22-03-50-48.png) -->
-![bg right h:340px](images/2021-10-22-03-52-31.png)
+- SignUp画面のSIGNUPボタンとLogin画面のLOGINボタンの遷移先も、HomeからMyPetsに変更しておきましょう
+![bg right h:450px](images/2023-11-02-05-26-39.png)
 
 ---
 - デフォルトで作成されていたHome画面は不要になったので、削除しましょう
-![bg right h:480px](images/2021-10-22-03-57-57.png)
+![bg right h:600px](images/2023-11-02-05-29-02.png)
+
 ---
-ペット一覧画面の見た目を確認してみましょう。
+ペット一覧画面の動作を確認しましょう。
 - ペット登録画面のプレビューをした時と同様に、ペット一覧画面のScreen Navigation TypeをHome Screenに変更してください
 - プレビュー機能でログインをすると、ペット一覧画面が表示できます。
+![bg right h:700px](images/2023-11-02-05-36-18.png)
 
-これで、ペット一覧画面のUIは完成です。
-![bg right h:700px](images/2021-10-22-02-40-24.png)
+---
+- ペット登録画面でペットを追加すると、ペット一覧画面にも表示されます
+
+これで、ペット一覧画面は完成です。
+![bg right h:700px](images/2023-11-02-05-34-18.png)
 
 ---
 ###### ペット詳細画面
