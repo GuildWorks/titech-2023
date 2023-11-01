@@ -410,7 +410,7 @@ Learn Adaloのコンテンツをやってみる？ -->
 - 整理されたデータの集合。
 - データの登録、読込(表示)、更新、削除が行われる。
 - 例: Chatアプリの場合
-![w:400px](../Adalo1/images/2021-10-19-23-49-03.png)
+![w:400px](images/2023-10-29-15-08-00.png)
 <!-- ![w:570px](images/2021-10-19-23-39-29.png) -->
 ![bg 35% right](../Adalo1/images/2021-10-19-23-13-47.png)
 
@@ -418,7 +418,7 @@ Learn Adaloのコンテンツをやってみる？ -->
 - データベースはよく「表計算ソフトのようなもの」と例えられます。
 - データベースを使ってデータを作成(CREATE)、読み取り(READ)、更新(UPDATE)、削除(DELETE)することができます。 これらの操作を総称してCRUDと呼びます。
 
-![bg right w:630px](../Adalo1/images/2021-10-20-01-30-09.png)
+![bg right w:630px](images/2023-11-01-21-39-53.png)
 
 ---
 #### Adaloのデータベースの基本
@@ -431,7 +431,7 @@ Adaloのデータベースの構成要素は、以下の3つです。
 ---
 ###### Collectionとは
 同じ属性(Property)を持ったデータの集まり
-![w:214px](../Adalo1/images/2021-10-20-01-38-57.png) ![w:878px](../Adalo1/images/2021-10-20-01-30-09.png)
+![w:250px](images/2023-11-01-21-38-02.png) ![w:700px](images/2023-11-01-21-39-53.png)
 
 ---
 - Collectionは、データベースで扱う様々なデータをデータの種類ごとに分割し、整理するためのものです。(類似の言葉として、テーブルがあります)
@@ -445,13 +445,12 @@ Adaloのデータベースの構成要素は、以下の3つです。
 - Recordは、Collection内へ情報を保存する際の単位です。
   - 画像の1行が1つのRecordとなります。
 - Users Collectionの例では、1人のユーザーが持つ情報をまとめて1Recordとして登録します。
-
-![w:650px](../Adalo1/images/2021-10-20-01-30-09.png)
+![w:550px](images/2023-11-01-21-39-53.png)
 
 ---
 - Recordは基本的にアプリの画面上のフォームから登録できるようにしますが、Recordの表示中に右上の「+Add xxxx」ボタンを押して、右の画像のようなフォームから登録することも可能です。
 - Collection内のRecordの検索や、CSVファイルのアップロード(インポート)・ダウンロードも可能です。
-![bg right h:460px](images/2021-11-03-13-47-25.png)
+![bg right h:460px](images/2023-11-01-21-41-59.png)
 
 ---
 ###### Propertyとは
@@ -482,8 +481,8 @@ Relationshipとは
 - 例えば、Chatアプリでユーザーが送信したメッセージはUsers Collectionとは別のMessages Collectionに保存され、これら2つのCollectionはRelationshipで関連づけられます。
   - Users側にはMessagesというRelationshipが、Messages側にはSenderという(Usersとの)Relationshipが登録されています。
 
-![bg right h:450px](images/2021-11-05-16-57-18.png)
-![bg right h:350px](images/2021-11-05-16-57-49.png)
+![bg right h:450px](images/2023-11-01-21-45-10.png)
+![bg right h:350px](images/2023-11-01-21-46-52.png)
 
 ---
 Relationshipの種類
@@ -500,7 +499,7 @@ Relationshipの種類
 1対多のRelationshipの例
 - Chatアプリでは1人のユーザーが複数のメッセージを送信しますが、メッセージの送信者は1人のユーザーなので、Users CollectionとMessages CollectionのRelationshipは1対多になります。
 
-![h:290px](images/2021-11-05-17-15-22.png) ![h:290px](images/2021-11-05-17-17-31.png)
+![h:250px](images/2023-11-01-21-48-22.png) ![h:250px](images/2023-11-01-21-51-33.png)
 
 <!-- 例えば、主催者がイベントに対して1人だけいる場合の、主催者とイベントのRelationshipは1対多です。 -->
 <!-- 例えば、1人のユーザーが複数のイベントを主催したり、複数のイベントに1人の主催者がいたりしますが、どちらも真の1対多の関係を表しています。 -->
@@ -516,7 +515,7 @@ Relationshipの種類
 多対多のRelationshipの例
 - Chatアプリでは1人のユーザーが複数の会話(誰とどんなメッセージをやりとりしたかを管理するもの)を持ち、1つの会話には複数のメンバー(ユーザー)が所属するので、Users CollectionとConversations CollectionのRelationshipは多対多になります。
 
-![h:240px](images/2021-11-05-17-15-22.png)![h:240px](images/2021-11-05-17-13-11.png)
+![h:260px](images/2023-11-01-21-53-05.png) ![h:260px](images/2023-11-01-21-53-42.png)
 
 <!-- - 例えば、参加者は複数のイベントに参加できるし、イベントには複数の参加者がいるという場合の、参加者とイベントのRelationshipは多対多です。 -->
 <!-- 例えば、イベントが複数のホストを持ち、ホストが複数のイベントを持つことが可能です。 -->
@@ -530,7 +529,7 @@ Relationshipの種類
 <!-- ---
 TODO: 演習の前に一度テンプレートのアプリを例にデータベース設計の手順を紹介して、一度流れを理解してもらう? -->
 
-サンプルアプリのUIを見ながら、保存が必要なデータを考えて、データベースを設計しましょう。
+次に、実際にデータベースを設計しましょう。
 
 ---
 #### データベースを設計してみよう
@@ -598,8 +597,11 @@ Collectionの分類に関する補足
 
 ---
 - CollectionをAdaloのデータベースに登録しておきます。
+  - ADD TO DATABASE > Add Collectionから手動で追加してください
+  - Magic Add は追加したい機能をテキスト入力するとAIがデータベースの変更を提案してくれますが、今回は使いません
+  <!-- 追加したい機能をテキストで入力するとAIがデータベースの変更を提案してくれますが、毎回結果が異なるので、 -->
 - Usersはデフォルトで作成されています。
-![bg right h:450px](images/2021-11-03-14-50-11.png)
+![bg right h:550px](images/2023-11-01-22-10-13.png)
 
 ---
 次に、1でリストアップしたデータを適切なCollectionの配下にPropertyとして追記すると、以下のようになりました。()の中は選択するTypeです。
@@ -643,25 +645,25 @@ Collectionの分類に関する補足
 - Users Collectionを選択して、Pet Collectionとの1対多のRelationshipを追加します。
 ![w:530px](images/2021-11-03-15-50-06.png)
 
-![bg right h:700px](images/2021-11-03-16-02-05.png)
+![bg right h:700px](images/2023-11-01-22-18-31.png)
 
 ---
 - Pets Collectionを確認すると、Users Collection側でRelationshipの設定をしたので、自動でUsers CollectionとのRelationshipが追加されています。
   - Users Collection側が1なので、末尾のsが省略されて、Userという Property名になっています。
 
-![bg right h:500px](images/2021-11-03-16-01-37.png)
+![bg right h:550px](images/2023-11-01-22-19-28.png)
 
 ---
 - Pets Collectionに、PetWeightLogs CollectionとのRelationshipを追加します。
   - Pets Collectionを選択して、PetWeightLogs Collectionとの1対多のRelationshipを追加します。
 ![w:490px](images/2021-11-03-15-58-38.png)
-![bg right h:700px](images/2021-11-03-16-00-59.png)
+![bg right h:700px](images/2023-11-01-22-20-54.png)
 
 ---
 PetWeightLogs Collectionを確認すると、Pets Collection側でRelationshipの設定をしたので、自動でPets CollectionとのRelationshipが追加されています。
   - Pets Collection側が1なので、末尾のsが省略されて、Petという Property名になっています。
 
-![bg right h:500px](images/2021-11-03-16-04-16.png)
+![bg right h:500px](images/2023-11-01-22-21-35.png)
 
 ---
 参考: Pets Collectionにペットの体重とその登録日時を含めた場合どうなるか
@@ -734,8 +736,8 @@ Chromeの開発者ツールでは、様々なデバイスの画面サイズで�
 ![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
-- ADD SCREENからApp Barを選択します
-![bg right h:700px](images/2021-10-20-06-26-12.png)
+- ADD SCREENからBlank Mobile Firstを選択します
+![bg right h:700px](images/2023-11-01-22-48-24.png)
 
 ---
 - Screen Nameを入力します
@@ -747,71 +749,63 @@ Screenが追加されました。
 
 この上に必要なコンポーネントを追加していきます。
 
-![bg right h:700px](images/2021-10-20-06-37-56.png)
+![bg right h:700px](images/2023-11-01-22-51-44.png)
 
 ---
-- ADD COMPONENTからTextを選択します
-![bg right h:500px](images/2021-10-20-06-47-19.png)
-
----
-- 画面上に配置します
-![bg right h:500px](images/2021-10-20-06-49-18.png)
-
----
-- Textの値をNameに変えます
-![bg right h:500px](images/2021-10-20-06-52-11.png)
-
----
-- 同様に、ImageとBirthdayというTextも追加します。
-![bg right h:500px](images/2021-10-20-07-02-04.png)
-
----
-- ADD COMPONENTからText Inputを選択します
-![bg right h:500px](images/2021-10-20-06-53-05.png)
-
----
-- 画面上に配置し、Placeholderの値をEnter Nameに変更します
-![bg right h:480px](images/2021-10-20-07-03-27.png)
-
----
-- ADD COMPONENTからImage Pickerを選択します
-![bg right h:480px](images/2021-10-20-07-05-23.png)
+- ADD COMPONENTからApp Barを選択します
+![bg right h:650px](images/2023-11-01-22-53-38.png)
 
 ---
 - 画面上に配置します
-![bg right h:480px](images/2021-10-20-07-06-54.png)
+![bg right h:700px](images/2023-11-01-22-54-12.png)
 
 ---
-- ADD COMPONENTからDate Pickerを選択します
-![bg right h:480px](images/2021-10-20-07-08-35.png)
+- Title > Textの値を画面名(PetRegistration)に変えます
+![bg right h:700px](images/2023-11-01-22-55-53.png)
 
 ---
-- 画面上に配置し、StyleをDate Pickerに変更します
-![bg right h:480px](images/2021-10-20-07-10-35.png)
-
----
-- ADD COMPONENTからButtonを選択します
-![bg right h:480px](images/2021-10-20-07-12-13.png)
+- ADD COMPONENTからFormを選択します
+![bg right h:700px](images/2023-11-01-22-57-45.png)
 
 ---
 - 画面上に配置します
-- Textの値をRegisterに変更します
-- Button ColorをSecondaryに変更します
-- Icon & Text ColorをDefault Background(White)に変更します
-![bg right h:530px](images/2021-10-22-02-19-14.png)
+![bg right h:700px](images/2023-11-01-22-59-55.png)
 
 ---
-ペット登録画面の見た目を確認してみましょう。
-- まだ導線がなく、画面遷移をして表示することができないので、ログイン後の遷移先であるHome Screenに設定します
-- Screensからペット登録画面を選び、Screen Navigation TypeをHome Screenに変更しましょう
+- Which data collection?でPetsを選択します
+  - 選択したCollectionに合わせたフォームが自動生成されます
+- What do you want the form to do?でCreate New petを選択します
+![bg right h:450px](images/2023-11-01-23-06-42.png)
+
+---
+- FieldsのBirthdayとImageの順番をドラッグ&ドロップで入れ替えます
+![bg right h:580px](images/2023-11-01-23-08-54.png)
+
+---
+- Submit ButtonのClickActionsにCreate Petが設定されていることを確認します
+![bg right h:580px](images/2023-11-01-23-10-32.png)
+
+---
+まだ導線がなく、表示することができないので、表示できるようにしましょう
+- ログイン状態の時に最初に表示されるHome Screenに設定します
+  - Screensからペット登録画面を選び、Screen Navigation TypeをHome Screenに変更します
 ![bg right h:400px](images/2021-10-20-07-28-52.png)
 ---
+- ログイン画面の Form > Submit buttonを開き、ClickActionsに設定されているLinkのScreenをペット登録画面に変更します
+![bg right h:600px](images/2023-11-01-23-29-51.png)
+
+---
+ペット登録画面の動作を確認してみましょう。
 - プレビュー機能でログインをすると、ペット登録画面が表示できます。
 - 名前の入力、画像の選択、誕生日の選択ができます。
-- まだRegisterボタンを押しても何も起きません
+- CREATE PETボタンを押して、ペットを登録できます
+![bg right h:700px](images/2023-11-01-23-34-29.png)
 
-これで、ペット登録画面のUIは完成です。
-![bg right h:700px](images/2021-10-22-02-23-09.png)
+---
+ペットの登録後、データベースのPets CollectionにRecordが登録されたらOKです。
+![w:300](images/2023-11-01-23-37-16.png) ![w:800](images/2023-11-01-23-36-05.png)
+
+これで、ペット登録画面は完成です。
 
 ---
 ###### ペット一覧画面
