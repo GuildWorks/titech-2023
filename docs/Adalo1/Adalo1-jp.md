@@ -891,36 +891,84 @@ Screenが追加されました。
 ![bg right h:700px](images/2021-10-22-04-07-06.png)
 
 ---
-- ADD SCREENからInfo with Linksを選択して、Screen Nameを入力してください
-![bg right h:650px](images/2021-10-22-02-58-46.png)
+- ADD SCREENからBlank Mobile Firstを選択して、Screen Nameを入力します
+![h:500px](images/2023-11-01-22-48-24.png) ![h:300px](images/2023-11-02-06-41-40.png)
 
 ---
-- Image Sourceでペット一覧画面で使用した写真をUploadしてください
-![bg right h:500px](images/2021-10-22-03-05-37.png)
+- ADD COMPONENTからApp Barを選択して、画面上に配置します
+- Title > Textの値を画面名(PetDetail)に変えます
+![bg right h:600px](images/2023-11-02-06-44-49.png)
+
+---
+- ADD COMPONENTからImageを選択して、画面上に配置します
+![bg right w:600px](images/2023-11-02-05-10-27.png)
+
+---
+Image Sourceに現在表示しているペットの画像を表示できるようにしていきます。
+
+そのままでは現在表示しているペットが選択肢にありません。
+
+※ Logged In User's > Pets > ... と選べそうに思えますが、ユーザーはペットを複数持つので、ペット1匹を特定できません
+
+![bg right w:600px](images/2023-11-02-06-47-41.png)
+
+---
+この画面への導線を設定することで、現在表示しているペットが選択肢に追加されます
+- ペット一覧画面のCardListでADD ACTIONをクリックし、PetDetailへのLinkを追加しましょう
+![bg right h:600px](images/2023-11-02-06-56-07.png)
+
+---
+- 追加したLinkのSend This Data to PetDetail ScreenにCurrent Petが自動で設定されています。
+
+![bg right h:500px](images/2023-11-02-07-00-07.png)
+
+---
+- ペット一覧画面からのLinkのSend This Data to PetDetail ScreenにCurrent Petが設定されたため、ペット詳細画面のAvailable Data内にLinked Dataとして Current Petが設定されています。
+  - これにより、ペット詳細画面でペット一覧画面で選択したペット(Current Pet)を扱えるようになります。
+![bg right h:350px](images/2023-11-02-07-01-51.png)
+
+---
+- ImageコンポーネントのImageSourceに Database > Current Pet > Image を設定します
+![h:400](images/2023-11-02-07-03-10.png)
+
+これで、現在表示しているペットの画像が表示されるようになりました。
+
+---
+その他の項目も追加していきます。
+- ADD COMPONENTからTextを追加し、Birthdayというラベルとその値を表示します
+  - 値の表示は、Add Magic TextでCurrent Pet's > Birthdayを選択します
+![bg right h:700px](images/2023-11-02-07-08-35.png)
+
+---
+- ADD COMPONENTからTextを追加し、Latest Weightというラベルを表示します
+![bg right h:700px](images/2023-11-02-07-14-08.png)
+
+---
+Latest Weightの値の表示は、少し工夫が必要です。
+
+- ADD COMPONENTからTextを追加し、Make Listでリストにします。
+![bg right h:400px](images/2023-11-02-07-17-47.png)
+
+--- 
+- What is this a list of?でPetWeightLogsを選択
+- Filterで Current Pet > PetWeightLogsを選択
+- SortingでWeightRegisteredTime - Newest to Oldestを選択
+- Maximum number of itemsに1を設定
+
+![bg right h:600px](images/2023-11-02-07-19-58.png)
+
+これにより、最新の1件だけに絞り込まれます。
+
+---
+- List内のTextコンポーネントの値は、Current PetWeightLog's > WeightKg に設定します
+![bg right h:600px](images/2023-11-02-07-24-05.png)
 
 
 ---
-- TextをBirthdayというラベルとその値、Latest Weightというラベルとその値に書き換えましょう
-![bg right h:700px](images/2021-10-22-03-18-32.png)
+- プレビュー画面で動作を確認しましょう
 
----
-- Link 1というTextをWeihgt Logに変更しましょう
-- Link 2はそのまま残しておきます
-(最後の演習時間で作成した画面への導線として使ってください)
-
-![bg right h:700px](images/2021-10-22-03-28-26.png)
-
----
-ペット一覧画面からペット詳細画面に遷移できるようにしましょう
-- ペット一覧画面の1匹目のペットに関するコンポーネントをまとめたGroupを選択し、ADD ACTION -> Link -> PetDetail とクリックしてください
-  <!-- - この設定を2匹目のペットに関するコンポーネントをまとめたGroupにも設定しても良いです。ただし、ペット詳細画面はどちらのペットをクリックして遷移しても、同じ表示になります。 -->
-![bg right h:450px](images/2021-10-22-03-31-30.png)
-
----
-- プレビュー画面で表示を確認しておきましょう
-
-ペット詳細画面のUIはこれでOKです。
-![bg right h:700px](images/2021-10-22-04-07-06.png)
+まだPetWeightLogのデータが登録されていないので、Latest Weightは表示されませんが、現時点ではこれでOKです。
+![bg right h:700px](images/2023-11-02-07-26-19.png)
 
 ---
 ###### 体重記録画面
