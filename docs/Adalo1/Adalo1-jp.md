@@ -385,8 +385,6 @@ Learn Adaloのコンテンツをやってみる？ -->
 ---
 - テンプレート: Blank Mobile First を選択してください
 ![bg right 95%](images/2023-10-29-18-05-48.png)
-  <!-- - TODO: Blank Desktop Firstの方が良いかも？
-![bg right 50%](images/2023-11-01-08-06-52.png) -->
 
 <!-- モバイルを提供するのであれば、まずモバイルから始めることをお勧めします。画面を小さくするよりも、画面を大きくしてコンポーネントを並べ替える方が簡単です。このシナリオでは、コンポーネントがモバイルの画面からはみ出す傾向があります。 -->
 <!-- We definitely recommend starting with mobile first if you plan to offer it. It's easier to make screens bigger and rearrange components, than it is to make them smaller - components tend to hang off the mobile screen in that scenario. -->
@@ -400,6 +398,291 @@ Learn Adaloのコンテンツをやってみる？ -->
 ---
 - アプリができました
 ![h:550px](images/2023-11-01-07-56-10.png)
+
+---
+## データベースを学ぼう
+アプリ開発の最初にそのアプリで扱うデータを定義しておくことで、その後の開発をスムーズに進めることができます。
+
+まずは、データベースがどのようなものかを確認します。
+
+---
+#### Database(復習)
+- 整理されたデータの集合。
+- データの登録、読込(表示)、更新、削除が行われる。
+- 例: Chatアプリの場合
+![w:400px](../Adalo1/images/2021-10-19-23-49-03.png)
+<!-- ![w:570px](images/2021-10-19-23-39-29.png) -->
+![bg 35% right](../Adalo1/images/2021-10-19-23-13-47.png)
+
+---
+- データベースはよく「表計算ソフトのようなもの」と例えられます。
+- データベースを使ってデータを作成(CREATE)、読み取り(READ)、更新(UPDATE)、削除(DELETE)することができます。 これらの操作を総称してCRUDと呼びます。
+
+![bg right w:630px](../Adalo1/images/2021-10-20-01-30-09.png)
+
+---
+#### Adaloのデータベースの基本
+![w:60px](../Adalo1/images/2021-10-20-01-20-56.png) このアイコンからAdaloのデータベースにアクセスできます。
+Adaloのデータベースの構成要素は、以下の3つです。
+- Collection
+- Property
+- Record
+
+---
+###### Collectionとは
+同じ属性(Property)を持ったデータの集まり
+![w:214px](../Adalo1/images/2021-10-20-01-38-57.png) ![w:878px](../Adalo1/images/2021-10-20-01-30-09.png)
+
+---
+- Collectionは、データベースで扱う様々なデータをデータの種類ごとに分割し、整理するためのものです。(類似の言葉として、テーブルがあります)
+- ユーザーが1度の操作で登録や更新、削除といった操作をするデータのまとまりがCollectionになることが多いです。<!-- (名詞として表現できるものがCollectionになることが多いと言われます) -->
+- デフォルトでは、UsersがCollectionとして用意されており、それ以外は開発するアプリに合わせて追加していきます。
+
+※ どのようなCollectionを追加するかを決めるのはとても難しいです。練習しながら慣れていきましょう。(悩んだ時は、メンター陣に相談するのもおすすめです)
+
+---
+###### Recordとは
+- Recordは、Collection内へ情報を保存する際の単位です。
+  - 画像の1行が1つのRecordとなります。
+- Users Collectionの例では、1人のユーザーが持つ情報をまとめて1Recordとして登録します。
+
+![w:650px](../Adalo1/images/2021-10-20-01-30-09.png)
+
+---
+- Recordは基本的にアプリの画面上のフォームから登録できるようにしますが、Recordの表示中に右上の「+Add xxxx」ボタンを押して、右の画像のようなフォームから登録することも可能です。
+- Collection内のRecordの検索や、CSVファイルのアップロード(インポート)・ダウンロードも可能です。
+![bg right h:460px](images/2021-11-03-13-47-25.png)
+
+---
+###### Propertyとは
+- Propertyは、Recordを構成する一つ一つの項目です。
+- Users Collectionは、Eメール、パスワード、ユーザー名、氏名といったPropertyで構成されます。
+- Propertyの値は空で登録される場合もあります。
+
+![bg right h:450px](images/2021-11-05-16-25-58.png)
+
+---
+Propertyがどのようなデータかを定義するため、Property追加時はTypeを選択します。
+- Text
+- Number
+- True/False
+- Date/Time
+- Date
+- Image
+- File
+- Location
+
+![bg right h:600px](images/2022-11-05-12-38-25.png)
+
+---
+Relationshipとは
+- 1つのRecordに対して多数のPropertyを保存する代わりに、Relationshipと呼ばれる複数のCollectionを関連づけるための特別なPropertyを設定します。これにより、Collectionを扱いやすい形に分割することができます。
+
+---
+- 例えば、Chatアプリでユーザーが送信したメッセージはUsers Collectionとは別のMessages Collectionに保存され、これら2つのCollectionはRelationshipで関連づけられます。
+  - Users側にはMessagesというRelationshipが、Messages側にはSenderという(Usersとの)Relationshipが登録されています。
+
+![bg right h:450px](images/2021-11-05-16-57-18.png)
+![bg right h:350px](images/2021-11-05-16-57-49.png)
+
+---
+Relationshipの種類
+- AdaloのRelationshipでは、Collection間で紐付けられるRecordの数に応じて、1対多と多対多という2つの種類のいずれかを選択します。 
+
+---
+1対多のRelationship
+- 1つのRecordが、別のコレクションにある複数のRecordと関係を持つことを意味します。 
+- Relationshipを設定しようとしているCollectionを1と多のどちらにするかで、2種類の選択肢が現れます。
+
+![bg right h:320px](images/2022-11-05-12-42-56.png)
+
+---
+1対多のRelationshipの例
+- Chatアプリでは1人のユーザーが複数のメッセージを送信しますが、メッセージの送信者は1人のユーザーなので、Users CollectionとMessages CollectionのRelationshipは1対多になります。
+
+![h:290px](images/2021-11-05-17-15-22.png) ![h:290px](images/2021-11-05-17-17-31.png)
+
+<!-- 例えば、主催者がイベントに対して1人だけいる場合の、主催者とイベントのRelationshipは1対多です。 -->
+<!-- 例えば、1人のユーザーが複数のイベントを主催したり、複数のイベントに1人の主催者がいたりしますが、どちらも真の1対多の関係を表しています。 -->
+
+---
+多対多のRelationship
+- 両方のCollectionの1Recordが、もう一方のCollectionの複数のRecordに紐付けられることを意味します。
+
+![bg right h:140px](images/2022-11-05-12-48-16.png)
+<!-- ![bg right h:140px](images/2022-11-05-12-45-59.png) -->
+
+---
+多対多のRelationshipの例
+- Chatアプリでは1人のユーザーが複数の会話(誰とどんなメッセージをやりとりしたかを管理するもの)を持ち、1つの会話には複数のメンバー(ユーザー)が所属するので、Users CollectionとConversations CollectionのRelationshipは多対多になります。
+
+![h:240px](images/2021-11-05-17-15-22.png)![h:240px](images/2021-11-05-17-13-11.png)
+
+<!-- - 例えば、参加者は複数のイベントに参加できるし、イベントには複数の参加者がいるという場合の、参加者とイベントのRelationshipは多対多です。 -->
+<!-- 例えば、イベントが複数のホストを持ち、ホストが複数のイベントを持つことが可能です。 -->
+<!-- ---
+「イベントには主催者が1人だけいる」「参加者は複数のイベントに参加できるし、イベントには複数の参加者がいる」と定義するリレーションを作りたいとします。そこで、選択肢を「User」という言葉で読むのではなく、「User」を「Host」という言葉に置き換えることで、どの選択肢を選べばよいのかをより明確にすることができます。この場合は、選択肢1となります。 もし、「参加者」と「イベント」の関係を作るとしたら、あなたはどちらを選びますか？ 実際に試してみてください。
+>コレクションのレコードをクリックすると、そのコレクション内のレコードも表示されるので、リレーションシップを含むプロパティは、Adaloのデータベースの列としても視覚化できます。 -->
+
+---
+## データベース設計
+
+<!-- ---
+TODO: 演習の前に一度テンプレートのアプリを例にデータベース設計の手順を紹介して、一度流れを理解してもらう? -->
+
+サンプルアプリのUIを見ながら、保存が必要なデータを考えて、データベースを設計しましょう。
+
+---
+#### データベースを設計してみよう
+サンプルアプリのUIを見ながら、データベースを設計してみましょう。手順は次のページで紹介します。
+![h:383px](../Adalo1/images/2021-10-20-06-09-56.png)![h:383px](../Adalo1/images/2021-10-20-06-16-03.png)![h:383px](../Adalo1/images/2021-10-22-02-23-09.png)![h:384px](../Adalo1/images/2021-10-22-02-40-24.png)![h:383px](../Adalo1/images/2021-10-22-04-07-06.png)![h:383px](../Adalo1/images/2021-10-22-16-42-42.png)
+
+---
+###### データベース設計の手順
+1. UIを見ながら、保存が必要になるデータをリストアップしましょう。テキストエディタ(メモ帳アプリ等)に書き起こしてください。
+2. リストアップしたデータがどのようなCollectionに分類できるかを考えて、Adaloのデータベースに必要なCollectionを作成しましょう。
+3. 1でリストアップしたデータを適切なCollectionにPropertyとして追加してください。その際、適切なTypeを選択してください。
+4. 他のCollectionと関連を持つCollectionには、Relationship Propertyを設定しましょう。
+
+--- 
+※ 次のスライド以降に解説がありますが、答えを見る前に一度自分で手を動かして考えてみることをおすすめします。
+
+※ 絶対的な正解はないです。悩んだら、直感に従って進めてみてください。
+
+---
+###### 解説
+UIを見ながら、保存が必要になるデータをリストアップすると、以下のようになりました。
+```
+- ユーザーのEmail
+- ユーザーのパスワード
+- ユーザーのFullName
+- ペットの名前
+- ペットの写真
+- ペットの誕生日
+- ペットの体重
+- ペットの体重の登録日時
+```
+
+- その他のデータを挙げられた人がいれば、教えてください！
+
+<!-- ![](images/2021-11-03-13-57-56.png) -->
+
+---
+リストアップしたデータがどのようなCollectionに分類できるかを考えて、今回はこの3つに分類することにします。
+```
+- Users
+- Pets
+- PetWeightLogs
+```
+
+- ユーザーのCollectionとペットのCollectionの2つを用意した人は多いのではないでしょうか？
+- ペットの体重記録のCollectionは用意しなかった人もいるかもしれません。(ペットの体重とその登録日時をペットのCollectionに含める方法も間違いではないです。後ほど解説します。)
+- その他のCollectionの分類をした人はいますか？
+<!-- 極論、1Collectionでもやれなくはないよ -->
+
+---
+Collectionの分類に関する補足
+- 「Aが決まればBが1つに決まる」という関係が成り立つ時、AをCollectionに、BをそのCollectionのPropertyにする場合が多いです。
+  - ユーザーが決まれば、ユーザーのEmail、パスワード、FullNameがそれぞれ1つに決まります。
+  - ペットが決まれば、ペットの名前、写真、誕生日がそれぞれ1つに決まります。
+- 「Aに対してBが複数存在する」という関係が成り立つ時、AとBは別々のCollectionに分割することが多いです。
+  - (1匹の)ペットに対して、ペットの体重とその登録日時は複数存在します。
+
+<!-- ※ TODO: 従属性についてわかりやすい言葉で解説 -->
+<!-- コツは、関連性の強い複数のデータを一つに決めることができるものを、Collection名にする -->
+<!-- ※ Email,パスワード、FullNameは、ユーザーが決まれば一つに決まるので、UsersというCollectionにまとめる。
+※ ペットの名前、写真、誕生日は、ペットが決まれば一つに決まるので、PetsというCollectionにまとめる。 -->
+
+<!-- ※ ペットの体重とその登録日時は同時に登録されるため、セットで扱う -->
+<!-- ※ ペットの体重とその登録日時は、1匹のペットに対して複数登録されるので、Collectionを分ける(ペットとペットの体重が1対多の関係になる) -->
+
+---
+- CollectionをAdaloのデータベースに登録しておきます。
+- Usersはデフォルトで作成されています。
+![bg right h:450px](images/2021-11-03-14-50-11.png)
+
+---
+次に、1でリストアップしたデータを適切なCollectionの配下にPropertyとして追記すると、以下のようになりました。()の中は選択するTypeです。
+```
+- Users
+  - Email(Text)
+  - Password(※Password)
+  - FullName(Text)
+- Pets
+  - Name(Text)
+  - Image(Image)
+  - Birthday(Date)
+- PetWeightLogs
+  - WeightKg(Number)
+  - RegisteredTime(Date&Time)
+```
+※ Passwordはデフォルトで設定される特殊なTypeです。
+<!-- Textを暗号化したものになります。 -->
+
+---
+- Adaloで実際にPropertyを追加します。
+- Users Collectionはデフォルトで設定済みで、必要な項目は含まれています。
+- Usernameは不要ですが、削除できないのでそのままにしておきます。
+![bg right h:500px](images/2021-11-03-15-40-03.png)
+
+---
+- Pets CollectionのPropertyはこのようになります。
+![bg right h:400px](images/2021-11-03-15-42-07.png)
+
+---
+- PetWeightLogs CollectionのPropertyはこのようになります。
+- Collection追加時にデフォルトで設定されるName Propertyは不要なので、削除します。
+  - ドラッグアンドドロップで順番がCollection内の一番上でなくなるように移動すれば、削除できます。
+
+<!-- ![](images/2021-11-03-15-36-02.png) -->
+![bg right h:300px](images/2021-11-03-15-45-14.png)
+
+---
+最後に、他のCollectionと関連を持つCollectionには、Relationship Propertyを設定します。
+
+- Users Collectionを選択して、Pet Collectionとの1対多のRelationshipを追加します。
+![w:530px](images/2021-11-03-15-50-06.png)
+
+![bg right h:700px](images/2021-11-03-16-02-05.png)
+
+---
+- Pets Collectionを確認すると、Users Collection側でRelationshipの設定をしたので、自動でUsers CollectionとのRelationshipが追加されています。
+  - Users Collection側が1なので、末尾のsが省略されて、Userという Property名になっています。
+
+![bg right h:500px](images/2021-11-03-16-01-37.png)
+
+---
+- Pets Collectionに、PetWeightLogs CollectionとのRelationshipを追加します。
+  - Pets Collectionを選択して、PetWeightLogs Collectionとの1対多のRelationshipを追加します。
+![w:490px](images/2021-11-03-15-58-38.png)
+![bg right h:700px](images/2021-11-03-16-00-59.png)
+
+---
+PetWeightLogs Collectionを確認すると、Pets Collection側でRelationshipの設定をしたので、自動でPets CollectionとのRelationshipが追加されています。
+  - Pets Collection側が1なので、末尾のsが省略されて、Petという Property名になっています。
+
+![bg right h:500px](images/2021-11-03-16-04-16.png)
+
+---
+参考: Pets Collectionにペットの体重とその登録日時を含めた場合どうなるか
+
+以下のようにレコードが登録されますが、この場合、少し困ることが出てきます。
+![w:1200px](images/2021-11-03-14-47-07.png)
+
+---
+困ること
+- 1匹のペットに対して異なるペットの体重とその登録日時が結合されたRecordが複数登録されるため、ペットの情報(Name,Image,Birthday)が重複して登録されてしまう。
+  - 1匹のペットの情報を変更するために、重複して登録されたRecordを全て更新しないといけなくなり、処理が複雑になる。
+- Adaloには一つのCollectionを選んでそこにRecordを登録するためのフォームを自動生成する便利な機能があるが、データを登録する単位でCollectionが分かれていないので、それが使えなくなる。
+
+---
+データベース設計は以上です。
+
+※ この後の作業で混乱しないために、Adaloのデータベースを資料と同じ状態に設定しておくことをおすすめします。
+
+---
+## アプリを開発しよう
+設計したデータベースを使って、サンプルアプリを開発していきましょう。
 
 ---
 ###### 会員登録画面、ログイン画面
