@@ -1320,7 +1320,8 @@ Preview機能で確認すると、体重が未登録であれば、Latest Weight
 ---
 #### クローン用URL
 - 以下のURLの右下のCLONE APPボタンでアプリをクローンできますので、答え合わせに使ってください
-TODO: https://ryo-imahashis-team-6.adalo.com/improvedpethealthlog
+TODO: URL追加
+<!-- https://ryo-imahashis-team-6.adalo.com/improvedpethealthlog -->
 
 ![bg right h:350px](images/2023-11-02-08-32-08.png)
 
@@ -1343,7 +1344,7 @@ Adaloだけで実現できないことがある場合、外部サービスと連
 #### Marketplaceの外部連携コンポーネント
 Marketplaceから外部連携を可能にするコンポーネントを追加できます。
 
-![bg right h:600px](images/2021-11-26-21-49-01.png)
+![bg right h:480px](images/2023-11-02-23-54-00.png)
 
 ---
 まずはアプリを新規作成しましょう。
@@ -1708,17 +1709,9 @@ Custom ActionやExtenal Collectionでは、連携先のサービスのAPIの仕�
 次は、もっと簡単に外部サービスとの連携ができるサービスをご紹介します。
 
 ---
-連携サービスにも色々なものがありますが、今回はZapierというサービスを紹介します。
+連携サービスにも色々なものがありますが、今回はAdaloに組み込まれているZapierというサービスを紹介します。
 ![h:500px](images/2021-11-26-16-42-00.png)
 
-
-
----
-
-##### Zapier
-- Zapierを使えば、案内に従って操作することで、簡単に外部サービスを連携させられます。試してみましょう。
-
-![h:400px](images/2022-11-12-19-35-24.png)
 
 ---
 Adaloにはメール送信機能がありません。
@@ -1734,159 +1727,98 @@ Adaloにはメール送信機能がありません。
 https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
 
 
+---
+Googleアカウントが用意できたら、Zapierとの連携を設定していきます。
+- ApiIntegrationTrialアプリのSign Up画面でSubmit Buttonを選択
+- ADD ANOTHER ACTION > New Integration > Gmail を選択
+![bg right h:650px](images/2023-11-02-23-09-00.png)
+
+---
+- Send Gmail emails for new Adalo recordsのUse this Zapをクリック
+![bg right h:400px](images/2023-11-02-23-11-50.png)
 
 
 ---
-- Googleアカウントが用意できたら、https://zapier.com/apps/adalo/integrations にアクセスして、"Connect Adalo to 5,000+ apps" をクリック
-![h:550px](images/2022-11-12-19-35-24.png)
-
-
-
----
-- 好きな方法でSign upしてください
-![h:550px](images/2022-11-12-19-56-28.png)
-
+Continue
+![bg right h:400px](images/2023-11-02-23-12-46.png)
 
 
 ---
-- ロールと従業員の数を入力して、"Continue"をクリック
-![h:550px](images/2022-11-12-20-01-58.png)
+Zapierの設定画面が開きます
+- 右側のConnect AdaloのSign Inをクリック
+![w:1000](images/2023-11-02-23-14-09.png)
 
 
 ---
-- 使用するアプリにAdaloとGmailを追加して、"Finish setup"をクリック
+- Adaloにログイン
+![w:1000](images/2023-11-02-23-15-37.png)
 
-![h:310px](images/2022-11-12-20-03-15.png) ![h:310px](images/2022-11-12-20-04-23.png)
+---
+- ALLOW ACCESSをクリック
+![bg right w:400](images/2023-11-02-23-16-44.png)
 
+---
+- Triggerを設定
+![bg right w:400](images/2023-11-02-23-18-45.png)
+
+---
+- Test trigger
+![bg right w:400](images/2023-11-02-23-19-28.png)
 
 
 ---
-Zapと呼ばれる、サービス連携設定の編集画面が表示されます。
-
-![h:450px](images/2022-11-12-20-08-43.png)
-
+- レコードが見つかったら、Continue with selected record
+![bg right w:400](images/2023-11-02-23-20-08.png)
 
 
 ---
-- Trigger("1. Adalo"と書かれている長方形)をクリック
-- Eventに"New Record"を設定
-- "Continue"をクリック
-![h:450px](images/2022-11-12-20-48-27.png)
-
----
-- "Sign in" をクリック
-![h:450px](images/2022-11-12-20-50-01.png)
-
----
-- AdaloのアカウントのEmail AddressとPasswordを入力して、"SIGN IN"をクリック
-![h:500px](images/2022-11-12-20-52-35.png)
+-  Connect GmailでSign in
+![bg right w:400](images/2023-11-02-23-20-54.png)
 
 
 ---
-- "ALLOW ACCESS"をクリック
-![h:500px](images/2022-11-12-20-54-28.png)
-
-
----
-- Adalo accountが設定されたのを確認して、"Continue"をクリック
-![h:500px](images/2022-11-12-20-55-17.png)
-
+- アカウントを選択
+![bg right w:400](images/2023-11-02-23-22-03.png)
 
 ---
-- Appに"ApiIntegrationTrial"を設定
-- Tableに"Users"を設定
-- "Continue"をクリック
-
-![h:400px](images/2022-11-12-20-56-45.png)
-
+- リクエストを許可する
+![bg right w:400](images/2023-11-02-23-22-29.png)
 
 ---
-- "Test trigger"をクリック
-
-![h:500px](images/2022-11-12-20-59-37.png)
-
-
----
-- レコードが見つかったら、"Continue"をクリック
-
-![h:500px](images/2022-11-12-21-03-13.png)
-
----
-- Actionを実行するAppにGmailを選択
-![h:500px](images/2022-11-12-21-57-05.png)
-
----
-- Eventに"Send Email"を設定
-- "Continue"をクリック
-![h:500px](images/2022-11-12-22-00-04.png)
-
-
----
-- "Sign in" をクリック
-![h:500px](images/2022-11-12-22-01-08.png)
-
----
-- Welcomeメールの送信元にするアカウントを選択
-![h:500px](images/2022-11-12-22-03-00.png)
-
----
-- Gmail accountが設定されたことを確認して、"Continue"をクリック
-![h:500px](images/2022-11-12-22-06-10.png)
-
----
-- ToにEmailを設定
+Actionを設定します。
 - Fromに自分のGmailアドレスを設定
-- From Nameに自分のアプリの名前を設定
+- From Nameにアプリ名を設定
 - Subject, Bodyを自由に入力
 - "Continue"をクリック
-![bg right h:700px](images/2022-11-12-22-12-36.png)
+![bg right h:700px](images/2023-11-02-23-27-14.png)
 
 
 ---
-- to: のアドレスが実際の自分のメールアドレスになっていれば、"Test action"をクリックしてメール受信を確認する
-  - 実際の自分のメールアドレスになっていなければ、"Test action"はクリックしない(メール送信が失敗するため)
-- "Publish Zap"をクリック
-
-![h:380px](images/2022-11-12-22-16-10.png) ![h:380px](images/2022-11-12-22-25-17.png)
+- to: のアドレスが実際の自分のメールアドレスになっていれば、"Test step"をクリックしてメール受信を確認する
+  - 実際の自分のメールアドレスになっていなければ、"Skip test"をクリック(testをするとメール送信が失敗するため)
+![bg right h:700px](images/2023-11-02-23-29-13.png)
 
 ---
-- "Publish & Turn On"をクリック
-
-![h:500px](images/2022-11-12-22-29-42.png)
+- Publishをクリック
+![bg right h:600px](images/2023-11-02-23-29-49.png)
 
 ---
 AdaloのApiIntegrationTrialアプリでWelcomeメールが送信されることを確認しましょう。
-- Preview機能で、実際の自分のメールアドレスを入力してSignup
+- Preview機能で、実際の自分のメールアドレスを入力してSignupすると、2分以内にメールが届きます
+![w:500](images/2023-11-02-23-31-10.png)
 
-![bg right h:700px](images/2022-11-12-22-36-44.png)
-
----
-Signupしても、すぐにはメールが届きません。
-14日間はZapierのProfessional Planのフリートライアル期間のため、2分間隔でZapが実行されます。それ以後はFree Planとなり、15分間隔でZapが実行されます。(参考: https://zapier.com/app/pricing)
-
-![h:400px](images/2022-11-12-22-58-19.png)
 
 ---
-Zapの一覧画面から、手動ですぐにZapを実行することもできます。
+参考: 2分待たなくても、Zapの一覧画面から、手動ですぐにZapを実行することもできます。
 - https://zapier.com/app/zaps にアクセス
-- 実行したいZapを選んで"Run"をクリック
-
-![h:500px](images/2022-11-12-22-49-32.png)
-
----
-Signupから2分経つか、手動でZapを実行した後に、SignupしたメールアドレスでWelcomeメールを受信していることが確認できます。
-
-![h:300px](images/2022-11-12-23-02-50.png)
+- 実行したいZapを選んで"Run Zap"をクリック
+![h:500px](images/2023-11-02-23-43-58.png)
 
 ---
 Zapierを使えば、他にも様々なサービスを連携させることができます。
 
-今後Adaloだけでうまく実現できないことが出てきた時には、他のサービスと組み合わせることで実現できないかを考えてみると良いかもしれません。
-
-
-参考: [Popular ways to use Adalo workflows](https://zapier.com/apps/adalo/integrations#zap-template-list)
-
-![bg right h:600px](images/2022-11-12-23-14-29.png)
+Adaloだけでうまく実現できないことが出てきた時には、他のサービスと組み合わせることで実現できないかを考えてみると良いかもしれません。
+![bg right h:480px](images/2023-11-02-23-46-22.png)
 
 ---
 
@@ -1913,9 +1845,6 @@ Adaloでの外部連携についての紹介は以上です。
 - NoCodeツールでは、簡単にアプリを作れる反面、複雑なUIや機能を実現できない場合があります
   - 行き詰まった時は、どうすれば自分がやりたいことをシンプルなUI、機能で実現できるか考えてみてください
     - 例: 1画面に多くのコンポーネントを含めず、画面を分ける 等
-
----
-TODO: Feature Templateの紹介
 
 ---
 参考
