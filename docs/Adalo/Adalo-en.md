@@ -10,9 +10,9 @@ paginate: true
 
 **Programming Boot Camp**
 
-# Adalo Basics
+# App Development and external integration with Adalo
 
-**Tokyo Institute of Technology 2022/11/5**
+**Tokyo Institute of Technology 2023/11/3**
 　
 　
 　
@@ -25,7 +25,8 @@ paginate: true
   - Try template application
   - Overview of application development with Adalo
   - Sample application development
-  - Exercise
+  - Sample application improvement
+  - External integration
   - Summary
 
 ---
@@ -33,7 +34,12 @@ paginate: true
 - [Adalo](https://www.adalo.com/) is a no-code tool from the United States. It allows you to develop applications without programming.
 - You can create an app by selecting the parts you want to use from those provided and dragging and dropping them onto the screen.
 - You can develop not only web apps(to be displayed in a browser), but also smartphone apps for Android and iOS. It is also possible to publish the developed application on Google Play and AppStore.
+- It is a good tool for learning no-code development for the first time because it is simple and easy to understand.
 
+---
+#### Caution
+- It is difficult for multiple people to edit an Adalo application at the same time, so using it for team development in DevelopmentPhase is not recommended.
+  - However, if only one person is in charge of screen development and all other members are in charge of API development, it can be used without problems.
 
 ---
 #### Example of apps created with Adalo
@@ -49,6 +55,8 @@ paginate: true
 - Go to Adalo's SignUp page.
   - https://app.adalo.com/signup
 ![w:800px](images/signup.png)
+- Recommended browser is the Google Chrom
+  - Install: https://www.google.com/intl/ja_jp/chrome/
 
 ---
 - You can register for free!
@@ -66,16 +74,21 @@ paginate: true
 :white_check_mark:  Consider using a Paid Plan when you actually launch your app.
 
 ---
+- Select For teaching or taking a class and Click Go Build Apps! Button.
+![w:900px](images/2023-10-29-13-06-38.png)
+
+
+---
 #### Platform Selection
-- You can select Native Mobile App or Desktop Web App.
-- This time, select Native Mobile App.
-![bg 90% right](images/select-native-mobile-app.png)
+- You can select Responsive App or Mobile Only.
+- Select Responsive App. It can be used by both PC and Mobile device sizes.
+![bg 90% right](images/2023-10-29-13-09-34.png)
 
 ---
 #### Selecting a template
 - Finished apps are provided as templates.
 - This time, select Chat template.
-![bg 90% right](images/2022-11-04-23-15-25.png)
+![bg 90% right](images/2023-10-29-13-34-34.png)
 
 
 ---
@@ -83,12 +96,12 @@ paginate: true
 - Enter the App Name, Primary Color, and Secondary Color.
   - Primary Color is the base color that will be used most in your app.
   - Secondary Color is the color for important parts (e.g. register button)
-![bg 90% right](images/branding-chat-app.png)
+![bg 90% right](images/2023-10-29-13-36-48.png)
 
 ---
 - When you see Adalo's admin panel like this, you are good to go!
 - From now on, we will use this admin panel to develop our application.
-![w:900px](images/dev-tool-of-chat-app.png)
+![w:900px](images/2023-10-29-13-37-30.png)
 
 ---
 ## Try template application
@@ -100,57 +113,37 @@ paginate: true
 ---
 - The preview screen will be launched.
 - Let's operate the Chat application together!
-![w:800px](images/chat-app-preview.png)
+![w:800px](images/2023-10-29-14-41-39.png)
 
 ---
 - Sign up.
   -  Enter your Email and Password (remember them so that you can use again later).
-![bg 50% right](images/chat-app-signup.png)
+![w:900px](images/2023-10-29-14-44-05.png)
 
----
-- Add profile picture.
-![bg 50% right](images/2022-11-02-07-48-39.png)
 
 ---
 - The list is empty because no conversation has taken place yet
--  Press the + button at the bottom right of the screen.
-![bg 50% right](images/chat-app-no-conversation.png)
+-  Press the NEW CHAT button at the top right corner of the screen.
+![w:900px](images/2023-10-29-14-46-41.png)
 
 ---
 - You can see the list of sample users.
-- Click anyone.
-![bg 50% right](images/2022-11-02-07-51-03.png)
+- Click Will W.
+![w:900px](images/2023-10-29-14-48-59.png)
 
 ---
 - You can send messages.
-![bg 50% right](images/2022-11-02-07-54-34.png)
+![w:900px](images/2023-10-29-14-50-08.png)
 
 ---
-- Let's share the app you created with others and have a conversation with them.
-- Close Preview mode with the x button in the upper left corner, and click SHARE in the menu.
-
-![w:1100px](images/share-button.png)
-
----
-- Click on the SHARE APP button and select COPY LINK.
-- Post the copied link to Slack so that all students can see it.
-
-![w:800px](images/share-chat-app.png)
-
----
-- Click on a links posted in slack to signup for their app and send them a message.
-  - You'll see the creator of the app (and other students) in the list of users!
-![bg 50% right](images/start-conversation.png)
-
----
-- (Around the time when the message would have been sent to everyone's apps,)
-Display the Preview screen of your app again.
-  - You should have received a message, so click on it to check it!
-![bg 50% right](images/2022-11-02-07-58-19.png)
-
----
-- Message received :tada:
-![bg 50% right](images/2022-11-02-07-59-15.png)
+There are other features as below.
+- Profile Photo Update
+- Password Change
+- Logout
+- Log in
+  - You can log in as the sample user Will W by entering the following.
+    - Email: will@email.com
+    - Password: 123
 
 ---
 - In addition to the Chat we tried this time, there are several other templates available.
@@ -181,8 +174,8 @@ Next,  take a look at how to develop an app with Adalo.
 #### Database
 - A set of organized data.
 - Data can be registered, read (displayed), updated, and deleted.
-- Example: In the case of a Chat application
-![w:400px](images/2021-10-19-23-49-03.png)
+- Example: In the case of the Chat application
+![w:400px](images/2023-10-29-15-08-00.png)
 ![bg 35% right](images/2021-10-19-23-13-47.png)
 
 ---
@@ -194,46 +187,47 @@ Next,  take a look at how to develop an app with Adalo.
 ![bg 35% right](images/2021-10-19-23-12-42.png)
 
 ---
-### Explanation of Adalo's functions
+### Explanation of Adalo's features
 Next, take a look at the features available in Adalo's admin panel.
-![w:900px](images/dev-tool-of-chat-app.png)
+![w:900px](images/2023-10-29-15-10-32.png)
 
 ---
 #### Canvas
 - A work area for creating screens.
 - Elements can be selected and moved by dragging and dropping.
-![w:680px](images/canvas.png)
+![w:670px](images/2023-10-29-15-11-49.png)
 
 
 ---
 #### Left Toolbar
 Let's learn each function of the left toolbar.
 
-![w:60px](images/2022-11-02-08-00-18.png)
+![w:70px](images/2023-10-29-15-13-02.png)
 
 ---
 ###### ![w:60px](images/add-panel.png) Add Panel
 - This allows you to select a component or screen to add to your app.
-![bg right 95%](images/2021-10-20-00-37-54.png)
-![bg right 93%](images/2021-10-20-00-44-42.png)
+- Feature templates are also available.
+![bg right 95%](images/2023-10-29-15-16-43.png)
+![bg right 95%](images/2023-10-29-15-17-09.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-00-52-07.png) Branding
 - You can change colors and fonts.
-![bg right 100%](images/2021-10-20-00-50-02.png)
-![bg right 92%](images/2021-10-20-00-50-42.png)
+![bg right 98%](images/2023-10-29-15-25-23.png)
+![bg right 94%](images/2023-10-29-15-25-47.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-00-54-44.png) Screens
 - List of screens and their configurations.
-![bg right 100%](images/2021-10-20-01-18-20.png)
-![bg right 93%](images/2021-10-20-01-14-53.png)
+![bg right 100%](images/2023-10-29-15-26-42.png)
+![bg right 93%](images/2023-10-29-15-27-37.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-20-56.png) Database
 - Displays the structure of the database and the data stored in it.
 - Collection: A collection of data that has the same properties.
-![w:214px](images/2021-10-20-01-38-57.png) ![w:878px](images/2021-10-20-01-30-09.png)
+![w:200px](images/2023-10-29-15-29-22.png) ![w:850px](images/2023-10-29-15-30-54.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-45-09.png) Settings 
@@ -242,17 +236,17 @@ Let's learn each function of the left toolbar.
 - You can set access permissions to the app.
 - You can copy or delete an app.
 - You can set api key for geolocation feature.
-![bg right 90%](images/2022-11-04-23-24-28.png)
+![bg right 80%](images/2023-10-29-15-32-03.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-01-56-00.png)Publish
 - You can publish your apps (paid plan required).
-![bg right 90%](images/2021-10-20-01-59-11.png)
+![bg right 90%](images/2023-10-29-15-33-39.png)
 
 ---
 ###### ![w:60px](images/2021-10-20-02-06-34.png) Analytics
 - Show usage analysis report.
-![bg right 90%](images/2021-10-20-02-07-44.png)
+![bg right 95%](images/2023-10-29-15-34-38.png)
 
 ---
 ###### ![w:60px](images/2022-11-02-08-01-35.png) Version History
@@ -275,23 +269,17 @@ Let's learn each function of the top toolbar.
 
 
 ---
-###### Preview
+###### Preview, Share
 - You can run the app and try it out.
-- You can switch to devices with different screen sizes to check the display image.
-![w:830px](images/2021-10-20-02-42-08.png)
-
----
-###### Share
-- You can share the app to get others to use it.
-  No Adalo account required to use shared app.
-![w:830px](images/2021-10-20-02-44-28.png)
+![w:930px](images/2023-10-29-15-36-52.png)
 
 ---
 ###### Account Menu
 - Allows you to configure various settings.
 - Link to help and documentation.
+- You can find an Adalo Expert.
 - Sign Out.
-![bg right 90%](images/2021-10-20-02-56-33.png)
+![bg right 90%](images/2023-10-29-15-41-03.png)
 
 ---
 #### Tips
@@ -302,15 +290,13 @@ Let's learn each function of the top toolbar.
 ## Sample application development
 Let's create a new application.
 
-- In this lecture, we will create a static site without using a database (the content displayed will remain the same no matter which user accesses the site).
-- In the next lecture, we will create a dynamic app using a database (the content displayed will change for each user).
 
 ---
 #### UI of the sample application
 This is a health management application for your pet.
 First, check the UI.
 
-![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
+![h:383px](images/2023-11-02-18-52-28.png) ![h:383px](images/2023-11-02-18-53-10.png) ![h:383px](images/2023-11-02-18-47-35.png) ![h:384px](images/2023-11-02-18-48-18.png) ![h:383px](images/2023-11-02-18-50-07.png) ![h:383px](images/2023-11-02-18-50-36.png)
 
 
 ---
@@ -320,7 +306,7 @@ First, check the UI.
   - Password
   - Full Name
 - For those who have already registered, there is a link to the login screen.
-![bg right h:700px](images/2021-10-20-06-09-56.png)
+![bg right h:700px](images/2023-11-02-18-52-28.png)
 
 ---
 ###### Login screen
@@ -329,7 +315,7 @@ First, check the UI.
   - Password
 - There is a link for those who have forgotten their password.
 - There is a link to the user registration page.
-![bg right h:700px](images/2021-10-20-06-16-03.png)
+![bg right h:700px](images/2023-11-02-18-53-10.png)
 
 ---
 ###### Pet Registration Screen
@@ -337,54 +323,315 @@ First, check the UI.
 - You can select your pet's photo.
 - You can enter your pet's birthday.
 - You can click the "Register" button to register your pet and move to the pet list screen.
-![bg right h:700px](images/2021-10-22-02-23-09.png)
+![bg right h:700px](images/2023-11-02-18-47-35.png)
 
 ---
 ###### Pet List screen
 - Registered pets can be displayed in a list.
 - Clicking on a pet will take you to the pet details screen for that pet.
 - Clicking the icon at the bottom right take you to the Pet Registration screen.
-![bg right h:700px](images/2021-10-22-02-40-24.png)
+![bg right h:700px](images/2023-11-02-18-48-18.png)
 
 ---
 ###### Pet Detail Screen
-- There is a link to the weight Record screen.
-(Link2 is for exercise)
 - Birthday is displayed.
 - The latest weight is displayed.
-![bg right h:700px](images/2021-10-22-04-07-06.png)
+- There is a link to the weight Record screen.
+![bg right h:700px](images/2023-11-02-18-50-07.png)
 
 ---
 ###### Weight Record screen
 - A graph showing the transition in weight is displayed.
 - You can enter your pet's current weight.
 - You can add your pet's weight by pressing the button
-![bg right h:700px](images/2021-10-22-16-42-42.png)
+![bg right h:700px](images/2023-11-02-18-50-36.png)
 
 ---
 #### Creating the application
-Now, let's start creating the application.
+Now, let's create the application.
 
 -  select CREATE NEW APP
-![bg right 90%](images/2021-10-20-05-31-12.png)
+![bg right 95%](images/2023-10-29-18-03-42.png)
 
 --- 
-- Select Native Mobile App !
-![bg right 90%](images/select-native-mobile-app.png)
+- Select Responsive App
+![bg right 95%](images/2023-10-29-18-04-45.png)
 
 ---
--  select Template: Blank
-![bg right 90%](images/2021-10-20-05-35-47.png)
+-  select Template: Blank Mobile First
+![bg right 95%](images/2023-10-29-18-05-48.png)
 
 ---
-- Enter App Name and Color as you like.
-![bg right 90%](images/2022-11-04-23-51-03.png)
+- Enter App Name, Users of this app, and Color as you like.
+![bg right 95%](images/2023-10-29-18-07-55.png)
 
 ---
-- The application is ready!
-![h:550px](images/2021-10-20-05-45-06.png)
+- The application is created
+![h:550px](images/2023-11-01-07-56-10.png)
 
 ---
+#### Let's learn about database
+Defining the data to be handled by that application at the beginning of the application development make it easy to develop the application.
+
+First, learn what a database is.
+
+---
+###### Database
+- A set of organized data.
+- Data can be registered, read (displayed), updated, and deleted.
+- Example: In the case of a Chat application
+![w:400px](images/2023-10-29-15-08-00.png)
+![bg 35% right](images/2021-10-19-23-13-47.png)
+
+---
+- Databases are often compared to "spreadsheet-like" software.
+- A database can be used to CREATE, READ, UPDATE, and DELETE data. These operations are collectively called CRUD operations.
+
+![bg right w:630px](images/2023-11-01-21-39-53.png)
+
+---
+###### Basics of Adalo's database
+![w:60px](images/2021-10-20-01-20-56.png) You can access Adalo's database from this icon.
+There are three components of the Adalo database.
+- Collection
+- Property
+- Record
+
+---
+###### What is a Collection?
+A collection of data that has the same property.
+![w:250px](images/2023-11-01-21-38-02.png) ![w:700px](images/2023-11-01-21-39-53.png)
+
+---
+- Collection is used to divide and organize the various data.(An analogous term is table.)
+- In many cases, a Collection is a group of data that a user can register, update, or delete in a single operation. <!-- (A collection is often said to be something that can be expressed as a noun.
+- By default, Users is prepared as a Collection, and the rest can be added according to the application to be developed.
+
+It is very difficult to decide what kind of collection to add. Let's practice and get used to it. (If you have any problems, consult with mentors.)
+
+---
+###### What is Record?
+- Record is a unit of information in a collection.
+  - One row corresponds to one Record.
+- In the example of Users Collection, the information belongs to one user is registered as one Record.
+![w:550px](images/2023-11-01-21-39-53.png)
+
+---
+- Records are basically registered from the form on the screen of the app, but it is also possible to register from the form by pressing the "+Add xxxx" button on the upper right in Record View.
+- You can also search for Records in the Collection, and upload (import) and download CSV files.
+![bg right h:460px](images/2023-11-01-21-41-59.png)
+
+---
+###### What is Property?
+- Property is each and every item that makes up a Record.
+- The Users Collection consists of properties such as email, password, user name, and name.
+- The value of Property can be empty.
+
+![bg right h:450px](images/2021-11-05-16-25-58.png)
+
+---
+To define what kind of data the Property is, select the Type when adding it.
+- Text
+- Number
+- True/False
+- Date/Time
+- Date/Time
+- Image
+- File
+- Location
+
+![bg right h:600px](images/2022-11-05-12-38-25.png)
+
+---
+What is Relationship?
+- Instead of storing a large number of properties for a single Record, we can set a special property to relate multiple Collections, called Relationship. This allows you to divide a Collection into manageable pieces.
+
+---
+- For example, a message sent by a user in the Chat app is stored in the Messages Collection, which is separate from the Users Collection, and these two collections are related by Relationship.
+  - The Users side has a Relationship called Messages, and the Messages side has a Relationship called Sender (with Users).
+
+![bg right h:450px](images/2023-11-01-21-45-10.png)
+![bg right h:350px](images/2023-11-01-21-46-52.png)
+
+---
+Types of Relationship
+- In Adalo's Relationship, you can choose one of two types, one-to-many or many-to-many, depending on the number of Records associated with the Collection. 
+
+---
+One-to-many Relationship
+- This means that one Record has a relationship with multiple Records in different collections. 
+- Depending on whether the Collection you are trying to set the Relationship to is one or many, two choices will appear.
+
+![bg right h:320px](images/2022-11-05-12-42-56.png)
+
+---
+Example of a one-to-many Relationship
+- In the Chat application, one user sends multiple messages, but the sender of the message is one user, so the Relationship in the Users Collection and Messages Collection is one-to-many.
+
+![h:250px](images/2023-11-01-21-48-22.png) ![h:250px](images/2023-11-01-21-51-33.png)
+
+<!-- For example, if there is only one organizer for an event, then the Relationship between the organizer and the event is one-to-many. -->
+<!-- For example, one user organizes multiple events, or there is one organizer for multiple events, both of which represent true one-to-many Relationships. -->
+
+---
+Many-to-many Relationships
+- This means that one Record in both Collections is tied to multiple Records in the other Collection.
+
+![bg right h:140px](images/2022-11-05-12-48-16.png)
+
+---
+An example of a many-to-many Relationship
+- In a Chat application, one user can have multiple conversations (to keep track of who and what messages were exchanged), and one conversation can have multiple members (users), so the relationship between the Users Collection and the Conversations Collection is many-to-many.
+
+![h:260px](images/2023-11-01-21-53-05.png) ![h:260px](images/2023-11-01-21-53-42.png)
+
+---
+#### Database design
+Let's design the database of the sample app.
+
+---
+###### Let's design the database.
+Let's design the database by looking at the UI of the sample application. The steps are described in the next page.
+![h:383px](images/2023-11-02-18-52-28.png) ![h:383px](images/2023-11-02-18-53-10.png) ![h:383px](images/2023-11-02-18-47-35.png) ![h:384px](images/2023-11-02-18-48-18.png) ![h:383px](images/2023-11-02-18-50-07.png) ![h:383px](images/2023-11-02-18-50-36.png)
+
+---
+###### Database Design Steps
+1. While looking at the UI, make a list of the data that will need to be saved. Write them down in a text editor (e.g. Notepad application).
+2. Think about what kind of collections should be created to store the listed data, and create the collections in the Adalo database.
+3. Add the data you listed in step 1 as a Property to the appropriate Collection and select the appropriate Type.
+4. Set the Relationship Property to collections related to other collection.
+
+---
+In the next slide and onwards, there are explanations, but it is highly recommended that you try it by yourself before checking them.
+
+There is no absolute right answer. When in doubt, follow your intuitions.
+
+---
+###### Explanations
+While looking at the UI, made a list of the data that needs to be saved, and it looked like this
+````
+- User's Email
+- User's Password
+- User's FullName
+- Pet's Name
+- Pet's Photo
+- Pet's Birth Date
+- Pet's weight
+- Date and time the pet's weight was registered
+````
+
+- If anyone can name any other data, please let me know!
+
+---
+Thinking about what kind of collections should be created to store the listed data, listed these three Collections.
+```
+- Users
+- Pets
+- PetWeightLogs
+```
+- Many of you would have listed two collections, one for users and one for pets.
+- Some people would not have listed a collection for pet weight records. (It is not wrong to include the pet's weight and its registration date in the pet's Collection. This will be explained later.)
+- Have any of you listed other Collections?
+<!-- In extreme cases, you can do it with 1Collection -->.
+
+---
+Additional information on Collection classification
+- When the relationship "if A is identified, then B is identified" is true, "A" is often a Collection and "B" is a Property of that Collection.
+  - If a user is identified, the user's email, password, and FullName are identified.
+  - If a pet is identified, the pet's name, photo, and birthday are identified.
+- When the relationship "there are multiple B's corresponding to A" is true, A and B are often split into two collections.
+  - There are multiple pet weights and their registration times corresponding to a pet.
+
+---
+- Register the Collection into the Adalo database.
+  - Add manually by ADD TO DATABASE > Add Collection
+  - Magic Add will suggest changes to the database based on the description of the feature you entered, but we will not use it this time.
+- Users Collection is created by default.
+![bg right h:550px](images/2023-11-01-22-10-13.png)
+
+---
+Next, I appended the data listed in step1 as a Property of the appropriate Collection. Types are placed in "()".
+```
+- Users
+  - Email(Text)
+  - Password(*Password)
+  - FullName(Text)
+- Pets
+  - Name(Text)
+  - Image(Image)
+  - Birthday(Date)
+- PetWeightLogs
+  - WeightKg(Number)
+  - RegisteredTime(Date&Time)
+```
+Password is a special Type that is set to Password by default.
+<!-- This will be an encrypted version of Text. -->
+
+---
+- In Adalo database, add the properties.
+- The Users Collection is already set by default and contains all the necessary items.
+- We don't need Username, but since we can't delete it, leave it as is.
+![bg right h:500px](images/2021-11-03-15-40-03.png)
+
+---
+- The Pets Collection Property looks like this.
+![bg right h:400px](images/2021-11-03-15-42-07.png)
+
+---
+- The Property of the PetWeightLogs Collection looks like this.
+- Delete the Name Property, which is set by default when you add a Collection.
+  - You can delete it after dragging and dropping it so that the order is not at the top of the collection.
+
+<!-- The name property is not needed. [](images/2021-11-03-15-36-02.png) --> !
+![bg right h:300px](images/2021-11-03-15-45-14.png)
+
+---
+Finally, for collections that are related to other collections, set the Relationship Property.
+
+- Select the Users Collection to add a one-to-many Relationship with the Pet Collection.
+![w:530px](images/2021-11-03-15-50-06.png)
+
+![bg right h:700px](images/2023-11-01-22-18-31.png)
+
+---
+- If you check the Pets Collection, you will see that a Relationship with the Users Collection has been automatically added because the Relationship setting was made on the Users Collection side.
+  - Since the Users Collection is one side, the "s" at the end is omitted and the Property name is "User".
+
+![bg right h:550px](images/2023-11-01-22-19-28.png)
+
+---
+- Add a Relationship to the Pets Collection with the PetWeightLogs Collection.
+  - Select the Pets Collection to add a one-to-many Relationship with the PetWeightLogs Collection.
+![w:490px](images/2021-11-03-15-58-38.png)
+![bg right h:700px](images/2023-11-01-22-20-54.png)
+
+---
+If you check the PetWeightLogs Collection, you will see that a Relationship with the Pets Collection has been automatically added because the Relationship setting was made on the Pets Collection side.
+  - Since the Pets Collection side is one side, the "s" at the end is omitted, and the Property name is "Pet".
+
+![bg right h:500px](images/2023-11-01-22-21-35.png)
+
+---
+Reference: What happens if you include the pet weights and its registration times in the Pets Collection?
+
+The record will be registered as follows, but in this case, you will have the troubles.
+![w:1200px](images/2021-11-03-14-47-07.png)
+
+---
+The troubles
+- Because multiple Records with different pet weights and their registration times are registered for one pet, the pet's information (Name, Image, Birthday) is registered in duplicate.
+  - In order to change the information of one pet, we have to update all the duplicated records, which makes the process more complicated.
+- Adalo has a convenient function to automatically generate a form to register a record in a single collection, but since the collection is not divided by the unit to register data, it cannot be used.
+
+---
+That's it for the sample app database design.
+
+It is recommended that you set up Adalo's database in the same state as the document to avoid confusion in the later work.
+
+---
+
+
+
 ###### User registration screen, login screen
 
 User registration screen and login screen are generated by default.
