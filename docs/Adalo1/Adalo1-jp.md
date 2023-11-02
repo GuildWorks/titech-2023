@@ -27,7 +27,8 @@ paginate: true
   - テンプレートアプリを操作してみよう
   - Adaloでのアプリ開発の概要説明
   - アプリを作ってみよう
-  - 演習
+  - サンプルアプリを改善しよう
+  - 外部連携
   - まとめ
 
 ---
@@ -396,13 +397,13 @@ Learn Adaloのコンテンツをやってみる？ -->
 
 
 ---
-## データベースを学ぼう
+#### データベースを学ぼう
 アプリ開発の最初にそのアプリで扱うデータを定義しておくことで、その後の開発をスムーズに進めることができます。
 
 まずは、データベースがどのようなものかを確認します。
 
 ---
-#### Database(復習)
+###### Database(復習)
 - 整理されたデータの集合。
 - データの登録、読込(表示)、更新、削除が行われる。
 - 例: Chatアプリの場合
@@ -417,7 +418,7 @@ Learn Adaloのコンテンツをやってみる？ -->
 ![bg right w:630px](images/2023-11-01-21-39-53.png)
 
 ---
-#### Adaloのデータベースの基本
+###### Adaloのデータベースの基本
 ![w:60px](../Adalo1/images/2021-10-20-01-20-56.png) このアイコンからAdaloのデータベースにアクセスできます。
 Adaloのデータベースの構成要素は、以下の3つです。
 - Collection
@@ -520,7 +521,7 @@ Relationshipの種類
 >コレクションのレコードをクリックすると、そのコレクション内のレコードも表示されるので、リレーションシップを含むプロパティは、Adaloのデータベースの列としても視覚化できます。 -->
 
 ---
-## データベース設計
+#### データベース設計
 
 <!-- ---
 TODO: 演習の前に一度テンプレートのアプリを例にデータベース設計の手順を紹介して、一度流れを理解してもらう? -->
@@ -528,7 +529,7 @@ TODO: 演習の前に一度テンプレートのアプリを例にデータベ�
 次に、実際にデータベースを設計しましょう。
 
 ---
-#### データベースを設計してみよう
+###### データベースを設計してみよう
 サンプルアプリのUIを見ながら、データベースを設計してみましょう。手順は次のページで紹介します。
 ![h:383px](images/2023-11-02-18-52-28.png) ![h:383px](images/2023-11-02-18-53-10.png) ![h:383px](images/2023-11-02-18-47-35.png) ![h:384px](images/2023-11-02-18-48-18.png) ![h:383px](images/2023-11-02-18-50-07.png) ![h:383px](images/2023-11-02-18-50-36.png)
 
@@ -679,7 +680,7 @@ PetWeightLogs Collectionを確認すると、Pets Collection側でRelationship�
 ※ この後の作業で混乱しないために、Adaloのデータベースを資料と同じ状態に設定しておくことをおすすめします。
 
 ---
-## アプリを開発しよう
+#### データベースを使ってアプリを開発しよう
 設計したデータベースを使って、サンプルアプリを開発していきましょう。
 
 ---
@@ -1123,11 +1124,11 @@ https://ryo-imahashis-team-6.adalo.com/pethealthlog
 # :hourglass:
 
 ---
-## 演習1の答え合わせ
+#### 演習1の答え合わせ
 まずは自分でやってみて、その後でここから先を見てください :pray:
 
 ---
-#### ペット編集画面
+###### ペット編集画面
 登録したペットの情報を更新できるペット編集画面を新たに作ります。
 
 
@@ -1179,7 +1180,7 @@ Preview機能でペット情報編集画面が使えることを確認しまし�
 ![bg right h:600px](images/2023-11-03-00-28-44.png)
 
 ---
-#### ペット削除機能
+###### ペット削除機能
 ペット詳細画面に、登録したペットを削除できるボタンを追加します。
 
 ---
@@ -1199,16 +1200,16 @@ Preview機能で削除を試してみましょう。
 ![bg right h:600px](images/2023-11-03-00-34-58.png)
 
 ---
-## TODO: サンプルアプリを改善しよう
+## サンプルアプリを改善しよう
 まだ紹介していないAdaloの機能を使いながら、サンプルアプリを改善していきます。
 
 ---
 #### ログアウト
 - ペット一覧画面のAppBarを選択し、Right Icon 1を有効化
-- Iconをexit_to_appに変更する
+- Iconをlogoutに変更する
 - ADD ACTION > More... > User Login > Log Outを選択
 - ADD ANOTHER ACTION > Link > Loginを選択
-![bg right h:580px](images/2021-11-04-23-51-45.png)
+![bg right h:580px](images/2023-11-03-00-56-10.png)
 
 ---
 Preview機能で確認しましょう。
@@ -1216,15 +1217,15 @@ Preview機能で確認しましょう。
 
 ----
 #### Actionの実行条件設定
-ペットが未登録の場合にペット一覧画面を表示したらペット登録画面へ遷移させます。
+ペットが未登録の場合にペット一覧画面を表示した場合、ペット登録画面へ遷移させます。
 - ペット一覧画面でActions > ADD ACTION > Link > Pet Registrationを選択
 - SHOW ADVANCEDをクリックし、When does this happen?をSometimesに変更
-![bg right h:600px](images/2021-11-05-00-06-55.png)
+![bg right h:600px](images/2023-11-03-00-59-14.png)
 
 ---
 - This action will only happen if...でMore > Logged In User's > Pets' > Count を選択
 - Is equal to の下の数値を0に変更
-![bg right h:600px](images/2021-11-05-00-15-50.png)
+![bg right h:600px](images/2023-11-03-01-00-58.png)
 
 ---
 Preview機能で確認しましょう。
@@ -1238,7 +1239,7 @@ Preview機能で確認しましょう。
 選択式入力フォームで使う選択肢は、データベースにCollectionを追加してレコードとして用意します。
 - データベースにGenders Collectionを追加(PropertyはデフォルトのままでOK)
 - 0 Records > ADD GENDERとクリックし、MaleとFemaleの2つのRecordを追加
-![h:400px](images/2021-11-05-00-42-41.png)
+![h:400px](images/2023-11-03-01-02-28.png)
 
 ---
 - Genders CollectionにPets Collectionとの1対多のRelationshipを追加する
@@ -1248,11 +1249,11 @@ Preview機能で確認しましょう。
 ---
 - ペット登録画面のフォームを選択
 - Fields > ADD VISIBLE FIELD > Genderを選択
-![bg right h:500px](images/2021-11-05-00-37-26.png)
+![bg right h:600px](images/2023-11-03-01-04-12.png)
 
 ---
 - ペット詳細画面に性別の表示欄を追加
-![bg right h:500px](images/2021-11-05-00-54-18.png)
+![bg right h:500px](images/2023-11-03-01-06-07.png)
 
 ---
 Preview機能で確認しましょう。
@@ -1260,15 +1261,13 @@ Preview機能で確認しましょう。
 - ペット登録画面で性別が選択できます。
 - 選択した性別がペット詳細画面に表示されます。
 
-![bg right h:620px](images/2021-11-05-00-58-14.png)
-![bg right h:620px](images/2021-11-05-00-58-53.png)
+![bg right h:620px](images/2023-11-03-01-07-18.png)
+![bg right h:620px](images/2023-11-03-01-07-56.png)
 
 ---
 補足
 - 性別を選択できるようになる前に登録したペットで空欄が表示されることが気になるようであれば、Pet CollectionのRecordを表示してそのペットをクリックし、性別を手動で設定してもOKです。
-<!-- (性別は変わらないので、編集画面の項目には追加しません) -->
-
-![h:400px](images/2021-11-05-01-16-39.png)
+![h:420px](images/2023-11-03-01-08-51.png)
 
 ---
 参考
@@ -1276,47 +1275,34 @@ Preview機能で確認しましょう。
 複数選択式の入力フォームは、MarketplaceのMultiselectDropdownを使って作れます。
 
 必要になったら、試してみてください。
-![bg right h:650px](images/2021-11-05-00-31-26.png)
+![bg right h:400px](images/2023-11-03-01-09-51.png)
 
----
-#### コンポーネントの非表示設定
-表示しないコンポーネントを削除せずに残しておくことができます。
-- ペット詳細画面のコンポーネント一覧で、Link 2を含むGroupにマウスオーバーして、右側の目のアイコンをクリック
-![bg right h:550px](images/2021-11-05-01-05-44.png)
-
----
-Preview機能で確認すると、Link 2が消えています。
-
-もう一度目のアイコンをクリックすれば、再度表示させられます。
-
-![bg right h:700px](images/2021-11-05-01-23-27.png)
 
 ---
 #### 条件によってコンポーネントの表示or非表示を切り替える
 体重が未登録であれば、ペット詳細画面のLatest Weightは非表示にします。
 
-![bg right h:700px](images/2021-11-05-02-19-31.png)
+![bg right h:620px](images/2023-11-03-01-07-56.png)
 
 ---
 - Latest Weightというラベルとその値を選択し、グループ化します
-
-![bg right h:550px](images/2021-11-05-01-07-47.png)
+![bg right h:500px](images/2023-11-03-01-12-04.png)
 
 ---
 - Change Visibilityを選択します
 
-![bg right h:550px](images/2021-11-05-02-22-10.png)
+![bg right h:500px](images/2023-11-03-01-13-04.png)
 
 ---
 - VisibilityをSometimes Visibleに変更
 - Will be visible if...でCurrent Pet > PetWeightLogs > Countを選択
 - Is not equal to 0と設定
-![bg right h:620px](images/2021-11-05-02-24-00.png)
+![bg right h:620px](images/2023-11-03-01-14-11.png)
 
 ---
 Preview機能で確認すると、体重が未登録であれば、Latest Weightが非表示になりました。
 
-![bg right h:620px](images/2021-11-05-02-41-24.png)
+![bg right h:620px](images/2023-11-03-01-14-40.png)
 
 
 サンプルアプリの改善は一旦ここまでとします。
@@ -1324,11 +1310,8 @@ Preview機能で確認すると、体重が未登録であれば、Latest Weight
 ---
 #### クローン用URL
 - 以下のURLの右下のCLONE APPボタンでアプリをクローンできますので、答え合わせに使ってください
-TODO: URL追加
-<!-- https://ryo-imahashis-team-6.adalo.com/improvedpethealthlog -->
-
-![bg right h:350px](images/2023-11-02-08-32-08.png)
-
+https://ryo-imahashis-team-6.adalo.com/improvedpethealthlog
+![h:400px](images/2023-11-03-01-15-43.png)
 
 
 ---
