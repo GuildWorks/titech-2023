@@ -1103,13 +1103,227 @@ https://ryo-imahashis-team-6.adalo.com/pethealthlog
 
 ---
 ## 演習1
-- 登録済のペットの情報を編集できる画面を作成しましょう
-- 登録済のペットを削除できる機能を追加しましょう
-- ログアウト機能を追加しましょう
-<!-- - 体重が未登録であれば、ペット詳細画面のLatest Weightは非表示にしましょう -->
+1. 登録済のペットの情報を編集できる、ペット編集画面を作成しましょう
+2. 登録済のペットを削除できる、ペット削除機能を追加しましょう
 
 ---
-TODO: 演習の1答え合わせ用アプリのクローンリンクを追加
+#### ヒント
+- ペット編集画面を作る時は、ペット登録画面の作り方が参考になります
+- ペット削除機能のために新規の画面は不要なので、どこに削除ボタンを追加するのが良いかを考えてください
+- ACTIONを追加する時に、UpdateやDeleteが選べます
+![h:300](images/2023-11-02-19-44-50.png)
+
+
+---
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+## 演習1の答え合わせ
+まずは自分でやってみて、その後でここから先を見てください :pray:
+
+---
+#### ペット編集画面
+登録したペットの情報を更新できるペット編集画面を新たに作ります。
+
+
+---
+まず、ペット詳細画面にペット情報編集画面への導線を追加します。
+- ADD COMPONENTからAction Buttonを追加
+- Iconをeditに変更
+- Icon and Text ColorをDefault Background(white)に変更
+![bg right h:450px](images/2021-11-04-04-31-55.png)
+
+---
+- ADD ACTIONからLink > New Screenを選択
+![bg right h:630px](images/2021-11-04-04-32-24.png)
+
+
+---
+- Screen Nameを入力
+- Formを選択
+- CREATE SCREENをクリック
+![bg right h:620px](images/2021-11-04-04-33-34.png)
+
+---
+以下の設定をするだけでペット情報編集画面は完成です。
+- Which data collection?でPetsを選択
+  - 選択したCollectionに合わせたフォームを自動生成してくれる
+- What do you want the form to do?でUpdate Current Petを選択
+- FieldsでBirthdayとImageの順番を入れ替え
+
+![bg right h:420px](images/2021-11-04-04-38-03.png)
+<!-- 更新不要な項目があれば、その入力箇所は削除できそう -->
+
+---
+Preview機能でペット情報編集画面が使えることを確認しましょう。
+
+![bg right h:700px](images/2021-11-04-21-01-32.png)
+
+---
+補足
+- Formコンポーネントを使えば、FieldのRequired Error Textにチェックを入れるだけで、必須項目が入力されているかどうかをチェックすることができます。
+- 入力フォームを作る際は、できるだけFormコンポーネントを使いましょう。
+![bg right h:600px](images/2021-11-04-21-18-20.png)
+![bg right h:600px](images/2021-11-04-21-05-30.png)
+
+---
+#### ペット削除機能
+ペット詳細画面に、登録したペットを削除できるボタンを追加します。
+
+---
+- App Barを選択し、Right Icon 1のトグルをONにする
+- Iconをdeleteに変更
+- ADD ACTIONからDelete > Current Petを選択
+- ADD ANOTHER ACTIONからLink > Mypetsを選択
+
+![bg right h:500px](images/2021-11-04-05-12-13.png)
+
+<!-- TODO: 削除の前に本当によろしいですか？ を挟みたい-->
+---
+Preview機能で削除を試してみましょう。
+
+
+削除が完了してペット一覧画面に遷移すると、削除したペットは表示されません。
+
+
+![bg right h:600px](images/2021-11-04-05-16-12.png)
+![bg right h:600px](images/2021-11-04-05-16-26.png)
+
+---
+## サンプルアプリを改善しよう
+まだ紹介していないAdaloの機能を使いながら、サンプルアプリを改善していきます。
+
+---
+#### ログアウト
+- ペット一覧画面のAppBarを選択し、Right Icon 1を有効化
+- Iconをexit_to_appに変更する
+- ADD ACTION > More... > User Login > Log Outを選択
+- ADD ANOTHER ACTION > Link > Loginを選択
+![bg right h:580px](images/2021-11-04-23-51-45.png)
+
+---
+Preview機能で確認しましょう。
+追加したアイコンをクリックするとログアウトし、ログイン画面に遷移するようになりました。
+
+----
+#### Actionの実行条件設定
+ペットが未登録の場合にペット一覧画面を表示したらペット登録画面へ遷移させます。
+- ペット一覧画面でActions > ADD ACTION > Link > Pet Registrationを選択
+- SHOW ADVANCEDをクリックし、When does this happen?をSometimesに変更
+![bg right h:600px](images/2021-11-05-00-06-55.png)
+
+---
+- This action will only happen if...でMore > Logged In User's > Pets' > Count を選択
+- Is equal to の下の数値を0に変更
+![bg right h:600px](images/2021-11-05-00-15-50.png)
+
+---
+Preview機能で確認しましょう。
+新しいユーザーでSignupすると、ペット一覧画面からペット登録画面に遷移します。
+
+---
+#### 選択式入力フォーム
+ペットの情報に性別を追加し、入力フォームで選択式入力ができるようにします。
+
+---
+選択式入力フォームで使う選択肢は、データベースにCollectionを追加してレコードとして用意します。
+- データベースにGenders Collectionを追加(PropertyはデフォルトのままでOK)
+- 0 Records > ADD GENDERとクリックし、MaleとFemaleの2つのRecordを追加
+![h:400px](images/2021-11-05-00-42-41.png)
+
+---
+- Genders CollectionにPets Collectionとの1対多のRelationshipを追加する
+  - 1匹のペットは1つの性別を持ち、1つの性別は複数のペットに対して設定されるため
+![bg right h:600px](images/2021-11-05-00-46-10.png)
+
+---
+- ペット登録画面のフォームを選択
+- Fields > ADD VISIBLE FIELD > Genderを選択
+![bg right h:500px](images/2021-11-05-00-37-26.png)
+
+---
+- ペット詳細画面に性別の表示欄を追加
+![bg right h:500px](images/2021-11-05-00-54-18.png)
+
+---
+Preview機能で確認しましょう。
+
+- ペット登録画面で性別が選択できます。
+- 選択した性別がペット詳細画面に表示されます。
+
+![bg right h:620px](images/2021-11-05-00-58-14.png)
+![bg right h:620px](images/2021-11-05-00-58-53.png)
+
+---
+補足
+- 性別を選択できるようになる前に登録したペットで空欄が表示されることが気になるようであれば、Pet CollectionのRecordを表示してそのペットをクリックし、性別を手動で設定してもOKです。
+<!-- (性別は変わらないので、編集画面の項目には追加しません) -->
+
+![h:400px](images/2021-11-05-01-16-39.png)
+
+---
+参考
+
+複数選択式の入力フォームは、MarketplaceのMultiselectDropdownを使って作れます。
+
+必要になったら、試してみてください。
+![bg right h:650px](images/2021-11-05-00-31-26.png)
+
+---
+#### コンポーネントの非表示設定
+表示しないコンポーネントを削除せずに残しておくことができます。
+- ペット詳細画面のコンポーネント一覧で、Link 2を含むGroupにマウスオーバーして、右側の目のアイコンをクリック
+![bg right h:550px](images/2021-11-05-01-05-44.png)
+
+---
+Preview機能で確認すると、Link 2が消えています。
+
+もう一度目のアイコンをクリックすれば、再度表示させられます。
+
+![bg right h:700px](images/2021-11-05-01-23-27.png)
+
+---
+#### 条件によってコンポーネントの表示or非表示を切り替える
+体重が未登録であれば、ペット詳細画面のLatest Weightは非表示にします。
+
+![bg right h:700px](images/2021-11-05-02-19-31.png)
+
+---
+- Latest Weightというラベルとその値を選択し、グループ化します
+
+![bg right h:550px](images/2021-11-05-01-07-47.png)
+
+---
+- Change Visibilityを選択します
+
+![bg right h:550px](images/2021-11-05-02-22-10.png)
+
+---
+- VisibilityをSometimes Visibleに変更
+- Will be visible if...でCurrent Pet > PetWeightLogs > Countを選択
+- Is not equal to 0と設定
+![bg right h:620px](images/2021-11-05-02-24-00.png)
+
+---
+Preview機能で確認すると、体重が未登録であれば、Latest Weightが非表示になりました。
+
+![bg right h:620px](images/2021-11-05-02-41-24.png)
+
+
+サンプルアプリの改善は一旦ここまでとします。
+
+---
+#### クローン用URL
+- 以下のURLの右下のCLONE APPボタンでアプリをクローンできますので、答え合わせに使ってください
+TODO: https://ryo-imahashis-team-6.adalo.com/improvedpethealthlog
+
+![bg right h:350px](images/2023-11-02-08-32-08.png)
+
+
 
 ---
 ## 外部連携
