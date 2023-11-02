@@ -12,8 +12,8 @@
 
 ### 2023/11/4
 
-* [Bubble の基本](https://github.com/GuildWorks/titech-2023/raw/master/docs/Bubble1/pdf/Bubble1-jp.pdf)
-* [Bubble Basics](https://github.com/GuildWorks/titech-2023/raw/master/docs/Bubble1/pdf/Bubble1-en.pdf)
+* [Bubble の基本](https://github.com/GuildWorks/titech-2023/raw/main/docs/Bubble1/pdf/Bubble1-jp.pdf)
+* [Bubble Basics](https://github.com/GuildWorks/titech-2023/raw/main/docs/Bubble1/pdf/Bubble1-en.pdf)
 
 ### 2023/11/11
 
