@@ -1734,12 +1734,12 @@ Googleアカウントが用意できたら、Zapierとの連携を設定して�
 ![bg right h:650px](images/2023-11-02-23-09-00.png)
 
 ---
-- Send Gmail emails for new Adalo recordsのUse this Zapをクリック
+- 一番上のSend Gmail emails for new Adalo recordsのUse this Zapをクリック
 ![bg right h:400px](images/2023-11-02-23-11-50.png)
 
 
 ---
-Continue
+- Continueをクリック
 ![bg right h:400px](images/2023-11-02-23-12-46.png)
 
 
@@ -1759,20 +1759,22 @@ Zapierの設定画面が開きます
 
 ---
 - Triggerを設定
+  - App: ApiIntegrationTrial
+  - Collection: Users
 ![bg right w:400](images/2023-11-02-23-18-45.png)
 
 ---
-- Test trigger
+- Test triggerをクリック
 ![bg right w:400](images/2023-11-02-23-19-28.png)
 
 
 ---
-- レコードが見つかったら、Continue with selected record
+- レコードが見つかったら、Continue with selected recordをクリック
 ![bg right w:400](images/2023-11-02-23-20-08.png)
 
 
 ---
--  Connect GmailでSign in
+-  Connect GmailのSign inをクリック
 ![bg right w:400](images/2023-11-02-23-20-54.png)
 
 
@@ -1781,7 +1783,7 @@ Zapierの設定画面が開きます
 ![bg right w:400](images/2023-11-02-23-22-03.png)
 
 ---
-- リクエストを許可する
+- 許可をクリック
 ![bg right w:400](images/2023-11-02-23-22-29.png)
 
 ---
@@ -1789,7 +1791,7 @@ Actionを設定します。
 - Fromに自分のGmailアドレスを設定
 - From Nameにアプリ名を設定
 - Subject, Bodyを自由に入力
-- "Continue"をクリック
+- Continueをクリック
 ![bg right h:700px](images/2023-11-02-23-27-14.png)
 
 
@@ -1800,6 +1802,8 @@ Actionを設定します。
 
 ---
 - Publishをクリック
+
+これで、Zapierとの連携設定ができました。
 ![bg right h:600px](images/2023-11-02-23-29-49.png)
 
 ---
