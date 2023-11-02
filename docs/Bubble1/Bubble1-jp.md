@@ -12,7 +12,7 @@ paginate: true
 
 # Bubble の基本
 
-**東京工業大学 2022/11/19**
+**東京工業大学 2023/11/04**
 　
 　
 　
@@ -24,17 +24,18 @@ paginate: true
 
 ## 目次
 - Bubble とは (P3 〜)
-- まずはユーザ登録を作ってみよう (P28 〜)
-- Bubble でのアプリ開発の概要説明 (P44 〜)
-- ペット登録から一覧表示まで作ってみよう (P57 〜)
-- ペット詳細画面を作ってみよう (P162 〜)
-- ヘッダー部品を作っていこう (P201 〜)
-- ペットの体重を管理しよう (P273 〜)
-- まとめ (P303 〜)
+- まずはユーザ登録とサインアップの部品を使って画面を作ってみよう (P25 〜)
+- Bubble でのアプリ開発の概要説明 (P43 〜)
+- ペット登録から一覧表示まで作ってみよう (P56 〜)
+- データベースとつなげてみよう (P93 〜)
+- ヘッダー部品を作っていこう (P203 〜)
+- ペットの体重を管理しよう (P292 〜)
+- まとめ (P349 〜)
 
 ---
 
 ## Bubble とは
+
 - [Bubble](https://bubble.io/) はビジュアルプログラミングツールと呼ばれ、ノーコードツールではありますが、プログラミング的な発想が必要なツールとなります。
 - 用意されているパーツから使用したいものを選び、それを画面にドラッグ＆ドロップしていくなどの操作は Adalo と同じです。
 - ただ、配置したパーツに対して動きをつけていく部分については、プログラミング的な発想が必要となります。
@@ -43,6 +44,7 @@ paginate: true
 ---
 
 #### Bubble で作られたアプリの例
+
 - あいホームバーチャル展示場: https://aihome-vr.com/
   - 物件のオンライン内見アプリ
   - 物件をストリートビューのような形でオンライン内見できるアプリです。
@@ -55,11 +57,12 @@ paginate: true
 ---
 
 ### Bubble に登録しよう
+
 - Bubble の TOP 画面からメールアドレスを入力してアカウント登録
   - https://bubble.io/
   - "Get started" をクリック
 
-![w:900px](images/2022-11-06-16-24-15.png)
+![w:1150px](images/2023-11-01-23-51-31.png)
 
 ---
 - アカウントは無料で登録できます
@@ -69,27 +72,40 @@ paginate: true
 
 ---
 
-- 今日の目標を聞かれるので "BUILD" を選択して Next
+- 今日の目標を聞かれるので "BUILD" を選択
 
-![w:900px](images/2022-11-06-16-38-59.png)
+![w:760px](images/2023-11-02-03-26-10.png)
+
+---
+
+- 新しい技術を学ぶことにどの程度慣れているかを聞かれるので、皆さんご自身のレベルで選択してください
+
+![w:850px](images/2023-11-02-03-27-24.png)
 
 ---
 
-- Bubble をどこで知ったのか聞かれるので、適当に選択して Complete
+- Bubble で作るアプリのアイデアがどの段階かを聞かれているのですが、今回は講義の中で作るものが明確なので "EXECUTION" を選択しておきます
 
-![w:900px](images/2022-11-06-16-40-03.png)
+![w:750px](images/2023-11-02-03-29-16.png)
 
 ---
+
+- 最後に Bubble をどこで知ったかを聞かれるので、適当に選択してください
+
+![w:950px](images/2023-11-02-03-32-35.png)
+
+---
+
 
 - すると、入力したメールアドレス宛に確認メールが送信されるので、ご自身のメールボックスを確認
 
-![bg right h:600px](images/2022-11-06-16-40-35.png)
+![bg right h:600px](images/2023-11-02-03-33-31.png)
 
 ---
 
 - "Verify Your Bubble Account" というタイトルで Bubble からメールが来ていると思うので、本文に記載の "Click here to confirm your email address" のリンクをクリック
 
-![bg right h:500px](images/2022-11-06-16-41-29.png)
+![bg right h:500px](images/2023-11-02-03-35-46.png)
 
 ---
 
@@ -100,88 +116,57 @@ paginate: true
 
 ---
 
-- Welcome ページが表示されるので、これから作成する演習用の名前をつけて "Create app" をクリック
+- Welcome ページが表示されるので "Get started" をクリック
 
-![w:900px](images/2022-11-06-16-45-17.png)
-
----
-
-- ただし、（世界中の）他の人と同じ名前のアプリは作成できないため、下記のような命名にしましょう
-  - `titech2022-bubble-{Your Name}`
-  - アプリ名を入力してエラーメッセージが表示されなければ OK
-
-![w:800px](images/2022-11-06-16-45-17.png)
+![w:800px](images/2023-11-02-03-37-28.png)
 
 ---
 
-- 今から作成するアプリのプランを聞かれるので Free の "Start building" をクリック
+今から作成するアプリのプランを聞かれるので左側の FREE PLAN の "Start with basic features" をクリック
 
-![w:650px](images/2022-11-06-16-47-02.png)
+![w:650px](images/2023-11-02-03-38-29.png)
 
 ---
 
 - 作成されると、Bubble のエディタ画面が表示され、初期設定の入力ガイドが表示されるので従っていきます
 
-![w:900px](images/2022-11-06-16-55-13.png)
+![w:800px](images/2023-11-01-23-54-26.png)
 
 ---
 
-- Step 1/5 はこれから作成する Web アプリケーションの画面上での表示名を聞かれます
+- Step 1/4 はこれから作成する Web アプリケーションの画面上での表示名を聞かれます
 - おそらく先ほど入力したアプリ名が初期値として入っていると思うので一旦そのままで OK
 - Next step をクリック
 
-![bg right h:700px](images/2022-11-06-16-55-57.png)
+![bg right h:650px](images/2023-11-01-23-55-14.png)
 
 ---
 
-- Step 2/5 はアプリのメイン言語を選択します
-- 各自好きな言語を選択して Next step をクリック
-![bg right h:600px](images/2022-11-06-16-56-38.png)
+- Step 2/4 はアプリの標準のフォントを選択します
+- 後からでも変えられるので一旦ここもそのままで Next step をクリック
+
+![bg right h:600px](images/2023-11-01-23-56-48.png)
 
 ---
 
-- Step 3/5 はアプリのアイコン（favicon）を選択します
-- 今回はバブル標準のもので進めますので、そのまま Next step をクリック
-  - 余裕のある人は好きなアイコンを設定しても OK です :ok_woman:
-![bg right h:600px](images/2022-11-06-16-57-21.png)
+- Step 3/4 はアプリの標準的な各種要素のカラーを選択します
+- ここも後から変えられるので一旦このままで Next step をクリック
+
+![bg right h:650px](images/2023-11-01-23-58-02.png)
 
 ---
 
-- Step 4/5 はアプリに対して別のアプリケーションとの接続をするかを選択します
-- 後の手順で接続するため "Install API Connector" を選択
-![bg right h:600px](images/2022-11-06-16-58-15.png)
+- Step 4/4 はアプリに対してプラグインを導入するかを選択します
+- 右パネルに Bubble のオフィシャルプラグインがいくつか表示されていますが、こちらも後から導入できるので特に導入せずに先に進みます
+- "Get started building" をクリック
 
----
-
-- すると Install New Plugins というポッうアップが表示され、そこに "API Connector" が表示されているので、その "Install" をクリック
-
-![w:800px](images/2022-11-06-16-58-44.png)
-
----
-
-- ボタンが "Uninstall" になったら無事インストールされたので DONE をクリック
-
-![w:800px](images/2022-11-06-16-59-16.png)
-
----
-
-- 元の画面に戻ってきたら Next step クリック
-
-![bg right h:600px](images/2022-11-06-16-58-15.png)
-
----
-
-- Step 5/5 はさらにアプリに対して高度なプラグインを導入するかを選択します
-- 他に必要になったものは後から追加もできるので、ここでは何もインストールしません
-- 最後に "Get started building" をクリック
-
-![bg right h:600px](images/2022-11-06-17-00-08.png)
+![bg right h:550px](images/2023-11-02-00-00-55.png)
 
 ---
 
 - このような画面が表示されたら OK です
 
-![w:800px](images/2022-11-06-17-01-31.png)
+![w:900px](images/2023-11-02-00-01-59.png)
 
 ---
 
@@ -202,10 +187,11 @@ paginate: true
 - さすがに少し動きを見ていきたいので、Adalo と同じくアカウントのサインアップ・ログインを試してみましょう
 - Bubble では、サインアップ・ログインの「画面」は用意されていませんが「部品」は用意されています
 - その部品を組み込んでログイン画面を表現してみたいと思います
+- :warning: 実際のサインアップやログインの機能はこのあと開発していくので今は紙芝居としてしか動きません
 
 ---
 
-## まずはユーザ登録を作ってみよう
+## まずはユーザ登録とサインアップの部品を使って画面を作ってみよう
 
 - :warning: 画面の色々な部品を触っていきますが、各パーツの説明は後ほど行います
 - まずは最低限の部品の説明を行い、ユーザ登録画面を作ってみます
@@ -220,9 +206,9 @@ paginate: true
   3. Data
 - 左メニューからそれぞれを行き来することができます
 
-![bg right h:400px](images/2021-10-31-21-28-32.png)
+![bg right h:500px](images/2023-11-02-00-05-23.png)
 
---- 
+---
 
 #### Design
 
@@ -234,26 +220,39 @@ paginate: true
 
 - 画面のテイストは Adalo と同じですね
 
-![w:1050px](images/2022-11-16-22-35-09.png)
+![w:800px](images/2023-11-02-00-08-50.png)
 
 ---
 
 - それでは、ユーザ登録を作っていきましょう！
 
-![bg right h:600px](images/2022-11-16-22-25-11.png)
+![w:800px](images/2023-11-02-03-17-08.png)
 
 ---
 
 - まずは Bubble に標準で用意されているサインアップ・ログインの部品を、配置していきます
-- 左パネルの UI Builder から Element templates の中にある "Signup Login form" をクリック
+- 画面上段に黒の四角いアイコンがあると思いますので、それをクリック
 
-![bg right h:600px](images/2022-11-06-17-30-09.png)
+![w:800px](images/2023-11-02-00-10-35.png)
 
 ---
 
-- 右パネルの適当な場所でクリックすると、ユーザ登録のフォームが表示されます
+- すると、画面の右側から `Component Library` というエリアが出てきたと思います
+- これは文字通り、Bubble で用意されている共通部品の一覧になります
 
-![w:900px](images/2022-11-06-17-31-33.png)
+![bg right h:600px](images/2023-11-02-00-12-14.png)
+
+---
+
+- このエリアの一番下に画像付きのサインアップ / ログイン用の共通部品があるのでそれを Drawing エリアへドラッグ & ドロップします
+
+![bg right w:500px](images/2023-11-02-03-18-41.png)
+
+---
+
+- おそらくこんな感じで画面上部にピッタリ収まるよう配置されたかと思います
+
+![w:700px](images/2023-11-02-00-15-00.png)
 
 ---
 
@@ -265,22 +264,21 @@ paginate: true
 ---
 
 - ここでプレビューを実施してみます
-- するとサインアップの画面が表示されると思うので、メールアドレスとパスワードを入力してサインアップしてみましょう
-  - 入力した Email と Password はメモしておいてください(後で使います)
-![bg right h:600px](images/2022-11-06-17-49-07.png)
+- 最初はサインアップの部品が表示されていますが、下にある `Already have an account? Log In` というリンクを押すと、部品の内容がログインに切り替わりますね
+
+![w:550px](images/2023-11-02-00-25-14.png)
 
 ---
 
-- おそらく何も起きないと思いますが今は大丈夫です
-- これでサインアップとログインは使いまわせそうなので、次に進んでいきましょう 🙋‍♀️
+- こっちがログイン部品
+
+![w:800px](images/2023-11-02-00-25-57.png)
 
 ---
 
-- プレビューを閉じて Data タブを選択し、右パネルから "App data" タブを選び、 "All Users" をクリック
-- すると、右パネルに登録済みのユーザ一覧のデータが表示され、そこに先程 "Sign up" したユーザが存在するはずです
-- これで画面とデータベースが連携していることを確認できましたね
-
-![w:800px](images/2021-11-11-23-19-02.png)
+- まだ今の時点では、"Sign Up" ボタンや "Log In" ボタンを押しても何も起きません
+- これは、ボタンを押した時にどう言うアクションを実行して欲しいか、Bubble にまだ教えていないからできません
+- この設定については追って説明していきますので、次に進んでいきましょう 🙋‍♀️
 
 ---
 
@@ -339,7 +337,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   2. Workflow
   3. Data
 
-![bg right h:400px](images/2021-10-31-21-28-32.png)
+![bg right h:500px](images/2023-11-02-00-05-23.png)
 
 ---
 
@@ -350,16 +348,15 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - 例）ボタンが押された時に、データを操作する
 - ここが、少しプログラミングの考え方を必要とする部分となります
 
-![w:900](images/2022-11-06-17-55-58.png)
+![w:600px](images/2023-11-02-00-29-37.png)
 
 ---
 
 - ちなみに、すでにいくつかの箱があると思います
-- これは Bubble が標準で用意してくれているワークフローの定義となります
-  - この中に、先程組み込んだサインアップやログインに関するワークフローも含まれています
-  - 内容については後ほど詳しく見ていきます
+- これは先ほど使ったサインアップ / ログインの共通部品に設定されていたワークフローの定義となります。
+  - 具体的にはサインアップ部品とログイン部品の表示切り替えを行なっているワークフローになります
 
-![w:850](images/2022-11-06-17-55-58.png)
+![w:600px](images/2023-11-02-00-29-37.png)
 
 ---
 
@@ -367,15 +364,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - データを定義したり操作したりするモード
 
-![w:1100px](images/2022-11-06-17-59-02.png)
+![w:1100px](images/2023-11-02-00-31-35.png)
 
 ---
 
 - "App data" タブを選び、 "All Users" のリンクをクリック
-- すると、右パネルに登録済みのユーザ一覧のデータが表示され、そこに先程サインアップしたユーザが存在するはずです
-- これで画面とデータベースが連携していることを確認できましたね
+- すると、右パネルに登録済みのユーザ一覧のデータが表示されますが、まだサインアップ機能を作っていないので、ユーザがまだ 0 件だと思います
 
-![w:1150px](images/2022-11-06-18-00-12.png)
+![w:1000px](images/2023-11-02-00-32-45.png)
 
 ---
 
@@ -389,7 +385,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - スタイルに名前をつけてあげることで、アプリケーション全体で汎用的に使用可能（部品ごとに個別指定も可能）
 
-![w:800px](images/2022-11-06-18-01-22.png)
+![w:700px](images/2023-11-02-00-34-16.png)
 
 ---
 
@@ -427,7 +423,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 #### これから作っていく画面の全体像
 
-![w:1000px](images/2022-11-16-23-04-43.png)
+![w:1050px](images/2023-11-02-03-14-25.png)
 
 ---
 
@@ -444,7 +440,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 画面左上の `Page: index` をクリックするとポップアップが表示されます
 - ポップアップの中から `Add a new page...` をクリック
 
-![w:600px](images/2022-11-06-20-54-27.png)
+![w:800px](images/2023-11-02-00-35-34.png)
 
 ---
 
@@ -496,7 +492,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 左パネルの "UI Builder" から `Input forms` の中にある `Input` を選択
 - そして右パネル上で配置したい場所でクリックすると入力欄が表示されます
 
-![bg right h:550px](images/2022-11-06-22-02-52.png)
+![bg right h:500px](images/2023-11-02-00-42-21.png)
 
 ---
 
@@ -504,14 +500,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Placeholder` はテキストボックスが未入力状態の時に表示される補助文言です
   - 今回は「pet name」とします
 
-![bg right h:550px](images/2022-11-06-22-02-52.png)
+![bg right h:500px](images/2023-11-02-00-42-21.png)
 
 ---
 
 - `Content format` はテキストボックスに入力できる値の形式を指定できます
   - 今回は文字列の入力となるので "Text" のままとします
 
-![bg right h:550px](images/2022-11-06-22-02-52.png)
+![bg right h:500px](images/2023-11-02-00-42-21.png)
 
 ---
 
@@ -525,7 +521,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - ダイアログ先頭の部分をクリックすると、このテキストボックスの要素に対して名前を付けることができます
 - これは後々ワークフローを定義するときに便利になるのでここでは "Input pet name" と指定しましょう
 
-![bg right h:550px](images/2022-11-06-22-02-52.png)
+![bg right h:500px](images/2023-11-02-00-42-21.png)
 
 ---
 
@@ -540,7 +536,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 次にペットの画像をアップロードする要素を配置します
 - 左パネルから `Picture Uploader` を選択し、右パネル上でペットの名前の下に **ドラッグして** 要素を配置します
 
-![bg right h:700px](images/2021-11-11-23-46-49.png)
+![bg right h:650px](images/2023-11-02-00-43-29.png)
 
 ---
 
@@ -549,7 +545,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - 要素の名前として "Input pet image" を指定します
   - `This input should not be empty` はチェックをつけて必須にします
 
-![bg right h:550px](images/2022-11-06-22-15-16.png)
+![bg right h:480px](images/2023-11-02-00-45-05.png)
 
 ---
 
@@ -558,7 +554,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 次にペットの誕生日を入力するための要素を配置します
 - 左パネルから `Date/Time Picker` を選択し、右パネル上でドラッグして要素を配置します
 
-![bg right h:700px](images/2021-11-11-23-50-06.png)
+![bg right h:650px](images/2023-11-02-00-46-11.png)
 
 ---
 
@@ -567,23 +563,23 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
     - ここで Date & Time を選択することで日付と時刻の入力が可能です
     - 今回は Date とします
 
-![bg right h:550px](images/2022-11-06-22-13-48.png)
+![bg right h:500px](images/2023-11-02-00-47-34.png)
 
 ---
 
 - `This input should not be empty` はチェックをつけて必須にします
 - 要素の名前として `Input pet birthday` を指定します
 
-![bg right h:550px](images/2022-11-06-22-13-48.png)
+![bg right h:500px](images/2023-11-02-00-47-34.png)
 
----
+----
 
 #### ペットの性別
 
 - 最後にペットの性別を選択するための要素を配置します
 - 左パネルから `Dropdown` を選択し、右パネル上でクリックして要素を配置します
 
-![bg right h:600px](images/2021-11-11-23-52-41.png)
+![bg right h:650px](images/2023-11-02-00-48-33.png)
 
 ---
 
@@ -591,14 +587,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - `Placeholder` に "pet gender" と入力します
   - `Choices` に "Male" と入力したら Enter キーで改行し、次の行に "Female" と入力します
 
-![bg right h:600px](images/2022-11-06-22-20-15.png)
+![bg right h:550px](images/2023-11-02-00-50-38.png)
 
 ---
 
 - `This input should not be empty` はチェックをつけて必須にします
 - 要素の名前として `Input pet gender` を指定します
 
-![bg right h:600px](images/2022-11-06-22-20-15.png)
+![bg right h:550px](images/2023-11-02-00-50-38.png)
 
 ---
 
@@ -607,14 +603,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - ここまでペット情報の入力ができたら登録ボタンを配置します
 - 左パネルの `Visual elements` の中にある `Button` を選択し、右パネルでクリックして要素を配置します
 
-![bg right h:600px](images/2021-11-11-23-56-17.png)
+![bg right h:600px](images/2023-11-02-00-51-29.png)
 
 ---
 
 - こちらも要素をダブルクリックして要素の詳細を設定します
   - Appearance タブの上部にある「...edit me...」と入力されている部分を編集して「REGISTER」と入力します
 
-![w:1000px](images/2022-11-06-22-22-45.png)
+![w:1000px](images/2023-11-02-00-52-26.png)
 
 ---
 
@@ -623,7 +619,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - Adalo の時の画面のように、各要素の左上にラベルを用意しましょう
 - 左パネルの `Visual elements` の中にある `Text` を選択し、右パネルでドラッグして要素を配置します
 
-![bg right h:600px](images/2021-11-11-23-57-15.png)
+![bg right h:600px](images/2023-11-02-00-53-03.png)
 
 ---
 
@@ -649,7 +645,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - Birthday
   - Gender
 
-![bg right h:700px](images/2022-11-06-22-29-15.png)
+![bg right h:700px](images/2023-11-02-00-56-15.png)
 
 ---
 
@@ -657,7 +653,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - コピー（Ctrl + C）してペースト（Ctrl + P）し、ラベルの内容だけ書き換える
   - Mac であればコピー（Command + C）とペースト（Command + P）
 
-![bg right h:700px](images/2022-11-06-22-29-15.png)
+![bg right h:700px](images/2023-11-02-00-56-15.png)
 
 ---
 
@@ -671,28 +667,28 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 要素を全て選択した状態で右クリック、Edit を選択
   - 全ての要素をドラッグで選択
 
-![bg right h:700px](images/2022-11-06-22-31-47.png)
+![bg right h:700px](images/2023-11-02-00-57-10.png)
 
 ---
 
 - 全て選択している状態で、どれか一つの要素を右クリック
 - 表示されるサブメニューから Edit を選択
 
-![w:600px](images/2022-11-06-22-32-56.png)
+![bg right h:600px](images/2023-11-02-00-57-49.png)
 
 ---
 
 - するとダイアログが表示されるので、選択中の要素数が「9」であることを確認
-- 問題なければ、ダイアログの中にある `Width` の部分をクリック
+- 問題なければ、ダイアログの中から Layout タブを開き `W` (Width) の部分をクリック
 
-![bg right h:600px](images/2022-11-06-22-36-57.png)
+![bg right h:600px](images/2023-11-02-00-59-15.png)
 
 ---
 
-- すると洗濯中の要素に対して幅（W）と高さを一律で設定できるので、`W` に 220 を入力
+- すると選択中の要素に対して幅（W）と高さを一律で設定できるので、`W` に 220 を入力して完了
 - "Apply changes to eleents" をクリック
 
-![bg right h:600px](images/2022-11-06-22-38-26.png)
+![bg right h:600px](images/2023-11-02-00-59-15.png)
 
 ---
 
@@ -700,7 +696,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - 先程と同じくすべての要素をドラッグで選択し右クリックから `Center horizontally` を選択し、入力フォームの横位置を中央に統一します
 
-![bg right h:700px](images/2022-11-06-22-39-59.png)
+![bg right h:650px](images/2023-11-02-01-00-38.png)
 
 ---
 
@@ -726,15 +722,15 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 #### まずはペットの情報を保存するための箱を用意します
 
 - 左メニューのタブから Data を選択
-- すると Data types タブが有効になっていると思うのでその下にある Custom data types の中から `New type` と書かれたテキストボックスに "Pets" と入力してください
+- すると Data types タブを選択し、その下にある Custom data types の中から `New type` と書かれたテキストボックスに "Pets" と入力してください
 
-![bg right h:450px](images/2022-11-12-13-07-10.png)
+![bg right h:450px](images/2023-11-02-01-02-09.png)
 
 ---
 
 - そして `Make this data type private by default` のチェックをつけて `Create` ボタンをクリックします
 
-![bg right h:500px](images/2021-11-07-12-07-08.png)
+![bg right h:500px](images/2023-11-02-01-03-24.png)
 
 ---
 
@@ -750,10 +746,10 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 ---
 
 - 作成した Pets の type に対して要素（field）を追加していきます
-- `Custome data types` から `Pets` を選択
+- `Data types` から `Pets` を選択
 - 右側の `Fields for type Pets` の下にある `Create a new field` をクリック
 
-![w:880px](images/2022-11-12-13-09-36.png)
+![w:700px](images/2023-11-02-01-04-44.png)
 
 ---
 
@@ -789,7 +785,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - Birthday: date
 - Gender: text
 
-![bg right h:470px](images/2022-11-12-13-11-59.png)
+![bg right h:600px](images/2023-11-02-01-06-23.png)
 
 ---
 
@@ -804,35 +800,35 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 左メニューから Design タブを選択
 - 左上から "pet_register" 画面を選択
 - 右パネルからペット登録画面の "REGISTER" のボタンをダブルクリックします
-- "Appearance" タブにある `Start/Edit workflow` をクリックします
+- "Appearance" タブにある `Add workflow` をクリックします
 
-![bg right h:400px](images/2021-11-07-12-26-27.png)
+![bg right h:400px](images/2023-11-02-01-07-29.png)
 
 ---
 
 - すると Workflow タブに切り替わり、When の部分に `Button REGISTER is clicked` と表示されていると思います
   - これは文字通り "REGISTER" ボタンを押したときのワークフロー定義になります
 
-![w:700px](images/2021-11-07-12-29-27.png)
+![w:700px](images/2023-11-02-01-08-57.png)
 
 ---
 
 - なので、その下にある `Click here to add an action...` を選択して、ボタン押下時の振る舞いを設定していきます
 
-![w:800px](images/2021-11-07-12-29-27.png)
+![w:800px](images/2023-11-02-01-08-57.png)
 
 ---
 
 - `Click here to add an action...` を選択すると、様々なアクションを指定できるポップアップが表示されます
 - 今回のようにデータベースに関する操作（アクション）の場合 `Data(Things)` を選びます
 
-![bg right h:600px](images/2021-11-08-22-23-30.png)
+![bg right h:600px](images/2023-11-02-01-10-43.png)
 
 ---
 
 - すると下位要素がさらに表示されると思いますので、その中から `Create a new thing...` を選択します
 
-![bg right h:600px](images/2021-11-08-22-23-30.png)
+![bg right h:600px](images/2023-11-02-01-10-43.png)
 
 ---
 
@@ -840,40 +836,42 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - 今回は Pets ですね
 - すると `Set another field` というボタンが表示されるので、タイトルの通り画面で入力された項目を Pets の "field" にセットしていきます
 
-![bg right h:400px](images/2021-11-12-00-22-31.png)
+![bg right h:400px](images/2023-11-02-01-11-49.png)
 
 ---
 
 - ここでは Pets に保存したい項目の "field" 名を左辺に指定し、右辺に実際にその "field" に保存する値を指定します
   - まず、左辺に `Name` を選択します
 
-![bg right h:400px](images/2021-11-12-00-25-50.png)
+![bg right h:400px](images/2023-11-02-01-12-37.png)
 
 ---
 
 - 左辺を指定すると `=` に挟まれて今度は右辺に `Click` というのが表示されると思います
 
-![bg right h:400px](images/2021-11-12-00-27-03.png)
+![bg right h:500px](images/2023-11-02-01-13-15.png)
 
 ---
 
 - ここをクリックすると何やらいろいろな選択肢が出てきます
 - 詳細はここでは割愛しますが、左辺に選択されたフィールドに対して設定する対象を指定します
 
-![bg right h:600px](images/2021-11-12-00-27-53.png)
+![bg right h:600px](images/2023-11-02-01-14-05.png)
 
 ---
 
 - 今回は画面で入力されたペットの名前になるので `Input pet name` という項目を選択します
+- 選択肢が多い場合などは項目名を入力して絞り込むこともできます
+  - キャプチャでは "Input" と入力して絞り込んでいます
 
-![bg right h:600px](images/2021-11-12-00-30-52.png)
+![bg right h:500px](images/2023-11-02-01-15-55.png)
 
 ---
 
 - この `Input pet name` というのは画面を作るときに入力要素に対して名前を付けたものがここに表示されています
 - こうすることで、例えば 1 つの画面に複数の入力要素が存在したときにも、それらを一意に識別しやすくなります
 
-![bg right h:600px](images/2021-11-12-00-30-52.png)
+![bg right h:500px](images/2023-11-02-01-15-55.png)
 
 ---
 
@@ -881,13 +879,13 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - ここでは画面で入力されたペットの名前の「値そのもの」を使いたいので `'s value` を選択します
   - その他の選択肢である `is valid` と `isn't valid` は入力された値が正しいかどうかの判定結果を使いたい時に利用します
 
-![bg right h:500px](images/2021-11-08-22-33-45.png)
+![bg right h:500px](images/2023-11-02-01-17-26.png)
 
 ---
 
 - すべて指定するとこんな感じ
 
-![bg right h:600px](images/2021-11-13-00-11-40.png)
+![bg right h:600px](images/2023-11-02-01-18-32.png)
 
 ---
 
@@ -902,7 +900,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - プレビューを閉じ Data タブを開いて App data を選択、そして左パネル `All Pets` を選択したときに、先ほど画面から入力された情報が保存されていることを確認してください
 
-![w:1150px](images/2022-11-12-13-19-04.png)
+![w:1150px](images/2023-11-02-01-20-54.png)
 
 ---
 
@@ -920,7 +918,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 画面左上の `Page: index` をクリックするとポップアップが表示されます
 - ポップアップの中から `Add a new page...` をクリック
 
-![w:750px](images/2022-11-12-13-41-48.png)
+![w:750px](images/2023-11-02-01-21-51.png)
 
 ---
 
@@ -946,26 +944,26 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 左メニューから Workflow タブをクリック
 - 先ほど設定した "REGISTER" ボタンをクリックした時の振る舞いが表示されていると思います
 
-![bg right h:550px](images/2022-11-12-13-47-01.png)
+![bg right h:420px](images/2023-11-02-01-23-01.png)
 
 ---
 
 - ここで "Create a new Pets..." の右にある `Click here to add an action...` をクリック
 
-![bg right h:550px](images/2021-11-08-22-57-42.png)
+![bg right h:550px](images/2023-11-02-01-24-06.png)
 
 ---
 
 - 今度は `Navigation` を選択し、下位要素として `Go to page...` をクリック
 
-![bg right h:550px](images/2021-11-08-22-57-42.png)
+![bg right h:550px](images/2023-11-02-01-24-06.png)
 
 ---
 
 - するとダイアログが表示されるので "Destination" に遷移したい画面を選択します
 - 今回はペット一覧画面へ遷移したいので `pet_list` を選択します
 
-![bg right h:500px](images/2021-11-08-22-59-29.png)
+![bg right h:550px](images/2023-11-02-01-24-06.png)
 
 ---
 
@@ -998,7 +996,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 今回のように、同じ要素を繰り返し表示する場合、 `Containers` の中から `Repeating Group` を選択
 - 右パネルのキャンバスにドラッグします
 
-![bg right h:500px](images/2021-11-09-20-00-45.png)
+![bg right h:500px](images/2023-11-02-01-28-56.png)
 
 ---
 
@@ -1007,7 +1005,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Type of content` には、繰り返し表示するデータのタイプを指定します
   - 今回は `Pets` ですね
 
-![bg right h:520px](images/2022-11-12-13-56-03.png)
+![bg right h:520px](images/2023-11-02-01-31-36.png)
 
 ---
 
@@ -1016,20 +1014,21 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 代わりに 1 行の最小となる高さを指定しておきます
   - 今回は "200px" とします
 
-![bg right w:450px](images/2022-11-12-21-05-11.png)
+![bg right h:520px](images/2023-11-02-01-31-36.png)
 
 ---
 
 - 列数は今回 1 行当たり 3 つの画像を表示したいので `Set fixed number of columns` のチェックは ON のまま
 - Columns の値を "3" とします
 
-![bg right w:450px](images/2022-11-12-21-05-11.png)
+![bg right h:520px](images/2023-11-02-01-31-36.png)
 
 ---
 
 - 表全体の高さは 2 行分の高さを確保しておきたいので、 `Layout` を選択し `H` の値を "400" としておきます
+- 1行当たりの画像のサイズを正方形にするため、`Layout` の `W` の値を "600" としておきます
 
-![bg right w:450px](images/2022-11-12-21-08-43.png)
+![bg right w:450px](images/2023-11-02-01-33-00.png)
 
 ---
 
@@ -1038,7 +1037,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - `Appearance` タブから `Data source` の Click から `Do a search for` をクリック
   - これは一覧表示対象のデータを指定するためのものです
 
-![bg right w:450px](images/2022-11-12-21-10-46.png)
+![bg right w:450px](images/2023-11-02-01-34-10.png)
 
 ---
 
@@ -1082,9 +1081,15 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - まず `Visual elements` から `Image` を選択し、右パネルにドラッグ
   - このとき先ほど配置した "Repeating Group" の中に含める形でドラッグすると、後で移動する手間が無くなります
   - 後から Repeating Group に含めることも可能
-  - 配置した後に Repeating Group の中の Cell いっぱいにドラッグして広げます
 
 ![w:600px](images/2022-11-12-14-01-29.png)
+
+---
+
+- Repeating Group 内に配置したら `Layout` タブから画像のサイズと Repeating Group 内での位置を調整します
+- `W`: 200 / `H`: 200 / `X`: 0 / `Y`: 0
+
+![bg right w:550px](images/2023-11-02-01-37-36.png)
 
 ---
 
@@ -1132,6 +1137,16 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
+- この配置した要素の位置も `Layout` タブから設定しておきます
+  - `W`: 200（画像と同じ幅）
+  - `H`: 40
+  - `X`: 0
+  - `Y`: 160（高さ 40 のオブジェクトを下いっぱいに設置するため、200 - 40 = 160）
+
+![bg right w:620px](images/2023-11-02-01-40-13.png)
+
+---
+
 - 配置した Shape の透過率を少し下げてみましょう
 - Shape の要素をダブルクリックしていつものポップアップを表示します
 - Style の内容が "Shape" になっていることを確認したらその下にある "Edit style" をクリック
@@ -1142,14 +1157,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - すると、Styles タブに移動し、先程選択されていた "Shape" のスタイル編集画面が表示されます
 
-![w:1000px](images/2022-11-12-14-30-10.png)
+![w:1000px](images/2023-11-02-01-41-13.png)
 
 ---
 
-- ここで Color の内容を選択すると、色と透過率を変更するポップアップが表示されるので、"Primary" と書いている右側の数値を 30% から 10% に変更します
+- ここで Color の内容を選択すると、色と透過率を変更するポップアップが表示されるので、"Primary" と書いている右側の数値を 10% から 20% に変更します
   - この数値が透過率となっており、100 が非透明、0 が透明となります
 
-![bg right w:500px](images/2022-11-12-14-31-33.png)
+![bg right w:500px](images/2023-11-02-01-42-28.png)
 
 ---
 
@@ -1175,7 +1190,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - これで一覧表で表示する内容の設定は完了です
 
-![bg right w:450px](images/2022-11-12-21-21-07.png)
+![bg right w:450px](images/2023-11-02-01-45-13.png)
 
 ---
 
@@ -1221,7 +1236,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - リンクの名前は "PET REGISTER" としましょう
 - 遷移先として `Destination page` に ペット登録画面を選択
 
-![bg right w:450px](images/2022-11-12-21-46-27.png)
+![bg right w:450px](images/2023-11-02-01-48-36.png)
 
 ---
 
@@ -1264,6 +1279,13 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ---
 
+- 合わせて、ワークフロータブから、REGISTER ボタンを押した時の設定を削除しておきます
+- REGISTER ボタンのワークフローを選択すると、右下にゴミ箱アイコンが出てくるので、それを押すとワークフローの定義を削除できます
+
+![bg right h:500px](images/2023-11-02-01-56-16.png)
+
+---
+
 - 続いて表示用の要素を配置していきます
 - "Visual elements" からそれぞれの要素ドラッグしてみましょう
   - Name: Text
@@ -1284,14 +1306,14 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 右パネルの左上の部分から `pet_detail` を選択すると、ダイアログが表示されます
   - 要素がいくつも重なっているときなどはここから要素を選ぶことも出来て便利です！
 
-![bg right w:600px](images/2022-11-12-21-56-44.png)
+![bg right w:550px](images/2023-11-02-01-53-45.png)
 
 ---
 
 - その中から `Type of content` という項目があるので、そこで `Pets` を指定します
 - こうすることで、この画面を表示する元となるデータベースのタイプが何なのかを指定でき、各項目にはそのタイプのどのフィールドを使うのかを指定するだけで済みます
 
-![bg right h:600px](images/2022-11-12-21-58-17.png)
+![bg right h:600px](images/2023-11-02-01-54-46.png)
 
 ---
 
@@ -1318,7 +1340,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
   - これは文字通り現在のページに割り当てられたペットの情報を指しています
 - すると Pets タイプが持っているフィールドが表示されるので `'s Name` を選択
 
-![bg right h:260px](images/2021-11-10-22-11-03.png)
+![bg right h:300px](images/2023-11-02-01-58-34.png)
 
 ---
 
@@ -1339,36 +1361,36 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 ### それでは一覧画面と詳細画面をつなげてみましょう
 
-- 左上のメニューから index ページに切り替えます
+- 左上のメニューから pet_list ページに切り替えます
 - 画面操作のイメージとしては、ペット一覧画面で表示されているペットの画像をクリックしたら、そのペットの詳細画面へ遷移させたいですね
 - なので、一覧画面のペット画像に対してワークフローを設定していきます
 
 ---
 
 - 要素一覧から "pet list image" をクリック
-- 詳細設定用ダイアログから `Start/Edit workflow` をクリックします
+- 詳細設定用ダイアログから `Edit workflow` をクリックします
 
-![bg right w:550px](images/2022-11-12-22-03-01.png)
+![bg right w:550px](images/2023-11-02-02-01-16.png)
 
 ---
 
 - すると "When pet list image is clicked" の箱に対して振る舞いを設定する前の状態になっているかと思います
 
-![bg right h:400px](images/2021-11-10-22-22-27.png)
+![bg right h:400px](images/2023-11-02-02-02-17.png)
 
 ---
 
 - なので "Click here to add an action" から Navigation -> Go to page を選択
 - ダイアログが表示されるので `Destination` (遷移先) には "pet_detail" を指定
 
-![bg right h:500px](images/2021-11-10-22-32-42.png)
+![bg right h:500px](images/2023-11-02-02-03-11.png)
 
 ---
 
 - そして `Data to send` に "Current cell's Pets" を指定
   - これでペット詳細画面へ遷移するときに、現在のセルのペット情報を遷移先へ送る、という指定ができました
 
-![bg right h:500px](images/2021-11-10-22-32-42.png)
+![bg right h:500px](images/2023-11-02-02-03-33.png)
 
 ---
 
@@ -1399,7 +1421,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 
 - そして `Current Page Pets's Birthday` の Birthday の部分をクリックすると、後ろに `More` という項目が表示されると思いますので、それをクリックします
 
-![bg right h:400px](images/2021-11-10-22-40-25.png)
+![bg right h:400px](images/2023-11-02-02-05-47.png)
 
 ---
 
@@ -1407,7 +1429,7 @@ https://developers.google.com/search/mobile-sites/mobile-seo/?hl=ja
 - 今回は一番上の `:formatted as DD/MM/YY` をクリックします
   - DD/MM/YY には本日日付が入っていると思います
 
-![bg right h:600px](images/2021-11-10-22-42-24.png)
+![bg right h:450px](images/2023-11-02-02-06-24.png)
 
 ---
 
@@ -1548,7 +1570,7 @@ Female だった場合には「女の子」を表示する
 
 - 左上の画面一覧を開き、その中にある "Add a new reusable element..." をクリック
 
-![bg right w:550px](images/2022-11-13-16-49-33.png)
+![bg right w:550px](images/2023-11-02-02-10-49.png)
 
 ---
 
@@ -1561,7 +1583,7 @@ Female だった場合には「女の子」を表示する
 - すると右パネルに縦横 200px のエリアが表示されると思います
 - このままでは少し横幅が狭いので、まずはエリアの領域を調整します
 
-![bg right w:550px](images/2022-11-13-16-51-19.png)
+![bg right w:550px](images/2023-11-02-02-11-42.png)
 
 ---
 
@@ -1573,14 +1595,13 @@ Female だった場合には「女の子」を表示する
 
 ---
 
-- それではヘッダーの共通部品を作り込んで行くのですが、ここで便利な機能を使います
-- Bubble の画面上部にあるメニューの中に "Components" というものがあります
+- それではヘッダーの共通部品を作り込んで行くのですが、ここでは便利な機能を使います
+- 最初にサインアップ / ログイン部品を使った "Components" の中からヘッダー部品を流用してみます
 
-![w:950px](images/2022-11-13-16-54-56.png)
+![w:800px](images/2023-11-02-00-10-35.png)
 
 ---
 
-- これは Bubble が標準で用意してくれている、よくある部品のライブラリとなっています
 - 今回はこの中にある "Header" 部品の中から一番上の部品を選択して、右パネルにドラッグします
 - 配置したら Component Library の下にある Close ボタンをクリックして閉じます
 
@@ -1677,9 +1698,141 @@ Female だった場合には「女の子」を表示する
 
 ---
 
+#### サインアップ / ログインを作り込む
+
+- ヘッダーが準備できましたので、その先で必要になってくるユーザ情報のサインアップ（登録）とログインを作っていきます
+
+![w:600px](images/2023-11-02-03-15-24.png)
+
+---
+
+- ここでやることは下記 2 つです
+
+1. ユーザを登録するための箱を準備
+2. 最初に用意した index ページにサインアップとログインを設定する
+
+- まずはユーザ登録のための箱を準備していきます
+
+---
+
+#### 1. ユーザを登録するための箱を準備
+
+- 実はユーザの箱は最初から準備されています
+- Data の Data types にすでに User があると思いますので選択
+- すでにフィールドとして email もありますが、ユーザ名のフィールドがないため、type を `text` で追加します
+
+![bg right w:500px](images/2023-11-02-02-18-16.png)
+
+---
+
+- ちなみにパスワードのフィールドが見当たりませんが、実際には存在しています
+- これは、データ保護の観点から Bubble が表に見せていないだけで、裏ではパスワードのフィールドがあり、そこにユーザが入力したパスワードが暗号化されて保存されています
+
+---
+
+#### 2. 最初に用意した index ページにサインアップとログインを設定する
+
+- ユーザの箱は準備ができたので、いよいよ index ページにワークフローを設定していきます
+- 左上の画面一覧から index を選択
+
+![](images/2023-11-02-02-21-06.png)
+
+- 今回はワークフローのタブから設定していきます
+
+---
+
+##### まずはサインアップ（ユーザ登録）から設定
+
+- `Click here to add an event...` をクリック
+- 今回はすでに index ページにある `Sign up` / `Sign in` ボタンを押した時のワークフローとなるため `Elements` --> `An element is clicked` を選択
+
+![bg right w:550px](images/2023-11-02-02-22-46.png)
+
+---
+
+- 詳細ポップアップが出てくるので、まずは要素を選択します
+  `Button Sign Up (Sign Up / Log In)`
+- これで Sign Up ボタンを押した時のワークフローという意味になりました
+
+![bg right w:500px](images/2023-11-02-02-24-02.png)
+
+---
+
+- 次にワークフローの中身を設定していきますが、皆さんならきっと設定できますよね？
+- これまでの学習内容を踏まえて設定してみてください
+- 注意点としては、ユーザの操作に関しては特別であるため、 `Data (Things)` ではなく `Account` からそれらしきメニューを選択してくださいね
+
+![bg right w:500px](images/2023-11-02-02-24-52.png)
+
+---
+
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+
+- メニューは文字通り `Sign the user up` ですね
+- そして、設定する中身はこんな感じ
+  - Email: Input Sign Up Email (titech)'s value
+  - Password: Input Sign Up Password (titech)'s value
+  - Name: Input Sign Up Name (titech)'s value
+
+![bg right w:450px](images/2023-11-02-02-25-55.png)
+
+---
+
+- Input 要素が大量にあり、お目当ての要素を探しづらかったため、要素名の末尾に `(titech)` をつけました
+  これにより、設定時に `titech` で絞り込みができて便利 ☝️
+
+![bg right w:450px](images/2023-11-02-02-27-02.png)
+
+---
+
+- 実際にプレビューしてみましょう
+- Sign up 画面で必要事項を入力して `Sign Up` を押してみましょう
+- そして、Data タブの App data から `All Users` を選択し、今入力したユーザ情報が登録されていればオッケー🙆‍♀️
+
+----
+
+##### 続いてログインを設定してみましょう
+
+- 先程の Sign Up と考え方は同じですので、やってみましょう！
+
+---
+
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+
+- 選択するアクションは `Account` --> `Log the user in` ですね
+- そしてログイン時に使用するメールアドレスとパスワードを選択します
+  - ここでも、要素が大量にあるため識別するために対象要素の末尾に `(titech)` とつけてみました
+
+---
+
+- それではプレビューしてみましょう
+- 先程サインアップの時に入力したユーザのメールアドレスとパスワードを入力して Log In ができることを確認
+- Log In ボタンを押して、下記のようなダイアログが出なければログイン成功です！
+
+![w:800px](images/2023-11-02-02-34-36.png)
+
+---
+
+- これでユーザ登録とログインが出揃いましたので次に進んでいきます🙋‍♀️
+
+---
+
 #### ログイン状態に応じたログイン / ログアウトボタンの制御
 
 - 次にログイン、ログアウトボタンの準備をしていきます
+- 左上から Reusable elements の header を選択
 
 ![w:1150px](images/2022-11-13-21-05-11.png)
 
@@ -1891,21 +2044,21 @@ Female だった場合には「女の子」を表示する
 
 - 左パネルの中から `Elements tree` を開き、その中にあるオブジェクトの `+` を押して要素を表示します
 
-![bg right w:400px](images/2022-11-13-21-12-37.png)
+![bg right w:450px](images/2023-11-02-02-40-21.png)
 
 ---
 
 - ここに表示されている要素は、今表示している画面（共通部品）に含まれている全ての要素です
 - 表示順序にも意味があり、下に表示されているのが、画面上でいうところの最前面に表示されているものになります
 
-![bg right w:400px](images/2022-11-13-21-12-37.png)
+![bg right w:450px](images/2023-11-02-02-40-21.png)
 
 ---
 
-- そして、その中で一番最前面（一番下）にある要素の中で、"Log in" ボタンと "Log out"（Sign in）ボタンの右にある「目」のアイコン
+- そして、その中で一番最前面（一番下）にある要素の中で、"Log in" ボタンと "Log out"（Sign in）ボタンの右にある「目」のアイコン👁️
 - これが ON と OFF の状態があり、ON が右パネル上に表示、OFF が右パネル上に非表示、を表します
 
-![bg right w:400px](images/2022-11-13-21-11-55.png)
+![bg right w:450px](images/2023-11-02-02-41-06.png)
 
 ---
 
@@ -1990,8 +2143,8 @@ Let's Try!! :fire:
 
 - 今の皆さんには簡単ですね！
 - index ページのワークフローを開き、下記 2 つの When に対して、"Go to page pet_list" のアクションを追加するだけです
-  - "When Button Log in is clicked"
-  - "When Button Sign up is clicked"
+  - "When Button Log In (Sign Up / Log In) is clicked"
+  - "When Button Sign Up (Sign Up / Log In) is clicked"
 
 ---
 
@@ -2092,10 +2245,12 @@ Let's Try!! :fire:
 
 ![bg right h:600px](images/2022-11-13-23-19-08.png)
 
+
+
 ---
 
 - 次に、体重保存のボタンクリックに対してワークフローを設定していきます
-- ADD ボタンをダブルクリックし、詳細設定ダイアログから Start/Edit workflow を選択
+- ADD ボタンをダブルクリックし、詳細設定ダイアログから Edit workflow を選択
 
 ![w:700px](images/2022-11-13-23-20-34.png)
 
@@ -2173,7 +2328,7 @@ Let's Try!! :fire:
 
 - こんな感じ！
 
-![w:900px](images/2022-11-13-23-27-30.png)
+![bg right w:500px](images/2023-11-02-02-57-58.png)
 
 ---
 
@@ -2214,7 +2369,7 @@ Let's Try!! :fire:
 - 左メニューから Plugins を選択し、プラグイン画面を表示します
 - そして、右上の `+ Add plugins` を押して追加するプラグインを検索します
 
-![w:1100px](images/2022-11-13-23-33-57.png)
+![bg right w:600px](images/2023-11-02-03-01-21.png)
 
 ---
 
@@ -2228,7 +2383,7 @@ Let's Try!! :fire:
 - インストールが完了したら DONE をクリックしてポップアップを閉じます
 - Installed Plugins に Chart Element が入っていれば OK です
 
-![bg right h:600px](images/2022-11-13-23-35-54.png)
+![bg right h:450px](images/2023-11-02-03-02-39.png)
 
 ---
 
@@ -2249,7 +2404,7 @@ Let's Try!! :fire:
 - `pet_weight_register` ページの Design を開きます
 - すると `Visual elements` の中に `Line/Bar Chart` という要素が新たに追加されていると思いますので、この要素を選択して早速体重入力の上部にドラッグします
 
-![bg right h:700px](images/2021-11-11-20-43-44.png)
+![bg right h:700px](images/2023-11-02-03-04-10.png)
 
 ---
 
@@ -2420,7 +2575,7 @@ Let's Try!! :fire:
   - Go to page index
 - 他のワークフローと違ってボタンをトリガーにしないため、分かりやすく色を変えました
 
-![bg right w:600px](images/2022-11-14-00-09-55.png)
+![bg right w:500px](images/2023-11-02-03-09-35.png)
 
 ----
 
