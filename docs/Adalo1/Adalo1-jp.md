@@ -901,7 +901,7 @@ Screenが追加されました。
 
 ---
 - ADD COMPONENTからImageを選択して、画面上に配置します
-![bg right w:600px](images/2023-11-02-05-10-27.png)
+![bg right w:500px](images/2023-11-02-07-48-13.png)
 
 ---
 Image Sourceに現在表示しているペットの画像を表示できるようにしていきます。
@@ -940,6 +940,10 @@ Image Sourceに現在表示しているペットの画像を表示できるよ�
 ![bg right h:700px](images/2023-11-02-07-08-35.png)
 
 ---
+- Textのpet birthdayの右側の編集アイコンから、Data Formatを No Formattingに変更します
+![bg right h:400px](images/2023-11-02-08-35-08.png)
+
+---
 - ADD COMPONENTからTextを追加し、Latest Weightというラベルを表示します
 ![bg right h:700px](images/2023-11-02-07-14-08.png)
 
@@ -968,7 +972,7 @@ Latest Weightの値の表示は、少し工夫が必要です。
 - プレビュー画面で動作を確認しましょう
 
 まだPetWeightLogのデータが登録されていないので、Latest Weightは表示されませんが、現時点ではこれでOKです。
-![bg right h:700px](images/2023-11-02-07-26-19.png)
+![bg right h:700px](images/2023-11-02-08-37-34.png)
 
 ---
 ###### 体重記録画面
@@ -980,70 +984,128 @@ Latest Weightの値の表示は、少し工夫が必要です。
 ![bg right h:700px](images/2021-10-22-16-42-42.png)
 
 
-<!-- Chartコンポーネントは次回に回すので却下 -->
 ---
-- ADD SCREENからApp Barを選択して、Screen Nameを入力してください
-![bg right h:700px](images/2021-10-20-06-26-12.png)
-<!-- ---
-- ADD COMPONENTから、EXPLORE MARKETPLACEを選択してください
-![bg right h:500px](images/2021-10-22-04-15-57.png) -->
-<!-- ![](images/2021-10-22-04-18-00.png) -->
-<!-- ---
-- Chart KitをINSTALLしてください
-![bg right h:500px](images/2021-10-22-04-19-03.png) -->
-<!-- ---
-- ADD COMPONENTのInstalled欄にChartのコンポーネントが追加されました
-- Line Chartを選んで、画面上に配置してください
-![bg right h:500px](images/2021-10-22-04-20-12.png) -->
+ペット詳細画面に、体重記録画面への導線となるボタンを追加します
+- ADD COMPONENTからButtonを選択して、画面上に配置します
+- TextをWeight Logに変更します
+- Iconをchevron_rightに変更します
+![bg right h:600px](images/2023-11-02-08-00-48.png)
 
 ---
-- Chartの作成にはデータベースの準備が必要なので、これは次回のレクチャーで説明します
-- 今回は、Chartの画像を貼り付けましょう
-  - 画像は私からみなさんにSlackで共有します
-  (右の画像のスクリーンショットを撮影してそれを使ってもOKです)
-![bg right h:350px](images/pet-weight-log-chart.png)
+- ADD ACTION > Link > New Screenを選択します
+![bg right h:600px](images/2023-11-02-08-02-53.png)
 
 ---
-- ADD COMPONENTからImageを追加して、Chartの画像をアップロードしてください
-![bg right h:500px](images/2021-10-22-16-33-13.png)
+- Screen Nameを入力し、Blank Mobile Firstを選択して、画面を作成します
+ ![bg right h:600px](images/2023-11-02-08-04-30.png)
 
 ---
+作成された画面では、ペット詳細画面から受け渡されたCurrent Petのデータを扱えるようになっています
+![bg right h:440px](images/2023-11-02-08-09-20.png)
+
+---
+- ADD COMPONENTからApp Barを選択して、画面上に配置します
+- Title > Textの値を画面名(PetWeightLog)に変えます
+![bg right h:600px](images/2023-11-02-07-46-39.png)
+
+---
+次に、過去に登録したペットの体重がグラフとして表示されるようにしていきます。
+- ADD COMPONENTからEXPLORE MARKETPLACEを選択
+- Chart KitをINSTALL
+
+![bg right h:450px](images/2021-11-04-03-52-55.png)　![bg right h:170px](images/2023-11-02-07-51-53.png)
+
+---
+- Line Chartを画面に追加
+![bg right h:400px](images/2023-11-02-07-54-16.png)
+
+
+---
+Line Chartを設定します。
+- What is this a chart of?でPetWeightLogsを選択
+- FilterでCurrent Pet > PetWeightLogsを選択
+- Custom Filterに WeightRegisteredTime Is after 30 days ago を設定し、表示期間を指定
+- SortingでWeightRegisteredTime - Oldest to Newestを選択
+
+![bg right h:700px](images/2023-11-02-08-12-17.png)
+
+---
+- X Axis ValueにPetWeightLog > WeightRegisteredTimeを設定
+  - Date FormatにDate / Timeを設定
+- Y Axis ValueにPetWeightLog > WeightKgを設定
+![bg right h:350px](images/2023-11-02-08-13-12.png)
+![bg right h:250px](images/2021-11-04-04-13-46.png)
+
+これで、グラフを表示するための設定ができました。
+
+---
+次に、体重を記録できるようにしましょう。
+
 - ADD COMPONENTから、Text Inputを追加してください
 - TypeをNumberに変更してください
 - PlaceholderをEnter current weightに変更してください
-![bg right h:500px](images/2021-10-22-16-35-03.png)
+![bg right h:500px](images/2023-11-02-08-17-51.png)
+
 ---
 - ADD COMPONENTからTextを追加してください
 - 値をWeight(kg)に変更してください
-![bg right h:500px](images/2021-10-22-16-35-39.png)
+![bg right h:500px](images/2023-11-02-08-18-37.png)
 
 ---
 - ADD COMPONENTからButtonを追加してください
 - TextをAddに変更してください
-![bg right h:500px](images/2021-10-22-16-36-06.png)
+- ADD ACTIONからCreate > PetWeightLogを選択してください
+![bg right h:500px](images/2023-11-02-08-20-46.png)
 
 ---
-ペット詳細画面から体重記録画面への導線を設定しましょう
-- ペット詳細画面のText:'Weight Log'を含むGroupに対して、Click Actionで体重記録画面へのLinkを設定します
-![bg right h:500px](images/2021-10-22-12-40-18.png)
+以下のように設定します。
+- WeightKg: Other Components > Input
+- WeightRegisteredTime: Date & Time > Current Time
+- Pet: Current Pet
+![bg right h:500px](images/2023-11-02-08-22-46.png)
+
+これで体重記録画面が作成できました。
 
 ---
-- プレビュー画面で表示を確認しておきましょう
-
-体重記録画面のUIはこれでOKです。
-![bg right h:700px](images/2021-10-22-16-42-42.png)
+画面を行き来して動作が確認できるように、ヘッダーの戻るアイコンにリンクを設定しましょう。
+- ペット登録画面、ペット詳細画面のそれぞれで、App BarのLeft IconにMyPetsへのリンクを追加します
+![bg right h:450](images/2023-11-02-08-50-25.png)
 
 ---
-アプリのUIを一通り作成することができました :tada:
+- 体重記録画面では、App BarのLeft Iconのリンクで、Backを選択します
+![bg right h:550](images/2023-11-02-08-53-32.png)
 
+<!-- ---
+参考: 体重記録画面で、App BarのLeft Iconのリンク先を、ペット詳細画面にしてしまうと、CurrentPetの情報が失われてしまいます
+![bg right h:450](images/2023-11-02-08-56-14.png) -->
+<!-- →実際に試すと、動作に問題なかった -->
+
+---
+Preview機能でグラフの表示を確認しましょう。体重を複数追加すると、グラフが描画されます。
+
+※ 体重の登録日時が長く、省略して表示されてしまいます。同じ日に複数の体重を登録してテストをしたかったのでDate&Time型にしていますが、本来はDate型にして、1日に1回しか登録できないよう制御する方が良さそうです。
+<!-- 、連続で異なる体重を追加するとLineが上下に伸びてしまう -->
+<!-- ![bg right h:700px](images/2021-11-04-04-15-38.png) -->
+![bg right h:700px](images/2023-11-02-08-28-21.png)
+
+---
+ペット詳細画面でLatest Weightが表示されるようになったことも確認できます。
+![bg right h:700px](images/2023-11-02-09-01-42.png)
+
+
+---
+アプリの画面を一通り作成することができました :tada:
+
+
+TODO: 画面差し替え
 ![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
 
 ---
 #### クローン用URL
-- 以下のURLからアプリをクローンできますので、答え合わせに使ってください
-https://previewer.adalo.com/014fd9d1-80c6-4325-899a-d943e778c865
+- 以下のURLの右下のCLONE APPボタンでアプリをクローンできますので、答え合わせに使ってください
+https://ryo-imahashis-team-6.adalo.com/pethealthlog
 
-![bg right h:400px](images/2021-10-22-17-31-06.png)
+![bg right h:350px](images/2023-11-02-08-32-08.png)
 
 ---
 ## 演習
