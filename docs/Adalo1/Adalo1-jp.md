@@ -1102,6 +1102,7 @@ https://ryo-imahashis-team-6.adalo.com/pethealthlog
 ![bg right h:350px](images/2023-11-02-08-32-08.png)
 
 ---
+
 ## 演習1
 1. 登録済のペットの情報を編集できる、ペット編集画面を作成しましょう
 2. 登録済のペットを削除できる、ペット削除機能を追加しましょう
@@ -1122,7 +1123,7 @@ https://ryo-imahashis-team-6.adalo.com/pethealthlog
 # :hourglass:
 
 ---
-## 演習1の答え合わせ
+## TODO: 演習1の答え合わせ
 まずは自分でやってみて、その後でここから先を見てください :pray:
 
 ---
@@ -1194,7 +1195,7 @@ Preview機能で削除を試してみましょう。
 ![bg right h:600px](images/2021-11-04-05-16-26.png)
 
 ---
-## サンプルアプリを改善しよう
+## TODO: サンプルアプリを改善しよう
 まだ紹介していないAdaloの機能を使いながら、サンプルアプリを改善していきます。
 
 ---
@@ -1351,63 +1352,58 @@ https://app.adalo.com/login
 - CREATE NEW APPをクリック
 ![bg right h:300px](images/2021-11-26-22-00-12.png)
 ---
-- PlatformはNative Mobile Appを選択
-![bg right h:500px](images/2021-11-26-21-53-43.png)
+- PlatformはResponsive Appを選択
+![bg right h:500px](images/2023-10-29-13-09-34.png)
 
 ---
-- TemplateはBlankを選択
-![bg right h:500px](images/2021-11-26-09-00-44.png)
+- TemplateはBlank Mobile Firstを選択
+![bg right h:500px](images/2023-11-02-20-25-53.png)
 
 ---
 - App NameにはMarketplaceComponentTrialを入力
-- Colorは自由に設定してください
-![bg right h:500px](images/2021-11-26-21-56-35.png)
+- その他の項目は自由に設定してください
+![bg right h:500px](images/2023-11-02-20-27-20.png)
 
 ---
 ##### Twitter Timeline コンポーネント
 - +ボタンを押してADD COMPONENTの中のExplore Marketplaceをクリック
-![bg right h:700px](images/2021-11-26-22-02-19.png)
+![bg right h:700px](images/2023-11-02-20-49-56.png)
 
 
 ---
 - Twitter TimelineコンポーネントをINSTALL
-![bg right h:450px](images/2021-11-26-08-57-37.png)
+![bg right h:450px](images/2023-11-02-20-50-46.png)
 
 ---
 Twitter Timelineコンポーネントを配置します。
 - Home ScreenにTwitter用画面へのLinkボタンを追加
-![bg right h:600px](images/2021-11-26-22-21-56.png)
+![bg right h:600px](images/2023-11-02-20-52-04.png)
 
 ---
 - ADD ACTIONからNew ScreenへのLinkを追加
-![bg right h:600px](images/2021-11-26-22-23-29.png)
+![bg right h:600px](images/2023-11-02-20-52-41.png)
 
 ---
-- Templateで"App Bar"を選択し、"Twitter Timeline" 画面を作成
-![bg right h:600px](images/2021-11-26-22-14-40.png)
+- Blank Mobile Firstを選択し、TwitterTimeline画面を作成
+![bg right h:600px](images/2023-11-02-20-54-06.png)
 
 ---
 - Twitter Timelineコンポーネントを配置
-![bg right h:550px](images/2021-11-26-22-16-29.png)
+![bg right h:600px](images/2023-11-02-20-55-36.png)
 
 ---
 - Twitter Handle Nameに "tokyotech_jp" と入力
   - 好きなTwitterアカウントのHandle Nameに変更してもOKです
-![bg right h:550px](images/2021-11-26-22-18-43.png)
+![bg right h:550px](images/2023-11-02-20-57-01.png)
 
 ---
-- Preview機能でSignupして、Twitterボタンをクリック
-![bg right h:670px](images/2021-11-26-22-20-46.png)
-![bg right h:670px](images/2021-11-26-22-26-55.png)
+Preview機能でSignupして、HomeのTwitterボタンをクリックすると、TwitterTimeline画面に入力したHandle NameのTwitterアカウントの投稿が一覧表示されます
+![bg right h:700px](images/2023-11-02-20-58-47.png)
+
 
 ---
-- 入力したHandle NameのTwitterアカウントの投稿が一覧表示されます
-![bg right h:700px](images/2021-11-26-22-28-24.png)
-
----
-ログインしたユーザー自身のTwitterアカウントの投稿が一覧表示されるように修正しましょう。
 <!-- スライドの枚数的に時間が足りなくなりそうなので、割愛します... -->
-- Users CollectionにTwitterHandleName Propertyを追加
+<!-- - Users CollectionにTwitterHandleName Propertyを追加
   - TypeはTextを選択
 ![bg right h:700px](images/2021-11-26-22-33-36.png)
 
@@ -1453,7 +1449,7 @@ Twitter Timelineは有志の方が無償公開してくれているコンポー�
 誰かが作ってくれているものが、いつも自分の思い通りに動くとは限りません。
 
 「不具合があったりもするんだな」くらいは覚えておいてもらえると嬉しいです。
-![bg right h:380px](images/2022-11-12-12-08-17.png)
+![bg right h:380px](images/2022-11-12-12-08-17.png) -->
 
 ---
 この他にも外部サービスと連携するためのコンポーネントがいくつか提供されています。興味があれば、試してみましょう。
@@ -1477,14 +1473,16 @@ https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%8
 無料で試せるThe Cat APIを使います。以下のURLにアクセスしてください。
 https://thecatapi.com/
 
-![h:400px](images/2021-11-26-17-04-35.png)
+![h:400px](images/2023-11-02-21-05-32.png)
 
 ---
 参考: 犬派の人のために、The Dog APIもあります。おそらくThe Cat APIと同様のことができると思います。(試せていないので、まずは一緒にThe Cat APIを使うことをおすすめします)
 https://www.thedogapi.com/
 
-![h:400px](images/2021-11-27-06-36-43.png)
+![h:400px](images/2023-11-02-21-06-15.png)
 
+<!-- APIキーなしでできる範囲でやる -->
+<!-- 
 ---
 APIを使用する際には、APIの提供者からAPIキーを発行してもらう必要がある場合が多いです。
 The Cat APIでもAPIキーが必要になりますので、発行してもらいましょう。
@@ -1493,28 +1491,27 @@ The Cat APIでもAPIキーが必要になりますので、発行してもらい
 
 ---
 - E-mail、App Description、type of projectを入力し、 "SIGNUP" をクリック
-![bg right h:600px](images/2021-11-26-17-10-01.png)
+![bg right h:600px](images/2023-11-02-21-08-44.png)
 
 ---
 - メールで送られてきたAPIキーを確認(後で使います)
-![h:580px](images/2021-11-26-17-16-56.png)
+![h:580px](images/2023-11-02-21-12-30.png) -->
 
 ---
-次に、APIドキュメントでAPIの使い方を確認しましょう。
-- 以下のURLへアクセス(先程のメールにも"API Documentation"というリンクが記載されています)
+APIドキュメントでAPIの使い方を確認しましょう。
+- 以下のURLへアクセス
 https://docs.thecatapi.com/
 
 ---
 トップページに記載されている、ランダムな子猫の画像を取得するAPIを使います。
-
-Exampleと同じように、ボタンを押すと画像が切り替わるようにしましょう。
-![bg right h:600px](images/2021-11-26-18-13-42.png)
+https://api.thecatapi.com/v1/images/search
+![w:900](images/2023-11-02-21-41-46.png)
 
 ---
 - Adaloの管理画面でCREATE NEW APP
 - 設定は以下の通り
-  - Platform: Native Mobile App
-  - Template: Blank
+  - Platform: Responsive App
+  - Template: Blank Mobile First
   - App Name: ApiIntegrationTrial
 
 ![bg right h:250px](images/2021-11-27-02-15-47.png)
@@ -1522,20 +1519,20 @@ Exampleと同じように、ボタンを押すと画像が切り替わるよう�
 ---
 - Home画面に子猫画像表示画面へのリンクボタンを追加
 - ADD ACTIONからNew ScreenへのLinkを設定
-![bg right h:500px](images/2021-11-27-02-45-19.png)
+![bg right h:500px](images/2023-11-02-21-49-44.png)
 
 ---
-- TemplateにApp Barを選択し、Kittens画面を作成
-![bg right h:500px](images/2021-11-27-02-49-26.png)
+- TemplateにBlank Mobile Firstを選択し、Kitten画面を作成
+![bg right h:500px](images/2023-11-02-21-50-08.png)
 
 ---
 - Imageコンポーネントを画面上に配置
 - コンポーネントの設定はそのままにしておく(後で設定します)
-![bg right h:500px](images/2021-11-27-03-02-07.png)
+![bg right h:500px](images/2023-11-02-21-51-28.png)
 
 ---
 - Change Kitten Image Buttonを追加
-![bg right h:650px](images/2021-11-27-03-55-04.png)
+![bg right h:550px](images/2023-11-02-21-54-13.png)
 
 ---
 - ADD ACTIONからNew Custom Actionを選択
@@ -1544,12 +1541,12 @@ Exampleと同じように、ボタンを押すと画像が切り替わるよう�
 ---
 14日間のフリートライアル(無料)の開始を促されます。
 - "START FREE TRIAL" をクリック
-![bg right h:400px](images/2022-11-12-17-25-25.png)
+![bg right h:400px](images/2023-11-02-21-28-44.png)
 
 ---
 トライアルが開始しました。
 - "CREATE NEW CUSTOM ACTION" をクリック
-![h:500px](images/2022-11-12-17-26-26.png)
+![h:500px](images/2023-11-02-21-27-32.png)
 
 ---
 - 以下を入力してNEXTをクリック
@@ -1559,30 +1556,16 @@ Exampleと同じように、ボタンを押すと画像が切り替わるよう�
 ![h:400px](images/2021-11-27-04-25-58.png)
 
 ---
-次に、送信するAPI Requestを設定していきます。
-![h:600px](images/2021-11-27-04-26-54.png)
-
-<!-- そもそもなんでこのドキュメントが使用するAPIのものだと分かるのか は口頭で補足したい -->
----
-以下のURLにアクセスして、使用するAPIのドキュメントから設定項目を確認します。
-https://docs.thecatapi.com/api-reference/images/images-search
-- API Base URLは https://api.thecatapi.com/v1/images/search
-- MethodはGET
-- Headerに x-api-keyというNameでAPI keyを設定
-![bg right h:350px](images/2021-11-27-05-22-05.png)
+- 送信するAPI Requestを以下のように設定します。
+  - API Base URL: https://api.thecatapi.com/v1/images/search
+  - Method: GET
+- 設定後、"RUN TEST REQUEST" をクリック
+![bg right h:450px](images/2023-11-02-21-59-14.png)
 
 ---
-- 確認した結果を踏まえてAPI Requestを設定
-  - API Base URLは https://api.thecatapi.com/v1/images/search
-  - MethodはGET
-  - Headerに x-api-keyというNameでAPI keyを設定
-- "RUN TEST REQUEST" をクリック
-![bg right h:500px](images/2021-11-27-05-28-00.png)
-
----
-Testが成功すると、APIから取得したデータ(Magic Text Output Properties)が表示されます。これらは、後続のアクションで使用できます。
+Testが成功すると、APIから取得したデータが表示されます。これらは、後続のアクションで使用できます。
 - "SAVE CUSTOM ACTION" をクリック
-![h:500px](images/2021-11-27-05-33-42.png)
+![h:450px](images/2023-11-02-22-03-17.png)
 
 ---
 次に、APIから取得した子猫の画像のURLをImageコンポーネントのImage Sourceに設定します。
@@ -1591,18 +1574,18 @@ Testが成功すると、APIから取得したデータ(Magic Text Output Proper
 ![h:100px](images/2021-11-27-05-52-10.png)
 
 ![bg right h:500px](images/2021-11-27-05-54-04.png)
-![bg right h:500px](images/2021-11-27-05-54-35.png)
+![bg right h:500px](images/2023-11-02-22-08-34.png)
 
 ---
 - Text Inputコンポーネントを画面上に追加
 - Nameを "Invisible Kitten Image URL Input" に変更
-![bg right h:520px](images/2021-11-27-05-58-21.png)
+![bg right h:550px](images/2023-11-02-22-09-43.png)
 
 ---
 - "Change Kitten Image Button" をクリック
-- ADD ANOTHER ACTION から Change Input Value を選択
+- ADD ANOTHER ACTION から More > Change Input Value を選択
 
-![bg right h:520px](images/2021-11-27-06-01-07.png)
+![bg right h:550px](images/2023-11-02-22-10-48.png)
 
 ---
 - Inputに "Invisible Kitten Image URL Input" を設定
@@ -1612,19 +1595,18 @@ Testが成功すると、APIから取得したデータ(Magic Text Output Proper
 
 ---
 - Imageコンポーネントをクリック
-- URLに "Invisible Kitten Image URL Input" を設定
-![bg right h:550px](images/2021-11-27-06-06-13.png)
+- URLに Other Components > Invisible Kitten Image URL Input を設定
+![bg right h:550px](images/2023-11-02-22-12-28.png)
 
 ---
-- 画面名 "Kittens" をクリック
-- "Invisible Kitten Image URL Input" の右側の目のアイコンをクリックして非表示にする
-![bg right h:550px](images/2021-11-27-06-07-46.png)
+- "Invisible Kitten Image URL Input" のLAYOUTタブを開き、Visible On...で3つある目のアイコンをそれぞれクリックして、非表示にする
+![bg right h:358px](images/2023-11-02-22-17-03.png)
 
 ---
 Preview機能で確認します。
 
 CHANGEボタンをクリックすると、子猫の画像が表示されました。
-![bg right h:700px](images/2021-11-27-06-10-42.png)
+![bg right h:700px](images/2023-11-02-22-19-13.png)
 
 ---
 補足
@@ -1645,12 +1627,6 @@ CHANGEボタンをクリックすると、子猫の画像が表示されまし�
 - アプリをCloneしてもCustom Actionはコピーされません。Custom Actionを含むアプリをCloneしたら、手動で作成し直してください。
 <!-- https://help.adalo.com/integrations/custom-actions -->
 
----
-\>アプリをCloneしてもCustom Actionはコピーされません。Custom Actionを含むアプリをCloneしたら、手動で作成し直してください。
-
-14日間のフリートライアルは、Development Phaseの前に終了します。
-
-Custom Actionを多用する可能性がある場合、Development Phaseの作業開始前に新しくAdaloのアカウントを作成し、フリートライアルを新たに開始することをおすすめします。
 
 ---
 
@@ -1660,133 +1636,70 @@ APIから取得したデータをAdaloのCollectionとして扱う方法を紹�
 複数のデータを一括取得してそれらを画面上に一覧表示するような場合はCustom Actionではなく、External Collectionを使います。
 
 ---
-このAPIを使って、猫の品種の一覧を取得&表示しましょう。
-https://docs.thecatapi.com/api-reference/breeds/breeds-list#send-a-test-request
-<!-- ![h:500px](images/2021-11-27-06-42-55.png) -->
-![h:400px](images/2021-11-27-06-50-04.png)
+先ほどのAPIの末尾に ?limit=10 を付け加えて、猫の画像を10件取得します。
+https://api.thecatapi.com/v1/images/search?limit=10
+![h:450px](images/2023-11-02-22-25-58.png)
 
 ---
 - DatabaseのExternal Collectionsで "ADD COLLECTION" をクリック
-![bg right h:700px](images/2021-11-27-06-44-13.png)
+![bg right h:700px](images/2023-11-02-22-27-40.png)
 
 ---
-
-- Collection Name: Breeds
-- Base URL: https://api.thecatapi.com/v1/breeds
-- Auth Setup
-  - Header x-api-key: 発行したAPI Key
-
-![bg right h:530px](images/2021-11-27-06-55-32.png)
+- 以下を設定して、NEXTをクリック
+  - Collection Name: Kittens
+  - Base URL: https://api.thecatapi.com/v1/images/search?limit=10
+![bg right h:530px](images/2023-11-02-22-28-51.png)
 
 
 ---
-Adaloでは、APIでアクセスするリソース(この例ではbreeds)毎に5つのEndpoints(アクセス方法)が設定できます。
+Adaloでは、APIでアクセスするリソース(この例ではKittens)毎に5つのEndpoints(アクセス方法)が設定できます。
 
 APIの仕様によってはそれに合わせるための修正が必要になりますが、今回はそのままNEXTをクリックしてOKです。
 <!-- (使用するEndpointである Get All はデフォルトでAPIの仕様を満たす設定になっています) -->
-![bg right h:500px](images/2021-11-27-06-56-48.png)
+![bg right h:500px](images/2023-11-02-22-30-19.png)
 
 ---
-- テストを実行して成功したら、"CREATE COLLECTION" をクリック
-![bg right h:650px](images/2021-11-27-07-11-41.png)
+- テストを実行して成功したら、"SAVE COLLECTION" をクリック
+![bg right h:650px](images/2023-11-02-22-30-57.png)
 
 
 ---
 External Collectionが作成されました。
 
 APIから取得するデータが全てプロパティとして設定されています。
-![bg right h:700px](images/2021-11-27-07-17-10.png)
+![bg right h:400px](images/2023-11-02-22-31-55.png)
 
 ---
 取得したデータを一覧表示しましょう。
-- Home画面に "Breeds Link" ボタンを追加
+- Home画面に "Kitten List Link" ボタンを追加
 - ADD ACTIONからNEW SCREENヘのLINKを追加
-![bg right h:600px](images/2021-11-27-07-19-58.png)
+![bg right h:600px](images/2023-11-02-22-34-20.png)
 
 --- 
-- Nameに "Breeds"と入力
-- TemplateでImage Listを選択
-- CREATE SCREEN をクリック
-
-![bg right h:600px](images/2021-11-27-07-24-09.png)
+- BlankMobileFirstを選択して、"KittenList"スクリーンを作成
+![bg right h:600px](images/2023-11-02-22-35-30.png)
 
 ---
-- List TitleのTextを"Cat Breeds"に変更
-- Image ListをBreeds Collectionのリストとして設定
-- ImageのURLに "image > url" を設定
+- ADD COMPONENTからImage Listを追加
+![bg right h:420px](images/2023-11-02-22-38-15.png)
+
+
+---
+- Kittens Collectionのリストとして設定
+- ImageのURLに "kitten url" を設定
 - "If there's no image..." に "Don't show anything" を設定
-- 右下の+ボタンは不要なので削除
-![bg right h:600px](images/2021-11-27-07-30-23.png)
-
----
-- Textを "name" に変更
-![bg right h:600px](images/2021-11-27-07-37-24.png)
-
----
-戻るアイコンが非表示になっているので、表示します。
-- App Barをクリック
-- Left IconのトグルをONに変更
-![bg right h:550px](images/2021-11-27-07-32-24.png)
-
----
-Preview機能で確認すると、猫の品種の一覧が表示されました。
-![bg right h:700px](images/2021-11-27-07-39-21.png)
-
-<!-- ---
-###### 追加コンテンツ
-TODO: 時間に余裕があれば資料化。難しければ、資料なしで時間が余った時に実演。
-
-- 子猫画像表示画面で選択した品種だけを表示できるようにする
-- 表示した子猫の画像をお気に入りに登録でき、お気に入り一覧画面に表示されるようにする
-  - お気に入りからの削除もできるようにする -->
-
-
-<!-- ---
-
-SpreadSheet連携はAPI連携先のデータのCRUDを実演したかったから選んだテーマだけど、The Cat APIでCRDは教えられる(Uはないけど)し、SpreadSheetにデータを保持する意味もあまりないので、こちらは割愛。
-###### APIから取得したGoogle SpreadSheetのデータをAdaloのCollectionとして扱う
-API連携先のデータは取得するだけではなく、登録、更新、削除することもできます。
-Google SpreadSheetを使ってそれを試してみましょう。
-
----
-Googleアカウントを作成します。
-既に持っていればそのアカウントを使えば良いので、作成は不要です。
-持っていない人は、一緒に作成してください。
-https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
-
----
-Google SpreadSheetのデータをAPIで操作できるようにするために、SheetDBというサービスを使います。
-https://sheetdb.io/
-![h:500px](images/2021-11-26-17-56-27.png)
-
----
-補足
-連携サービスで、Adaloとは直接連携させられなくても、Google SpreadSheetとであれば連携させられるという場合が多いかと思います。そのような場合は、今回ご紹介したようにGoogle SpreadSheetをデータのハブとして活用すると良いかもしれません。 -->
-
-<!-- ---
-##### 連携サービス
-Custom ActionやExtenal Collectionでは、連携先のサービスのAPIの仕組みをドキュメントから理解するのが大変かもしれません。
-
-次は、そんなことをしなくても簡単に連携の設定ができるサービスをご紹介します。
-
----
-連携サービスにも色々なものがあります。
-![h:600px](images/2021-11-26-16-42-00.png)
-
----
-元々はZapierを紹介しようと思っていたのですが、数日前からAdaloとのアカウント連携ができないトラブルが起きてしまっています。(焦りました。。。)
-参考: [Bad request error when connecting to Adalo](https://community.zapier.com/general-questions-3/bad-request-error-when-connecting-to-adalo-12739)
-![h:400px](images/2021-11-26-16-44-33.png)
-
+![bg right h:600px](images/2023-11-02-22-41-37.png)
 
 
 ---
-そのため、今回はIntegromatを紹介します。
-https://www.integromat.com/en
-![h:550px](images/2021-11-26-16-49-38.png)
+- TextとIconは不要なので非表示にする
+![bg right h:500px](images/2023-11-02-22-46-58.png)
+
 
 ---
-TODO: Integromatでメール送信 -->
+Preview機能で確認すると、猫のリストが表示されました。
+![bg right h:700px](images/2023-11-02-22-48-01.png)
+
 
 ---
 #### 連携サービス
@@ -2000,6 +1913,9 @@ Adaloでの外部連携についての紹介は以上です。
 - NoCodeツールでは、簡単にアプリを作れる反面、複雑なUIや機能を実現できない場合があります
   - 行き詰まった時は、どうすれば自分がやりたいことをシンプルなUI、機能で実現できるか考えてみてください
     - 例: 1画面に多くのコンポーネントを含めず、画面を分ける 等
+
+---
+TODO: Feature Templateの紹介
 
 ---
 参考
