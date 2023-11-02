@@ -1123,7 +1123,7 @@ https://ryo-imahashis-team-6.adalo.com/pethealthlog
 # :hourglass:
 
 ---
-## TODO: 演習1の答え合わせ
+## 演習1の答え合わせ
 まずは自分でやってみて、その後でここから先を見てください :pray:
 
 ---
@@ -1136,40 +1136,47 @@ https://ryo-imahashis-team-6.adalo.com/pethealthlog
 - ADD COMPONENTからAction Buttonを追加
 - Iconをeditに変更
 - Icon and Text ColorをDefault Background(white)に変更
-![bg right h:450px](images/2021-11-04-04-31-55.png)
+![bg right h:600px](images/2023-11-03-00-06-25.png)
 
 ---
 - ADD ACTIONからLink > New Screenを選択
-![bg right h:630px](images/2021-11-04-04-32-24.png)
+![bg right h:630px](images/2023-11-03-00-08-11.png)
 
 
 ---
-- Screen Nameを入力
-- Formを選択
-- CREATE SCREENをクリック
-![bg right h:620px](images/2021-11-04-04-33-34.png)
+- Blank Mobile Firstを選択し、EditPetInfoスクリーンを作成
+![bg right h:620px](images/2023-11-03-00-09-03.png)
 
 ---
-以下の設定をするだけでペット情報編集画面は完成です。
-- Which data collection?でPetsを選択
-  - 選択したCollectionに合わせたフォームを自動生成してくれる
-- What do you want the form to do?でUpdate Current Petを選択
+- App Barを追加してTitleをEditPetInfoに変更
+- Formを追加して、以下を設定
+  - Which data collection?でPetsを選択
+  - What do you want the form to do?でUpdate Current Petを選択
 - FieldsでBirthdayとImageの順番を入れ替え
 
-![bg right h:420px](images/2021-11-04-04-38-03.png)
+![bg right h:460px](images/2023-11-03-00-13-30.png)
 <!-- 更新不要な項目があれば、その入力箇所は削除できそう -->
+
+---
+- FormのSubmit Buttonに戻るリンクを追加
+![bg right h:600px](images/2023-11-03-00-22-10.png)
+
+---
+- App BarのLeft Iconに戻るリンクを追加
+![bg right h:600px](images/2023-11-03-00-15-38.png)
+
 
 ---
 Preview機能でペット情報編集画面が使えることを確認しましょう。
 
-![bg right h:700px](images/2021-11-04-21-01-32.png)
+![bg right h:700px](images/2023-11-03-00-25-31.png)
 
 ---
-補足
-- Formコンポーネントを使えば、FieldのRequired Error Textにチェックを入れるだけで、必須項目が入力されているかどうかをチェックすることができます。
-- 入力フォームを作る際は、できるだけFormコンポーネントを使いましょう。
-![bg right h:600px](images/2021-11-04-21-18-20.png)
-![bg right h:600px](images/2021-11-04-21-05-30.png)
+参考
+- FormコンポーネントのFieldのRequired Error Textにはデフォルトでチェックが入っており、その項目が入力されていない場合にはエラーメッセージが表示されます。
+- 未入力のままUPDATE PETをクリックして確認してみましょう
+![bg right h:600px](images/2023-11-03-00-27-27.png)
+![bg right h:600px](images/2023-11-03-00-28-44.png)
 
 ---
 #### ペット削除機能
@@ -1180,19 +1187,16 @@ Preview機能でペット情報編集画面が使えることを確認しまし�
 - Iconをdeleteに変更
 - ADD ACTIONからDelete > Current Petを選択
 - ADD ANOTHER ACTIONからLink > Mypetsを選択
-
-![bg right h:500px](images/2021-11-04-05-12-13.png)
+![bg right h:550px](images/2023-11-03-00-32-55.png)
 
 <!-- TODO: 削除の前に本当によろしいですか？ を挟みたい-->
 ---
 Preview機能で削除を試してみましょう。
 
-
 削除が完了してペット一覧画面に遷移すると、削除したペットは表示されません。
 
-
-![bg right h:600px](images/2021-11-04-05-16-12.png)
-![bg right h:600px](images/2021-11-04-05-16-26.png)
+![bg right h:600px](images/2023-11-03-00-34-40.png)
+![bg right h:600px](images/2023-11-03-00-34-58.png)
 
 ---
 ## TODO: サンプルアプリを改善しよう
@@ -1401,8 +1405,7 @@ Twitter Timelineコンポーネントを配置します。
 Preview機能でSignupして、HomeのTwitterボタンをクリックすると、TwitterTimeline画面に入力したHandle NameのTwitterアカウントの投稿が一覧表示されます
 ![bg right h:700px](images/2023-11-02-20-58-47.png)
 
-
----
+<!-- --- -->
 <!-- スライドの枚数的に時間が足りなくなりそうなので、割愛します... -->
 <!-- - Users CollectionにTwitterHandleName Propertyを追加
   - TypeはTextを選択
