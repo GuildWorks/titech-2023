@@ -6,8 +6,8 @@
 ### 2023/11/3
 * [ノーコード開発とは](https://github.com/GuildWorks/titech-2023/raw/main/docs/NoCode/pdf/NoCodeDevelopment-jp.pdf)
 * [What is No-Code Development?](https://github.com/GuildWorks/titech-2023/raw/main/docs/NoCode/pdf/NoCodeDevelopment-en.pdf)
-* [Adaloでのアプリ開発と外部連携](https://github.com/GuildWorks/titech-2023/raw/main/docs/Adalo1/pdf/Adalo-jp.pdf)
-* [App development and external integration with Adalo](https://github.com/GuildWorks/titech-2023/raw/main/docs/Adalo1/pdf/Adalo-en.pdf)
+* [Adaloでのアプリ開発と外部連携](https://github.com/GuildWorks/titech-2023/raw/main/docs/Adalo/pdf/Adalo-jp.pdf)
+* [App development and external integration with Adalo](https://github.com/GuildWorks/titech-2023/raw/main/docs/Adalo/pdf/Adalo-en.pdf)
 
 
 ### 2023/11/4
