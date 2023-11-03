@@ -1097,7 +1097,7 @@ Preview機能でグラフの表示を確認しましょう。体重を複数追�
 - 以下のURLの右下のCLONE APPボタンでアプリをクローンできますので、答え合わせに使ってください
 https://ryo-imahashis-team-6.adalo.com/pethealthlog
 
-![bg right h:350px](images/2023-11-02-08-32-08.png)
+![bg right h:350px](images/2023-11-03-08-04-43.png)
 
 ---
 
@@ -1332,8 +1332,6 @@ Marketplaceから外部連携を可能にするコンポーネントを追加で
 
 ---
 まずはアプリを新規作成しましょう。
-- Adaloにログイン
-https://app.adalo.com/login
 - CREATE NEW APPをクリック
 ![bg right h:300px](images/2021-11-26-22-00-12.png)
 ---

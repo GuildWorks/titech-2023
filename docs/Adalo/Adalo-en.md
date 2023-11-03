@@ -336,11 +336,11 @@ First, check the UI.
 ###### Pet Detail Screen
 - Birthday is displayed.
 - The latest weight is displayed.
-- There is a link to the weight Record screen.
+- There is a link to the weight log screen.
 ![bg right h:700px](images/2023-11-02-18-50-07.png)
 
 ---
-###### Weight Record screen
+###### Weight Log screen
 - A graph showing the transition in weight is displayed.
 - You can enter your pet's current weight.
 - You can add your pet's weight by pressing the button
@@ -695,310 +695,1058 @@ Let's add components on this screen.
 ![bg right h:700px](images/2023-11-01-22-51-44.png)
 
 ---
-- Select "Text" from ADD COMPONENT.
-![bg right h:500px](images/2021-10-20-06-47-19.png)
+- Select App Bar from ADD COMPONENT.
+![bg right h:650px](images/2023-11-01-22-53-38.png)
 
 ---
 - Place it on the screen.
-![bg right h:500px](images/2021-10-20-06-49-18.png)
+![bg right h:700px](images/2023-11-01-22-54-12.png)
 
 ---
-- Change the value of "Text" to Name.
-![bg right h:500px](images/2021-10-20-06-52-11.png)
+- Change the value of Title > Text to the screen name (PetRegistration).
+![bg right h:700px](images/2023-11-01-22-55-53.png)
 
 ---
-- Let's put text "Image" and "Birthday" in the same way.
-![bg right h:500px](images/2021-10-20-07-02-04.png)
-
----
-- Select "Text Input" from ADD COMPONENT
-![bg right h:500px](images/2021-10-20-06-53-05.png)
-
----
-- Place it on the screen and change the "Placeholder" value to "Enter Name"
-![bg right h:480px](images/2021-10-20-07-03-27.png)
-
----
-- Select "Image Picker" from ADD COMPONENT.
-![bg right h:600px](images/2021-10-20-07-05-23.png)
+- Select Form from ADD COMPONENT.
+![bg right h:700px](images/2023-11-01-22-57-45.png)
 
 ---
 - Place it on the screen.
-![bg right h:480px](images/2021-10-20-07-06-54.png)
+![bg right h:700px](images/2023-11-01-22-59-55.png)
 
 ---
-- Select "Date Picker" from ADD COMPONENT.
-![bg right h:480px](images/2021-10-20-07-08-35.png)
+- Select Pets for "Which data collection?
+  - A form will be automatically generated for the selected collection.
+- Select Create New pet for What do you want the form to do?
+![bg right h:450px](images/2023-11-01-23-06-42.png)
 
 ---
-- Place it on the screen and change the Style to "Date Picker".
-![bg right h:480px](images/2021-10-20-07-10-35.png)
+- Change ther order of Birthday and Image in Fields by drag and drop.
+![bg right h:580px](images/2023-11-01-23-08-54.png)
 
 ---
-- Select "Button" from ADD COMPONENT.
-![bg right h:480px](images/2021-10-20-07-12-13.png)
+- Make sure Create Pet is set in ClickActions of Submit Button
+![bg right h:580px](images/2023-11-01-23-10-32.png)
 
 ---
-- Place it on the screen.
-- Change the "Text" value to Register.
-- Change "Button Color" to "Secondary".
-- Change the "Icon & Text Color" to "Default Background"(White)
-
-![bg right h:530px](images/2021-10-22-02-19-14.png)
-
----
-Let's Preview the appearance of the pet registration screen.
-- Since there is no link yet, we can't display this screen with screen transitions, so we'll set it to the Home Screen, which is the screen displayed after logging in.
-- Change the Screen Navigation Type of Pet Registration screen to Home Screen.
+Since there is no link yet, we can't display it, so let's make it possible.
+- Make it Home Screen to be the first screen that appears when you are logged in
+  - Select "Pet Registration" from "Screens" and change "Screen Navigation Type" to "Home Screen
 ![bg right h:400px](images/2021-10-20-07-28-52.png)
+---
+- Open Form > Submit button on the login screen, and change the Screen of Link to the PetRegistration.
+![bg right h:600px](images/2023-11-01-23-29-51.png)
 
 ---
-- Open Preview. After logging in, you can see the Pet Registration screen.
-- You can enter a name, select an image, and select a birthday.
-- Nothing happens when you press the Register button yet.
+Let's see how the Pet Registration Screen works.
+- After logging in with the preview function, you can view the pet registration screen.
+- You can enter a name, select an image, and choose a birthday.
+- Press CREATE PET button to register your pet
+![bg right h:700px](images/2023-11-01-23-34-29.png)
+
+---
+After registering the pet, it is OK when the Record is registered in the Pets Collection of the database.
+![w:300](images/2023-11-01-23-37-16.png) ![w:800](images/2023-11-01-23-36-05.png)
 
 The pet registration screen is done.
-![bg right h:700px](images/2021-10-22-02-23-09.png)
 
 ---
-###### Pet List Screen
+###### ペット一覧画面
 - Registered pets can be displayed in a list.
-- Clicking on a pet will take you to the pet details screen for that pet.
-- Clicking the icon at the bottom right take you to the Pet Registration screen.
-![bg right h:700px](images/2021-10-22-02-40-24.png)
+- Click on a pet to move to the pet details screen.
+- Click the icon in the lower right corner to move to the pet registration screen.
+![bg right h:700px](images/2023-11-02-18-48-18.png)
 
 Next, let's create this screen.
 
 ---
-- Select "App Bar" from ADD SCREEN and enter the Screen Name.
-![bg right h:700px](images/2021-10-20-06-26-12.png)
+- Select Blank Mobile First from ADD SCREEN and enter Screen Name
+![h:500px](images/2023-11-01-22-48-24.png) ![h:300px](images/2023-11-02-05-01-05.png)
 
 ---
-- Select "Image" from ADD COMPONENT
-![bg right h:700px](images/2021-10-21-23-24-54.png)
+- Select App Bar from ADD COMPONENT and place it on the screen
+- Change the value of Title > Text to the screen name (MyPets)
+![bg right h:600px](images/2023-11-02-05-07-19.png)
 
 ---
-- Place it on the screen.
-- Upload a photo of your pet from "Image Source" -> "Upload"
-![bg right h:540px](images/2021-10-22-01-08-36.png)
+- Select Card List from ADD COMPONENT and place it on the screen
+![bg right w:600px](images/2023-11-02-05-10-27.png)
 
 ---
-- Select "Text" from ADD COMPONENT
-![bg right h:500px](images/2021-10-22-00-07-29.png)
+- Select Pets under What is this a list of?
+- Select Logged In User > Pets in Filter
+- Change the value of Columns to 1
+![bg right h:600px](images/2023-11-02-05-13-14.png)
 
 ---
-- Enter your pet's name in "Text" value and change the text color to White.
-- Depending on the photo you choose, the white text may be difficult to see, so the next step is to make the text easier to read.
-![bg right h:450px](images/2021-10-22-01-10-24.png)
+- Turn off the unwanted Subtitle and Body toggles to hide them.
+![bg right h:600px](images/2023-11-02-05-16-40.png)
 
 ---
-- Select "Rectagle" from ADD COMPONENT
-![bg right h:500px](images/2021-10-22-01-13-13.png)
-
----
-- Place it over the pet's name.
-- After selecting Black as the Background color, change the value of A in RGBA to 10.
-  - RGBA is a form of color representation that combines the intensity of each of the three primary colors (Red, Green, and Blue) with a degree of transparency (Alpha).
-![bg right h:500px](images/2021-10-22-01-23-50.png)
-
----
-- Select the Pet List screen from Screens, and confirm that Rectangle is above Text in the Components order.
-  - The Rectangle is now hiding the Text because the one on top is displayed in front of the others.
-
-![bg right h:500px](images/2021-10-22-01-38-45.png)
-
---- 
-- Let's switch the order. Put Text at the top and Rectangle at the second.
-  - The Text is now in the foreground, and the Rectangle makes it easier to see the white text!
-![bg right h:500px](images/2021-10-22-01-41-54.png)
-
----
-Next, let's add one more pet.
-- Select the three components you added (Image, Rectangle, Text) on Canvas, and click "MAKE GROUP".
-![bg right h:500px](images/2021-10-22-01-53-38.png)
-
----
-- Copy and paste (`Ctrl + C` and `Ctrl + V` on Windows, `Command + C` and `Command + V` on Mac) the created Group while it is selected, and place the duplicated Group under first pet.
-![bg right h:700px](images/2021-10-22-02-01-32.png)
-
----
-- Change the second Image and Text to those of another pet.
-![bg right h:700px](images/2021-10-22-02-06-16.png)
-
----
-Next, add the link to the pet registration page.
-- Select "Action Button" from ADD COMPONENT
-![bg right h:370px](images/2021-10-22-02-11-11.png)
+Next, add a lead to the pet registration screen
+- Select Action Button from ADD COMPONENT
+![bg right h:500px](images/2023-11-02-05-18-12.png)
 
 ---
 - Place it in the lower right corner of the screen.
-- Change the "Icon and Text Color" to "Default Background"(White).
-![bg right h:500px](images/2021-10-22-02-26-03.png)
+- Change Icon and Text Color to Default Background(White)
+![bg right h:600px](images/2023-11-02-05-19-29.png)
 
 ---
-- Select "ADD ACTION"
-  - Select "Link"
-    - Select [Pet Registration Screen Name]
-![bg right h:500px](images/2021-10-22-02-28-24.png)
+- Select ADD ACTION -> Link -> PetRegistration
+- Transition can be left as None
+![bg right h:500px](images/2023-11-02-05-20-09.png)
 
 ---
-Let's add a link from the pet registration screen to the pet list screen.
-- Select the Register button on the Pet Registration page
-- ADD ACTION -> Link -> Select [Pet List Screen Name]
-You can't register your pets yet because you just added a link (Data registration is in the next lecture).
-![bg right h:500px](images/2021-10-22-02-33-55.png)
+Let's also add a link from the Pet Registration screen to the Pet List screen
+- Select Form > Submit Button on the pet registration screen.
+- ADD ANOTHER ACTION -> Link -> MyPets
+![bg right h:500px](images/2023-11-02-05-24-39.png)
 
 ---
-- Change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to the Pet List screen.
-![bg right h:340px](images/2021-10-22-03-52-31.png)
+- Change the destination of the SIGNUP button on the SignUp screen and the LOGIN button on the Login screen from Home to MyPets.
+![bg right h:450px](images/2023-11-02-05-26-39.png)
 
 ---
-- The Home screen that was created by default is no longer needed. You can delete it.
-![bg right h:480px](images/2021-10-22-03-57-57.png)
+- The Home screen that was created by default is no longer needed, so let's delete it.
+![bg right h:600px](images/2023-11-02-05-29-02.png)
 
 ---
-Preview the appearance of the Pet List screen.
-- Change the "Screen Navigation Type" of the Pet List screen to "Home Screen" as you did when you previewed the Pet Registration screen.
-- After logging, you can see the Pet List screen.
-
-Pet List screen seems OK.
-![bg right h:650px](images/2021-10-22-02-40-24.png)
+Let's check how the Pets List screen works.
+- Change the Screen Navigation Type of the Pet List screen to Home Screen as you did when you previewed the Pet Registration screen!
+- After logging in with the Preview function, you can view the Pets List screen.
+![bg right h:700px](images/2023-11-02-05-36-18.png)
 
 ---
-###### Pet Detail Screen
-- There is a link to the weight Record screen.
-(Link2 is for exercise)
-- Birthday is displayed.
-- The latest weight is displayed.
+- When you add a pet on the Pet Registration screen, it will also appear on the Pet List screen
+
+The Pets List screen is done.
+![bg right h:700px](images/2023-11-02-05-34-18.png)
+
+---
+###### ペット詳細画面
+- Birthday is displayed
+- Shows the latest weight.
+- There is a link to the weight log screen
 
 Next, let's create this screen
-![bg right h:700px](images/2021-10-22-04-07-06.png)
+![bg right h:700px](images/2023-11-02-18-50-07.png)
 
 ---
-- Select "Info with Links" from ADD SCREEN and enter the Screen Name.
-![bg right h:650px](images/2021-10-22-02-58-46.png)
+- Select Blank Mobile First from ADD SCREEN and enter Screen Name.
+![h:500px](images/2023-11-01-22-48-24.png) ![h:300px](images/2023-11-02-06-41-40.png)
 
 ---
-- Upload one of the photos used in the Pet List screen in Image Source.
-![bg right h:500px](images/2021-10-22-03-05-37.png)
+- Select App Bar from ADD COMPONENT and place it on the screen
+- Change the value of Title > Text to the screen name (PetDetail)
+![bg right h:600px](images/2023-11-02-06-44-49.png)
+
+---
+- Select Image from ADD COMPONENT and place it on the screen.
+![bg right w:500px](images/2023-11-02-07-48-13.png)
+
+---
+We want to set Image Source as image of a specific pet that we want to display, but it is ready to do.
+
+It seems like we can choose "Logged In User's > Pets > ...", but it is not an option at this time. 
+You could choose "Logged In User's > Pets > ...", but since the user has multiple pets, you can't specify a single pet.
+
+![bg right w:600px](images/2023-11-02-06-47-41.png)
+
+---
+Setting up a link to this screen will add the specific pet you want to display to the choices.
+- Click ADD ACTION in CardList on the Pet Listing screen to add a Link to PetDetail.
+![bg right h:600px](images/2023-11-02-06-56-07.png)
+
+---
+- Current Pet is automatically set to Send This Data to PetDetail Screen in the Link you added.
+
+![bg right h:500px](images/2023-11-02-07-00-07.png)
+
+---
+- Current Pet is set as Linked Data in Available Data of Pette Detail Screen because Current Pet is set in Send This Data to PetDetail Screen of Link from Pette List Screen.
+  - This allows you to handle the pet (Current Pet) selected on the Pet List screen in the Pet Detail screen.
+![bg right h:350px](images/2023-11-02-07-01-51.png)
+
+---
+- Set Database > Current Pet > Image to ImageSource in the Image component.
+![h:400](images/2023-11-02-07-03-10.png)
+
+Now the image of the specific pet will be displayed.
+
+---
+We will also add other items.
+- Add Text from ADD COMPONENT to display the label Birthday and its value
+  - To display the value, select Current Pet's > Birthday from ADD Magic Text
+![bg right h:700px](images/2023-11-02-07-08-35.png)
+
+---
+- Change the Data Format to No Formatting from the edit icon on the right side of the pet birthday in Text
+![bg right h:400px](images/2023-11-02-08-35-08.png)
+
+---
+- Add Text from ADD COMPONENT and display the label Latest Weight.
+![bg right h:700px](images/2023-11-02-07-14-08.png)
+
+---
+To display the value of Latest Weight needs some work.
+
+- Add Text from ADD COMPONENT and make it a list with Make List.
+![bg right h:400px](images/2023-11-02-07-17-47.png)
+
+--- 
+- Select PetWeightLogs in What is this a list of?
+- Select Current Pet > PetWeightLogs in Filtering
+- In Sorting, select WeightRegisteredTime - Newest to Oldest
+- Set Maximum number of items to 1
+
+![bg right h:600px](images/2023-11-02-07-19-58.png)
+
+This will limit the number of items to only the most recent one.
+
+---
+- Set the value of the Text component in the List to Current PetWeightLog's > WeightKg.
+![bg right h:600px](images/2023-11-02-07-24-05.png)
 
 
 ---
-- Rewrite the Text with the label "Birthday" and its value, and the label "Latest Weight" and its value.
-![bg right h:700px](images/2021-10-22-03-18-32.png)
+- Let's see how it works in the preview window
+
+Since PetWeightLog's data has not been registered yet, Latest Weight is not displayed, but this is OK for now.
+![bg right h:700px](images/2023-11-02-08-37-34.png)
 
 ---
-- Change the Text named "Link 1" to "Weight Log"
-- Leave Link 2 as it is.
-(This will be used as a link to the screen created in the exercise)
+###### Weight Log Screen
+- Displays a graph showing weight transitions
+- Current weight can be entered
+- Weight can be added with the press of a button
 
-![bg right h:700px](images/2021-10-22-03-28-26.png)
+Finally, let's create this screen.
+![bg right h:700px](images/2023-11-02-18-50-36.png)
 
----
-Let's make it possible to move from the pet list screen to the pet detail screen.
-- Select the Group that contains the components for the first pet in the Pet List screen, and click "ADD ACTION" -> "Link" -> [PetDetailScreenName]
-
-![bg right h:450px](images/2021-10-22-03-31-30.png)
 
 ---
-- Preview the appearance of the Pet Detail screen.
-
-The pet detail screen seems OK.
-![bg right h:700px](images/2021-10-22-04-07-06.png)
-
----
-###### Weight Record screen
-- A graph showing the transition in weight is displayed.
-- You can enter your pet's current weight.
-- You can add your pet's weight by pressing the button.
-
-Let's create this screen.
-![bg right h:700px](images/2021-10-22-16-42-42.png)
+Add a button on the pet details screen that will lead to the weight recording screen
+- Select the Button from ADD COMPONENT and place it on the screen.
+- Change the Text to Weight Log.
+- Change Icon to chevron_right
+![bg right h:600px](images/2023-11-02-08-00-48.png)
 
 ---
-- Select "App Bar" from ADD SCREEN and enter the Screen Name.
-![bg right h:700px](images/2021-10-20-06-26-12.png)
+- Select ADD ACTION > Link > New Screen
+![bg right h:600px](images/2023-11-02-08-02-53.png)
 
 ---
-- To create a Chart, we need to prepare a database, which will be explained in the next lecture.
-- This time, paste the Chart image instead of using actual chart.
-  - I'll share the Chart image with you via Slack.
-  (You can also take a screenshot of the image on the right and use it)
-![bg right h:350px](images/pet-weight-log-chart.png)
+- Enter Screen Name and select Blank Mobile First to create the screen.
+ ![bg right h:600px](images/2023-11-02-08-04-30.png)
 
 ---
-- Add an Image from ADD COMPONENT and upload the Chart image.
-![bg right h:500px](images/2021-10-22-16-33-13.png)
+The created screen can handle the Current Pet data passed from the Pet Details screen.
+![bg right h:440px](images/2023-11-02-08-09-20.png)
 
 ---
-- Add "Text Input" from ADD COMPONENT.
-- Change "Type" to "Number".
-- Change "Placeholder" to "Enter current weight".
-![bg right h:500px](images/2021-10-22-16-35-03.png)
+- Select App Bar from ADD COMPONENT and place it on the screen
+- Change the value of Title > Text to the screen name (PetWeightLog)
+![bg right h:600px](images/2023-11-02-07-46-39.png)
 
 ---
-- Add a "Text" from ADD COMPONENT.
-- Change the value to "Weight(kg)".
-![bg right h:500px](images/2021-10-22-16-35-39.png)
+Next, we will display the weight of the pets registered in the past as a graph.
+- Select EXPLORE MARKETPLACE from ADD COMPONENT
+- INSTALL Chart Kit
+
+![bg right h:450px](images/2021-11-04-03-52-55.png)　![bg right h:170px](images/2023-11-02-07-51-53.png)
 
 ---
-- Add "Button" from ADD COMPONENT.
-- Change Text to "Add".
-![bg right h:500px](images/2021-10-22-16-36-06.png)
+- Add Line Chart to screen
+![bg right h:400px](images/2023-11-02-07-54-16.png)
+
 
 ---
-Set up a link from the pet detail screen to the weight record screen.
-- Set up a link to the weight record screen with "Click Action" of the Group containing "Text:'Weight Log'" in the pet detail screen.
-![bg right h:500px](images/2021-10-22-12-40-18.png)
+Set up a Line Chart.
+- Select PetWeightLogs in What is this a chart of?
+- Select Current Pet > PetWeightLogs in Filter
+- In Custom Filter, set WeightRegisteredTime Is after 30 days ago and specify the display period
+- Select WeightRegisteredTime - Oldest to Newest in Sorting
+
+![bg right h:700px](images/2023-11-02-08-12-17.png)
 
 ---
-Let's preview the screen.
+- Set PetWeightLog > WeightRegisteredTime in X Axis Value
+  - Set Date / Time to Date Format
+- Set PetWeightLog > WeightKg to Y Axis Value
+![bg right h:350px](images/2023-11-02-08-13-12.png)
+![bg right h:250px](images/2021-11-04-04-13-46.png)
 
-The weight record screen seems OK.
-![bg right h:700px](images/2021-10-22-16-42-42.png)
-
----
-We have created all UI for the sample app :tada:
-
-![h:383px](images/2021-10-20-06-09-56.png)![h:383px](images/2021-10-20-06-16-03.png)![h:383px](images/2021-10-22-02-23-09.png)![h:384px](images/2021-10-22-02-40-24.png)![h:383px](images/2021-10-22-04-07-06.png)![h:383px](images/2021-10-22-16-42-42.png)
+Ready to show the graph.
 
 ---
-#### URL for cloning
-- You can clone the application from the following URL, and use it to check completed version.
-https://previewer.adalo.com/014fd9d1-80c6-4325-899a-d943e778c865
+Next, let's make it possible to record weight.
 
-![bg right h:400px](images/2021-10-22-17-31-06.png)
-
----
-## Exercise
-- Create your own screen that will be the transition destination for "Link 2" on the pet details screen.
-- Alternatively, you can create a new app as you like.
-
-When you are ready, share the URL on Slack to make it available for everyone.
-
-![bg right h:500px](images/2021-10-22-18-37-12.png)
+- From ADD COMPONENT, add Text Input
+- Change the Type to Number
+- Change the Placeholder to Enter current weight
+![bg right h:500px](images/2023-11-02-08-17-51.png)
 
 ---
-#### Notes about the exercise
-- Components and Screens named "xxxxList" may be difficult to use because they need to be connected to the database, which will be explained in the next lecture.
-  - If you face a problem and can't solve by yourself, I recommend you to avoid using "xxxxList" for today.
-- While the NoCode tool allows you to create apps easily, it may not allow you to achieve complex UI and functions.
-  - If you are stuck, think about how you can achieve what you want to do with a simple UI and functions.
-    - For example: Avoid including too many components in one screen(separate them into multiple screens).
+- Add Text from ADD COMPONENT
+- Change the value to Weight(kg)
+![bg right h:500px](images/2023-11-02-08-18-37.png)
 
 ---
-#### Presentation of exercise results
-(If there is enough time)
+- Add Button from ADD COMPONENT
+- Change Text to Add
+- Choose Create > PetWeightLog from ADD ACTION 
+![bg right h:500px](images/2023-11-02-08-20-46.png)
 
-Would you like to present the app you made in the exercise?
+---
+Set the following for the Action.
+- WeightKg: Other Components > Input
+- WeightRegisteredTime: Date & Time > Current Time
+- Pet: Current Pet
+![bg right h:500px](images/2023-11-02-08-22-46.png)
+
+Weight log screen is done.
+
+---
+Let's set a link to the back icon in the header so that you can go back and forth between screens to check the operation.
+- On each of the Pet Registration and Pet Details screens, add a link to MyPets to the Left Icon in the App Bar
+![bg right h:450](images/2023-11-02-08-50-25.png)
+
+---
+- On the Weight Record screen, select Back in the link in the Left Icon of the App Bar
+![bg right h:550](images/2023-11-02-08-53-32.png)
+
+<!-- ---
+参考: 体重記録画面で、App BarのLeft Iconのリンク先を、ペット詳細画面にしてしまうと、CurrentPetの情報が失われてしまいます
+![bg right h:450](images/2023-11-02-08-56-14.png) -->
+<!-- →実際に試すと、動作に問題なかった -->
+
+---
+Check the graph with the Preview function. If you add multiple weights, the graph will be drawn.
+
+The date and time is long and not displayed properly. I wanted to test by registering multiple weights on the same day, so I used Date&Time type, but it would be better to use Date type and control that only one weight can be registered per day.
+<!-- 、連続で異なる体重を追加するとLineが上下に伸びてしまう -->
+<!-- ![bg right h:700px](images/2021-11-04-04-15-38.png) -->
+![bg right h:700px](images/2023-11-02-08-28-21.png)
+
+---
+You can also see that the Latest Weight is now displayed in the pet details screen.
+![bg right h:700px](images/2023-11-02-09-01-42.png)
+
+
+---
+You created a whole set of screens for the application :tada:
+
+![h:383px](images/2023-11-02-18-52-28.png) ![h:383px](images/2023-11-02-18-53-10.png) ![h:383px](images/2023-11-02-18-47-35.png) ![h:384px](images/2023-11-02-18-48-18.png) ![h:383px](images/2023-11-02-18-50-07.png) ![h:383px](images/2023-11-02-18-50-36.png)
+
+---
+#### URL for clone
+- You can clone the app I created by the CLONE APP button in the lower right corner of the following URL. 
+https://ryo-imahashis-team-6.adalo.com/pethealthlog
+
+![bg right h:350px](images/2023-11-03-08-04-43.png)
+
+---
+
+## 演習1
+1. Create an edit pet screen where you can edit the information of registered pets
+2. Add a function to delete a registered pet.
+
+---
+#### Hint
+- When creating the Edit Pets screen, please refer to how to create the Pet Registration screen.
+- You don't need a new screen for the pet deletion function, so please think about where to add the delete button!
+- When adding ACTION, you can choose Update or Delete
+![h:300](images/2023-11-02-19-44-50.png)
+
+
+---
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+#### 演習1の答え合わせ
+Try it by yourself first, then see the answer in following pages :pray:
+
+---
+###### Pet Edit Screen
+Create a new pet edit screen where you can update the information of your registered pets.
+
+
+---
+First, add a lead to the pet information edit screen to the pet details screen.
+- Add Action Button from ADD COMPONENT
+- Change Icon to edit.
+- Change Icon and Text Color to Default Background(white)
+![bg right h:600px](images/2023-11-03-00-06-25.png)
+
+---
+- Select Link > New Screen from ADD ACTION
+![bg right h:630px](images/2023-11-03-00-08-11.png)
+
+
+---
+- Select Blank Mobile First and create EditPetInfo screen
+![bg right h:620px](images/2023-11-03-00-09-03.png)
+
+---
+- Add App Bar and change Title to EditPetInfo
+- Add Form and set the following
+  - Pets for Under Which data collection?
+  - Update Current Pet for What do you want the form to do?
+- In Fields, change the order of Birthday and Image.
+
+![bg right h:460px](images/2023-11-03-00-13-30.png)
+<!-- 更新不要な項目があれば、その入力箇所は削除できそう -->
+
+---
+- Add a link back to the Submit Button on the Form
+![bg right h:600px](images/2023-11-03-00-22-10.png)
+
+---
+- Add back link to Left Icon of App Bar.
+![bg right h:600px](images/2023-11-03-00-15-38.png)
+
+
+---
+Make sure the Edit Pet Info screen is available in the Preview function.
+
+![bg right h:700px](images/2023-11-03-00-25-31.png)
+
+---
+FYI
+- The Required Error Text of the Field in the Form component is checked by default, and an error message will be displayed if that field is not filled in.
+- Let's check it by clicking UPDATE PET with no entry!
+![bg right h:600px](images/2023-11-03-00-27-27.png)
+![bg right h:600px](images/2023-11-03-00-28-44.png)
+
+---
+###### Pet Delete Function
+Add a button to delete a registered pet on the pet details screen.
+
+---
+- Select App Bar and turn on the Right Icon 1 toggle
+- Change Icon to DELETE
+- Select Delete > Current Pet from ADD ACTION
+- Select Link > Mypets from ADD ANOTHER ACTION
+![bg right h:550px](images/2023-11-03-00-32-55.png)
+
+<!-- TODO: 削除の前に本当によろしいですか？ を挟みたい-->
+---
+Let's preview deleting function.
+
+When the deletion is completed and you move to the Pets List screen, the deleted pets will not be displayed.
+
+![bg right h:600px](images/2023-11-03-00-34-40.png)
+![bg right h:600px](images/2023-11-03-00-34-58.png)
+
+---
+## Sample application improvement
+We will improve the sample app by using Adalo features that I have not yet introduced.
+
+---
+#### Logout
+- Select AppBar on the pet list screen and activate Right Icon 1
+- Change Icon to logout
+- ADD ACTION > More... > Select User Login > Log Out
+- Select ADD ANOTHER ACTION > Link > Login
+![bg right h:580px](images/2023-11-03-00-56-10.png)
+
+---
+Use the Preview function to check it out.
+Clicking on the added icon now logs you out and takes you to the login screen.
+
+----
+#### Action execution condition setting
+If a pet is unregistered and the Pet List screen is displayed, it will transition to the Pet Registration screen.
+- Select Actions > ADD ACTION > Link > Pet Registration on the Pet List screen.
+- Click SHOW ADVANCED and change When does this happen?
+![bg right h:600px](images/2023-11-03-00-59-14.png)
+
+---
+- Select More > Logged In User's > Pets' > Count in This action will only happen if... 
+- Change the number under Is equal to to 0
+![bg right h:600px](images/2023-11-03-01-00-58.png)
+
+---
+Check it out with the Preview function.
+Signup as a new user and you will be redirected from the Pet List screen to the Pet Registration screen.
+
+---
+#### Selective Input Form
+Add gender to the pet information and allow selective input on the input form.
+
+---
+The choices used in the selective input form are prepared as records by adding a Collection to the database.
+- ADD Genders Collection to database (Property can be left as default)
+- 0 Click Records > ADD GENDER and add two Records, Male and Female
+![h:400px](images/2023-11-03-01-02-28.png)
+
+---
+- Add a one-to-many Relationship with the Pets Collection to the Genders Collection
+  - Since one pet has one gender and one gender has multiple pets.
+![bg right h:600px](images/2021-11-05-00-46-10.png)
+
+---
+- Select the form on the pet registration screen
+- Select Fields > ADD VISIBLE FIELD > Gender 
+![bg right h:600px](images/2023-11-03-01-04-12.png)
+
+---
+- Add Gender field on Pet Details screen.
+![bg right h:500px](images/2023-11-03-01-06-07.png)
+
+---
+Let's check it with Preview function.
+
+- Gender can be selected on the pet registration screen.
+- The selected gender will be displayed on the pet details screen.
+
+![bg right h:620px](images/2023-11-03-01-07-18.png)
+![bg right h:620px](images/2023-11-03-01-07-56.png)
+
+---
+FYI
+- If you are concerned about a blank space being displayed for a pet registered before you were able to select its gender, display the Record in the Pet Collection, click on that pet, and manually set its gender.
+![h:420px](images/2023-11-03-01-08-51.png)
+
+---
+FYI
+
+Multiple-choice input forms can be created using MultiselectDropdown in Marketplace.
+
+If you need it, give it a try.
+![bg right h:400px](images/2023-11-03-01-09-51.png)
+
+
+---
+#### Show or hide components depending on conditions.
+If the weight is not registered yet, hide the Latest Weight on the Pet Details screen.
+
+![bg right h:620px](images/2023-11-03-01-07-56.png)
+
+---
+- Select the label Latest Weight and its value and make them group.
+![bg right h:500px](images/2023-11-03-01-12-04.png)
+
+---
+- Select Change Visibility
+
+![bg right h:500px](images/2023-11-03-01-13-04.png)
+
+---
+- Change Visibility to Sometimes Visible
+- Will be visible if... Select Current Pet > PetWeightLogs > Count in
+- Set Is not equal to 0
+![bg right h:620px](images/2023-11-03-01-14-11.png)
+
+---
+If you check with the Preview function, the Latest Weight is now hidden if the weight has not registered yet.
+
+![bg right h:620px](images/2023-11-03-01-14-40.png)
+
+
+This is the end of the improvements to the sample application for now.
+
+---
+#### クローン用URL
+- You can clone the app I created by the CLONE APP button in the lower right corner of the following URL.
+https://ryo-imahashis-team-6.adalo.com/improvedpethealthlog
+![h:400px](images/2023-11-03-01-15-43.png)
+
+
+---
+## External integration
+ If there is something you can't achieve with Adalo alone, you may be able to do so by integration with an external service.
+
+Let's check is how to do it.
+
+---
+I will introduce four types of external integration methods.
+- Marketplace external integration components
+- Custom Action
+- External Collection
+- Linked Services
+
+---
+#### Marketplace external integration components
+You can add a component to enable external integration from Marketplace.
+
+![bg right h:480px](images/2023-11-02-23-54-00.png)
+
+---
+First, create a new application.
+- Click CREATE NEW APP
+![bg right h:300px](images/2021-11-26-22-00-12.png)
+---
+- Select Responsive App for Platform
+![bg right h:500px](images/2023-10-29-13-09-34.png)
+
+---
+- Select "Blank Mobile First" for Template.
+![bg right h:500px](images/2023-11-02-20-25-53.png)
+
+---
+- Enter MarketplaceComponentTrial for App Name.
+- Other items can be set as you like
+![bg right h:500px](images/2023-11-02-20-27-20.png)
+
+---
+##### Twitter Timeline Component
+- Click the + button and click Explore Marketplace in ADD COMPONENT
+![bg right h:700px](images/2023-11-02-20-49-56.png)
+
+
+---
+- INSTALL Twitter Timeline component
+![bg right h:450px](images/2023-11-02-20-50-46.png)
+
+---
+Place the Twitter Timeline component.
+- Add Link button to Home Screen
+![bg right h:600px](images/2023-11-02-20-52-04.png)
+
+---
+- Add Link to New Screen from ADD ACTION
+![bg right h:600px](images/2023-11-02-20-52-41.png)
+
+---
+- Select Blank Mobile First and create TwitterTimeline screen
+![bg right h:600px](images/2023-11-02-20-54-06.png)
+
+---
+- Place Twitter Timeline component
+![bg right h:600px](images/2023-11-02-20-55-36.png)
+
+---
+- Enter "tokyotech_jp" in the Twitter Handle Name field.
+  - You can change the Handle Name to any Twitter account.
+![bg right h:550px](images/2023-11-02-20-57-01.png)
+
+---
+Signup with the Preview function and click the Twitter button in Home, the TwitterTimeline screen will display a list of posts from the Twitter account with the Handle Name you entered.
+![bg right h:700px](images/2023-11-02-20-58-47.png)
+
+---
+Several other components are provided for integration with external services. If you are interested, try them out.
+
+Examples 
+- Youtube (free)
+- Google Maps (requires credit card registration, but available in a free trial)
+
+---
+#### Custom Action
+Next, Let's learn how to handle data obtained from the API on the Adalo screen.
+
+---
+FYI
+>An application programming interface (API) is a way for two or more computer programs to communicate with each other. It is a type of software interface, offering a service to other pieces of software.
+
+https://en.wikipedia.org/wiki/API
+
+---
+Let's try API integration.
+We will use The Cat API, which you can try for free. Please access the following URL
+https://thecatapi.com/
+
+![h:400px](images/2023-11-02-21-05-32.png)
+
+---
+FYI: For dog lovers, there is also The Dog API. It probably does the same thing as The Cat API. (I have not tried it, so I recommend using The Cat API first)
+https://www.thedogapi.com/
+
+![h:400px](images/2023-11-02-21-06-15.png)
+
+---
+Check the API documentation to see how to use the API.
+- Go to the following URL
+https://docs.thecatapi.com/
+
+---
+Use the API to get a random kitten image listed on the top page.
+https://api.thecatapi.com/v1/images/search
+![w:900](images/2023-11-02-21-41-46.png)
+
+---
+- CREATE NEW APP in the Adalo admin page
+- Settings are as follows
+  - Platform: Responsive App
+  - Template: Blank Mobile First
+  - App Name: ApiIntegrationTrial
+
+![bg right h:250px](images/2021-11-27-02-15-47.png)
+
+---
+- Add link button to kitten image display screen on Home screen
+- Set Link to New Screen from ADD ACTION
+![bg right h:500px](images/2023-11-02-21-49-44.png)
+
+---
+- Select Blank Mobile First as Template and create Kitten screen
+![bg right h:500px](images/2023-11-02-21-50-08.png)
+
+---
+- Place the Image component on the screen
+- Leave the component settings as they are (we will set them later)
+![bg right h:500px](images/2023-11-02-21-51-28.png)
+
+---
+- Add Change Kitten Image Button
+![bg right h:550px](images/2023-11-02-21-54-13.png)
+
+---
+- Select New Custom Action from ADD ACTION
+![bg right h:650px](images/2021-11-27-03-57-01.png)
+
+---
+You will be prompted to start a 14-day free trial (free of charge).
+- Click "START FREE TRIAL."
+![bg right h:400px](images/2023-11-02-21-28-44.png)
+
+---
+Trial has started.
+- Click "CREATE NEW CUSTOM ACTION"
+![h:500px](images/2023-11-02-21-27-32.png)
+
+---
+- Enter the following and click NEXT
+  - Name: GetRandomKitten
+  - Type: Create
+
+![h:400px](images/2021-11-27-04-25-58.png)
+
+---
+- Set the API Request as follows
+  - API Base URL: https://api.thecatapi.com/v1/images/search
+  - Method: GET
+- After setting, click RUN TEST REQUEST
+![bg right h:450px](images/2023-11-02-21-59-14.png)
+
+---
+If the Test is successful, the data from the API will be displayed. These can be used in subsequent actions.
+- Click SAVE CUSTOM ACTION.
+![h:450px](images/2023-11-02-22-03-17.png)
+
+---
+Next, set the URL of the kitten image obtained from the API to the Image Source of the Image component.
+
+The data from the API does not appear in the choices...
+![h:100px](images/2021-11-27-05-52-10.png)
+
+![bg right h:500px](images/2021-11-27-05-54-04.png)
+![bg right h:500px](images/2023-11-02-22-08-34.png)
+
+---
+- Add Text Input component on the screen
+- Change Name to "Invisible Kitten Image URL Input"
+![bg right h:550px](images/2023-11-02-22-09-43.png)
+
+---
+- Click "Change Kitten Image Button".
+- Select More > Change Input Value from ADD ANOTHER ACTION
+
+![bg right h:550px](images/2023-11-02-22-10-48.png)
+
+---
+- Set "Invisible Kitten Image URL Input" for Input
+- Set "GetRandomKitten > url" for Valoue
+- Click "DONE"
+![bg right h:500px](images/2021-11-27-06-02-37.png)
+
+---
+- Click on Image component
+- Set URL to Other Components > Invisible Kitten Image URL Input
+![bg right h:550px](images/2023-11-02-22-12-28.png)
+
+---
+- Open the LAYOUT tab of "Invisible Kitten Image URL Input" and click three eye icons in Visible On...
+![bg right h:358px](images/2023-11-02-22-17-03.png)
+
+---
+Check with the Preview function.
+
+Click the CHANGE button to see the kitten image.
+![bg right h:700px](images/2023-11-02-22-19-13.png)
+
+---
+FYI
+
+- Data obtained from the API in a Custom Action can be used in subsequent Actions.If you want to use that data in a component, use one of the following methods.
+  - Set the data to the value of Text Input on the same screen in the subsequent Action's Change Input Value, as in this case, and load it. 
+  - Or, you can save the data to a database in a subsequent Action and load it from another component. 
+     - Example: https://help.adalo.com/integrations/custom-actions
+
+
+---
+Caution
+
+Currently, Custom Action has some limitations.
+- Custom Action does not work with the Submit button of the Form component.
+- If a Custom Action is used as an Action for an entire screen, the data retrieved as an API response cannot be used in subsequent Actions.
+- Cloning the app does not copy Custom Action. If you clone the app containing the Custom Action, you must re-create it manually.
+
+---
+#### External Collection
+This section introduces how to handle data acquired from the API as a collection in Adalo.
+
+If you want to acquire multiple data at once and list them on the screen, use External Collection instead of Custom Action.
+
+---
+Add "?limit=10" to the end of the previous API to get 10 cat images.
+https://api.thecatapi.com/v1/images/search?limit=10
+![h:450px](images/2023-11-02-22-25-58.png)
+
+---
+- In External Collections in Database, click "ADD COLLECTION".
+![bg right h:700px](images/2023-11-02-22-27-40.png)
+
+---
+- Set the following and click NEXT
+  - Collection Name: Kittens
+  - Base URL: https://api.thecatapi.com/v1/images/search?limit=10
+![bg right h:530px](images/2023-11-02-22-28-51.png)
+
+
+---
+In Adalo, five Endpoints (access methods) can be set for each resource (Kittens in this example) to be accessed by the API.
+
+Depending on the specification of the API, you may need to modify it to match your needs, but in this case, you can click NEXT as is.
+![bg right h:500px](images/2023-11-02-22-30-19.png)
+
+---
+- Run the test and if successful, click "SAVE COLLECTION"
+![bg right h:650px](images/2023-11-02-22-30-57.png)
+
+
+---
+An External Collection has been created.
+
+All data to be retrieved from the API are set as properties.
+![bg right h:400px](images/2023-11-02-22-31-55.png)
+
+---
+List the data.
+- Add "Kitten List Link" button on Home screen
+- Add LINK to NEW SCREEN from ADD ACTION
+![bg right h:600px](images/2023-11-02-22-34-20.png)
+
+--- 
+- Select BlankMobileFirst and create "KittenList" screen
+![bg right h:600px](images/2023-11-02-22-35-30.png)
+
+---
+- Add Image List from ADD COMPONENT
+![bg right h:420px](images/2023-11-02-22-38-15.png)
+
+
+---
+- Set as a list of Kittens Collection
+- Set "kitten url" to Image URL
+- Set "Don't show anything" to "If there's no image..." 
+![bg right h:600px](images/2023-11-02-22-41-37.png)
+
+
+---
+- Hide Text and Icon because they are not needed.
+![bg right h:500px](images/2023-11-02-22-46-58.png)
+
+
+---
+You can see the list of cats by Preview.
+![bg right h:700px](images/2023-11-02-22-48-01.png)
+
+
+---
+#### Integration Service
+With Custom Action and Extenal Collection, it may be difficult to understand how to use the API from the documentation.
+
+Let' try the service that can make external integration easy.
+
+---
+There are many different integration services, but this time we will try a service called Zapier that is built into Adalo.
+![h:500px](images/2021-11-26-16-42-00.png)
+
+
+---
+Adalo does not have an email sending function.
+
+This time, we will use Zapier to link Adalo and Gmail so that a Welcome email will be automatically sent to people who SignUp to the application.
+
+![bg right h:200px](images/2022-11-12-19-46-27.png)
+
+---
+- Create a Google account, as you will need it to use Gmail.
+  - If you already have one, you can use that account, so you do not need to create new one.
+  - If you don't have one, click this URL and create one. 
+https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S50453738%3A1637917137418951&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+
+---
+Once your Google account is ready, we will set up the integration with Zapier.
+- Select the Submit Button on the Sign Up screen of the ApiIntegrationTrial app.
+- Select ADD ANOTHER ACTION > New Integration > Gmail
+![bg right h:650px](images/2023-11-02-23-09-00.png)
+
+---
+- Click Use this Zap at the top, Send Gmail emails for new Adalo records.
+![bg right h:400px](images/2023-11-02-23-11-50.png)
+
+
+---
+- Click Continue
+![bg right h:400px](images/2023-11-02-23-12-46.png)
+
+
+---
+Zapier setup window will open
+- Click Sign In under Connect Adalo on the right side.
+![w:1000](images/2023-11-02-23-14-09.png)
+
+
+---
+- Log in to Adalo
+![w:1000](images/2023-11-02-23-15-37.png)
+
+---
+- Click ALLOW ACCESS
+![bg right w:400](images/2023-11-02-23-16-44.png)
+
+---
+- Set Trigger as follows
+  - App: ApiIntegrationTrial
+  - Collection: Users
+![bg right w:400](images/2023-11-02-23-18-45.png)
+
+---
+- Click Test trigger
+![bg right w:400](images/2023-11-02-23-19-28.png)
+
+
+---
+- When a record is found, click Continue with selected record
+![bg right w:400](images/2023-11-02-23-20-08.png)
+
+
+---
+- Click Connect Gmail Sign in
+![bg right w:400](images/2023-11-02-23-20-54.png)
+
+
+---
+- Select Account
+![bg right w:400](images/2023-11-02-23-22-03.png)
+
+---
+- Click Allow
+![bg right w:400](images/2023-11-02-23-22-29.png)
+
+---
+Set Action.
+- Set your Gmail address in From
+- Set the application name in From Name
+- Enter Subject and Body as you like.
+- Click Continue
+![bg right h:700px](images/2023-11-02-23-27-14.png)
+
+
+---
+- If the "to:" address is your actual email address, click "Test step" to confirm receipt of the email.
+  - If not, click on "Skip test" (because the test will fail to send the email).
+![bg right h:700px](images/2023-11-02-23-29-13.png)
+
+---
+- Click Publish
+
+Integration setting with Zapier is done.
+![bg right h:600px](images/2023-11-02-23-29-49.png)
+
+---
+Make sure a Welcome email is sent to you in Adalo's ApiIntegrationTrial app.
+- Enter your actual email address in the Preview function and Signup, and you will receive an email within 2 minutes!
+![w:500](images/2023-11-02-23-31-10.png)
+
+
+---
+FYI: You can also manually run Zap immediately from the Zap listing screen without waiting 2 minutes.
+- Go to https://zapier.com/app/zaps
+- Select the Zap you want to run and click "Run Zap"
+![h:500px](images/2023-11-02-23-43-58.png)
+
+---
+With Zapier, you can integrate various other services.
+
+When something comes up that cannot be successfully achieved with Adalo alone, you may should consider whether it can be achieved by integration with other services.
+![bg right h:480px](images/2023-11-02-23-46-22.png)
+
+---
+
+That's all for external integration in Adalo.
+
+---
+## Exercise 2
+- Develop one app you want use.
+- If you cannot think of an app you want to use, develop a team member management app with the following functions.
+    - Registration of team members
+    - Display of member list
+    - Displaying member details
+    - Update member information
+    - Delete members
+    - Original functions(as many as you want).
+
+---
+We would like everyone to make a presentation at the end (if time permits).
+
+When the app is ready to use, share the URL on Slack for everyone to see.
+
+---
+Notes for the exercise
+- While NoCode tools make it easy to create apps, they may not be able to realize complex UI and functions.
+  - If you get stuck, think about how you can achieve what you want to do with a simple UI and functions.
+    - For example: do not include many components in one screen, divide the screen into separate screens, etc.
+
+---
+FYI
+- Adalo has a number of apps that can be cloned, so it might be a good idea to see if there is something similar to what you want to do.
+  - App Templates
+  https://www.adalo.com/app-templates
+  - UI & Functional Kits
+  https://www.adalo.com/cloneable-kits
+
+---
+Examples of apps that can be cloned
+- Event Calendar https://www.adalo.com/cloneables/event-calendar
+- SNS follow function https://www.adalo.com/cloneables/follow-function
+- Facebook clone https://www.adalo.com/cloneables/facebook-clone
+- Blog app https://www.adalo.com/cloneables/minimal-blog-app
+- Product sales app https://www.adalo.com/cloneables/ecommerce-app
+
+
+---
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass_flowing_sand:
+# :hourglass:
+# :hourglass:
+
+---
+#### Presentation of Exercise Results
+Please make a presentation about the application you made in the exercise.
 
 ---
 ## Summary
-- In this lecture, we learned about Adalo and created the UI of the pet health management application.
-  - We used only simple components that do not require a database.
-- In the next lecture, we will continue to use Adalo to build a database that matches the UI we created today, and make it possible to manipulate data from the app. 
-  - By using a database, various functions can be realized and the UI can be easily created. I hope you'll enjoy it!
+- After introducing Adalo and learning how to design a database, we developed an application on the subject of a pet health care application.
+- We introduced the following four methods of external integration with external services.
+  - Marketplace external integration component
+  - Custom Action
+  - External Collection
+  - Integration Service
+
+---
+- Based on what we have seen so far, it is a good idea for the team to consider whether the application they want to create in the Development Phase can be realized with Adalo.
+- Next time, I will give a lecture on Bubble, a no-code tool. Please look forward to it!
 
 ---
 # That's all!
-# Thanks for your time!
+# Thank you for your hard work!
