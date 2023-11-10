@@ -2,7 +2,7 @@
 marp: true
 theme: gaia
 size: 16:9
-header: '　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Copyright Naotake KYOGOKU'
+header: '　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Copyright Naotake KYOGOKU with K'
 
 page_number: true
 paginate: true
@@ -12,13 +12,13 @@ paginate: true
 
 # Bubble の基本 #2-2
 
-**東京工業大学 2022/11/26**
+**東京工業大学 2023/11/11**
 　
 　
 　
 　
 　
-　　　　　　　　　　　　　　　　　　　**Naotake KYOGOKU**
+　　　　　　　　　　　　　　　　**Naotake KYOGOKU with K**
 
 
 ---
@@ -32,9 +32,9 @@ paginate: true
 
 ---
 
-### 今回やることの確認
+### やることの確認
 
-- 今回はまず、Bubble で作ったアプリケーションを外部のサービスと連携させる方法を学びます
+- ここではまず、Bubble で作ったアプリケーションを外部のサービスと連携させる方法を学びます
 - 次に、1 つのアプリケーションを使った共同作業に関するコツや注意点をご紹介します
 - 最後に、Development Phaseのチームでアプリ開発の演習と発表を行います
 
@@ -64,9 +64,10 @@ paginate: true
 ---
 
 - 各自のアカウントで作成している Bubble アプリの一覧が表示されます
-- その中で、Bubble 1 回目の講義で作成したアプリケーションの下にある COPY をクリック
+- その中で、先ほどまでの基礎編で作ってきたアプリケーションを選択して、ポップアップの最下部にある`Duplicate app`をクリック
 
-![bg right w:600px](images/2022-11-23-15-36-25.png)
+![bg right w:600px](images/2023-11-09-12-34-49.png)
+
 
 ---
 
@@ -74,19 +75,19 @@ paginate: true
 - 以前のデータは使い回さないので `Copy the application database content` のチェックは OFF のまま
 - COPY をクリック
 
-![bg right w:600px](images/2022-11-23-15-41-06.png)
+![bg right w:500px](images/2023-11-09-12-36-50.png)
 
 ---
 
 - コピーが終わると、コピーしたアプリケーションの編集画面（index）が表示されれば OK です
 
-![w:850px](images/2022-11-23-15-42-33.png)
+![w:850px](images/2023-11-09-12-38-00.png)
 
 ---
 
-##### 続いて YouTube 連携の事前準備
+##### YouTube 連携の事前準備
 
-- YouTube の動画一覧を表示するために必要な下準備を行います
+- 続いて、YouTube の動画一覧を表示するために必要な下準備を行います
 - 今回の講義では Google が提供しているクラウドサービス "Google Cloud Platform" に用意されている各種 API を使っていきます
   - Amazon が提供している "Amazon Web Service" (AWS) の Google 版だと思ってください
 
@@ -131,7 +132,7 @@ paginate: true
 
 - サジェスト候補の中から "プロジェクトとページ" ブロックにある "API とサービス" を選択
 
-![bg right h:400px](images/2022-11-23-15-53-45.png)
+![bg right h:400px](images/2023-11-09-05-59-06.png)
 
 ---
 
@@ -157,13 +158,7 @@ paginate: true
 
 ##### Bubble の API 連携の準備
 
-- 左メニューから Plugins を選択し、Installed Plugins の中に `API Connector` が既に存在していることを確認
-
-![bg right h:500px](images/2022-11-23-16-06-15.png)
-
----
-
-- もし含まれていない人はAdd plugins ボタンをクリック
+- 左メニューから Plugins を選択し、Add plugins ボタンをクリック
 - "API" で検索し、 `API Connector` というプラグインをインストールします
 
 ![bg right h:500px](images/2021-11-25-20-24-21.png)
@@ -492,9 +487,8 @@ https://console.developers.google.com/
 ---
 
 - OAuth クライアント ID の作成画面が表示されるので下記の通り入力し「保存」
-
-- アプリケーションの種類: ウェブアプリケーション
-- 名前: `Bubble OAuth`
+  - アプリケーションの種類: ウェブアプリケーション
+  - 名前: `Bubble OAuth`
 
 ![bg right h:700px](images/2022-11-23-17-11-46.png)
 
@@ -533,26 +527,20 @@ https://console.developers.google.com/
 
 ##### ログイン機構を Google に置き換える
 
-- 前回の講義で作成した Reusable elements の header を開きます
+- index画面を開き、サインアップのテキストボックスやボタンをすべて削除しましょう
+- 新たにボタンを置いて、`Login by Google`といったラベルに変更しましょう
 
-![w:900px](images/2022-11-23-17-16-03.png)
-
----
-
-- Workflow タブを開き、ログインボタンに対するワークフローを開きます
-- 今はログイン画面（index ページ）へ遷移するアクションだけが設定されているので、これを見直していきます
-
-![w:700px](images/2022-11-23-17-19-41.png)
+![bg right h:400px](images/2023-11-09-13-10-53.png)
 
 ---
 
-- 今回ログインは Google が用意しているログイン画面を使うことになるため、Bubble 側のログイン画面（index ページ）へ遷移するアクションは削除します
+- 設置したボタンの設定ウィンドウで`Edit workflow`をクリックして、ボタンクリック時のワークフロー作成を開始しましょう
 
-![bg right h:600px](images/2022-11-23-17-22-01.png)
+![bg right h:400px](images/2023-11-09-13-13-14.png)
 
 ---
 
-- 続いて Google ログインのワークフローを設定していきます
+- Google ログインのワークフローを設定していきます
 - Click here to add an action... を選択
 - Account から Signup/login with a soccial network を選択
 
@@ -562,9 +550,17 @@ https://console.developers.google.com/
 
 - Signup/login with Google のポップアップが表示されます
 - OAuth provider に Google を選択
-- 事前に Google と Bubble のプラグインに設定を行ったので、これだけで Google 認証が行えるようになりました 🙌
 
 ![bg right h:350px](images/2021-11-25-18-14-22.png)
+
+---
+
+ログインができた後に、ペットリストに遷移するように指定しましょう
+- Click here to add an action... を選択
+- `Navigation`>`Go to page`を指定する
+- Destinationに`pet_list`を指定する
+
+これだけでGoogleアカウントでのログインができるようになりました。簡単ですね。
 
 ---
 
@@ -574,6 +570,13 @@ https://console.developers.google.com/
 
 ---
 
+- Reusable elements の header を開きます
+
+![w:900px](images/2022-11-23-17-16-03.png)
+
+---
+
+- 
 - Design タブに切り替え、現在非表示になっている下記 3 つのコンポーネントを Elements tree から表示しておきます
   - こうしておかないと、画像追加後のイメージが分かりづらいため
 
@@ -607,19 +610,21 @@ https://console.developers.google.com/
 - ちなみに、ログインすると Bubble 側の User data にログインした Google アカウントのメールアドレス情報が登録されます
   - もちろんパスワードは保存されていないのでご安心を :smile:
 
----
+![w:600px](images/2022-11-23-17-41-33.png)
 
-![w:800px](images/2022-11-23-17-40-59.png)
 
-![w:800px](images/2022-11-23-17-41-33.png)
 
 ---
+
+#### ＜Advanced＞
 
 ##### 最後に YouTube API を使った検索機能を組み込んでみましょう
 
-![w:900px](images/2022-11-23-17-57-09.png)
+![w:700px](images/2022-11-23-17-57-09.png)
 
 ---
+
+#### ＜Advanced＞
 
 - 現状では YouTube API の認証キーや検索キーワードは固定になっています
 - なので、これを下記のように変えてみましょう
@@ -628,9 +633,13 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 次のページにヒントを書いておきますのでまずはトライしてみましょう！
 
 ---
+
+#### ＜Advanced＞
 
 - まずは User に対して `key` という field を追加し、事前に設定しておく
   - 本来ここもユーザ自身に入力させるなどの導線が自然ですが今回は時間の都合上、API キーの設定画面は割愛します
@@ -647,6 +656,8 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 - 重要なポイントを解説します
 - まずは User の型に対して `key` という field を追加します
 
@@ -654,11 +665,15 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 - そして、今回取得した認証キー（API キー）を登録済みの User に事前にセットしておきます
 
 ![](images/2021-11-25-22-32-29.png)
 
 ---
+
+#### ＜Advanced＞
 
 - 次に YouTube API 側の設定はこんな感じですね
 
@@ -666,12 +681,16 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 - ポイントとしては、動的に指定したい項目については Value の値を削除し、Private のチェックを外しました
 - これにより、API を使う場面でこれらのパラメータの値を指定することができるようになります
 
 ![bg right h:400px](images/2021-11-25-22-19-37.png)
 
 ---
+
+#### ＜Advanced＞
 
 - ついでに、検索のオプションを 2 つ追加しておきましょう
 - key: `maxResults`、1 回の検索で取得するデータの件数
@@ -683,12 +702,16 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 - 続いて Repeating Group の Data source を空にします
 - 表示する対象データの指定は、新たに設ける検索機能のワークフローの中で設定するため、ここが空でも問題ありません
 
 ![bg right h:500px](images/2021-11-25-22-21-24.png)
 
 ---
+
+#### ＜Advanced＞
 
 - 次にキーワード検索が行われた時のワークフローの設定となるため、新たに用意した検索ボタンに対してワークフローを設定します
 - 今回は要素（Repeating Group）に対するアクションとなるため "Element Actions" の中にある "Display list" を選択します
@@ -697,6 +720,8 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 - Data source には Get data from an external API を選択し、API 経由のデータ表示とします
 - そして API provicer に `YouTube - search` を選択すると、先ほどはなかった 2 つの param が表示されるはずです
 - これは先ほど YouTube API 側の設定で動的に指定したいパラメータについて Private のチェックを外したためとなります
@@ -704,19 +729,25 @@ https://console.developers.google.com/
 
 ---
 
+#### ＜Advanced＞
+
 - 設定するとこんな感じです
 
 ![w:1100px](images/2022-11-23-17-55-08.png)
 
 ---
 
+#### ＜Advanced＞
+
 #### プレビューしてみましょう
 
 - ログインしている状態で、キーワード欄に入力した動画一覧が表示されましたか？
 
-![w:750px](images/2022-11-23-17-57-09.png)
+![w:600px](images/2022-11-23-17-57-09.png)
 
 ---
+
+#### ＜Advanced＞
 
 - いかがでしたでしょうか？
 - API 連携を行うことで、Bubble で出来る幅がさらに広がったと思います！
@@ -740,7 +771,7 @@ https://console.developers.google.com/
 
 - Bubble には正規の方法による共同編集機能はついているのですが... 💰💰💰
 
-![h:450px](images/2022-11-23-20-14-14.png)
+![h:450px](images/2023-11-09-13-45-53.png)
 
 ---
 
